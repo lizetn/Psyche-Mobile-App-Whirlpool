@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,4 +42,21 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    /**
+     * Navigates to {@link FactsActivity}
+     * @param view
+     */
+    public void displayFacts(View view)
+    {
+        // TODO
+    }
+
+    /**
+     * Navigates to {@link TimelineActivity}
+     * @param view
+     */
+    public void displayTimeline(View view)
+    {
+        // TODO
+    }
 }
