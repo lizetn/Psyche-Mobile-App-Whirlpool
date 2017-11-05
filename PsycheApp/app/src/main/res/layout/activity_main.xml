@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
+        android:onClick="displayFacts"
         android:text="Facts"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="8dp"
+        android:onClick="displayTimeline"
         android:text="Timeline"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintStart_toEndOf="@+id/factsButton" />

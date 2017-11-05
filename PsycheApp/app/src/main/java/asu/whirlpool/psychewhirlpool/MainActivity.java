@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,8 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity
+{
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -48,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayFacts(View view)
     {
-        // TODO
+        Intent intent = new Intent(this, FactsActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayTimeline(View view)
     {
-        // TODO
+        Intent intent = new Intent(this, TimelineActivity.class);
+        startActivity(intent);
     }
 }
