@@ -50,6 +50,18 @@
         android:onClick="displayTimeline"
         android:text="Timeline"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintStart_toEndOf="@+id/factsButton" />
+        app:layout_constraintStart_toEndOf="@+id/factsButton"
+        android:layout_marginLeft="8dp" />
+
+    <Button
+        android:id="@+id/socialMediaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:onClick="displaySocialMedia"
+        android:text="SocialMedia"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toEndOf="@+id/timelineButton" />
 
 </android.support.constraint.ConstraintLayout>

@@ -63,4 +63,14 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, TimelineActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Navigates to {@link SocialMediaActivity}
+     * @param view
+     */
+    public void displaySocialMedia(View view)
+    {
+        Intent intent = new Intent(this, SocialMediaActivity.class);
+        startActivity(intent);
+    }
 }
