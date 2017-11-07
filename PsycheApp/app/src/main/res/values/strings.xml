@@ -7,4 +7,5 @@
     <string name="title_activity_facts">FactsActivity</string>
     <string name="title_activity_gallery">GalleryActivity</string>
     <string name="title_activity_countdown">CountdownActivity</string>
+    <string name="title_activity_game">activity_game</string>
 </resources>
