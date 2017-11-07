@@ -50,6 +50,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
+        <activity
+            android:name=".CountdownActivity"
+            android:label="@string/title_activity_countdown"></activity>
     </application>
 
 </manifest>
