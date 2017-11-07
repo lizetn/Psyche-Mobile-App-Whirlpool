@@ -5,4 +5,5 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_timeline">TimelineActivity</string>
     <string name="title_activity_facts">FactsActivity</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
 </resources>
