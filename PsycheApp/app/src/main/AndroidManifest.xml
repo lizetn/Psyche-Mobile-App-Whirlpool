@@ -34,6 +34,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
+        <activity
+            android:name=".SocialMediaActivity"
+            android:label="SocialMediaActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
