@@ -1,39 +1,56 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 
 /**
- * Created by Erick Ramirez Cordero on 11/10/2017.
- *
- * This class represents an individual node on the timeline
+ * This class represents an individual node on the timeline.
+ * @author  Erick Ramirez Cordero
+ * @date    11/10/2017
  */
 
 public class TimeNode
 {
     private String title;
     private String info;
-    Paint paint;
+    private Paint nodePaint;
+    private Paint textPaint;
+    private final int TEXT_SIZE = 20;
 
     public TimeNode()
     {
-        title = "New Node";
-        info = "No info available";
-        paint = new Paint();
-        paint.setColor(Color.CYAN);
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        this("New Node", "No info available");
     }
 
     public TimeNode(String title, String info)
     {
         this.title = title;
         this.info = info;
+
+        nodePaint = new Paint();
+        nodePaint.setColor(Color.CYAN);
+        nodePaint.setStyle(Paint.Style.FILL_AND_STROKE);
+
+        textPaint = new Paint();
+        textPaint.setColor(Color.BLACK);
+        textPaint.setStyle(Paint.Style.STROKE);
+        textPaint.setTextSize(TEXT_SIZE);
+        textPaint.setTextAlign(Paint.Align.CENTER);
     }
 
+    /**
+     * When called by {@link TimelineManager}, the node will be drawn as a
+     * circle with a title.
+     * @param canvas
+     * @param x
+     * @param y
+     * @param radius
+     */
     protected void drawNode(Canvas canvas, int x, int y, int radius)
     {
-        canvas.drawCircle(x, y, radius, paint);
+        canvas.drawText(title, x, y, textPaint);
+        canvas.drawCircle(x, y, radius, nodePaint);
     }
 }

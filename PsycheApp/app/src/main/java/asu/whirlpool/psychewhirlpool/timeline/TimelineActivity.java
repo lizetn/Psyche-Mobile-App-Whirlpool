@@ -65,8 +65,9 @@ public class TimelineActivity extends AppCompatActivity
         Bitmap bmp = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
         Canvas nodeCanvas = new Canvas(bmp);
 
-        TimeNode node = new TimeNode();
-        node.drawNode(nodeCanvas, bmp.getWidth()/2, bmp.getHeight()/2, bmp.getWidth()/4);
+        // Create TimelineManager
+        TimelineManager timeManager = new TimelineManager();
+        timeManager.drawTimeline(nodeCanvas);
 
         ImageView image = (ImageView) findViewById(R.id.timelineImage);
         image.setImageBitmap(bmp);
