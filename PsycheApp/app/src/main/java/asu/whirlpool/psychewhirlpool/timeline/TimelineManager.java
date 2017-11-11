@@ -1,11 +1,12 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
 import android.graphics.Canvas;
-
 import java.util.ArrayList;
 
 /**
  * The TimelineManager class uses {@link TimeNode} to compose the timeline displayed to the User.
+ * Since the timeline will be sectioned off into the different Psyche mission phases, this class
+ * will be in charge of drawing the section chosen by the User.
  *
  * @author  Erick Ramirez Cordero
  * @date    11/10/2017
@@ -14,23 +15,21 @@ import java.util.ArrayList;
 public class TimelineManager
 {
     ArrayList<TimeNode> timeNodes;
-    TimeNode firstNode;
-    TimeNode secondNode;
+    private final int NODE_TOTAL = 3;
 
     public TimelineManager()
     {
-        // TODO: Remove these nodes when done testing
-        firstNode = new TimeNode();
-        secondNode = new TimeNode();
-
         timeNodes = new ArrayList<TimeNode>();
-        timeNodes.add(firstNode);
-        timeNodes.add(secondNode);
+
+        for (int index = 0; index < NODE_TOTAL; index++)
+        {
+            timeNodes.add(new TimeNode());
+        }
     }
 
     /**
      * When called, the manager will draw all TimeNodes.
-     * NOTE: This method is currently hard-coded to draw two nodes.
+     * NOTE: This draw method is currently hard-coded
      *
      * @param canvas
      */
