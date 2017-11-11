@@ -45,6 +45,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
+     * Navigates to {@link CountdownActivity}
+     * @param view
+     */
+    public void displayCountdown(View view)
+    {
+        Intent intent = new Intent(this, CountdownActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * Navigates to {@link FactsActivity}
      * @param view
      */
@@ -71,6 +81,26 @@ public class MainActivity extends AppCompatActivity
     public void displaySocialMedia(View view)
     {
         Intent intent = new Intent(this, SocialMediaActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to {@link GalleryActivity}
+     * @param view
+     */
+    public void displayGallery(View view)
+    {
+        Intent intent = new Intent(this, GalleryActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to {@link GameActivity}
+     * @param view
+     */
+    public void displayGame(View view)
+    {
+        Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
 }
