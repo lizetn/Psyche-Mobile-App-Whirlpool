@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;

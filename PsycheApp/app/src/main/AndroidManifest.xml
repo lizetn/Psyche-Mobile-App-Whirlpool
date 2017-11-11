@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TimelineActivity"
+            android:name=".timeline.TimelineActivity"
             android:label="@string/title_activity_timeline"
             android:parentActivityName=".MainActivity">
             <meta-data
