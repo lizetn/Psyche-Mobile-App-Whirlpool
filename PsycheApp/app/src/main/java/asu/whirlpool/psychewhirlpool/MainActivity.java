@@ -93,4 +93,14 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Navigates to {@link GameActivity}
+     * @param view
+     */
+    public void displayGame(View view)
+    {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
 }
