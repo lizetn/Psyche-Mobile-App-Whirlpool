@@ -53,4 +53,9 @@ public class TimeNode
         canvas.drawText(title, x, y, textPaint);
         canvas.drawCircle(x, y, radius, nodePaint);
     }
+
+    protected void setNodeColor(int color)
+    {
+        nodePaint.setColor(color);
+    }
 }

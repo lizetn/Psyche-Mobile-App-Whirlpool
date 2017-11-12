@@ -1,27 +1,20 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import asu.whirlpool.psychewhirlpool.TimePhaseActivity;
 import asu.whirlpool.psychewhirlpool.R;
 
 public class TimelineActivity extends AppCompatActivity
 {
 
     private TextView mTextMessage;
-
     public static final String PHASE_SELECTED = "Phase Selected";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -57,27 +50,6 @@ public class TimelineActivity extends AppCompatActivity
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
-    /*
-    public void drawTimeline(View view)
-    {
-        // Paint to draw
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setColor(Color.BLUE);
-
-        // Creating Bitmap to draw TimeNode
-        Bitmap bmp = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
-        Canvas nodeCanvas = new Canvas(bmp);
-
-        // Create TimelineManager
-        TimelineManager timeManager = new TimelineManager();
-        timeManager.drawTimeline(nodeCanvas);
-
-        ImageView image = (ImageView) findViewById(R.id.timelineImage);
-        image.setImageBitmap(bmp);
-    }
-    */
 
     /**
      * Navigates to {@link TimePhaseActivity}

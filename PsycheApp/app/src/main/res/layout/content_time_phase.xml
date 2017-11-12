@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="asu.whirlpool.psychewhirlpool.TimePhaseActivity"
+    tools:context="asu.whirlpool.psychewhirlpool.timeline.TimePhaseActivity"
     tools:showIn="@layout/activity_time_phase">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
-
+    <ImageView
+        android:id="@+id/timelineImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/title_activity_time_phase"
+        android:scrollbars="vertical"
+        app:srcCompat="@android:color/transparent" />
 </android.support.v4.widget.NestedScrollView>

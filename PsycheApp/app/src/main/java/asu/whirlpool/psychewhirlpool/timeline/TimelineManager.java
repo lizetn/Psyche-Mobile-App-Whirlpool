@@ -42,8 +42,15 @@ public class TimelineManager
         for(int index = 0; index < timeNodes.size(); index++)
         {
             timeNodes.get(index).drawNode(canvas, x, y, radius);
-            x /= 2;
             y /= 2;
+        }
+    }
+
+    protected void setTimeColor(int color)
+    {
+        for (int index = 0; index < NODE_TOTAL; index++)
+        {
+            timeNodes.get(index).setNodeColor(color);
         }
     }
 }

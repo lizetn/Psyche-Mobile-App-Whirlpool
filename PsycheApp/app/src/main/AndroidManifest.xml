@@ -62,7 +62,7 @@
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
         <activity
-            android:name=".TimePhaseActivity"
+            android:name=".timeline.TimePhaseActivity"
             android:label="@string/title_activity_time_phase"
             android:parentActivityName=".timeline.TimelineActivity"
             android:theme="@style/AppTheme">
