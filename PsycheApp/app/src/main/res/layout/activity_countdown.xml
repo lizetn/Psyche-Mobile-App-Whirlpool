@@ -131,65 +131,50 @@
             app:layout_constraintStart_toEndOf="@+id/textViewColonMtoS"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/defaultTimerLabels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/defaultTimer"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/defaultTimer"
-        app:layout_constraintTop_toBottomOf="@+id/defaultTimer">
+        <TextView
+            android:id="@+id/textViewDaysLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Days"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/textViewDays"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDays" />
 
         <TextView
             android:id="@+id/textViewHoursLabel"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:text="Hours"
             android:textSize="18sp"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/textViewDaysLabel"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewDaysLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Days"
-            android:textSize="18sp"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewMinutesLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="Mins"
-            android:textSize="18sp"
-            android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/textViewHoursLabel"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/textViewHours"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHours" />
 
         <TextView
             android:id="@+id/textViewSecondsLabel"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:text="Secs"
             android:textSize="18sp"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewMinutesLabel"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="@+id/textViewSeconds"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSeconds" />
+
+        <TextView
+            android:id="@+id/textViewMinutesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mins"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/textViewMinutes"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMinutes" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.design.widget.BottomNavigationView
