@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,12 +14,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.TimePhaseActivity;
 import asu.whirlpool.psychewhirlpool.R;
 
 public class TimelineActivity extends AppCompatActivity
 {
 
     private TextView mTextMessage;
+
+    public static final String PHASE_SELECTED = "Phase Selected";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -54,6 +58,7 @@ public class TimelineActivity extends AppCompatActivity
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    /*
     public void drawTimeline(View view)
     {
         // Paint to draw
@@ -71,5 +76,44 @@ public class TimelineActivity extends AppCompatActivity
 
         ImageView image = (ImageView) findViewById(R.id.timelineImage);
         image.setImageBitmap(bmp);
+    }
+    */
+
+    /**
+     * Navigates to {@link TimePhaseActivity}
+     * @param view
+     */
+    public void displayTimePhase(View view)
+    {
+        Intent intent = new Intent(this, TimePhaseActivity.class);
+        int phase = 0;
+
+        switch(view.getId())
+        {
+            case R.id.phaseButton1:
+                phase = 1;
+                break;
+            case R.id.phaseButton2:
+                phase = 2;
+                break;
+            case R.id.phaseButton3:
+                phase = 3;
+                break;
+            case R.id.phaseButton4:
+                phase = 4;
+                break;
+            case R.id.phaseButton5:
+                phase = 5;
+                break;
+            case R.id.phaseButton6:
+                phase = 6;
+                break;
+            case R.id.phaseButton7:
+                phase = 7;
+                break;
+        }
+
+        intent.putExtra(PHASE_SELECTED, phase);
+        startActivity(intent);
     }
 }
