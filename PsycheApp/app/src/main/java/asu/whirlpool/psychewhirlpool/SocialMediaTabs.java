@@ -1,8 +1,12 @@
 package asu.whirlpool.psychewhirlpool;
 
+import android.annotation.SuppressLint;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -19,7 +23,9 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class SocialMediaTabs extends AppCompatActivity {
+import static android.support.v7.app.ActionBar.NAVIGATION_MODE_TABS;
+
+public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -36,13 +42,20 @@ public class SocialMediaTabs extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
 
+        //final android.app.ActionBar aBar = getActionBar();
+
+        //aBar.addTab(aBar.newTab().setText("Twitter").setTabListener((android.app.ActionBar.TabListener) this));
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -80,6 +93,28 @@ public class SocialMediaTabs extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    @Override
+    public void onTabSelected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction fragmentTransaction)
+    {
+        if(tab.getPosition() == 0 || tab.getPosition() == 1)
+        {
+            SocialMediaActivity sm = new SocialMediaActivity();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Container,sm).commit();
+        }
+    }
+
+    @Override
+    public void onTabUnselected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onTabReselected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction fragmentTransaction) {
+
     }
 
     /**
@@ -131,7 +166,14 @@ public class SocialMediaTabs extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            if(position == 0 || position == 1)
+            {
+
+                SocialMediaActivity sm = new SocialMediaActivity();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.Container,sm).commit();
+                return sm;
+            }
+            return null;
         }
 
         @Override

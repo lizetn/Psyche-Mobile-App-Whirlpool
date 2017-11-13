@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PsycheApp.iml" filepath="$PROJECT_DIR$/PsycheApp.iml" />
-      <module fileurl="file://C:\Users\jperez60\Desktop\Psyche-Mobile-App-Whirlpool-master\PsycheApp\PsycheApp.iml" filepath="C:\Users\jperez60\Desktop\Psyche-Mobile-App-Whirlpool-master\PsycheApp\PsycheApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\jperez60\Desktop\Psyche-Mobile-App-Whirlpool-master\PsycheApp\app\app.iml" filepath="C:\Users\jperez60\Desktop\Psyche-Mobile-App-Whirlpool-master\PsycheApp\app\app.iml" />
     </modules>
   </component>
 </project>
