@@ -100,4 +100,12 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="phase_seven">Phase 7</string>
+    <string name="faq">FAQ</string>
+    <string name="phase_six">Phase 6</string>
+    <string name="phase_five">Phase 5</string>
+    <string name="phase_four">Phase 4</string>
+    <string name="phase_three">Phase 3</string>
+    <string name="phase_two">Phase 2</string>
+    <string name="phase_one">Phase 1</string>
 </resources>

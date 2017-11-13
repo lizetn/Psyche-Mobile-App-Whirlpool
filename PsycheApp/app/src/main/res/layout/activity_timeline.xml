@@ -11,7 +11,7 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="@string/timeline_title"
@@ -35,85 +35,113 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
 
-    <ImageButton
-        android:id="@+id/phaseButton2"
-        android:layout_width="@dimen/phase_button_size"
-        android:layout_height="@dimen/phase_button_size"
-        android:layout_marginTop="16dp"
-        android:onClick="displayTimePhase"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/phaseButton1"
-        app:layout_constraintTop_toBottomOf="@+id/message"
-        app:srcCompat="@color/psyche_gold" />
-
-    <ImageButton
+    <Button
         android:id="@+id/phaseButton1"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_mustard"
         android:onClick="displayTimePhase"
+        android:text="@string/phase_one"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/phaseButton2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/message"
         app:srcCompat="@color/psyche_mustard" />
 
-    <ImageButton
+    <Button
+        android:id="@+id/phaseButton2"
+        android:layout_width="@dimen/phase_button_size"
+        android:layout_height="@dimen/phase_button_size"
+        android:layout_marginTop="16dp"
+        android:background="@color/psyche_gold"
+        android:onClick="displayTimePhase"
+        android:text="@string/phase_two"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/phaseButton1"
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        app:srcCompat="@color/psyche_gold" />
+
+    <Button
         android:id="@+id/phaseButton3"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_coral"
         android:onClick="displayTimePhase"
+        android:text="@string/phase_three"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/phaseButton4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phaseButton1"
         app:srcCompat="@color/psyche_coral" />
 
-    <ImageButton
+    <Button
         android:id="@+id/phaseButton4"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_magenta"
         android:onClick="displayTimePhase"
+        android:text="@string/phase_four"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/phaseButton3"
         app:layout_constraintTop_toBottomOf="@+id/phaseButton2"
         app:srcCompat="@color/psyche_magenta" />
 
-    <ImageButton
+    <Button
         android:id="@+id/phaseButton5"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_purple"
         android:onClick="displayTimePhase"
+        android:text="@string/phase_five"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/phaseButton6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phaseButton3"
         app:srcCompat="@color/psyche_purple" />
 
-    <ImageButton
+    <Button
         android:id="@+id/phaseButton6"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_dark_purple"
         android:onClick="displayTimePhase"
+        android:text="@string/phase_six"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/phaseButton5"
         app:layout_constraintTop_toBottomOf="@+id/phaseButton4"
         app:srcCompat="@color/psyche_dark_purple" />
 
-    <ImageButton
+    <Button
         android:id="@+id/phaseButton7"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_black"
         android:onClick="displayTimePhase"
+        android:text="@string/phase_seven"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toStartOf="@+id/faqButton"
         app:layout_constraintHorizontal_bias="0.5"
@@ -121,12 +149,17 @@
         app:layout_constraintTop_toBottomOf="@+id/phaseButton5"
         app:srcCompat="@color/psyche_black" />
 
-    <ImageButton
+    <Button
         android:id="@+id/faqButton"
         android:layout_width="@dimen/phase_button_size"
         android:layout_height="@dimen/phase_button_size"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
+        android:background="@color/psyche_black"
+        android:onClick="displayFaq"
+        android:text="@string/faq"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

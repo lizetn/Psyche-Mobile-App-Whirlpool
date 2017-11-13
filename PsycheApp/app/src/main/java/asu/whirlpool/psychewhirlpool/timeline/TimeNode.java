@@ -43,10 +43,10 @@ public class TimeNode
     /**
      * When called by {@link TimelineManager}, the node will be drawn as a
      * circle with a title.
-     * @param canvas
-     * @param x
-     * @param y
-     * @param radius
+     * @param canvas        The canvas to be drawn
+     * @param x             X coordinate to draw at
+     * @param y             Y coordinate to draw at
+     * @param radius        Radius of the node to be drawn
      */
     protected void drawNode(Canvas canvas, int x, int y, int radius)
     {
@@ -54,6 +54,10 @@ public class TimeNode
         canvas.drawCircle(x, y, radius, nodePaint);
     }
 
+    /**
+     * Sets the color of the paint to be used to draw the nodes
+     * @param color         The color to use
+     */
     protected void setNodeColor(int color)
     {
         nodePaint.setColor(color);

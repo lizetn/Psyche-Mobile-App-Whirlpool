@@ -53,44 +53,40 @@ public class TimePhaseActivity extends AppCompatActivity
 
         int color = 0;
 
-        // Set color of TimeNodes
+        // Set color of TimeNodes based on Phase selected
         switch(phase)
         {
             case 1:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                color = ResourcesCompat.getColor(getResources(), R.color.psyche_mustard, null);
                 break;
             case 2:
                 color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
                 break;
             case 3:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                color = ResourcesCompat.getColor(getResources(), R.color.psyche_coral, null);
                 break;
             case 4:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                color = ResourcesCompat.getColor(getResources(), R.color.psyche_magenta, null);
                 break;
             case 5:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                color = ResourcesCompat.getColor(getResources(), R.color.psyche_purple, null);
                 break;
             case 6:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                color = ResourcesCompat.getColor(getResources(), R.color.psyche_dark_purple, null);
                 break;
             case 7:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                color = ResourcesCompat.getColor(getResources(), R.color.psyche_black, null);
                 break;
         }
 
         timelineManager.setTimeColor(color);
-    }
 
-    public void drawTimeline(View view)
-    {
         // Creating Bitmap to draw TimeNode
         Bitmap bmp = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
         Canvas nodeCanvas = new Canvas(bmp);
 
-        // Create TimelineManager
+        // Draw timeline
         timelineManager.drawTimeline(nodeCanvas);
-
         ImageView image = (ImageView) findViewById(R.id.timelineImage);
         image.setImageBitmap(bmp);
     }

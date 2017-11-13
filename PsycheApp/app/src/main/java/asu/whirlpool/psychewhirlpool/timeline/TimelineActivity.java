@@ -9,11 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.FactsActivity;
 import asu.whirlpool.psychewhirlpool.R;
 
 public class TimelineActivity extends AppCompatActivity
 {
-
     private TextView mTextMessage;
     public static final String PHASE_SELECTED = "Phase Selected";
 
@@ -52,8 +52,8 @@ public class TimelineActivity extends AppCompatActivity
     }
 
     /**
-     * Navigates to {@link TimePhaseActivity}
-     * @param view
+     * Navigates to a phase of the timeline {@link TimePhaseActivity}
+     * @param view          Necessary for onClick() methods
      */
     public void displayTimePhase(View view)
     {
@@ -86,6 +86,16 @@ public class TimelineActivity extends AppCompatActivity
         }
 
         intent.putExtra(PHASE_SELECTED, phase);
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to the FAQ section of the Psyche App {@link FactsActivity}
+     * @param view          Necessary for onClick() methods
+     */
+    public void displayFaq(View view)
+    {
+        Intent intent = new Intent(this, FactsActivity.class);
         startActivity(intent);
     }
 }

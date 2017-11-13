@@ -36,8 +36,8 @@ public class TimelineManager
     protected void drawTimeline(Canvas canvas)
     {
         int x = canvas.getWidth() / 2;
-        int y = canvas.getHeight() / 2;
-        int radius = y / 4;
+        int y = canvas.getHeight();
+        int radius = y / 8;
 
         for(int index = 0; index < timeNodes.size(); index++)
         {
