@@ -17,7 +17,7 @@ public class TimeNode
     private String info;
     private Paint nodePaint;
     private Paint textPaint;
-    private final int TEXT_SIZE = 20;
+    private final int TEXT_SIZE = 75;
 
     public TimeNode()
     {
@@ -34,8 +34,8 @@ public class TimeNode
         nodePaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
         textPaint = new Paint();
-        textPaint.setColor(Color.BLACK);
-        textPaint.setStyle(Paint.Style.STROKE);
+        textPaint.setColor(Color.WHITE);
+        textPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         textPaint.setTextSize(TEXT_SIZE);
         textPaint.setTextAlign(Paint.Align.CENTER);
     }
@@ -50,8 +50,8 @@ public class TimeNode
      */
     protected void drawNode(Canvas canvas, int x, int y, int radius)
     {
-        canvas.drawText(title, x, y, textPaint);
         canvas.drawCircle(x, y, radius, nodePaint);
+        canvas.drawText(title, x, y, textPaint);
     }
 
     /**

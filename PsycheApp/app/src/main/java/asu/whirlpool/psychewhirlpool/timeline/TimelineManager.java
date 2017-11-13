@@ -15,7 +15,9 @@ import java.util.ArrayList;
 public class TimelineManager
 {
     ArrayList<TimeNode> timeNodes;
-    private final int NODE_TOTAL = 3;
+    private final int NODE_TOTAL = 5;
+    private final int RADIUS = 200;
+    private final int SPACE = 500;
 
     public TimelineManager()
     {
@@ -36,13 +38,12 @@ public class TimelineManager
     protected void drawTimeline(Canvas canvas)
     {
         int x = canvas.getWidth() / 2;
-        int y = canvas.getHeight();
-        int radius = y / 8;
+        int y = canvas.getHeight() - SPACE;
 
         for(int index = 0; index < timeNodes.size(); index++)
         {
-            timeNodes.get(index).drawNode(canvas, x, y, radius);
-            y /= 2;
+            timeNodes.get(index).drawNode(canvas, x, y, RADIUS);
+            y -= SPACE;
         }
     }
 

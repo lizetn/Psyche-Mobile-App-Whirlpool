@@ -34,17 +34,6 @@ public class TimePhaseActivity extends AppCompatActivity
         setContentView(R.layout.activity_time_phase);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
@@ -82,7 +71,7 @@ public class TimePhaseActivity extends AppCompatActivity
         timelineManager.setTimeColor(color);
 
         // Creating Bitmap to draw TimeNode
-        Bitmap bmp = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
+        Bitmap bmp = Bitmap.createBitmap(2000, 3000, Bitmap.Config.ARGB_8888);
         Canvas nodeCanvas = new Canvas(bmp);
 
         // Draw timeline
