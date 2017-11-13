@@ -3,13 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_activity_timeline">TimelineActivity</string>
-    <string name="title_activity_facts">FactsActivity</string>
-    <string name="title_activity_gallery">GalleryActivity</string>
-    <string name="title_activity_countdown">CountdownActivity</string>
-    <string name="title_activity_game">activity_game</string>
+    <string name="title_activity_timeline">Timeline Activity</string>
+    <string name="title_activity_facts">Facts Activity</string>
+    <string name="title_activity_gallery">Gallery Activity</string>
+    <string name="title_activity_countdown">Countdown Activity</string>
+    <string name="title_activity_game">Game Activity</string>
     <string name="timeline_title">Psyche Mission Timeline</string>
-    <string name="title_activity_time_phase">TimePhaseActivity</string>
+    <string name="title_activity_time_phase">Time Phase Activity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -108,4 +108,15 @@
     <string name="phase_three">Phase 3</string>
     <string name="phase_two">Phase 2</string>
     <string name="phase_one">Phase 1</string>
+    <string name="error_message">Error</string>
+    <string name="psyche_faq_info">
+        "Mission Overview\n\n"
+        "-Psyche is:\n"
+        "\t\t -The name of an asteroid orbiting the Sun between Mars and Jupiter.\n"
+        "\t\t -The name of an ASU space mission to visit that asteroid.\n"
+        "-Psyche is the first mission to a world made of metal rather than rock or ice.\n"
+        "-The Psyche mission was chosen by NASA on January 4, 2017.\n"
+        "-Psyche is the 14th mission selected for NASA’s Discovery Program, a series of "
+        "relatively low-cost missions to solar system targets.\n"
+    </string>
 </resources>
