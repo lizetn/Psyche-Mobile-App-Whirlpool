@@ -4,10 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -80,17 +85,8 @@ public class MainActivity extends AppCompatActivity
      */
     public void displaySocialMedia(View view)
     {
-        Intent intent = new Intent(this, SocialMediaActivity.class);
-        startActivity(intent);
-    }
-
-    /**
-     * Navigates to {@link GalleryActivity}
-     * @param view
-     */
-    public void displayGallery(View view)
-    {
-        Intent intent = new Intent(this, GalleryActivity.class);
+        Intent intent = new Intent(this, SocialMediaTabs.class
+        );
         startActivity(intent);
     }
 
@@ -101,6 +97,16 @@ public class MainActivity extends AppCompatActivity
     public void displayGame(View view)
     {
         Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to {@link GalleryActivity}
+     * @param view
+     */
+    public void displayGallery(View view)
+    {
+        Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
     }
 }
