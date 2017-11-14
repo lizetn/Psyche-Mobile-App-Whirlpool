@@ -3,12 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_activity_timeline">TimelineActivity</string>
-    <string name="title_activity_facts">FactsActivity</string>
-    <string name="title_activity_gallery">GalleryActivity</string>
-    <string name="title_activity_countdown">Countdown to Launch of Psyche Spacecraft</string>
-    <string name="title_activity_game">activity_game</string>
-    <string name="countdown_colonDelin">:</string>
     <string name="title_activity_timeline">Timeline Activity</string>
     <string name="title_activity_facts">Facts Activity</string>
     <string name="title_activity_gallery">Gallery Activity</string>
@@ -18,7 +12,6 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
-    <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">6Gekxk012j0RkDVr9x6wwornQ</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">	L9vdf2MOhyBrbW53C7Q6WaPH3dVW4bG24X096iwxnP4EOR0PD5</string>
