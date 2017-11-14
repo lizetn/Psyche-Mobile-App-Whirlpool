@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
@@ -85,6 +87,26 @@ public class MainActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this, SocialMediaTabs.class
         );
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to {@link GalleryActivity}
+     * @param view
+     */
+    public void displayGallery(View view)
+    {
+        Intent intent = new Intent(this, GalleryActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to {@link GameActivity}
+     * @param view
+     */
+    public void displayGame(View view)
+    {
+        Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
 
