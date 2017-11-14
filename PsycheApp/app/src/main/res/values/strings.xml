@@ -3,13 +3,20 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_timeline">TimelineActivity</string>
+    <string name="title_activity_facts">FactsActivity</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="title_activity_countdown">Countdown to Launch of Psyche Spacecraft</string>
+    <string name="title_activity_game">activity_game</string>
+    <string name="countdown_colonDelin">:</string>
     <string name="title_activity_timeline">Timeline Activity</string>
     <string name="title_activity_facts">Facts Activity</string>
     <string name="title_activity_gallery">Gallery Activity</string>
-    <string name="title_activity_countdown">Countdown Activity</string>
+    <string name="title_activity_countdown">Countdown to Launch of Psyche Spacecraft</string>
     <string name="title_activity_game">Game Activity</string>
     <string name="timeline_title">Psyche Mission Timeline</string>
     <string name="title_activity_time_phase">Time Phase Activity</string>
+    <string name="countdown_colonDelin">:</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
