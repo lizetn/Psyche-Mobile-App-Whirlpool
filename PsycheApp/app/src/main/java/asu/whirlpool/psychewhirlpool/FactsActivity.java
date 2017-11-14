@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool;
 
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,10 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import asu.whirlpool.psychewhirlpool.R;
+
 public class FactsActivity extends AppCompatActivity
 {
-
     private TextView mTextMessage;
+    private final String FAQ_TEXT_FILE = "faqText.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -44,6 +54,33 @@ public class FactsActivity extends AppCompatActivity
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
 
+        // Retrieve FAQ Information
+
+        TextView faqTextView = (TextView) findViewById(R.id.faqTextView);
+        String faqText = "";
+        /*
+        try
+        {
+            InputStreamReader streamReader = new InputStreamReader(getAssets().open(FAQ_TEXT_FILE));
+            BufferedReader bufferedReader = new BufferedReader(streamReader);
+
+            String faqLine;
+
+            while ((faqLine = bufferedReader.readLine()) != null)
+            {
+                faqText += faqLine + "\n";
+            }
+        }
+        catch (IOException e)
+        {
+            faqText = getString(R.string.error_message);
+        }
+        finally
+        {
+            faqTextView.setText(faqText);
+        }
+        */
+        faqTextView.setText(R.string.psyche_faq_info);
+    }
 }
