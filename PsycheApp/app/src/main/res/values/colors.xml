@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="psyche_gold">#f47c33</color>
+    <color name="psyche_mustard">#f9a000</color>
+    <color name="psyche_coral">#ef5966</color>
+    <color name="psyche_magenta">#a53f5b</color>
+    <color name="psyche_purple">#592651</color>
+    <color name="psyche_dark_purple">#302144</color>
+    <color name="psyche_black">#12031d</color>
 </resources>
