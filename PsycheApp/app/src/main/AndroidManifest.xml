@@ -61,6 +61,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
+      
+        <activity
+            android:name=".SocialMediaTabs"
+            android:label="@string/title_activity_social_media_tabs"
+            android:theme="@style/AppTheme" />
+        </activity>
+      
+        <activity android:name=".Facebook"></activity>
+
         <activity
             android:name=".timeline.TimePhaseActivity"
             android:label="@string/title_activity_time_phase"
@@ -70,6 +79,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.timeline.TimelineActivity" />
         </activity>
+  
     </application>
 
 </manifest>
