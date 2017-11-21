@@ -38,6 +38,12 @@
                 android:layout_height="wrap_content"
                 android:text="Twitter" />
 
+            <android.support.design.widget.TabItem
+                android:id="@+id/facebook_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Facebook" />
+
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

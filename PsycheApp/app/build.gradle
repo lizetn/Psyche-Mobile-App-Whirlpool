@@ -38,4 +38,5 @@ dependencies {
     compile('com.twitter.sdk.android:twitter-core:2.3.0@aar') {
         transitive = true;
     }
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 }
