@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-		
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -51,11 +50,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-		
         <activity
             android:name=".CountdownActivity"
             android:label="@string/title_activity_countdown" />
-		
         <activity
             android:name=".GameActivity"
             android:label="@string/title_activity_game"
@@ -64,24 +61,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-      
         <activity
             android:name=".SocialMediaTabs"
             android:label="@string/title_activity_social_media_tabs"
             android:theme="@style/AppTheme" />
-      
-        <activity android:name=".Facebook"/>
-
+        <activity android:name=".Facebook" />
         <activity
             android:name=".timeline.TimePhaseActivity"
             android:label="@string/title_activity_time_phase"
-            android:parentActivityName=".timeline.TimelineActivity"
-            android:theme="@style/AppTheme">
+            android:parentActivityName=".timeline.TimelineActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.timeline.TimelineActivity" />
         </activity>
-  
     </application>
 
 </manifest>
