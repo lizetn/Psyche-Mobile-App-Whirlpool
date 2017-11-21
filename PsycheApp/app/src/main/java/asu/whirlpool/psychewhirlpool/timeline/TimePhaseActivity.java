@@ -1,82 +1,185 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.res.ResourcesCompat;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import asu.whirlpool.psychewhirlpool.R;
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
-import asu.whirlpool.psychewhirlpool.timeline.TimelineManager;
+
+import static asu.whirlpool.psychewhirlpool.timeline.TimelineActivity.PHASE_SELECTED;
 
 public class TimePhaseActivity extends AppCompatActivity
 {
-    public int phase = 0;
-    public TimelineManager timelineManager = new TimelineManager();
+    private int phase;
+    private int phaseColor;
+    private LinearLayout buttonLayout;
+    private int nodeCount;
+    private ArrayList<String> phaseInfo;
 
-    //Constants
-    private final int ERROR_PHASE = -1;
+    private TextView mTextMessage;
+
+    // Constants
+    private final String DEBUG_TAG = TimePhaseActivity.class.getSimpleName();
+    private final String ERROR_MSG = "ERROR!";
+    private final String PHASE_FILE = "SamplePhaseInfo.txt";
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item)
+        {
+            switch (item.getItemId())
+            {
+                case R.id.navigation_home:
+                    mTextMessage.setText(R.string.title_home);
+                    return true;
+                case R.id.navigation_dashboard:
+                    mTextMessage.setText(R.string.title_dashboard);
+                    return true;
+                case R.id.navigation_notifications:
+                    mTextMessage.setText(R.string.title_notifications);
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_phase);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        buttonLayout = (LinearLayout) findViewById(R.id.nodeLayout);
+        nodeCount = buttonLayout.getChildCount();
+        phaseInfo = new ArrayList<String>();
+
+        initPhaseButtons();
+        initPhaseInfo();
+    }
+
+    /**
+     * Initializes the image buttons used in {@link TimePhaseActivity}.
+     */
+    private void initPhaseButtons()
+    {
+        // Get phase selected from intent
         Intent intent = getIntent();
-        phase = intent.getIntExtra(TimelineActivity.PHASE_SELECTED, ERROR_PHASE);
-        Log.d("Phase Selected: ", String.valueOf(phase));
+        phase = intent.getIntExtra(PHASE_SELECTED, 0);
+        //Log.d(DEBUG_TAG, "Phase found: " + phase);
 
-        int color = 0;
-
-        // Set color of TimeNodes based on Phase selected
-        switch(phase)
+        switch (phase)
         {
             case 1:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_mustard, null);
+                phaseColor = R.color.psyche_mustard;
                 break;
             case 2:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_gold, null);
+                phaseColor = R.color.psyche_gold;
                 break;
             case 3:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_coral, null);
+                phaseColor = R.color.psyche_coral;
                 break;
             case 4:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_magenta, null);
+                phaseColor = R.color.psyche_magenta;
                 break;
             case 5:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_purple, null);
+                phaseColor = R.color.psyche_purple;
                 break;
             case 6:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_dark_purple, null);
+                phaseColor = R.color.psyche_dark_purple;
                 break;
             case 7:
-                color = ResourcesCompat.getColor(getResources(), R.color.psyche_black, null);
+                phaseColor = R.color.psyche_black;
+                break;
+            default:
+                phaseColor = R.color.psyche_black;
                 break;
         }
 
-        timelineManager.setTimeColor(color);
+        // Change color of nodes to match phase color
+        Button phaseButton = null;
 
-        // Creating Bitmap to draw TimeNode
-        Bitmap bmp = Bitmap.createBitmap(2000, 3000, Bitmap.Config.ARGB_8888);
-        Canvas nodeCanvas = new Canvas(bmp);
+        for(int index = 0; index < nodeCount; index++)
+        {
+            phaseButton = (Button) buttonLayout.getChildAt(index);
+            phaseButton.setBackgroundColor(getResources().getColor(phaseColor));
+        }
+    }
 
-        // Draw timeline
-        timelineManager.drawTimeline(nodeCanvas);
-        ImageView image = (ImageView) findViewById(R.id.timelineImage);
-        image.setImageBitmap(bmp);
+    /**
+     * Fetches information about the phase selected and initializes ArrayList holding
+     * facts.
+     */
+    private void initPhaseInfo()
+    {
+        String phaseText;
+        try
+        {
+            InputStreamReader streamReader = new InputStreamReader(getAssets().open(PHASE_FILE));
+            BufferedReader bufferedReader = new BufferedReader(streamReader);
+
+            while ((phaseText = bufferedReader.readLine()) != null)
+            {
+                phaseInfo.add(phaseText + "\n");
+            }
+        }
+        catch (IOException e)
+        {
+            mTextMessage.setText(ERROR_MSG);
+            Log.d(DEBUG_TAG, e.getMessage());
+        }
+    }
+
+    /**
+     *
+     * @param view
+     */
+    public void onClick(View view)
+    {
+        try
+        {
+            switch(view.getId())
+            {
+                case R.id.timeNode0:
+                    mTextMessage.setText(phaseInfo.get(0));
+                    break;
+                case R.id.timeNode1:
+                    mTextMessage.setText(phaseInfo.get(1));
+                    break;
+                case R.id.timeNode2:
+                    mTextMessage.setText(phaseInfo.get(2));
+                    break;
+                case R.id.timeNode3:
+                    mTextMessage.setText(phaseInfo.get(3));
+                    break;
+                case R.id.timeNode4:
+                    mTextMessage.setText(phaseInfo.get(4));
+                    break;
+            }
+        }
+        catch(Exception e)
+        {
+            mTextMessage.setText(ERROR_MSG);
+        }
     }
 }
