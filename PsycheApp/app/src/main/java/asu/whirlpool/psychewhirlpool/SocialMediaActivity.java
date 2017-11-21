@@ -57,9 +57,8 @@ public class SocialMediaActivity extends ListFragment
     };
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // CharSequence sm = ((CharSequence)mCountDownTimer);
         //int count = Integer.valueOf(String.valueOf(mCountDownTimer));
         View v = inflater.inflate(R.layout.activity_socialmedia, container, false);
@@ -67,13 +66,11 @@ public class SocialMediaActivity extends ListFragment
         int milliseconds = 0;
 
         CountdownActivity ms = new CountdownActivity();
-        mCountDownTimer = new CountDownTimer(8000, 1000) {
-
+        mCountDownTimer = new CountDownTimer(8000, 1000)
+        {
             @Override
             public void onTick(long l)
             {
-
-
                 Long countdownSeconds = l / 1000;
                 mp = String.format("%d", ((countdownSeconds % 86400) % 3600) % 60);
                 if(countdownSeconds == 1 || countdownSeconds == 1000)
@@ -81,7 +78,6 @@ public class SocialMediaActivity extends ListFragment
                     ls.setText("Check internet connection");
                     mCountDownTimer.cancel();
                 }
-
             }
 
             @Override
@@ -92,7 +88,6 @@ public class SocialMediaActivity extends ListFragment
         };
 
         mCountDownTimer.start();
-
         Twitter.initialize(v.getContext());
 
         final UserTimeline userTimeline = new UserTimeline.Builder()
@@ -103,8 +98,6 @@ public class SocialMediaActivity extends ListFragment
                 .build();
 
         setListAdapter(adapter);
-
-
         return v;
     }
 }
