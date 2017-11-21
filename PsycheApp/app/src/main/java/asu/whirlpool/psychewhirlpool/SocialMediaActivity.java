@@ -67,7 +67,6 @@ public class SocialMediaActivity extends ListFragment
 
         setListAdapter(adapter);
 
-
         return v;
     }
 /*
