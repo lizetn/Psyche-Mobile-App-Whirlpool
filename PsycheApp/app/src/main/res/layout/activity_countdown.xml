@@ -189,14 +189,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
 
-    <Chronometer
-        android:id="@+id/chronometer2"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginTop="84dp"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message" />
-
 </android.support.constraint.ConstraintLayout>
