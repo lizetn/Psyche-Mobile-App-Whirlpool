@@ -1,6 +1,7 @@
 package asu.whirlpool.psychewhirlpool.facebookClasses;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,8 +85,39 @@ public class ListAdapter extends BaseAdapter
         if(!fbList.get(i).getTime().isEmpty())
         {
             String facebookTime = fbList.get(i).getTime();
+            String wordMonth = "";
             Calendar calendar = toCalendar(facebookTime);
-            String textToDisplay = calendar.get(Calendar.MONTH) + " " +
+            switch (String.valueOf(calendar.get(Calendar.MONTH)))
+            {
+                case "1":
+                    wordMonth = "January";
+                case "2":
+                    wordMonth = "February";
+                case "3":
+                    wordMonth = "March";
+                case "4":
+                    wordMonth = "April";
+                case "5":
+                    wordMonth = "May";
+                case "6":
+                    wordMonth = "June";
+                case "7":
+                    wordMonth = "July";
+                case "8":
+                    wordMonth = "August";
+                case "9":
+                    wordMonth = "September";
+                case "10":
+                    wordMonth = "October";
+                case "11":
+                    wordMonth = "November";
+                case "12":
+                    wordMonth = "December";
+                default:
+                    wordMonth = calendar.get(Calendar.MONTH) + "";
+                    Log.d("CALENDAR", String.valueOf(calendar.get(Calendar.MONTH)));
+            }
+            String textToDisplay = wordMonth + " " +
                     calendar.get(Calendar.DAY_OF_MONTH) + " at " +
                     calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE) +
                     calendar.get(Calendar.AM_PM);

@@ -14,8 +14,6 @@ import android.widget.TextView;
 //import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.Twitter;
 import android.os.CountDownTimer;
-//import com.twitter.sdk.android.core.TwitterAuthConfig;
-//import com.twitter.sdk.android.core.models.Tweet;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 

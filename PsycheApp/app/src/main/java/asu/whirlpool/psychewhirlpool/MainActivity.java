@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Navigates to {@link SocialMediaActivity}
+     * Navigates to {@link SocialMediaTabs}
      * @param view
      */
     public void displaySocialMedia(View view)

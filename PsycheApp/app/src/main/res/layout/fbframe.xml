@@ -60,8 +60,9 @@
 
         <ImageView
             android:id="@+id/pic"
-            android:layout_width="345dp"
-            android:layout_height="274dp"
+            android:layout_width="341dp"
+            android:layout_height="266dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
             android:scaleType="fitXY"
             android:text="ID"

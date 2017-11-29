@@ -203,7 +203,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                     return twitter;
 //                    return PlaceholderFragment.newInstance(position + 1);
                 case 1:
-                  FacebookActivity facebook = new FacebookActivity();
+                    FacebookActivity facebook = new FacebookActivity();
                     return facebook;
 //                    return PlaceholderFragment.newInstance(position + 1);
                 case 2:
