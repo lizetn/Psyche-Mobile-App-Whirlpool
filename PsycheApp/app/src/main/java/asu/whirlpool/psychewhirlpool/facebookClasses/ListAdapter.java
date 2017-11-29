@@ -8,16 +8,22 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import java.util.ArrayList;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookfeedList;
 
 /**
  * Created by jperez60 on 11/27/2017.
+ * Edited by nfleisc on 11.28.2017
  */
-/*
-*   Custom base adapter used to set UI components, uses fbFrame to make UI look similar to typical facebook posts
-*
+/**
+ *   Custom base adapter used to set UI components, uses fbFrame to make UI look similar
+ *   to typical facebook posts
+ *
  */
 public class ListAdapter extends BaseAdapter
 {
@@ -77,7 +83,14 @@ public class ListAdapter extends BaseAdapter
         }
         if(!fbList.get(i).getTime().isEmpty())
         {
-            times.setText(fbList.get(i).getTime());
+            String facebookTime = fbList.get(i).getTime();
+            Calendar calendar = toCalendar(facebookTime);
+            String textToDisplay = calendar.get(Calendar.MONTH) + " " +
+                    calendar.get(Calendar.DAY_OF_MONTH) + " at " +
+                    calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE) +
+                    calendar.get(Calendar.AM_PM);
+
+            times.setText(textToDisplay);
         }
         if(!fbList.get(i).getPicture().isEmpty())
         {
@@ -91,4 +104,28 @@ public class ListAdapter extends BaseAdapter
         return v;
     }
 
+    /**
+     * Takes in the time format received from facebook and returns a calendar object in
+     * the default time zone.
+     * @param facebookTime
+     * @return calendar
+     */
+    public Calendar toCalendar(String facebookTime) {
+        TimeZone currentZone = TimeZone.getDefault();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        formatter.setLenient(false);
+        Date date;
+        Calendar calendar = GregorianCalendar.getInstance();
+
+        try {
+            date = formatter.parse(facebookTime);
+            calendar.setTime(date);
+            calendar.setTimeZone(currentZone);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return calendar;
+    }
 }
