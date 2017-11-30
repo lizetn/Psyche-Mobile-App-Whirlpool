@@ -5,21 +5,29 @@ Mission Overview
     o The name of an ASU space mission to visit that asteroid.
 • Psyche is the first mission to a world made of metal rather than rock or ice.
 • The Psyche mission was chosen by NASA on January 4, 2017.
-• Psyche is the 14th mission selected for NASA’s Discovery Program, a series of relatively low-cost missions to solar system targets.
+• Psyche is the 14th mission selected for NASA’s Discovery Program, a series of
+  relatively low-cost missions to solar system targets.
 
 • Psyche Mission Timeline:
-    o 2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL
-    o 2023: Psyche spacecraft flyby of Mars
-    o 2026: Psyche spacecraft arrives in asteroid’s orbit
-    o 2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months
+    o 2022:         Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL
+    o 2023:         Psyche spacecraft flyby of Mars
+    o 2026:         Psyche spacecraft arrives in asteroid’s orbit
+    o 2026-2027:    Psyche spacecraft orbits the Psyche asteroid for 21 months
 
 • Propulsion: Solar-electric (low-thrust) propulsion.
-    o Solar electric propulsion uses electricity from solar arrays to create electromagnetic fields to accelerate and expel charged atoms (ions) of xenon to create a very low thrust with a very efficient use of propellant[1].
+    o Solar electric propulsion uses electricity from solar arrays to create
+      electromagnetic fields to accelerate and expel charged atoms (ions) of xenon
+      to create a very low thrust with a very efficient use of propellant[1].
     o This will be the first use of Hall effect thrusters beyond lunar orbit.
     o The Psyche spacecraft is using xenon:
-        ▪ Xenon is a gas that is in the air we breathe (in very small amounts-- 0.09 parts per million![2])
-        ▪ Xenon gas is used in high quality light bulbs, including automobile headlamps and movie projectors.
-        ▪ “The most common propellant used in ion propulsion is xenon, which is easily ionized and has a high atomic mass, thus generating a desirable level of thrust when ions are accelerated. It also is inert and has a high storage density; therefore, it is well suited for storing on spacecraft”[3].
+        ▪ Xenon is a gas that is in the air we breathe (in very small amounts--
+          0.09 parts per million![2])
+        ▪ Xenon gas is used in high quality light bulbs, including automobile
+          headlamps and movie projectors.
+        ▪ “The most common propellant used in ion propulsion is xenon, which is
+          easily ionized and has a high atomic mass, thus generating a desirable
+          level of thrust when ions are accelerated. It also is inert and has a high
+          storage density; therefore, it is well suited for storing on spacecraft”[3].
 
 1 https://www.nasa.gov/content/how-will-nasas-asteroid-redirect-mission-help-humans-reach-mars
 2 http://www.srh.noaa.gov/jetstream/atmos/atmos_intro.html
