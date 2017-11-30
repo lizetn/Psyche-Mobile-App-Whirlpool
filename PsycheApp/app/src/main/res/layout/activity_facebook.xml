@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context="asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity">
 
+    <TextView
+        android:id="@+id/facebook_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Loading tweet" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"

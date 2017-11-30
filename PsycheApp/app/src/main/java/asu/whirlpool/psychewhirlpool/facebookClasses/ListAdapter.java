@@ -19,7 +19,7 @@ import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookfeedList;
 
 /**
  * Created by jperez60 on 11/27/2017.
- * Edited by nfleisc on 11.28.2017
+ * Edited by nfleisc on 11.29.2017
  */
 /**
  *   Custom base adapter used to set UI components, uses fbFrame to make UI look similar
@@ -85,42 +85,18 @@ public class ListAdapter extends BaseAdapter
         if(!fbList.get(i).getTime().isEmpty())
         {
             String facebookTime = fbList.get(i).getTime();
-            String wordMonth = "";
             Calendar calendar = toCalendar(facebookTime);
-            switch (String.valueOf(calendar.get(Calendar.MONTH)))
-            {
-                case "1":
-                    wordMonth = "January";
-                case "2":
-                    wordMonth = "February";
-                case "3":
-                    wordMonth = "March";
-                case "4":
-                    wordMonth = "April";
-                case "5":
-                    wordMonth = "May";
-                case "6":
-                    wordMonth = "June";
-                case "7":
-                    wordMonth = "July";
-                case "8":
-                    wordMonth = "August";
-                case "9":
-                    wordMonth = "September";
-                case "10":
-                    wordMonth = "October";
-                case "11":
-                    wordMonth = "November";
-                case "12":
-                    wordMonth = "December";
-                default:
-                    wordMonth = calendar.get(Calendar.MONTH) + "";
-                    Log.d("CALENDAR", String.valueOf(calendar.get(Calendar.MONTH)));
-            }
-            String textToDisplay = wordMonth + " " +
+            Calendar currentCal = Calendar.getInstance();
+            String monthName = monthName(calendar);
+
+            String textToDisplay = monthName + " " +
                     calendar.get(Calendar.DAY_OF_MONTH) + " at " +
                     calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE) +
                     calendar.get(Calendar.AM_PM);
+
+            if (currentCal.get(Calendar.YEAR) < calendar.get(Calendar.YEAR)) {
+                textToDisplay = textToDisplay + ", " + calendar.get(Calendar.YEAR);
+            }
 
             times.setText(textToDisplay);
         }
@@ -159,5 +135,54 @@ public class ListAdapter extends BaseAdapter
         }
 
         return calendar;
+    }
+
+    public String monthName(Calendar calendar) {
+        String wordMonth;
+
+        switch (calendar.get(Calendar.MONTH))
+        {
+            case 0:
+                wordMonth = "January";
+                break;
+            case 1:
+                wordMonth = "February";
+                break;
+            case 2:
+                wordMonth = "March";
+                break;
+            case 3:
+                wordMonth = "April";
+                break;
+            case 4:
+                wordMonth = "May";
+                break;
+            case 5:
+                wordMonth = "June";
+                break;
+            case 6:
+                wordMonth = "July";
+                break;
+            case 7:
+                wordMonth = "August";
+                break;
+            case 8:
+                wordMonth = "September";
+                break;
+            case 9:
+                wordMonth = "October";
+                break;
+            case 10:
+                wordMonth = "November";
+                break;
+            case 11:
+                wordMonth = "December";
+                break;
+            default:
+                wordMonth = String.valueOf(calendar.get(Calendar.MONTH));
+                Log.d("CALENDAR", wordMonth);
+        }
+
+        return wordMonth;
     }
 }

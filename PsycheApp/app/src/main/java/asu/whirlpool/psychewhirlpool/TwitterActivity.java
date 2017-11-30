@@ -30,6 +30,7 @@ public class TwitterActivity extends ListFragment {
         //int count = Integer.valueOf(String.valueOf(mCountDownTimer));
         view = inflater.inflate(R.layout.activity_socialmedia, container, false);
         final TextView ls = (TextView) view.findViewById(R.id.android_ls);
+        ls.setText("Loading Tweets");
 
         CountdownActivity ms = new CountdownActivity();
         mCountDownTimer = new CountDownTimer(8000, 1000) {

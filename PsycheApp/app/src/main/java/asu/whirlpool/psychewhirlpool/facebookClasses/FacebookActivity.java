@@ -38,6 +38,8 @@ public class FacebookActivity extends ListFragment {
     {
         view = inflater.inflate(R.layout.activity_facebook, container, false);
         super.onCreate(savedInstanceState);
+        mTextMessage = (TextView) view.findViewById(R.id.facebook_loading);
+        mTextMessage.setText("Loading Facebook Feed");
         list1 = (ListView) view.findViewById(android.R.id.list);
         list_arr = new ArrayList<>();
         //try catch required for callbackManager, graph API methods
@@ -53,6 +55,7 @@ public class FacebookActivity extends ListFragment {
             getUserData(AccessToken.getCurrentAccessToken());
         }
         catch (Exception e){
+            e.printStackTrace();
         }
         return view;
     }
@@ -63,60 +66,62 @@ public class FacebookActivity extends ListFragment {
     public void getUserData(AccessToken accessToken)
     {
         new GraphRequest(
-                AccessToken.getCurrentAccessToken(),
-                "/1598743977091187/feed?fields=id,message,picture,story,created_time", null,
-                HttpMethod.GET,
-                new GraphRequest.Callback() {
+            AccessToken.getCurrentAccessToken(),
+            "/1598743977091187/feed?fields=id,message,picture,story,created_time", null,
+            HttpMethod.GET,
+            new GraphRequest.Callback() {
 
-                    @Override
-                    public void onCompleted(GraphResponse graphResponse) {
-                        try
+                @Override
+                public void onCompleted(GraphResponse graphResponse) {
+                    try
+                    {
+                        final JSONObject jason = graphResponse.getJSONObject();
+                        JSONArray jsons = jason.getJSONArray("data");
+                        for(int i = 0; i < jsons.length(); i++)
                         {
-                            final JSONObject jason = graphResponse.getJSONObject();
-                            JSONArray jsons = jason.getJSONArray("data");
-                            for(int i=0;i<jsons.length();i++)
+                            FacebookfeedList fbFeedList = new FacebookfeedList();
+                            JSONObject objectdata = jsons.getJSONObject(i);
+                            String message = "";
+                            String id = objectdata.getString("id");
+                            if (objectdata.has("message"))
                             {
-                                FacebookfeedList fbFeedList = new FacebookfeedList();
-                                JSONObject objectdata = jsons.getJSONObject(i);
-                                String message = "";
-                                String id = objectdata.getString("id");
-                                if (objectdata.has("message"))
-                                {
-                                    message = objectdata.getString("message");
-                                }
-                                String pic="";
-                                String story="";
-                                if (objectdata.has("picture"))
-                                {
-                                    pic = objectdata.getString("picture");
-                                }
-                                else
-                                {
-                                    pic = "";
-                                }
-                                if (objectdata.has("story"))
-                                {
-                                    story = objectdata.getString("story");
-                                }
-                                else
-                                {
-                                    story = "";
-                                }
-                                String created_time = objectdata.getString("created_time");
-
-                                fbFeedList.setId(id);
-                                fbFeedList.setMessage(message);
-                                fbFeedList.setStory(story);
-                                fbFeedList.setTime(created_time);
-                                fbFeedList.setPicture(pic);
-                                list_arr.add(fbFeedList);
+                                message = objectdata.getString("message");
                             }
-                            ListAdapter adapter = new ListAdapter(getApplicationContext(),list_arr);
-                            list1.setAdapter(adapter);
-                        }catch (Exception e) {
+                            String pic;
+                            String story;
+                            if (objectdata.has("picture"))
+                            {
+                                pic = objectdata.getString("picture");
+                            }
+                            else
+                            {
+                                pic = "";
+                            }
+                            if (objectdata.has("story"))
+                            {
+                                story = objectdata.getString("story");
+                            }
+                            else
+                            {
+                                story = "";
+                            }
+                            String created_time = objectdata.getString("created_time");
+
+                            fbFeedList.setId(id);
+                            fbFeedList.setMessage(message);
+                            fbFeedList.setStory(story);
+                            fbFeedList.setTime(created_time);
+                            fbFeedList.setPicture(pic);
+                            list_arr.add(fbFeedList);
                         }
+                        ListAdapter adapter = new ListAdapter(getApplicationContext(),list_arr);
+                        list1.setAdapter(adapter);
+                    }catch (Exception e) {
+                        e.printStackTrace();
                     }
-                }).executeAsync();
+                }
+            }
+        ).executeAsync();
     }
     //methods required for callback manager and accessTokentracker
     @Override
@@ -133,6 +138,7 @@ public class FacebookActivity extends ListFragment {
             accessTokenTracker.stopTracking();}
         catch (Exception e){
             //Toast.makeText(FacebookActivity.this, "error is: "+e.toString(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
     }
 }
