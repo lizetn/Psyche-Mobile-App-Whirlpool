@@ -1,5 +1,6 @@
-Fact 1: Psyche is the name of an asteroid orbiting the Sun between Mars and Jupiter.
-Fact 2: Psyche is the name of an ASU space mission to visit that asteroid.
-Fact 3: Psyche is the first mission to a world made of metal rather than rock or ice.
-Fact 4: The Psyche mission was chosen by NASA on January 4, 2017.
-Fact 5: Psyche is the 14th mission selected for NASA’s Discovery Program, a series of relatively low-cost missions to solar system targets.
+1852: Asteroid discovered by Italian astronomer Annibale de Gasparis
+2010: Composition of asteroid Psyche discovered to be all metal
+2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL
+2023: Psyche spacecraft flyby of Mars
+2026: Psyche spacecraft arrives in asteroid’s orbit
+2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months
