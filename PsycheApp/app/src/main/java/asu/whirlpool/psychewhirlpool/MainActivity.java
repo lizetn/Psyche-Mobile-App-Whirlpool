@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.facebook.FacebookSdk;
+
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Navigates to {@link SocialMediaActivity}
+     * Navigates to {@link SocialMediaTabs}
      * @param view
      */
     public void displaySocialMedia(View view)

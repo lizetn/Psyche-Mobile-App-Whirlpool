@@ -3,19 +3,15 @@ package asu.whirlpool.psychewhirlpool.timeline;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,12 +26,11 @@ public class TimePhaseActivity extends AppCompatActivity
 {
     private int phase;
     private int phaseColor;
-    private ConstraintLayout buttonLayout;
+    private LinearLayout buttonLayout;
     private int nodeCount;
     private ArrayList<String> phaseInfo;
 
     private TextView mTextMessage;
-    private TextView infoText;
 
     // Constants
     private final String DEBUG_TAG = TimePhaseActivity.class.getSimpleName();
@@ -71,12 +66,11 @@ public class TimePhaseActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_phase);
 
-        mTextMessage = findViewById(R.id.textView);
-        infoText = findViewById(R.id.infoText);
+        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        buttonLayout = findViewById(R.id.NodeLayout);
+        buttonLayout = (LinearLayout) findViewById(R.id.nodeLayout);
         nodeCount = buttonLayout.getChildCount();
         phaseInfo = new ArrayList<String>();
 
@@ -123,21 +117,18 @@ public class TimePhaseActivity extends AppCompatActivity
         }
 
         // Change color of nodes to match phase color
-        int colorId = getResources().getColor(phaseColor);
-        infoText.setBackgroundColor(colorId);
         Button phaseButton = null;
 
         for(int index = 0; index < nodeCount; index++)
         {
             phaseButton = (Button) buttonLayout.getChildAt(index);
-            phaseButton.setBackgroundColor(colorId);
+            phaseButton.setBackgroundColor(getResources().getColor(phaseColor));
         }
     }
 
     /**
      * Fetches information about the phase selected and initializes ArrayList holding
      * facts.
-     * TODO: Replace text files with XML files
      */
     private void initPhaseInfo()
     {
@@ -160,7 +151,7 @@ public class TimePhaseActivity extends AppCompatActivity
     }
 
     /**
-     * Upon clicking a timeNode, display the matching information.
+     *
      * @param view
      */
     public void onClick(View view)
@@ -170,44 +161,25 @@ public class TimePhaseActivity extends AppCompatActivity
             switch(view.getId())
             {
                 case R.id.timeNode0:
-                    infoText.setText(phaseInfo.get(0));
+                    mTextMessage.setText(phaseInfo.get(0));
                     break;
                 case R.id.timeNode1:
-                    infoText.setText(phaseInfo.get(1));
+                    mTextMessage.setText(phaseInfo.get(1));
                     break;
                 case R.id.timeNode2:
-                    infoText.setText(phaseInfo.get(2));
+                    mTextMessage.setText(phaseInfo.get(2));
                     break;
                 case R.id.timeNode3:
-                    infoText.setText(phaseInfo.get(3));
+                    mTextMessage.setText(phaseInfo.get(3));
                     break;
                 case R.id.timeNode4:
-                    infoText.setText(phaseInfo.get(4));
-                    break;
-                case R.id.timeNode5:
-                    infoText.setText(phaseInfo.get(5));
+                    mTextMessage.setText(phaseInfo.get(4));
                     break;
             }
         }
         catch(Exception e)
         {
-            infoText.setText(ERROR_MSG);
-        }
-        finally
-        {
-            infoText.setVisibility(View.VISIBLE);
-        }
-    }
-
-    /**
-     * Hides the information displayed when pressed.
-     * @param view
-     */
-    public void hideInfo(View view)
-    {
-        if (infoText.getVisibility() == View.VISIBLE)
-        {
-            infoText.setVisibility(View.INVISIBLE);
+            mTextMessage.setText(ERROR_MSG);
         }
     }
 }

@@ -17,9 +17,7 @@
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">	L9vdf2MOhyBrbW53C7Q6WaPH3dVW4bG24X096iwxnP4EOR0PD5</string>
     <string name="title_activity_social_component">SocialComponent</string>
     <string name="title_activity_social_media_tabs">SocialMediaTabs</string>
-    <string name="tab_title_facebook">Facebook</string>
-    <string name="tab_title_instagram">Instagram</string>
-    <string name="tab_title_twitter">Twitter</string>
+    <string name="facebook_app_id">1499176063510395</string>
     <string name="timeline_title">Psyche Mission Timeline</string>
     <string name="title_activity_time_phase">Time Phase Activity</string>
     <string name="countdown_colonDelin">:</string>
@@ -124,9 +122,9 @@
     <string name="error_message">Error</string>
     <string name="psyche_faq_info">
         "Mission Overview\n\n"
-        "Psyche is:\n"
-        "-The name of an asteroid orbiting the Sun between Mars and Jupiter.\n"
-        "-The name of an ASU space mission to visit that asteroid.\n\n"
+        "-Psyche is:\n"
+        "\t\t -The name of an asteroid orbiting the Sun between Mars and Jupiter.\n"
+        "\t\t -The name of an ASU space mission to visit that asteroid.\n"
         "-Psyche is the first mission to a world made of metal rather than rock or ice.\n"
         "-The Psyche mission was chosen by NASA on January 4, 2017.\n"
         "-Psyche is the 14th mission selected for NASA’s Discovery Program, a series of "
