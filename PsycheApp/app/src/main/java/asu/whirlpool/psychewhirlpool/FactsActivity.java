@@ -51,36 +51,12 @@ public class FactsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // Retrieve FAQ Information
-
-        TextView faqTextView = (TextView) findViewById(R.id.faqTextView);
-        String faqText = "";
-        /*
-        try
-        {
-            InputStreamReader streamReader = new InputStreamReader(getAssets().open(FAQ_TEXT_FILE));
-            BufferedReader bufferedReader = new BufferedReader(streamReader);
-
-            String faqLine;
-
-            while ((faqLine = bufferedReader.readLine()) != null)
-            {
-                faqText += faqLine + "\n";
-            }
-        }
-        catch (IOException e)
-        {
-            faqText = getString(R.string.error_message);
-        }
-        finally
-        {
-            faqTextView.setText(faqText);
-        }
-        */
+        TextView faqTextView = findViewById(R.id.faqTextView);
         faqTextView.setText(R.string.psyche_faq_info);
     }
 }
