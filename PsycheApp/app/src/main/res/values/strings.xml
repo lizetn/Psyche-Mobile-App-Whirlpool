@@ -17,6 +17,9 @@
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">	L9vdf2MOhyBrbW53C7Q6WaPH3dVW4bG24X096iwxnP4EOR0PD5</string>
     <string name="title_activity_social_component">SocialComponent</string>
     <string name="title_activity_social_media_tabs">SocialMediaTabs</string>
+    <string name="tab_title_facebook">Facebook</string>
+    <string name="tab_title_instagram">Instagram</string>
+    <string name="tab_title_twitter">Twitter</string>
     <string name="timeline_title">Psyche Mission Timeline</string>
     <string name="title_activity_time_phase">Time Phase Activity</string>
     <string name="countdown_colonDelin">:</string>
