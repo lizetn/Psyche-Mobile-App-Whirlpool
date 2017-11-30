@@ -18,9 +18,9 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:background="?attr/colorPrimary"
+            android:background="@color/psyche_purple"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name">
@@ -30,29 +30,9 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/Twitter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/tw__composer_logo_blue"
-                android:text="@string/tab_title_twitter" />
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/facebook_tab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/com_facebook_button_icon_blue"
-                android:text="@string/tab_title_facebook" />
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/instagram_tab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@android:drawable/checkbox_off_background"
-                android:text="@string/tab_title_instagram" />
-
+            android:layout_height="wrap_content"
+            android:background="@color/psyche_purple"
+            app:tabIndicatorColor="@color/psyche_mustard">
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 
