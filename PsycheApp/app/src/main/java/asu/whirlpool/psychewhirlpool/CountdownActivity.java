@@ -23,6 +23,7 @@ public class CountdownActivity extends AppCompatActivity {
     private TextView textViewSecs;
 
     private static final String TAG = "CountdownActivity";
+    long startDate = System.currentTimeMillis();
 
     /**
      * Toggle this boolean constant's value to turn on/off logging
@@ -70,8 +71,6 @@ public class CountdownActivity extends AppCompatActivity {
         if (VERBOSE) Log.v(TAG, "++ ON START ++");
     }
 
-    long startDate = System.currentTimeMillis();
-
     /**
      * Initializes all of the TextViews by id so that they can be updated
      * with the correct values once the timer is started.
@@ -95,8 +94,6 @@ public class CountdownActivity extends AppCompatActivity {
 
         String endTime = "01.01.2022, 13:00:00";
         long milliseconds = 0;
-
-        final CountDownTimer mCountDownTimer;
 
         Date endDate;
         try {
