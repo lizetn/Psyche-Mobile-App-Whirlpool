@@ -32,6 +32,14 @@ public class FacebookActivity extends ListFragment {
     ListView list1;
     //Arraylist of FacebookfeedList used to store each field in graph response
     ArrayList<FacebookfeedList> list_arr;
+    AccessToken accessToken = new AccessToken(
+            "1499176063510395|ZI2GBERxLbDOoC1keO1AMsi5TmU",
+            "1499176063510395","1598743977091187",
+            null,
+            null,
+            null,
+            null,
+            null);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -52,7 +60,7 @@ public class FacebookActivity extends ListFragment {
                         AccessToken currentAccessToken) {
                 }
             };
-            getUserData(AccessToken.getCurrentAccessToken());
+            getUserData(accessToken);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -66,7 +74,7 @@ public class FacebookActivity extends ListFragment {
     public void getUserData(AccessToken accessToken)
     {
         new GraphRequest(
-            AccessToken.getCurrentAccessToken(),
+            accessToken,
             "/1598743977091187/feed?fields=id,message,picture,story,created_time", null,
             HttpMethod.GET,
             new GraphRequest.Callback() {
