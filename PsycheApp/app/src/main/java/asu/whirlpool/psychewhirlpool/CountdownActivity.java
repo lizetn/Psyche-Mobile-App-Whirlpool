@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class CountdownActivity extends AppCompatActivity {
 
@@ -36,15 +39,28 @@ public class CountdownActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    intent = new Intent(CountdownActivity.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_timeline:
+                    intent = new Intent(CountdownActivity.this, TimelineActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_gallery:
+                    intent = new Intent(CountdownActivity.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    intent = new Intent(CountdownActivity.this, SocialMediaTabs.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(CountdownActivity.this, GameActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -62,6 +78,7 @@ public class CountdownActivity extends AppCompatActivity {
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 

@@ -6,12 +6,18 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
 import asu.whirlpool.psychewhirlpool.FactsActivity;
+import asu.whirlpool.psychewhirlpool.GalleryActivity;
+import asu.whirlpool.psychewhirlpool.GameActivity;
+import asu.whirlpool.psychewhirlpool.MainActivity;
 import asu.whirlpool.psychewhirlpool.R;
+import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
 
 public class TimelineActivity extends AppCompatActivity
 {
@@ -19,22 +25,30 @@ public class TimelineActivity extends AppCompatActivity
     public static final String PHASE_SELECTED = "Phase Selected";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener()
-    {
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item)
-        {
-            switch (item.getItemId())
-            {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
+
+            switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    intent = new Intent(TimelineActivity.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_timeline:
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_gallery:
+                    intent = new Intent(TimelineActivity.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    intent = new Intent(TimelineActivity.this, SocialMediaTabs.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(TimelineActivity.this, GameActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -49,7 +63,11 @@ public class TimelineActivity extends AppCompatActivity
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
     }
 
     /**

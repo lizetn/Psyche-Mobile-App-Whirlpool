@@ -2,6 +2,9 @@ package asu.whirlpool.psychewhirlpool;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener{
 
@@ -48,19 +52,44 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
             R.drawable.com_facebook_button_icon_blue,
             R.drawable.ic_dashboard_black_24dp };
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
+
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    intent = new Intent(SocialMediaTabs.this, MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_timeline:
+                    intent = new Intent(SocialMediaTabs.this, TimelineActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_gallery:
+                    intent = new Intent(SocialMediaTabs.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(SocialMediaTabs.this, GameActivity.class);
+                    startActivity(intent);
+                    return true;
+            }
+            return false;
+        }
+    };
+
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
-
-        //final android.app.ActionBar aBar = getActionBar();
-
-        //aBar.addTab(aBar.newTab().setText("Twitter").setTabListener((android.app.ActionBar.TabListener) this));
-
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -81,6 +110,12 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(3);
+        menuItem.setChecked(true);
     }
 
     @Override
