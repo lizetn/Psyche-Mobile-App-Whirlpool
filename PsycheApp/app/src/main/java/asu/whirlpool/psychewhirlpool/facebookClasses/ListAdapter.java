@@ -88,11 +88,16 @@ public class ListAdapter extends BaseAdapter
             Calendar calendar = toCalendar(facebookTime);
             Calendar currentCal = Calendar.getInstance();
             String monthName = monthName(calendar);
+            String amOrPm;
+            if (calendar.get(Calendar.AM_PM) == 1)
+                amOrPm = "pm";
+            else
+                amOrPm = "am";
 
             String textToDisplay = monthName + " " +
                     calendar.get(Calendar.DAY_OF_MONTH) + " at " +
                     calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE) +
-                    calendar.get(Calendar.AM_PM);
+                    amOrPm;
 
             if (currentCal.get(Calendar.YEAR) < calendar.get(Calendar.YEAR)) {
                 textToDisplay = textToDisplay + ", " + calendar.get(Calendar.YEAR);
