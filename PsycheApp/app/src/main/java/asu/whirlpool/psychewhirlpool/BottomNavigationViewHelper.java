@@ -28,9 +28,9 @@ public class BottomNavigationViewHelper {
             }
 
         } catch (NoSuchFieldException e1) {
-
+            Log.e("BottomNavHelper","Caught no such field exception.");
         } catch (IllegalAccessException e2) {
-
+            Log.e("BottomNavHelper","Illegal access exception.");
         }
     }
 }
