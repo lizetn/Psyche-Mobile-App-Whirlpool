@@ -32,15 +32,15 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
         android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_gravity="bottom">
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:addStatesFromChildren="false"
             android:background="@color/psyche_purple"
             android:clickable="true"

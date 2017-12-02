@@ -160,9 +160,6 @@ public class CountdownActivity extends AppCompatActivity {
     /**
      * Cancels the timer to avoid memory leaks. Should be used whenever the
      * class is destroyed.
-     *
-     * Currently having an issue with this not being called because the
-     * mCountDownTimer pointer is null.
      */
     void cancelTimer() {
         if(mCountDownTimer != null)
