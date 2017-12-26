@@ -1,7 +1,6 @@
 package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,20 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class FactsActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
-    private final String FAQ_TEXT_FILE = "faqText.txt";
+    private final String FAQ_TEXT_FILE = "TimelineAssets/faqText.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

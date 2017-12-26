@@ -10,12 +10,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +18,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
-import asu.whirlpool.psychewhirlpool.CountdownActivity;
 import asu.whirlpool.psychewhirlpool.GalleryActivity;
 import asu.whirlpool.psychewhirlpool.GameActivity;
 import asu.whirlpool.psychewhirlpool.MainActivity;
@@ -46,7 +40,7 @@ public class TimePhaseActivity extends AppCompatActivity
     // Constants
     private final String DEBUG_TAG = TimePhaseActivity.class.getSimpleName();
     private final String ERROR_MSG = "ERROR!";
-    private final String PHASE_FILE = "SamplePhaseInfo.txt";
+    private final String PHASE_FILE = "TimelineAssets/SamplePhaseInfo.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
