@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import asu.whirlpool.psychewhirlpool.R;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class FactsActivity extends AppCompatActivity
 {
@@ -23,22 +25,32 @@ public class FactsActivity extends AppCompatActivity
     private final String FAQ_TEXT_FILE = "faqText.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener()
-    {
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item)
-        {
-            switch (item.getItemId())
-            {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
+
+            switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    intent = new Intent(FactsActivity.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_timeline:
+                    intent = new Intent(FactsActivity.this, TimelineActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_gallery:
+                    intent = new Intent(FactsActivity.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    intent = new Intent(FactsActivity.this, SocialMediaTabs.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(FactsActivity.this, GameActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -51,8 +63,9 @@ public class FactsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // Retrieve FAQ Information

@@ -5,75 +5,24 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/tw__composer_white"
     tools:context="asu.whirlpool.psychewhirlpool.MainActivity">
-
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/title_home"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
 
     <Button
         android:id="@+id/factsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="204dp"
+        android:layout_marginLeft="72dp"
+        android:background="@color/tw__composer_white"
+        android:drawableTop="@drawable/ic_info_outline_black_50dp"
+        android:elevation="16dp"
         android:onClick="displayFacts"
-        android:text="Facts"
+        android:text="Mission FAQ"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintLeft_toLeftOf="parent" />
-
-    <Button
-        android:id="@+id/timelineButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="8dp"
-        android:onClick="displayTimeline"
-        android:text="Timeline"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintStart_toEndOf="@+id/factsButton"
-        android:layout_marginLeft="8dp" />
-
-    <Button
-        android:id="@+id/socialMediaButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="8dp"
-        android:onClick="displaySocialMedia"
-        android:text="SocialMedia"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintStart_toEndOf="@+id/timelineButton" />
-
-    <Button
-        android:id="@+id/galleryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:onClick="displayGallery"
-        android:text="Gallery"
-        app:layout_constraintBottom_toTopOf="@+id/factsButton"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/countdownButton"
@@ -100,15 +49,31 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:addStatesFromChildren="false"
+        android:background="?android:attr/windowBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:soundEffectsEnabled="true"
+        app:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation" />
+
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="8dp"
-        android:onClick="displayGame"
-        android:text="Game"
-        app:layout_constraintBottom_toTopOf="@+id/timelineButton"
-        app:layout_constraintStart_toEndOf="@+id/galleryButton" />
+        android:layout_marginTop="11dp"
+        android:contentDescription="Psyche: Journey to a Metal World"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/home_title" />
 
 </android.support.constraint.ConstraintLayout>

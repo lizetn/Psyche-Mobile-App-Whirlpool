@@ -8,9 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Gallery;
 import android.widget.TextView;
+
+import com.facebook.FacebookSdk;
 
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
@@ -23,15 +27,26 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_timeline:
+                    intent = new Intent(MainActivity.this, TimelineActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_gallery:
+                    intent = new Intent(MainActivity.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    intent = new Intent(MainActivity.this, SocialMediaTabs.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(MainActivity.this, GameActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -44,9 +59,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
     }
 
     /**
@@ -69,44 +89,4 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    /**
-     * Navigates to {@link TimelineActivity}
-     * @param view
-     */
-    public void displayTimeline(View view)
-    {
-        Intent intent = new Intent(this, TimelineActivity.class);
-        startActivity(intent);
-    }
-
-    /**
-     * Navigates to {@link SocialMediaActivity}
-     * @param view
-     */
-    public void displaySocialMedia(View view)
-    {
-        Intent intent = new Intent(this, SocialMediaTabs.class
-        );
-        startActivity(intent);
-    }
-
-    /**
-     * Navigates to {@link GameActivity}
-     * @param view
-     */
-    public void displayGame(View view)
-    {
-        Intent intent = new Intent(this, GameActivity.class);
-        startActivity(intent);
-    }
-
-    /**
-     * Navigates to {@link GalleryActivity}
-     * @param view
-     */
-    public void displayGallery(View view)
-    {
-        Intent intent = new Intent(this, GalleryActivity.class);
-        startActivity(intent);
-    }
 }

@@ -22,7 +22,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
+import asu.whirlpool.psychewhirlpool.CountdownActivity;
+import asu.whirlpool.psychewhirlpool.GalleryActivity;
+import asu.whirlpool.psychewhirlpool.GameActivity;
+import asu.whirlpool.psychewhirlpool.MainActivity;
 import asu.whirlpool.psychewhirlpool.R;
+import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
 
 import static asu.whirlpool.psychewhirlpool.timeline.TimelineActivity.PHASE_SELECTED;
 
@@ -43,22 +49,32 @@ public class TimePhaseActivity extends AppCompatActivity
     private final String PHASE_FILE = "SamplePhaseInfo.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener()
-    {
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item)
-        {
-            switch (item.getItemId())
-            {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent intent;
+
+            switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    intent = new Intent(TimePhaseActivity.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_timeline:
+                    intent = new Intent(TimePhaseActivity.this, TimelineActivity.class);
+                    startActivity(intent);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_gallery:
+                    intent = new Intent(TimePhaseActivity.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    intent = new Intent(TimePhaseActivity.this, SocialMediaTabs.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(TimePhaseActivity.this, GameActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -74,6 +90,7 @@ public class TimePhaseActivity extends AppCompatActivity
         mTextMessage = findViewById(R.id.textView);
         infoText = findViewById(R.id.infoText);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         buttonLayout = findViewById(R.id.NodeLayout);

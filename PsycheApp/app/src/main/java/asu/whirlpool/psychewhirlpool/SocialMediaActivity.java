@@ -45,12 +45,7 @@ public class SocialMediaActivity extends ListFragment
                 case R.id.navigation_home:
                     message.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    message.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    message.setText(R.string.title_notifications);
-                    return true;
+
             }
             return false;
         }
