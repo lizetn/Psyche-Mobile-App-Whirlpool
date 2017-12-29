@@ -39,7 +39,7 @@ public class TimePhaseActivity extends AppCompatActivity
 
     // Constants
     private final String DEBUG_TAG = TimePhaseActivity.class.getSimpleName();
-    private final String ERROR_MSG = "ERROR!";
+    private final String ERROR_MESSAGE = "ERROR!";
     private final String PHASE_FILE = "TimelineAssets/SamplePhaseInfo.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -165,10 +165,21 @@ public class TimePhaseActivity extends AppCompatActivity
         }
         catch (IOException e)
         {
-            mTextMessage.setText(ERROR_MSG);
+            mTextMessage.setText(ERROR_MESSAGE);
             Log.d(DEBUG_TAG, e.getMessage());
         }
     }
+
+    /**
+     * Fetches information about the phase selected and initializes Arraylist holding facts
+     * NOTE: This one uses XML
+     */
+    /*
+    private void initPhaseInfo()
+    {
+        //
+    }
+    */
 
     /**
      * Upon clicking a timeNode, display the matching information.
@@ -202,7 +213,7 @@ public class TimePhaseActivity extends AppCompatActivity
         }
         catch(Exception e)
         {
-            infoText.setText(ERROR_MSG);
+            infoText.setText(ERROR_MESSAGE);
         }
         finally
         {

@@ -122,12 +122,44 @@
     <string name="error_message">Error</string>
     <string name="psyche_faq_info">
         "Mission Overview\n\n"
-        "-Psyche is:\n"
+        "Psyche is:\n"
         "-The name of an asteroid orbiting the Sun between Mars and Jupiter.\n"
         "-The name of an ASU space mission to visit that asteroid.\n\n"
-        "-Psyche is the first mission to a world made of metal rather than rock or ice.\n"
-        "-The Psyche mission was chosen by NASA on January 4, 2017.\n"
-        "-Psyche is the 14th mission selected for NASA’s Discovery Program, a series of "
-        "relatively low-cost missions to solar system targets.\n"
+
+        "Psyche is the first mission to a world made of metal rather than rock or ice.\n\n"
+
+        "The Psyche mission was chosen by NASA on January 4, 2017.\n\n"
+
+        "Psyche is the 14th mission selected for NASA’s Discovery Program, a series of "
+
+        "relatively low-cost missions to solar system targets.\n\n"
+
+        "Summary of Psyche Mission Timeline:\n\n"
+        "2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL\n\n"
+        "2023: Psyche spacecraft flyby of Mars\n\n"
+        "2026: Psyche spacecraft arrives in asteroid’s orbit\n\n"
+        "2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months\n\n"
+
+        "Propulsion: Solar-electric (low-thrust) propulsion.\n\n"
+        "-Solar electric propulsion uses electricity from solar arrays to create electromagnetic "
+        "fields to accelerate and expel charged atoms (ions) of xenon to create a very low thrust "
+        "with a very efficient use of propellant[1].\n\n"
+
+        "-This will be the first use of Hall effect thrusters beyond lunar orbit.\n\n"
+
+        "The Psyche spacecraft is using xenon:\n\n"
+        "-Xenon is a gas that is in the air we breathe (in very small amounts— 0.09 parts per million![2])\n\n"
+
+        "-Xenon gas is used in high quality light bulbs, including automobile headlamps and movie projectors.\n\n"
+
+        "-The most common propellant used in ion propulsion is xenon, which is easily ionized and has a high atomic mass, "
+        "thus generating a desirable level of thrust when ions are accelerated.\n\n"
+
+        "-It also is inert and has a high storage density; therefore, it is well suited for storing on spacecraft.\n\n"
+
+        "References:\n\n"
+        "[1] https://www.nasa.gov/content/how-will-nasas-asteroid-redirect-mission-help-humans-reach-mars\n"
+        "[2] http://www.srh.noaa.gov/jetstream/atmos/atmos_intro.html\n"
+        "[3] https://www.nasa.gov/centers/glenn/about/fs21grc.html\n"
     </string>
 </resources>
