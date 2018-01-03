@@ -31,6 +31,9 @@ import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
  * TimelineTab implements a tab system to sort the timeline into Past-Present-Future
  * sections for easy navigation.
  *
+ * {@link TimelineFragment} is used to create the fragments that are displayed when the User
+ * changes tabs.
+ *
  * @author  Erick Ramirez Cordero
  * @date    1/2/2018
  */
@@ -121,14 +124,23 @@ public class TimelineTab extends FragmentActivity
         menuItem.setChecked(true);
     }
 
+    /**
+     * Inflate the menu; this adds items to the action bar if it is present.
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_timeline_tab, menu);
         return true;
     }
 
+    /**
+     * Handles action bar item clicks.
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -161,10 +173,10 @@ public class TimelineTab extends FragmentActivity
         }
 
         /**
-         * getItem is called to instantiate the fragment for the given page.
+         * getItem is called to instantiate the fragment for the phase currently selected.
          *
-         * @param position
-         * @return
+         * @param position      Tab currently selected
+         * @return              New {@link TimelineFragment} with information matching position
          */
         @Override
         public Fragment getItem(int position)
@@ -202,6 +214,11 @@ public class TimelineTab extends FragmentActivity
             return TAB_COUNT;
         }
 
+        /**
+         * Gets Tab name from tabTitles array.
+         * @param position
+         * @return
+         */
         @Override
         public CharSequence getPageTitle(int position)
         {

@@ -12,14 +12,15 @@ import android.widget.TextView;
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * TimelineFragment
+ * TimelineFragment handles the display of information in the Timeline section of the Psyche
+ * app.
  *
  * @author  Erick Ramirez Cordero
  * @date    1/2/2018
  */
 public class TimelineFragment extends Fragment
 {
-    View view;
+    private View view;
 
     /**
      * Initializes the Fragment with information about the time currently selected.
