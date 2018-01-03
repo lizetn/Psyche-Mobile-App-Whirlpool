@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="asu.whirlpool.psychewhirlpool">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/psyche_launcher_icon"
@@ -36,9 +37,9 @@
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
 
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
 
         <activity
             android:name=".GalleryActivity"
@@ -63,9 +64,11 @@
             android:name=".SocialMediaTabs"
             android:label="@string/title_activity_social_media_tabs"
             android:theme="@style/AppTheme" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
         <activity
             android:name=".timeline.TimePhaseActivity"
             android:label="@string/title_activity_time_phase"
@@ -75,7 +78,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.timeline.TimelineActivity" />
         </activity>
-        <activity android:name=".FullImageActivity"></activity>
+        <activity android:name=".FullImageActivity" />
+        <activity
+            android:name=".timeline.TimelineTab"
+            android:label="@string/title_activity_timeline_tab"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

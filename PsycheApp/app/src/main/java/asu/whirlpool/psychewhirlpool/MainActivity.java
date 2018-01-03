@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.facebook.FacebookSdk;
 
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(MainActivity.this, TimelineActivity.class);
+                    intent = new Intent(MainActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

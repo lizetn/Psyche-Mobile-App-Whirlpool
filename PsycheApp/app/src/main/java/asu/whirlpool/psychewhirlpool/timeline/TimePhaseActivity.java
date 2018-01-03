@@ -43,10 +43,11 @@ public class TimePhaseActivity extends AppCompatActivity
     private final String PHASE_FILE = "TimelineAssets/SamplePhaseInfo.txt";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item)
+        {
             Intent intent;
 
             switch (item.getItemId()) {
