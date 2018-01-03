@@ -30,4 +30,23 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:addStatesFromChildren="false"
+            android:background="@color/psyche_gold"
+            android:clickable="true"
+            android:focusable="true"
+            android:soundEffectsEnabled="true"
+            app:elevation="16dp"
+            app:menu="@menu/navigation" />
+    </RelativeLayout>
+
 </android.support.design.widget.CoordinatorLayout>

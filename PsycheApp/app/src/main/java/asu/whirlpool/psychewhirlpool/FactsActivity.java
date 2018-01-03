@@ -14,6 +14,7 @@ import org.xmlpull.v1.XmlPullParser;
 import java.util.ArrayList;
 
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**
  * FactsActivity handles the loading of information for the FAQ / Mission Facts section of
@@ -42,7 +43,7 @@ public class FactsActivity extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(FactsActivity.this, TimelineActivity.class);
+                    intent = new Intent(FactsActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

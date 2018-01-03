@@ -25,6 +25,7 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener{
 
@@ -65,7 +66,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(SocialMediaTabs.this, TimelineActivity.class);
+                    intent = new Intent(SocialMediaTabs.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

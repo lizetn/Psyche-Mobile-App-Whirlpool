@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class GalleryActivity extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class GalleryActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(GalleryActivity.this, TimelineActivity.class);
+                    intent = new Intent(GalleryActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

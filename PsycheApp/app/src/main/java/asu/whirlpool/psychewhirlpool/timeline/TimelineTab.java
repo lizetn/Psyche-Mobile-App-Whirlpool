@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
 import asu.whirlpool.psychewhirlpool.GalleryActivity;
 import asu.whirlpool.psychewhirlpool.GameActivity;
 import asu.whirlpool.psychewhirlpool.MainActivity;
@@ -110,6 +111,14 @@ public class TimelineTab extends FragmentActivity
 
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        // Set up navigation bar
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
     }
 
     @Override
