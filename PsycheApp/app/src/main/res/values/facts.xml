@@ -47,21 +47,6 @@
         "[2] http://www.srh.noaa.gov/jetstream/atmos/atmos_intro.html\n"
         "[3] https://www.nasa.gov/centers/glenn/about/fs21grc.html\n\n"
     </string>
-    <string name="faq_xenon">
-        "The Psyche spacecraft is using xenon:\n\n"
-        "-Xenon is a gas that is in the air we breathe (in very small amounts— 0.09 parts per "
-        "million![2])\n\n"
-
-        "-Xenon gas is used in high quality light bulbs, including automobile headlamps and movie "
-        "projectors.\n\n"
-
-        "-The most common propellant used in ion propulsion is xenon, which is easily ionized and "
-        "has a high atomic mass, "thus generating a desirable level of thrust when ions are "
-        "accelerated.\n\n"
-
-        "-It also is inert and has a high storage density; therefore, it is well suited for "
-        "storing on spacecraft.\n\n"
-    </string>
     <string name="faq_spacecraft">
         "Spacecraft size:\n"
         "The full spacecraft, including the solar panels, is 24.76 meters (~81 feet) long by "

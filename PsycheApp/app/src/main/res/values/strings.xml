@@ -18,8 +18,7 @@
     <string name="title_activity_social_component">SocialComponent</string>
     <string name="title_activity_social_media_tabs">SocialMediaTabs</string>
     <string name="facebook_app_id">1499176063510395</string>
-    <string name="timeline_title">Psyche Mission Timeline</string>
-    <string name="title_activity_time_phase">Time Phase Activity</string>
+
     <string name="countdown_colonDelin">:</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

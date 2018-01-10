@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_activity_timeline_tab">Timeline</string>
+    <string name="timeline_title">Psyche Mission Timeline</string>
     <string name="timeline_load">Loading Timeline…</string>
     <string name="timeline_past_info">
         "1852: Asteroid discovered by Italian astronomer Annibale de Gasparis\n\n"
