@@ -14,7 +14,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class CountdownActivity extends AppCompatActivity {

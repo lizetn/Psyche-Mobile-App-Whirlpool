@@ -21,14 +21,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".timeline.TimelineActivity"
-            android:label="@string/title_activity_timeline"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
-        </activity>
-        <activity
             android:name=".FactsActivity"
             android:label="@string/title_activity_facts"
             android:parentActivityName=".MainActivity">
@@ -69,15 +61,6 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity
-            android:name=".timeline.TimePhaseActivity"
-            android:label="@string/title_activity_time_phase"
-            android:parentActivityName=".timeline.TimelineActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="asu.whirlpool.psychewhirlpool.timeline.TimelineActivity" />
-        </activity>
         <activity android:name=".FullImageActivity" />
         <activity
             android:name=".timeline.TimelineTab"

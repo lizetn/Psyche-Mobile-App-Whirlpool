@@ -24,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener{

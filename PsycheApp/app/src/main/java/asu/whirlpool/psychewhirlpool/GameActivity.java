@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class GameActivity extends AppCompatActivity {

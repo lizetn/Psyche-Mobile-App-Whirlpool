@@ -11,9 +11,7 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class GalleryActivity extends AppCompatActivity {

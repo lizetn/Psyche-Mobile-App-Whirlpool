@@ -13,7 +13,6 @@ import org.xmlpull.v1.XmlPullParser;
 
 import java.util.ArrayList;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**
@@ -76,7 +75,7 @@ public class FactsActivity extends AppCompatActivity
 
         // Retrieve FAQ Information
         TextView faqTextView = findViewById(R.id.faqTextView);
-        faqTextView.setText(R.string.psyche_faq_info);
+        faqTextView.setText(R.string.faq_intro);
 
         // TODO: Figure out why your own XML Doc isn't properly formatted like strings.xml!
         //faqTextView.setText(initPhaseInfo());
