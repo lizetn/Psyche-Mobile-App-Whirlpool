@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity
     public void displayCountdown(View view)
     {
         Intent intent = new Intent(this, CountdownActivity.class);
+        intent.putExtra("nightMode", nightMode);
         startActivity(intent);
     }
 
@@ -100,11 +101,11 @@ public class MainActivity extends AppCompatActivity
      * Toggles color scheme on home page.
      * @param view
      */
-    public void toggleNightMode(View view)
+    public void toggleHomeNightMode(View view)
     {
         mTitleImage = (ImageView) findViewById(R.id.homePageTitle);
         mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
-        mConstraint = (ConstraintLayout) findViewById(R.id.homeContainer);
+        mConstraint = (ConstraintLayout) findViewById(R.id.container);
 
         if (nightMode) {
             mTitleImage.setImageResource(R.drawable.home_title);
