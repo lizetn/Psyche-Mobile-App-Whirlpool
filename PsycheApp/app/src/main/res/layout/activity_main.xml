@@ -2,51 +2,83 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/homeContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/tw__composer_white"
+    android:visibility="visible"
     tools:context="asu.whirlpool.psychewhirlpool.MainActivity">
+
+    <ImageView
+        android:id="@+id/homePageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="137dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="Psyche: Journey to a Metal World"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_title" />
+
+    <ImageView
+        android:id="@+id/homePageButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homePageTitle"
+        app:srcCompat="@drawable/white_title_buttons" />
+
+    <Button
+        android:id="@+id/countdownButton"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="172dp"
+        android:background="@android:color/transparent"
+        android:elevation="16dp"
+        android:onClick="displayCountdown"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/factsButton"
         android:layout_width="115dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="204dp"
-        android:layout_marginLeft="72dp"
-        android:background="@color/tw__composer_white"
-        android:drawableTop="@drawable/ic_info_outline_black_50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="296dp"
+        android:background="@android:color/transparent"
         android:elevation="16dp"
         android:onClick="displayFacts"
-        android:text="Mission FAQ"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <Button
-        android:id="@+id/countdownButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:drawable/ic_lock_idle_alarm"
-        android:onClick="displayCountdown"
+        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="?android:attr/colorActivatedHighlight"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintHorizontal_bias="1.0"
+    <Button
+        android:id="@+id/nightModeButton"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="416dp"
+        android:background="@android:color/transparent"
+        android:elevation="16dp"
+        android:onClick="toggleNightMode"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.BottomNavigationView
@@ -64,16 +96,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:contentDescription="Psyche: Journey to a Metal World"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/home_title" />
 
 </android.support.constraint.ConstraintLayout>
