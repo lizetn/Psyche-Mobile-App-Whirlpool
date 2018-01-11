@@ -3,6 +3,8 @@
 
     package="asu.whirlpool.psychewhirlpool">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/psyche_launcher_icon"
@@ -76,6 +78,7 @@
                 android:value="asu.whirlpool.psychewhirlpool.timeline.TimelineActivity" />
         </activity>
         <activity android:name=".FullImageActivity"></activity>
+
     </application>
 
 </manifest>
