@@ -3,6 +3,7 @@ package asu.whirlpool.psychewhirlpool;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Gallery;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
@@ -21,6 +23,11 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
+    private ImageView mTitleImage;
+    private ImageView mButtonsImage;
+    private ConstraintLayout mConstraint;
+
+    private boolean nightMode = false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -76,6 +83,7 @@ public class MainActivity extends AppCompatActivity
     public void displayCountdown(View view)
     {
         Intent intent = new Intent(this, CountdownActivity.class);
+        intent.putExtra("nightMode", nightMode);
         startActivity(intent);
     }
 
@@ -89,4 +97,27 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    /**
+     * Toggles color scheme on home page.
+     * @param view
+     */
+    public void toggleHomeNightMode(View view)
+    {
+        mTitleImage = (ImageView) findViewById(R.id.homePageTitle);
+        mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
+        mConstraint = (ConstraintLayout) findViewById(R.id.container);
+
+        if (nightMode) {
+            mTitleImage.setImageResource(R.drawable.home_title);
+            mButtonsImage.setImageResource(R.drawable.white_title_buttons);
+            mConstraint.setBackgroundResource(R.color.tw__composer_white);
+            nightMode = false;
+        }
+        else {
+            mTitleImage.setImageResource(R.drawable.night_home_title);
+            mButtonsImage.setImageResource(R.drawable.night_title_buttons);
+            mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
+            nightMode = true;
+        }
+    }
 }
