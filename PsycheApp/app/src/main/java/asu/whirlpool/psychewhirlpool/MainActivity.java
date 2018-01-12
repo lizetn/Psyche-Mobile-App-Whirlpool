@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
 
+import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class MainActivity extends AppCompatActivity
