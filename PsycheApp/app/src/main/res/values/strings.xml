@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">PsycheWhirlpool</string>
+    <string name="insta_app_id">d42dd0e3990e4292bbba4c8261ed9c82</string>
+    <string name="client_secret">afe54954c60b42899c40c674ee988d71</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>

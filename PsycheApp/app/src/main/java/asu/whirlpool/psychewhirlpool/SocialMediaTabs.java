@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
@@ -88,7 +89,6 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -242,7 +242,20 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                     return facebook;
 //                    return PlaceholderFragment.newInstance(position + 1);
                 case 2:
-                    return PlaceholderFragment.newInstance(position + 1);
+                    Log.d("SHIT", "getItem: ");
+
+                    MainInstagramActivity instagramActivity;
+
+                    instagramActivity = new MainInstagramActivity();
+                    //return instagramActivity;
+                   /*MainInstagramActivity instagram = new MainInstagramActivity();
+                    getFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.Container
+                                    ,instagram)
+                            .commit();*/
+                    return instagramActivity;
+                   //return PlaceholderFragment.newInstance(position + 1);
                 default:
                     Log.d(TAG, "In getItem default!!!");
                     return null;

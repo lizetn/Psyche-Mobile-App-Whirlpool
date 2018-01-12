@@ -14,18 +14,33 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
-public class GalleryActivity extends AppCompatActivity {
-
+/**
+ * GalleryActivity handles the Gallery for the app through the use of the {@link ImageAdapter}.
+ * When an image is selected, a full-screen image is displayed with {@link FullImageActivity}.
+ *
+ * Revised variables and constants.
+ * @revision    Erick Ramirez Cordero
+ * @date        1/10/2018
+ */
+public class GalleryActivity extends AppCompatActivity
+{
+    public static final String IMAGE_KEY = "image_key";
+    private final int NAVIGATION_ID = 2;
     private TextView mTextMessage;
 
+    /**
+     * Handles navigation between different sections of the app
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item)
+        {
             Intent intent;
 
-            switch (item.getItemId()) {
+            switch (item.getItemId())
+            {
                 case R.id.navigation_home:
                     intent = new Intent(GalleryActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -50,28 +65,33 @@ public class GalleryActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        mTextMessage = findViewById(R.id.message);
+
+        // Set up Navigation Bar
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
-        MenuItem menuItem = menu.getItem(2);
+        MenuItem menuItem = menu.getItem(NAVIGATION_ID);
         menuItem.setChecked(true);
 
-        GridView tryGrid = (GridView) findViewById(R.id.tryGridView);
+        // Set up ImageAdapter
+        GridView tryGrid = findViewById(R.id.tryGridView);
         tryGrid.setAdapter(new ImageAdapter(this));
 
-        tryGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Intent i = new Intent(getApplicationContext(), FullImageActivity.class);
-                i.putExtra("id", position);
-                startActivity(i);
+        tryGrid.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id)
+            {
+                Intent intent = new Intent(getApplicationContext(), FullImageActivity.class);
+                intent.putExtra(IMAGE_KEY, position);
+                startActivity(intent);
             }
         });
     }
-
 }
