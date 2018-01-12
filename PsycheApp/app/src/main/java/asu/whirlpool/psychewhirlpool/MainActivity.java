@@ -9,12 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.facebook.FacebookSdk;
-import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -26,10 +24,11 @@ public class MainActivity extends AppCompatActivity
     private boolean nightMode = false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item)
+        {
             Intent intent;
 
             switch (item.getItemId()) {
@@ -103,13 +102,15 @@ public class MainActivity extends AppCompatActivity
         mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
         mConstraint = (ConstraintLayout) findViewById(R.id.container);
 
-        if (nightMode) {
+        if (nightMode)
+        {
             mTitleImage.setImageResource(R.drawable.home_title);
             mButtonsImage.setImageResource(R.drawable.white_title_buttons);
             mConstraint.setBackgroundResource(R.color.tw__composer_white);
             nightMode = false;
         }
-        else {
+        else
+        {
             mTitleImage.setImageResource(R.drawable.night_home_title);
             mButtonsImage.setImageResource(R.drawable.night_title_buttons);
             mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
