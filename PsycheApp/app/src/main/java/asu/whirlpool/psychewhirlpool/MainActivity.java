@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
-
 import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -41,7 +36,7 @@ public class MainActivity extends AppCompatActivity
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(MainActivity.this, TimelineActivity.class);
+                    intent = new Intent(MainActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

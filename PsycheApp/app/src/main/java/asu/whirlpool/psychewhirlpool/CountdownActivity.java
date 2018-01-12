@@ -18,7 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class CountdownActivity extends AppCompatActivity {
 
@@ -57,7 +57,7 @@ public class CountdownActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(CountdownActivity.this, TimelineActivity.class);
+                    intent = new Intent(CountdownActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

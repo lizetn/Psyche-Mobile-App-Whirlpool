@@ -11,9 +11,8 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**
  * GalleryActivity handles the Gallery for the app through the use of the {@link ImageAdapter}.
@@ -47,7 +46,7 @@ public class GalleryActivity extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(GalleryActivity.this, TimelineActivity.class);
+                    intent = new Intent(GalleryActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

@@ -1,29 +1,34 @@
 package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Xml;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import org.xmlpull.v1.XmlPullParser;
 
-import asu.whirlpool.psychewhirlpool.R;
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import java.util.ArrayList;
 
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
+
+/**
+ * FactsActivity handles the loading of information for the FAQ / Mission Facts section of
+ * the Psyche App
+ *
+ * @author  Erick Ramirez Cordero
+ * @date    11/10/2017
+ */
 public class FactsActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
-    private final String FAQ_TEXT_FILE = "faqText.txt";
 
+    /**
+     * Handles navigation between different sections of the Psyche App.
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -37,7 +42,7 @@ public class FactsActivity extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(FactsActivity.this, TimelineActivity.class);
+                    intent = new Intent(FactsActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
@@ -64,12 +69,12 @@ public class FactsActivity extends AppCompatActivity
         setContentView(R.layout.activity_facts);
 
         mTextMessage = findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // Retrieve FAQ Information
         TextView faqTextView = findViewById(R.id.faqTextView);
-        faqTextView.setText(R.string.psyche_faq_info);
+        faqTextView.setText(R.string.faq_intro);
     }
 }
