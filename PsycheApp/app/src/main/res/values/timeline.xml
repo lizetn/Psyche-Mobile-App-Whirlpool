@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timeline_title">Psyche Mission Timeline</string>
+    <string name="timeline_load">Loading Timeline…</string>
+    <string name="timeline_past_info">
+        "1852: Asteroid discovered by Italian astronomer Annibale de Gasparis\n\n"
+        "2010: Composition of asteroid Psyche discovered to be all metal\n\n"
+    </string>
+    <string name="timeline_present_info">
+        "Information missing\n\n"
+    </string>
+    <string name="timeline_future_info">
+        "2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL\n\n"
+        "2023: Psyche spacecraft flyby of Mars\n\n"
+        "2026: Psyche spacecraft arrives in asteroid’s orbit\n\n"
+        "2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months\n\n"
+    </string>
+</resources>

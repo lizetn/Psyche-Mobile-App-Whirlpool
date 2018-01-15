@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -28,7 +28,7 @@ public class GameActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(GameActivity.this, TimelineActivity.class);
+                    intent = new Intent(GameActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:

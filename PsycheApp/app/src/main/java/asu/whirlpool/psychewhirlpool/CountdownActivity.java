@@ -4,26 +4,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
-import asu.whirlpool.psychewhirlpool.timeline.TimelineActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class CountdownActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    CountDownTimer mCountDownTimer;
+    private CountDownTimer mCountDownTimer1;
+    private CountDownTimer mCountDownTimer2;
+    private TextView textViewYears;
+    private TextView textViewMonths;
     private TextView textViewDays;
     private TextView textViewHours;
     private TextView textViewMins;
     private TextView textViewSecs;
+    private ImageView mTitleImage;
+    private ConstraintLayout mConstraint;
+    private boolean nightMode;
 
     private static final String TAG = "CountdownActivity";
     long startDate = System.currentTimeMillis();
@@ -47,7 +57,7 @@ public class CountdownActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    intent = new Intent(CountdownActivity.this, TimelineActivity.class);
+                    intent = new Intent(CountdownActivity.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
@@ -72,8 +82,20 @@ public class CountdownActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countdown);
 
+        nightMode = getIntent().getExtras().getBoolean("nightMode");
+        mTitleImage = (ImageView) findViewById(R.id.countdownTitle);
+        mConstraint = (ConstraintLayout) findViewById(R.id.container);
+
+        if (nightMode) {
+            mTitleImage.setImageResource(R.drawable.night_countdown_title);
+            mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
+        }
+        else {
+            mTitleImage.setImageResource(R.drawable.white_countdown_title);
+            mConstraint.setBackgroundResource(R.color.tw__composer_white);
+        }
+
         if (VERBOSE) Log.v(TAG, "+++ ON CREATE +++");
-        initTextViews();
         startCountdown();
 
         mTextMessage = (TextView) findViewById(R.id.message);
@@ -92,47 +114,56 @@ public class CountdownActivity extends AppCompatActivity {
      * Initializes all of the TextViews by id so that they can be updated
      * with the correct values once the timer is started.
      */
-    private void initTextViews() {
-        textViewDays = (TextView) findViewById(R.id.textViewDays);
-        textViewHours = (TextView) findViewById(R.id.textViewHours);
-        textViewMins = (TextView) findViewById(R.id.textViewMinutes);
-        textViewSecs = (TextView) findViewById(R.id.textViewSeconds);
+    private void initTextViews(int years, int months, int days, int hours, int minutes, int seconds) {
+        textViewYears = (TextView) findViewById(years);
+        textViewMonths = (TextView) findViewById(months);
+        textViewDays = (TextView) findViewById(days);
+        textViewHours = (TextView) findViewById(hours);
+        textViewMins = (TextView) findViewById(minutes);
+        textViewSecs = (TextView) findViewById(seconds);
     }
 
 
     /**
-     * Starts the countdown. initTextViews must be used first for the TextViews
-     * to be updated properly.
+     * Starts the countdown.
      */
     private void startCountdown()
     {
         SimpleDateFormat formatter = new SimpleDateFormat("MM.dd.yyyy, HH:mm:ss");
         formatter.setLenient(false);
 
-        String endTime = "01.01.2022, 13:00:00";
-        long milliseconds = 0;
+        String endTime1 = "06.01.2022, 13:00:00";
+        String endTime2 = "01.01.2026, 06:00:00";
+        long milliseconds1 = 0;
+        long milliseconds2 = 0;
 
-        Date endDate;
+        Date endDate1;
+        Date endDate2;
+
         try {
-            endDate = formatter.parse(endTime);
-            milliseconds = endDate.getTime();
-
+            endDate1 = formatter.parse(endTime1);
+            milliseconds1 = endDate1.getTime();
+            endDate2 = formatter.parse(endTime2);
+            milliseconds2 = endDate2.getTime();
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         /**
-         * mCountDownTimer currently does not implement years or months. Years could be
-         * done easily with the only problem being leap year.
+         * This needs to be refactored and encapsulated, but the basic functionality is
+         * still being figured out, so that will be done later.
          */
-        mCountDownTimer = new CountDownTimer(milliseconds, 1000) {
+        mCountDownTimer1 = new CountDownTimer(milliseconds1, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
                 startDate = startDate - 1;
                 Long countdownSeconds = (millisUntilFinished - startDate) / 1000;
 
-                String daysLeft = String.format("%d", countdownSeconds / 86400);
+                initTextViews(R.id.textViewYearsA, R.id.textViewMonthsA, R.id.textViewDaysA,
+                        R.id.textViewHoursA, R.id.textViewMinutesA, R.id.textViewSecondsA);
+
+                /*String daysLeft = String.format("%d", countdownSeconds / 86400);
                 textViewDays.setText(daysLeft);
                 if (VERBOSE) Log.d("daysLeft",daysLeft);
 
@@ -146,7 +177,30 @@ public class CountdownActivity extends AppCompatActivity {
 
                 String secondsLeft = String.format("%d", ((countdownSeconds % 86400) % 3600) % 60);
                 textViewSecs.setText(secondsLeft);
-                if (VERBOSE) Log.d("secondsLeft",secondsLeft);
+                if (VERBOSE) Log.d("secondsLeft",secondsLeft);*/
+
+                Calendar calendar = GregorianCalendar.getInstance();
+                calendar.setTimeInMillis(countdownSeconds * 1000);
+
+                textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
+                textViewMonths.setText(String.format("%d", calendar.get(Calendar.MONTH)));
+                textViewDays.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
+                textViewHours.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
+                textViewMins.setText(String.format("%d", calendar.get(Calendar.MINUTE)));
+                textViewSecs.setText(String.format("%d",calendar.get(Calendar.SECOND)));
+
+                /*Calendar startCalendar = GregorianCalendar.getInstance();
+                Calendar endCalendar = GregorianCalendar.getInstance();
+                endCalendar.setTimeInMillis(millisUntilFinished);*/
+
+                /*String yearsLeft = String.format("%d", );
+                textViewYears.setText();
+
+                textViewMonths.setText();
+                textViewDays.setText();
+                textViewHours.setText();
+                textViewMins.setText();
+                textViewSecs.setText();*/
             }
 
             @Override
@@ -154,7 +208,34 @@ public class CountdownActivity extends AppCompatActivity {
 
             }
         };
-        mCountDownTimer.start();
+        mCountDownTimer2 = new CountDownTimer(milliseconds2, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+                startDate = startDate - 1;
+                Long countdownSeconds = (millisUntilFinished - startDate) / 1000;
+
+                initTextViews(R.id.textViewYears2, R.id.textViewMonths2, R.id.textViewDays2,
+                        R.id.textViewHours2, R.id.textViewMinutes2, R.id.textViewSeconds2);
+
+                Calendar calendar = GregorianCalendar.getInstance();
+                calendar.setTimeInMillis(countdownSeconds * 1000);
+
+                textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
+                textViewMonths.setText(String.format("%d", calendar.get(Calendar.MONTH)));
+                textViewDays.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
+                textViewHours.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
+                textViewMins.setText(String.format("%d", calendar.get(Calendar.MINUTE)));
+                textViewSecs.setText(String.format("%d",calendar.get(Calendar.SECOND)));
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        mCountDownTimer1.start();
+        mCountDownTimer2.start();
     }
 
     /**
@@ -162,8 +243,8 @@ public class CountdownActivity extends AppCompatActivity {
      * class is destroyed.
      */
     void cancelTimer() {
-        if(mCountDownTimer != null)
-            mCountDownTimer.cancel();
+        if(mCountDownTimer1 != null)
+            mCountDownTimer1.cancel();
     }
 
     @Override
