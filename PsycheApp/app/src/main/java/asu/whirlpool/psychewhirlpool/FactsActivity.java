@@ -17,10 +17,11 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**
  * FactsActivity handles the loading of information for the FAQ / Mission Facts section of
- * the Psyche App
+ * the Psyche App.
  *
- * @author  Erick Ramirez Cordero
- * @date    11/10/2017
+ * @author      Erick Ramirez Cordero
+ * @date        11/10/2017
+ * @updated     1/15/2018
  */
 public class FactsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -90,23 +91,21 @@ public class FactsActivity extends AppCompatActivity implements AdapterView.OnIt
         faqSpinner.setAdapter(adapter);
         faqSpinner.setOnItemSelectedListener(this);
 
-        // Retrieve FAQ Information
+        // Instantiate FAQ Information
         faqTextView = findViewById(R.id.faqTextView);
         faqTextView.setText(R.string.faq_intro);
     }
 
     /**
-     * When an item is selected, change the information presented in the FAQ.
+     * When an item is selected, the information displayed changes to match the selected option.
+     * Check facts.xml to view/edit the arrays used for the options.
      * @param parent
      * @param view
-     * @param pos
+     * @param pos       The position of the item selected
      * @param id
      */
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id)
     {
-        // An item was selected. You can retrieve the selected item using
-        //String section = parent.getItemAtPosition(pos).toString();
-
         try
         {
             faqTextView.setText(faqArray.getText(pos));
@@ -118,7 +117,7 @@ public class FactsActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     /**
-     *
+     * Handles behavior for when no option is selected.
      * @param parent
      */
     public void onNothingSelected(AdapterView<?> parent)
