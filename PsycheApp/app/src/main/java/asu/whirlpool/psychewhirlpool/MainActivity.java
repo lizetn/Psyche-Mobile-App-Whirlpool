@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
     private ImageView mTitleImage;
     private ImageView mButtonsImage;
     private ConstraintLayout mConstraint;
+    private BottomNavigationView mNavView;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -120,12 +121,14 @@ public class MainActivity extends AppCompatActivity
         mTitleImage = (ImageView) findViewById(R.id.homePageTitle);
         mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
         mConstraint = (ConstraintLayout) findViewById(R.id.container);
+        mNavView = (BottomNavigationView) findViewById(R.id.navigation);
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
             mTitleImage.setImageResource(R.drawable.home_title);
             mButtonsImage.setImageResource(R.drawable.white_title_buttons);
             mConstraint.setBackgroundResource(R.color.tw__composer_white);
+            mNavView.setItemBackgroundResource(R.color.tw__composer_white);
             setTheme(R.style.PsycheLightTheme);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
@@ -134,6 +137,7 @@ public class MainActivity extends AppCompatActivity
             mTitleImage.setImageResource(R.drawable.night_home_title);
             mButtonsImage.setImageResource(R.drawable.night_title_buttons);
             mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
+            mNavView.setItemBackgroundResource(R.color.psyche_purple);
             setTheme(R.style.PsycheDarkTheme);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
