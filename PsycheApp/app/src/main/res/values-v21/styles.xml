@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PsycheDarkTheme" parent="AppTheme">
+
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:windowBackground">@color/psyche_dark_purple</item>
+        <item name="android:statusBarColor">@color/psyche_mustard</item>
+        <item name="colorPrimary">@color/psyche_purple</item>
+    </style>
+
+    <style name="PsycheLightTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/psyche_black</item>
+        <item name="android:statusBarColor">@color/psyche_gold</item>
+        <item name="colorPrimary">@color/psyche_gold</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/psyche_gold</item>
+    </style>
+</resources>
