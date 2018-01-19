@@ -29,7 +29,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created by jperez60 on 1/4/2018.
  */
-
+//recycler viewer adapter
 public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
 {
     Context ctx;
@@ -78,11 +78,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onClick(View v)
             {
-                /*pos = position;
+                pos = position;
                 Intent i = new Intent(ctx, Display.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.
-                        makeSceneTransitionAnimation((Activity) ctx, (View) holder.cv, "mycard");
-                ctx.startActivity(i, options.toBundle());*/
+                i.putExtra("Pos", pos);
+                ctx.startActivity(i);
             }
         });
     }

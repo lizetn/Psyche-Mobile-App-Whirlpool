@@ -5,7 +5,7 @@ import android.support.v7.widget.*;
 /**
  * Created by jperez60 on 1/4/2018.
  */
-
+//recyclerviewer listener used for updating purposes
 public class EndlessRecycleOnScrollListener extends RecyclerView.OnScrollListener
 {
     public static String TAG = EndlessRecycleOnScrollListener.class.getSimpleName();
@@ -59,5 +59,6 @@ public class EndlessRecycleOnScrollListener extends RecyclerView.OnScrollListene
 
     }
 
+    //used for webservice call
     public static String scroll = "https://www.instagram.com/nasapsyche/?__a=1";
 }

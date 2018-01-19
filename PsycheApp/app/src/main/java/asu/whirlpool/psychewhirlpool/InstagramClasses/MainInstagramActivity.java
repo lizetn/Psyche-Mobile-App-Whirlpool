@@ -131,10 +131,7 @@ public class MainInstagramActivity extends Fragment
         });
     }
 
-
-
-
-
+    //used for constant updating
     public void loadmoredata(String newid)
     {
         final AsyncHttpClient client = new AsyncHttpClient();
