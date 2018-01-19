@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tw__composer_white"
+    android:background="?android:attr/windowBackground"
     android:visibility="visible"
     tools:context="asu.whirlpool.psychewhirlpool.MainActivity">
 
@@ -13,7 +13,6 @@
         android:id="@+id/homePageTitle"
         android:layout_width="wrap_content"
         android:layout_height="137dp"
-        android:layout_marginTop="25dp"
         android:contentDescription="Psyche: Journey to a Metal World"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
