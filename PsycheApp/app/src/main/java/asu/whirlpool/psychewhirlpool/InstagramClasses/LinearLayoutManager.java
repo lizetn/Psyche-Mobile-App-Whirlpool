@@ -8,7 +8,7 @@ import asu.whirlpool.psychewhirlpool.R;
 /**
  * Created by jperez60 on 1/4/2018.
  */
-
+//layout manager used for recycle viewer
 public class LinearLayoutManager extends android.support.v7.widget.LinearLayoutManager {
 
     public LinearLayoutManager(Context context) {

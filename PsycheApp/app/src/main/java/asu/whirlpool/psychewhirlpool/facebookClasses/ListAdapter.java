@@ -1,6 +1,7 @@
 package asu.whirlpool.psychewhirlpool.facebookClasses;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+
+import asu.whirlpool.psychewhirlpool.InstagramClasses.Display;
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookfeedList;
 
@@ -29,7 +32,7 @@ import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookfeedList;
 public class ListAdapter extends BaseAdapter
 {
     Context contexts;
-    ArrayList<FacebookfeedList> fbList;
+    public static ArrayList<FacebookfeedList> fbList;
     public ListAdapter(Context contexts, ArrayList<FacebookfeedList> fbList)
     {
 
@@ -54,7 +57,7 @@ public class ListAdapter extends BaseAdapter
         return fbList.indexOf(getItem(i));
     }
 
-    public View getView(int i, View view, ViewGroup viewGroup)
+    public View getView(final int i, View view, ViewGroup viewGroup)
     {
         View v = LayoutInflater.from(contexts).inflate(R.layout.fbframe,viewGroup,false);
         TextView ids,msg,story,times;
@@ -64,7 +67,6 @@ public class ListAdapter extends BaseAdapter
         story = (TextView) v.findViewById(R.id.story);
         times = (TextView) v.findViewById(R.id.times);
         pic = (ImageView) v.findViewById(R.id.pic);
-
         if(!fbList.get(i).getId().isEmpty()) 
         {
 
@@ -109,6 +111,15 @@ public class ListAdapter extends BaseAdapter
         {
             //Glide used for the image
             Glide.with(contexts).load(fbList.get(i).getPicture()).into(pic);
+            pic.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v)
+                {
+                    int pos = i;
+                    Intent in = new Intent(contexts, Display2.class);
+                    in.putExtra("Pos", pos);
+                    contexts.startActivity(in);
+                }
+            });
         }
         else
         {

@@ -71,6 +71,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
+        <activity android:name=".InstagramClasses.Display"></activity>
+        <activity android:name=".facebookClasses.Display2"></activity>
     </application>
 
 </manifest>
