@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="faq_options">
+        <item>Intro</item>
+        <item>Timeline Summary</item>
+        <item>Psyche the Asteroid</item>
+        <item>Spacecraft</item>
+        <item>Propulsion</item>
+        <item>Mission Cost</item>
+        <item>Mission Science Goals</item>
+        <item>Mission Science Objectives</item>
+        <item>Instruments and Investigations</item>
+        <item>Psyche Mission Team</item>
+        <item>More Information</item>
+        <item>References</item>
+    </string-array>
+    <array name="faq_array">
+        <item>@string/faq_intro</item>
+        <item>@string/faq_timeline_summary</item>
+        <item>@string/faq_asteroid</item>
+        <item>@string/faq_spacecraft</item>
+        <item>@string/faq_propulsion</item>
+        <item>@string/faq_mission_cost</item>
+        <item>@string/faq_mission_science_goals</item>
+        <item>@string/faq_mission_science_objectives</item>
+        <item>@string/faq_instruments_and_investigations</item>
+        <item>@string/faq_mission_team</item>
+        <item>@string/faq_more_info</item>
+        <item>@string/faq_references</item>
+    </array>
+    <string name="faq_intro">
+        "Mission Overview\n\n"
+        "•Psyche is:\n"
+        "oThe name of an asteroid orbiting the Sun between Mars and Jupiter.\n"
+        "oThe name of a NASA space mission to visit that asteroid, led by ASU.\n\n"
+
+        "•Psyche is the first mission to a world made of metal rather than rock or ice.\n\n"
+
+        "•The Psyche mission was chosen by NASA on January 4, 2017.\n\n"
+
+        "•Psyche is the 14th mission selected for NASA’s Discovery Program, a series of "
+        "relatively low-cost missions to solar system targets.\n\n"
+    </string>
+    <string name="faq_timeline_summary">
+        "Summary of Psyche Mission Timeline:\n\n"
+        "2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL\n"
+        "2023: Psyche spacecraft flyby of Mars\n"
+        "2026: Psyche spacecraft arrives in asteroid’s orbit\n"
+        "2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months\n\n"
+    </string>
+    <string name="faq_propulsion">
+        "Propulsion: Solar-electric (low-thrust) propulsion.\n\n"
+        "•Solar electric propulsion uses electricity from solar arrays to create electromagnetic "
+        "fields to accelerate and expel charged atoms (ions) of xenon to create a very low thrust "
+        "with a very efficient use of propellant[1].\n\n"
+
+        "•This will be the first use of Hall effect thrusters beyond lunar orbit.\n\n"
+
+        "•The Psyche spacecraft is using xenon:\n\n"
+        "oXenon is a gas that is in the air we breathe (in very small amounts— 0.09 parts per "
+        "million![2])\n\n"
+
+        "oXenon gas is used in high quality light bulbs, including automobile headlamps and movie "
+        "projectors.\n\n"
+
+        "oThe most common propellant used in ion propulsion is xenon, which is easily ionized and "
+        "has a high atomic mass, thus generating a desirable level of thrust when ions are "
+        "accelerated.\n\n"
+
+        "oIt also is inert and has a high storage density; therefore, it is well suited for "
+        "storing on spacecraft.\n\n"
+    </string>
+    <string name="faq_spacecraft">
+        "Spacecraft size:\n"
+        "•The full spacecraft, including the solar panels, is 24.76 meters (~81 feet) long by "
+        "7.34 meters (~24 feet) wide.\n"
+        "•That is about the size of a (singles) tennis court.\n\n"
+
+        "Bus size:\n"
+        "•The bus (body) of the spacecraft is 3.1 meters (~10 feet) long by 2.4 meters "
+        "(almost 8 feet) wide.\n\n"
+
+        "A few size comparisons:\n"
+        "•It is slightly bigger than a Smart Car.\n"
+        "•It about the size of a garden storage shed.\n"
+        "•It is as tall as a regulation basketball hoop!\n\n"
+    </string>
+    <string name="faq_mission_cost">
+        "Mission cost:\n"
+        "•Estimated $850 million (includes mission development, operations, and science)\n"
+        "•Amount does not include cost for the launch service which is procured separately\n"
+        "•Amount does not include the cost for the Deep Space Optical Communications demonstration "
+        "hardware or operations\n\n"
+    </string>
+    <string name="faq_asteroid"><![CDATA[
+        "Psyche, the Asteroid:\n\n"
+        "• Discovered in 1852.\n"
+        "• Discovered by Italian astronomer Annibale de Gasparis.\n"
+        "• 16th asteroid to be discovered.\n"
+        "• Named for the goddess of the soul in ancient Greek mythology.\n"
+        "• Composition: Psyche is likely made almost entirely of nickel-iron metal.\n\n"
+
+        "• Its bulk appears to be metal but its surface appears to have small areas that are rocky.\n"
+        "o How do we know? Confirmed by measurements of:\n"
+        "▪ Radar albedo: The “ratio of a target’s radar cross section in a specified polarization "
+        "to its projected area; hence, a measure of the target’s radar reflectivity.”[4, 5])\n"
+
+        "▪ Thermal inertia: “Refers to the ability of a material to conduct and store heat, and in "
+        "planetary science, its measure of the subsurface's ability to store heat during the day "
+        "and re-radiate it during the night.”[6])\n"
+
+        "o When did we find out? We have only had good evidence for metal composition since "
+        "about 2010.\n\n"
+
+        "• Scientists believe Psyche is the exposed nickel-iron core of an early planet, one of "
+        "the building blocks of our solar system.\n\n"
+
+        "• Psyche is most likely a survivor of multiple violent hit-and-run collisions, common "
+        "when the solar system was forming.\n\n"
+
+        "• The asteroid Psyche may be able to tell us how Earth’s core and the cores of the "
+        "other terrestrial (rocky) planets came to be. (The terrestrial planets are Mercury, "
+        "Venus, Earth, and Mars.)\n\n"
+
+        "o We can never go to the Earth’s core:\n"
+        "▪ Earth’s core lies at 3,000 kilometers (more than 1,800 miles) depth but we have only "
+        "drilled to 12 kilometers (~7.5 miles) – that’s the most our technology allows today.\n"
+        "▪ Earth’s core lies at about 3 million times the pressure of the atmosphere\n"
+        "▪ The temperature of Earth’s core is about 5,000 Celsius (~9,000 Fahrenheit)\n\n"
+
+        "o Because we cannot see or measure Earth’s core directly, asteroid Psyche offers a "
+        "unique window into the violent history of collisions and accretion that created the "
+        "terrestrial planets.\n\n"
+
+        "o It is the only known place in our solar system where we can examine directly what is "
+        "almost certainly a metallic core of an early planet.\n\n"
+
+        "• Psyche lies in the main asteroid belt between Mars and Jupiter.\n\n"
+
+        "• A day on Psyche is about 4 hours and 12 minutes.[7]\n"
+        "o This is the sidereal rotation period, or the "amount of time it takes for a [body] to completely spin around and make one full rotation."[8]\n"
+        "o You could live through just under six “days” on Psyche in the same time as one day"
+        "on Earth!\n\n"
+
+        "• A year on Psyche lasts about five Earth years (about 1,828 Earth days)[9].\n\n"
+
+        "• Psyche orbits the Sun at an average distance of 3 astronomical units (AU) "
+        "(about 280 million miles); Earth orbits at 1 AU (about 93 million miles).\n\n"
+
+        "o Fun fact: Because Psyche and Earth orbit at different speeds, the distance from Earth "
+        "to Psyche varies over a large range! From < 2 AU to > 4 AU.\n\n"
+
+        "• Density: Psyche is dense—perhaps as dense as 7,000 kilograms per cubic meter (kg/m3) "
+        "(similar to the density of a bar of steel)[10].\n\n"
+
+        "• Gravity: The surface gravity on Psyche is much less than Earth, and even less than the "
+        "Moon. On Psyche, lifting a car would feel as light as lifting a dog or a 2nd grader!\n\n"
+
+        "• Size: As asteroids go, Psyche is relatively large and has an irregular shape:\n"
+
+        "o 279 x 232 x 189 kilometers (173 x 144 x 117 miles)[11].\n\n"
+        "o If Psyche were a perfect sphere, it would have a diameter of 226 kilometers (140 miles):\n"
+
+        "▪ That is about the length of the state of Massachusetts (leaving out Cape Cod); If it "
+        "were in Arizona it would stretch between Phoenix and Flagstaff!\n\n"
+
+        "▪ a surface area of about 641,800 square kilometers (246,300 square miles), making it just"
+        "smaller than the area of the state of Texas and quite a bit larger than the area of "
+        "California.\n\n"
+
+        "• Appearance: Scientists have combined radar and optical observations to generate a "
+        "3D shape model of Psyche[12]. This model:\n"
+        "o Shows evidence for two crater-like depressions.\n"
+        "o Suggests that there is significant variation in the metal content and color of the "
+        "asteroid over the surface.\n"
+        "o NOTE: No one has seen the Psyche asteroid yet, so we will not know what it actually "
+        "looks like until the spacecraft arrives. This is the best look we have from radar "
+        "observations: [Insert Picture here?]\n\n"
+    ]]></string>
+    <string name="faq_mission_science_goals">
+        "Psyche Mission Science Goals:\n\n"
+        "• Understand a previously unexplored building block of planet formation: iron cores.\n\n"
+        
+        "• Look inside terrestrial planets, including Earth, by directly examining the interior of "
+        "a differentiated body, which otherwise could not be seen.\n\n"
+        
+        "• Explore a new type of world. For the first time, examine a world made not of rock and "
+        "ice, but metal.\n\n"
+    </string>
+    <string name="faq_mission_science_objectives">
+        "Psyche Mission Science Objectives\n\n"
+        "• Determine whether Psyche is a core, or if it is unmelted material.\n\n"
+
+        "• Determine the relative ages of regions of Psyche’s surface.\n\n"
+
+        "• Determine whether small metal bodies incorporate the same light elements as are "
+        "expected in the Earth’s high-pressure core.\n\n"
+
+        "• Determine whether Psyche was formed under conditions more oxidizing or more reducing "
+        "than Earth’s core.\n\n"
+
+        "• Characterize Psyche’s morphology.\n\n"
+    </string>
+    <string name="faq_instruments_and_investigations">
+        "Psyche Mission Science Instruments and Investigations\n\n"
+
+        "The Psyche Multispectral Imager:\n\n"
+        "• Provides high-resolution images using filters to discriminate between Psyche’s metallic "
+        "and silicate constituents.\n\n"
+
+        "• Consists of a pair of identical cameras designed to acquire geologic, compositional, "
+        "and topographic data.\n\n"
+
+        "• Purpose of the second camera is to provide redundancy for mission-critical optical "
+        "navigation.\n\n"
+
+        "• The team is based at Arizona State University.\n\n"
+
+        "The Psyche Gamma Ray and Neutron Spectrometer:\n\n"
+        "• Will detect, measure, and map Psyche’s elemental composition.\n\n"
+        "• Mounted on a 2-meter (6-foot) boom (“arm”) to:\n"
+        "o distance the sensors from background radiation created by energetic particles "
+        "interacting with the spacecraft;\n"
+        "o provide an unobstructed field of view.\n\n"
+
+        "• The team is based at the Applied Physics Laboratory at Johns Hopkins University.\n\n"
+
+        "The Psyche Magnetometer\n\n"
+        "• Designed to detect and measure the remnant magnetic field of the asteroid.\n\n"
+
+        "• Composed of two identical high-sensitivity magnetic field sensors located at the "
+        "middle and outer end of a 2-meter (6-foot) boom (&quot;arm&quot;).\n\n"
+
+        "• The team is based at Massachusetts Institute of Technology (MIT) and the University of "
+        "California Los Angeles (UCLA).\n\n"
+
+        "Radio Science:\n\n"
+        "• The Psyche mission will use the X-band radio telecommunications system to measure "
+        "Psyche’s gravity field to high precision.\n\n"
+
+        "• When combined with topography derived from onboard imagery, this will provide "
+        "information on the interior structure of Psyche.\n\n"
+
+        "• The team is based at MIT and JPL.\n\n"
+
+        "Deep Space Optical Communication (DSOC):\n\n"
+        "• The Psyche mission will test a sophisticated new laser communication technology that "
+        "encodes data in photons (rather than radio waves) to communicate between a probe in deep "
+        "space and Earth.\n\n"
+
+        "• Using light instead of radio allows the spacecraft to communicate more data in a given "
+        "amount of time.\n\n"
+
+        "• The DSOC team is based at the Jet Propulsion Laboratory\n\n"
+    </string>
+    <string name="faq_mission_team">
+        "Psyche Mission Team\n\n"
+        "Principal Investigator (PI): Lindy Elkins-Tanton, Arizona State University (ASU)\n"
+        "• The PI is responsible for overall mission success, and for the scientific integrity and "
+        "execution of the mission within committed cost and schedule.\n\n"
+
+        "• The PI oversees the team organization, decides science priorities and progress, and "
+        "oversees delivery of mission data to NASA’s Planetary Data System.\n\n"
+
+        "• The PI is the decision-maker within the Psyche team, and NASA is the ultimate "
+        "decision-maker.\n\n"
+
+        "• The PI is responsible for ensuring that all mission participants are playing their roles "
+        "as defined by the Team Guidelines.\n\n"
+
+        "Deputy Principal Investigator (Deputy PI): Jim Bell, ASU\n\n"
+
+        "Co-Investigators:\n
+        "• Erik Asphaug, University of Arizona\n"
+        "• David Bercovici, Yale University\n
+        "• Bruce Bills, Jet Propulsion Laboratory (JPL)\n"
+        "• Richard Binzel, Massachusetts Institute of Technology (MIT)\n"
+        "• William Bottke, Southwest Research Institute (SwRI)\n"
+        "• Ralf Jaumann, Deutsches Zentrum für Luft- und Raumfahrt\n"
+        "• Insoo Jun, JPL\n"
+        "• David Lawrence, Johns Hopkins University, Applied Physics Laboratory (APL)\n"
+        "• Simone Marchi, SwRI\n"
+        "• Timothy McCoy, Smithsonian Institution\n"
+        "• Ryan Park, JPL\n"
+        "• Patrick Peplowski, APL\n"
+        "• Thomas Prettyman, Planetary Science Institute\n"
+        "• Carol Raymond, JPL\n"
+        "• Chris Russell, University of California, Los Angeles\n"
+        "• Benjamin Weiss, MIT\n"
+        "• Dan Wenkert, JPL\n"
+        "• Mark Wieczorek, Observatoire de la Côte d’Azur\n"
+        "• David Williams, ASU\n"
+        "• Maria Zuber, MIT\n\n"
+
+        "Psyche Science Partners:\n"
+        "• Applied Physics Laboratory (APL)\n"
+        "• Deutsches Zentrum für Luft- und Raumfahrt (DLR)\n"
+        "• General Dynamics\n"
+        "• Glenn Research Center (GRC)\n"
+        "• Jet Propulsion Laboratory (JPL)\n"
+        "• Massachusetts Institute of Technology (MIT)\n"
+        "• Malin Space Science Systems (MSSS)\n"
+        "• Observatoire de la Côte d’Azur\n"
+        "• Planetary Science Institute (PSI)\n"
+        "• Smithsonian Institution\n"
+        "• Southwest Research Institute (SwRI)\n"
+        "• SSL\n"
+        "• Tesat Spacecom\n"
+        "• University of Arizona\n"
+        "• University of California Los Angeles (UCLA)\n"
+        "• Yale University\n\n"
+    </string>
+    <string name="faq_more_info">
+        "The mission is led by Arizona State University. NASA’s Jet Propulsion Laboratory is "
+        "responsible for mission management, operations and navigation. The spacecraft’s "
+        "solar-electric propulsion chassis will be built by SSL with a payload that includes an "
+        "imager, magnetometer, and a gamma-ray spectrometer.\n\n"
+
+        "Want to learn more about Psyche?\n\n"
+        "Visit:\n"
+        "sese.asu.edu/Psyche \n"
+        "www.jpl.nasa.gov/missions/psyche \n"
+        "www.nasa.gov/psyche \n\n"
+
+        "Social Media:\n"
+        "Twitter: @NASAPsyche\n"
+        "Facebook: NASAPsyche\n"
+    </string>
+    <string name="faq_references">
+        "References:\n\n"
+
+        "[1] https://www.nasa.gov/content/how-will-nasas-asteroid-redirect-mission-help-humans-reach-mars\n\n"
+
+        "[2] http://www.srh.noaa.gov/jetstream/atmos/atmos_intro.html\n\n"
+
+        "[3] https://www.nasa.gov/centers/glenn/about/fs21grc.html\n\n"
+
+        "[4] Ostro, S. J. (1999). Planetary Radar. Encyclopedia of the Solar System. Available "
+        "from http://echo.jpl.nasa.gov/asteroids/ostro_1998_encyc_ss.pdf\n\n"
+
+        "[5] Radar is an acronym for &quot;radio detection and ranging.&quot; Radar was developed to "
+        "detect objects and determine their range (or position) by transmitting short bursts of "
+        "microwaves. The strength and origin of "echoes" received from objects that were "
+        "hit by the microwaves is then recorded.\n\n"
+
+        "[6] https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA19357\n\n"
+
+        "[7] Shepard, M. K., Richardson, J., Taylor, P. A., Rodriguez-Ford, L. A., Conrad, A., "
+        "de Pater, I., … &amp; Close, L. M. (2017). Radar observations and shape model of asteroid "
+        "16 Psyche. Icarus, 281, 388-403: "sidereal rotation period P = 4.195948 h" \n\n"
+
+        "[8] https://spaceplace.nasa.gov/days/en/ \n\n"
+
+        "[9] https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=16 \n\n"
+
+        "[10] Elkins-Tanton, L. T., Asphaug, E., Bell, J. F., Bercovici, D., Bills, B. G., "
+        "Binzel, R. P., … &amp; Jun, I. (2017, March). Asteroid (16) Psyche: Visiting a Metal World. "
+        "In Lunar and Planetary Science Conference (Vol. 48).\n\n"
+
+        "[11] Shepard, M. K., Richardson, J., Taylor, P. A., Rodriguez-Ford, L. A., Conrad, A., "
+        "de Pater, I., … &amp; Close, L. M. (2017). Radar observations and shape model of asteroid "
+        "16 Psyche. Icarus, 281, 388-403.\n\n"
+
+        "[12] http://outreach.naic.edu/ao/blog/radar-observations-and-shape-model-asteroid-16-psyche\n\n"
+    </string>
+</resources>

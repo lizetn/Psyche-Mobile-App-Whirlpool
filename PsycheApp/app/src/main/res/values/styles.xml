@@ -20,4 +20,16 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="PsycheLightTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/psyche_black</item>
+        <item name="colorPrimary">@color/psyche_gold</item>
+    </style>
+
+    <style name="PsycheDarkTheme" parent="AppTheme">
+
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:windowBackground">@color/psyche_dark_purple</item>
+        <item name="colorPrimary">@color/psyche_gold</item>
+    </style>
+
 </resources>

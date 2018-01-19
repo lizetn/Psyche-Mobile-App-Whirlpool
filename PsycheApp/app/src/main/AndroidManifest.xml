@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="asu.whirlpool.psychewhirlpool">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/psyche_launcher_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/psyche_launcher_icon_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/PsycheLightTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -20,14 +21,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".timeline.TimelineActivity"
-            android:label="@string/title_activity_timeline"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
-        </activity>
-        <activity
             android:name=".FactsActivity"
             android:label="@string/title_activity_facts"
             android:parentActivityName=".MainActivity">
@@ -36,9 +29,9 @@
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
 
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
 
         <activity
             android:name=".GalleryActivity"
@@ -63,19 +56,23 @@
             android:name=".SocialMediaTabs"
             android:label="@string/title_activity_social_media_tabs"
             android:theme="@style/AppTheme" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
+        <activity android:name=".FullImageActivity" />
         <activity
-            android:name=".timeline.TimePhaseActivity"
-            android:label="@string/title_activity_time_phase"
-            android:parentActivityName=".timeline.TimelineActivity"
+            android:name=".timeline.TimelineTab"
+            android:label="@string/timeline_title"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="asu.whirlpool.psychewhirlpool.timeline.TimelineActivity" />
+                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-        <activity android:name=".FullImageActivity"></activity>
+        <activity android:name=".InstagramClasses.Display"></activity>
+        <activity android:name=".facebookClasses.Display2"></activity>
     </application>
 
 </manifest>

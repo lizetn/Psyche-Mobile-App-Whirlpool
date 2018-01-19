@@ -2,6 +2,9 @@ package asu.whirlpool.psychewhirlpool;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,10 +23,12 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
-public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener{
-
+public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener
+{
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -48,19 +53,46 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
             R.drawable.com_facebook_button_icon_blue,
             R.drawable.ic_dashboard_black_24dp };
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item)
+        {
+            Intent intent;
+
+            switch (item.getItemId())
+            {
+                case R.id.navigation_home:
+                    intent = new Intent(SocialMediaTabs.this, MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_timeline:
+                    intent = new Intent(SocialMediaTabs.this, TimelineTab.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_gallery:
+                    intent = new Intent(SocialMediaTabs.this, GalleryActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_social_media:
+                    return true;
+                case R.id.navigation_game:
+                    intent = new Intent(SocialMediaTabs.this, GameActivity.class);
+                    startActivity(intent);
+                    return true;
+            }
+            return false;
+        }
+    };
+
     @SuppressLint("WrongConstant")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
 
-        //final android.app.ActionBar aBar = getActionBar();
-
-        //aBar.addTab(aBar.newTab().setText("Twitter").setTabListener((android.app.ActionBar.TabListener) this));
-
-
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -81,44 +113,56 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableAnimation(navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(3);
+        menuItem.setChecked(true);
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Bundle outState)
+    {
         super.onSaveInstanceState(outState);
         outState.putInt(POSITION, tabLayout.getSelectedTabPosition());
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    protected void onRestoreInstanceState(Bundle savedInstanceState)
+    {
         super.onRestoreInstanceState(savedInstanceState);
         mViewPager.setCurrentItem(savedInstanceState.getInt(POSITION));
     }
 
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_social_media_tabs, menu);
         return true;
     }
 
+    /**
+     * Handle action bar item clicks here. The action bar will
+     * automatically handle clicks on the Home/Up button, so long
+     * as you specify a parent activity in AndroidManifest.xml.
+     * @param item
+     * @return
+     */
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
     @Override
     public void onTabSelected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction fragmentTransaction)
@@ -143,7 +187,8 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment extends Fragment
+    {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -188,16 +233,23 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
         private String tabTitles[] = new String[] { "Twitter", "Facebook", "Instagram" };
         private Context context;
 
-        public SectionsPagerAdapter(FragmentManager fm, Context context) {
+        public SectionsPagerAdapter(FragmentManager fm, Context context)
+        {
             super(fm);
             this.context = context;
         }
 
+        /**
+         * getItem is called to instantiate the fragment for the given page.
+         * Return a PlaceholderFragment (defined as a static inner class below).
+         * @param position
+         * @return
+         */
         @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
+        public Fragment getItem(int position)
+        {
+            switch (position)
+            {
                 case 0:
                     TwitterActivity twitter = new TwitterActivity();
                     return twitter;
@@ -207,22 +259,39 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                     return facebook;
 //                    return PlaceholderFragment.newInstance(position + 1);
                 case 2:
-                    return PlaceholderFragment.newInstance(position + 1);
+                    Log.d("SHIT", "getItem: ");
+
+                    MainInstagramActivity instagramActivity;
+
+                    instagramActivity = new MainInstagramActivity();
+                    //return instagramActivity;
+                   /*MainInstagramActivity instagram = new MainInstagramActivity();
+                    getFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.Container
+                                    ,instagram)
+                            .commit();*/
+                    return instagramActivity;
+                   //return PlaceholderFragment.newInstance(position + 1);
                 default:
                     Log.d(TAG, "In getItem default!!!");
                     return null;
             }
-
         }
 
+        /**
+         * Show number of pages
+         * @return
+         */
         @Override
-        public int getCount() {
-            // Show 3 total pages.
+        public int getCount()
+        {
             return PAGE_COUNT;
         }
 
         @Override
-        public CharSequence getPageTitle(int position) {
+        public CharSequence getPageTitle(int position)
+        {
             return tabTitles[position];
         }
     }
