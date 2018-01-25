@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import asu.whirlpool.psychewhirlpool.FullImageActivity;
 import asu.whirlpool.psychewhirlpool.ImageAdapter;
 import asu.whirlpool.psychewhirlpool.R;
 
@@ -38,11 +37,12 @@ public class GalleryImageFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_gallery_images, container, false);
-        // Set up ImageAdapter
-        GridView tryGrid = view.findViewById(R.id.gridView);
-        tryGrid.setAdapter(new ImageAdapter(view.getContext()));
 
-        tryGrid.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        // Set up ImageAdapter
+        GridView gridView = view.findViewById(R.id.gridView);
+        gridView.setAdapter(new ImageAdapter(view.getContext()));
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id)
             {

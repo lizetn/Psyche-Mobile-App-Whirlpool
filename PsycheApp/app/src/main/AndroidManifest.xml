@@ -63,7 +63,7 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".FullImageActivity" />
+        <activity android:name=".gallery.FullImageActivity" />
         <activity
             android:name=".timeline.TimelineTab"
             android:label="@string/timeline_title"
@@ -84,6 +84,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
+        <activity android:name=".gallery.VideoActivity"></activity>
     </application>
 
 </manifest>

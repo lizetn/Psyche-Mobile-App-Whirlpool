@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.whirlpool.psychewhirlpool.FullImageActivity">
+    tools:context="asu.whirlpool.psychewhirlpool.gallery.FullImageActivity">
 
     <ImageView
         android:id="@+id/imageView"
+        android:contentDescription="@string/title_activity_gallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitCenter"
