@@ -36,7 +36,7 @@
             android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
 
         <activity
-            android:name=".GalleryActivity"
+            android:name=".gallery.GalleryActivity"
             android:label="@string/title_activity_gallery"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -76,7 +76,7 @@
         <activity android:name=".InstagramClasses.Display" />
         <activity android:name=".facebookClasses.Display2" />
         <activity
-            android:name=".gallery.GalleryTabActivity"
+            android:name=".gallery.GalleryTab"
             android:label="@string/title_activity_gallery_tab"
             android:parentActivityName=".MainActivity"
             android:theme="@style/PsycheLightTheme">

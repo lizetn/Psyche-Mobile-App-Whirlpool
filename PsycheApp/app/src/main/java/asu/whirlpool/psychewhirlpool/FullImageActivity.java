@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import asu.whirlpool.psychewhirlpool.gallery.GalleryActivity;
+
 /**
  * {@link FullImageActivity} displays a full-screen version of the image selected in
  * the {@link GalleryActivity}.

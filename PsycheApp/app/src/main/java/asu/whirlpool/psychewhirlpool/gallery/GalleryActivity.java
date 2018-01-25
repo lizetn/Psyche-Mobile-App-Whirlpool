@@ -1,4 +1,4 @@
-package asu.whirlpool.psychewhirlpool;
+package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,13 @@ import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
+import asu.whirlpool.psychewhirlpool.FullImageActivity;
+import asu.whirlpool.psychewhirlpool.GameActivity;
+import asu.whirlpool.psychewhirlpool.ImageAdapter;
+import asu.whirlpool.psychewhirlpool.MainActivity;
+import asu.whirlpool.psychewhirlpool.R;
+import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**

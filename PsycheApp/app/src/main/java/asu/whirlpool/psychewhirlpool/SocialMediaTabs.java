@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,6 +24,7 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener
@@ -72,7 +72,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(SocialMediaTabs.this, GalleryActivity.class);
+                    intent = new Intent(SocialMediaTabs.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:
