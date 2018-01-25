@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="asu.whirlpool.psychewhirlpool">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/psyche_launcher_icon"
@@ -71,8 +73,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-        <activity android:name=".InstagramClasses.Display"></activity>
-        <activity android:name=".facebookClasses.Display2"></activity>
+        <activity android:name=".InstagramClasses.Display" />
+        <activity android:name=".facebookClasses.Display2" />
+        <activity
+            android:name=".gallery.GalleryTabActivity"
+            android:label="@string/title_activity_gallery_tab"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/PsycheLightTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

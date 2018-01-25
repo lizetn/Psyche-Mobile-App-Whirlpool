@@ -32,4 +32,8 @@
         <item name="colorPrimary">@color/psyche_gold</item>
     </style>
 
+    <style name="PsycheLightTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PsycheLightTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
