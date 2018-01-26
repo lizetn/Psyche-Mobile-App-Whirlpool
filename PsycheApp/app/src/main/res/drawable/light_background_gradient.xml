@@ -9,7 +9,7 @@
                 android:endColor="@color/tw__composer_white"
                 android:centerColor="@color/tw__composer_white"
                 android:type="linear"
-                android:centerY="45%"/>
+                android:centerY="40%"/>
         </shape>
     </item>
 

@@ -26,15 +26,32 @@
         <item name="android:windowBackground">@drawable/light_background_gradient</item>
         <item name="colorPrimaryDark">@color/tw__composer_white</item>
         <item name="colorAccent">@color/psyche_dark_purple</item>
+        <item name="android:textColorSecondary">@color/psyche_black</item>
+        <item name="android:actionModeCopyDrawable">@drawable/hourglass_purple</item>
+        <item name="android:alertDialogIcon">@drawable/ic_info_outline_black_50dp</item>
+        <item name="android:actionModeCloseDrawable">@drawable/play_outline_purple</item>
+        <item name="android:actionModeCutDrawable">@drawable/nasa_meatball_purple</item>
+        <item name="android:actionModePasteDrawable">@drawable/psyche_help_purple</item>
+        <item name="android:actionModeSelectAllDrawable">@drawable/crescent_moon_purple</item>
+        <item name="android:horizontalDivider">@color/psyche_black</item>
+        <item name="android:verticalDivider">@color/psyche_black</item>
     </style>
 
     <style name="PsycheDarkTheme" parent="AppTheme">
-
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:windowBackground">@drawable/night_background_gradient</item>
         <item name="colorPrimary">@color/psyche_mustard</item>
         <item name="colorPrimaryDark">@color/psyche_dark_purple</item>
         <item name="colorAccent">@color/psyche_mustard</item>
+        <item name="android:textColorSecondary">@color/psyche_mustard</item>
+        <item name="android:actionModeCopyDrawable">@drawable/hourglass_white</item>
+        <item name="android:alertDialogIcon">@drawable/ic_info_outline_black_50dp</item>
+        <item name="android:actionModeCloseDrawable">@drawable/play_outline_white</item>
+        <item name="android:actionModeCutDrawable">@drawable/nasa_meatball_white</item>
+        <item name="android:actionModePasteDrawable">@android:drawable/ic_menu_help</item>
+        <item name="android:actionModeSelectAllDrawable">@drawable/crescent_moon_white</item>
+        <item name="android:horizontalDivider">@android:color/white</item>
+        <item name="android:verticalDivider">@android:color/white</item>
     </style>
 
 </resources>
