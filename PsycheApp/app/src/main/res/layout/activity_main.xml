@@ -94,7 +94,7 @@
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:addStatesFromChildren="false"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/colorPrimaryDark"
         android:clickable="true"
         android:focusable="true"
         android:soundEffectsEnabled="true"

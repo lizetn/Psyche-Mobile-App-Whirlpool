@@ -125,21 +125,25 @@ public class MainActivity extends AppCompatActivity
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
-            mTitleImage.setImageResource(R.drawable.home_title);
-            mButtonsImage.setImageResource(R.drawable.white_title_buttons);
-            mConstraint.setBackgroundResource(R.color.tw__composer_white);
-            mNavView.setItemBackgroundResource(R.color.tw__composer_white);
+            /*mTitleImage.setImageResource(R.drawable.home_title);
+            mButtonsImage.setImageResource(R.drawable.white_title_buttons);*/
+            /*mConstraint.setBackgroundResource(R.color.tw__composer_white);
+            mNavView.setItemBackgroundResource(R.color.tw__composer_white);*/
             setTheme(R.style.PsycheLightTheme);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
         }
         else
         {
-            mTitleImage.setImageResource(R.drawable.night_home_title);
-            mButtonsImage.setImageResource(R.drawable.night_title_buttons);
-            mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
-            mNavView.setItemBackgroundResource(R.color.psyche_purple);
+            /*mTitleImage.setImageResource(R.drawable.night_home_title);
+            mButtonsImage.setImageResource(R.drawable.night_title_buttons);*/
+            /*mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
+            mNavView.setItemBackgroundResource(R.color.psyche_purple);*/
             setTheme(R.style.PsycheDarkTheme);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
         }
     }
 }
