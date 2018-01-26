@@ -35,23 +35,6 @@ public class SocialMediaActivity extends ListFragment
     ListView myList;
     private static final String TWITTER_KEY = "6Gekxk012j0RkDVr9x6wwornQ";
     private static final String TWITTER_SECRET = "L9vdf2MOhyBrbW53C7Q6WaPH3dVW4bG24X096iwxnP4EOR0PD5";
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener()
-    {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item)
-        {
-            switch (item.getItemId())
-            {
-                case R.id.navigation_home:
-                    message.setText(R.string.title_home);
-                    return true;
-
-            }
-            return false;
-        }
-    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

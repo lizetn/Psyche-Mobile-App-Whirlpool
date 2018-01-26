@@ -9,92 +9,231 @@
     android:visibility="visible"
     tools:context="asu.whirlpool.psychewhirlpool.MainActivity">
 
-    <ImageView
-        android:id="@+id/homePageTitle"
-        android:layout_width="381dp"
-        android:layout_height="137dp"
-        android:contentDescription="Psyche: Journey to a Metal World"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/homeButtonsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeTitleLayout">
+
+        <ImageView
+            android:id="@+id/verticalDividerHome"
+            android:layout_width="8dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintBottom_toBottomOf="@+id/helpButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/countdownButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/factsButton"
+            android:layout_width="140dp"
+            android:layout_height="106dp"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="?android:attr/alertDialogIcon"
+            android:elevation="16dp"
+            android:onClick="displayFacts"
+            android:paddingStart="@dimen/cardview_default_radius"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_home_facts"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/countdownButton"
+            app:layout_constraintStart_toEndOf="@+id/countdownButton" />
+
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="140dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="?android:attr/actionModePasteDrawable"
+            android:elevation="16dp"
+            android:onClick="displayCountdown"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_home_help"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/liveStreamButton"
+            app:layout_constraintTop_toBottomOf="@+id/liveStreamButton" />
+
+        <ImageView
+            android:id="@+id/horDividerHome1"
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:background="?android:attr/dividerHorizontal"
+            app:layout_constraintBottom_toTopOf="@+id/liveStreamButton"
+            app:layout_constraintEnd_toEndOf="@+id/factsButton"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/countdownButton" />
+
+        <Button
+            android:id="@+id/countdownButton"
+            android:layout_width="140dp"
+            android:layout_height="106dp"
+            android:layout_marginEnd="4dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="?android:attr/actionModeCopyDrawable"
+            android:elevation="16dp"
+            android:onClick="displayCountdown"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_home_countdown"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/verticalDividerHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/nightModeButton"
+            android:layout_width="140dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="?android:attr/actionModeSelectAllDrawable"
+            android:elevation="16dp"
+            android:onClick="toggleHomeNightMode"
+            android:paddingStart="@dimen/cardview_default_radius"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_home_nightmode"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/nasaButton"
+            app:layout_constraintTop_toBottomOf="@+id/nasaButton" />
+
+        <Button
+            android:id="@+id/nasaButton"
+            android:layout_width="140dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="?android:attr/actionModeCutDrawable"
+            android:elevation="16dp"
+            android:onClick="displayFacts"
+            android:paddingStart="@dimen/cardview_default_radius"
+            android:paddingTop="@dimen/tw__composer_logo_height"
+            android:text="@string/button_home_nasa"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/liveStreamButton"
+            app:layout_constraintTop_toTopOf="@+id/liveStreamButton" />
+
+        <ImageView
+            android:id="@+id/horDividerHome2"
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:background="?android:attr/dividerHorizontal"
+            app:layout_constraintBottom_toTopOf="@+id/helpButton"
+            app:layout_constraintEnd_toEndOf="@+id/factsButton"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/countdownButton" />
+
+        <Button
+            android:id="@+id/liveStreamButton"
+            android:layout_width="140dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="?android:attr/actionModeCloseDrawable"
+            android:elevation="16dp"
+            android:onClick="displayFacts"
+            android:paddingTop="@dimen/tw__composer_logo_height"
+            android:text="@string/button_home_stream"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/countdownButton"
+            app:layout_constraintTop_toBottomOf="@+id/countdownButton" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/homeTitleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_title" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/homeTitleTextLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/title_home_large"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/homeTitleLogo"
+            app:layout_constraintTop_toTopOf="@+id/homeTitleLogo" />
+
+        <TextView
+            android:id="@+id/homeTitleTextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:layout_marginStart="2dp"
+            android:text="@string/title_home_small"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@+id/homeTitleTextLarge"
+            app:layout_constraintTop_toBottomOf="@+id/homeTitleTextLarge" />
+
+        <ImageView
+            android:id="@+id/homeTitleLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Psyche: Journey to a Metal World"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.04000002"
+            app:srcCompat="@drawable/psyche_icon_color" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <ImageView
         android:id="@+id/homePageButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homePageTitle"
-        app:srcCompat="@drawable/white_title_buttons" />
-
-    <Button
-        android:id="@+id/nightModeButton"
-        android:layout_width="115dp"
-        android:layout_height="85dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="388dp"
-        android:background="@android:color/transparent"
-        android:elevation="16dp"
-        android:onClick="toggleHomeNightMode"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/factsButton"
-        android:layout_width="115dp"
-        android:layout_height="85dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="272dp"
-        android:background="@android:color/transparent"
-        android:elevation="16dp"
-        android:onClick="displayFacts"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/countdownButton"
-        android:layout_width="115dp"
-        android:layout_height="85dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="148dp"
-        android:background="@android:color/transparent"
-        android:elevation="16dp"
-        android:onClick="displayCountdown"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/white_title_buttons"
+        tools:layout_editor_absoluteY="139dp" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:addStatesFromChildren="false"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/colorPrimaryDark"
         android:clickable="true"
         android:focusable="true"
         android:soundEffectsEnabled="true"
