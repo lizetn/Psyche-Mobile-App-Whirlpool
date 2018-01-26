@@ -7,7 +7,8 @@ import android.util.Log;
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * VideoPlayer implements {@link MediaInterface} and uses {@link MediaPlayer}
+ * VideoPlayer implements {@link MediaInterface} and uses {@link MediaPlayer} to
+ * play videos stored in the Gallery.
  *
  * Based off the following sample code:
  * https://github.com/googlesamples/android-SimpleMediaPlayer
@@ -28,6 +29,9 @@ public class VideoPlayer implements MediaInterface
         mContext = context.getApplicationContext();
     }
 
+    /**
+     * Initialize the {@link MediaPlayer}
+     */
     public void initVideoPlayer()
     {
         if (mediaPlayer == null)
@@ -53,7 +57,7 @@ public class VideoPlayer implements MediaInterface
     }
 
     /**
-     * Initialize the media player with the provided resource.
+     * Initialize the {@link MediaPlayer} with the provided resource.
      * @param resourceId    Resource to load
      */
     public void load(int resourceId)
@@ -73,7 +77,7 @@ public class VideoPlayer implements MediaInterface
     }
 
     /**
-     * If the media player is playing, pause the playback.
+     * If the {@link MediaPlayer} is playing, pause the playback.
      */
     @Override
     public void pause()
@@ -85,7 +89,7 @@ public class VideoPlayer implements MediaInterface
     }
 
     /**
-     * If the media player is initialized but not playing, start the player.
+     * If the {@link MediaPlayer} is initialized but not playing, start the player.
      */
     @Override
     public void play()
@@ -97,7 +101,7 @@ public class VideoPlayer implements MediaInterface
     }
 
     /**
-     * Releases the media player when not used to release resources
+     * Releases the {@link MediaPlayer} when not used to release resources
      */
     @Override
     public void release()
@@ -110,7 +114,7 @@ public class VideoPlayer implements MediaInterface
     }
 
     /**
-     * If the playback is stopped, reset the media player.
+     * If the playback is stopped, reset the {@link MediaPlayer}.
      */
     @Override
     public void reset()
@@ -118,6 +122,15 @@ public class VideoPlayer implements MediaInterface
         if (mediaPlayer != null)
         {
             mediaPlayer.reset();
+        }
+    }
+
+    @Override
+    public void seek(int position)
+    {
+        if (mediaPlayer != null)
+        {
+            mediaPlayer.seekTo(position);
         }
     }
 }

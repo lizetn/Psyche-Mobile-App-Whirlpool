@@ -16,4 +16,5 @@ public interface MediaInterface
     void play();
     void release();
     void reset();
+    void seek(int position);
 }
