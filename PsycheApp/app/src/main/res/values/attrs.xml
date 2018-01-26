@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HomeIcons">
+        <attr name="countdownIcon" format="reference"/>
+        <attr name="factsIcon" format="reference"/>
+        <attr name="streamIcon" format="reference"/>
+        <attr name="nasaIcon" format="reference"/>
+        <attr name="helpIcon" format="reference"/>
+        <attr name="nightIcon" format="reference"/>
+    </declare-styleable>
+</resources>
