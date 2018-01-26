@@ -8,7 +8,7 @@ import asu.whirlpool.psychewhirlpool.R;
 /**
  * VideoActivity manages the playback of a video selected from the Gallery.
  * @author  Erick Ramirez Cordero
- * @date    1/25/18
+ * @date    1/25/2018
  */
 public class VideoActivity extends AppCompatActivity
 {

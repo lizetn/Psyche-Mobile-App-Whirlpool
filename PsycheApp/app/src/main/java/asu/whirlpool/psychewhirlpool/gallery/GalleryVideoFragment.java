@@ -2,9 +2,6 @@ package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.media.session.MediaControllerCompat;
-import android.support.v4.media.session.MediaSessionCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +18,6 @@ import asu.whirlpool.psychewhirlpool.R;
 
 public class GalleryVideoFragment extends Fragment
 {
-    MediaSessionCompat mMediaSession;
-    PlaybackStateCompat.Builder mStateBuilder;
-
     private View view;
 
     /**
