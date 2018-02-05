@@ -75,16 +75,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-
-        mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
-
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            mButtonsImage.setImageResource(R.drawable.night_title_buttons);
-        }
-        else
-        {
-            mButtonsImage.setImageResource(R.drawable.white_title_buttons);
-        }
     }
 
     /**
@@ -115,14 +105,12 @@ public class MainActivity extends AppCompatActivity
     {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
-            setTheme(R.style.PsycheLightTheme);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             Intent intent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(intent);
         }
         else
         {
-            setTheme(R.style.PsycheDarkTheme);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             Intent intent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(intent);

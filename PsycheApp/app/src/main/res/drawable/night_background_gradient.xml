@@ -8,7 +8,7 @@
                 android:endColor="@color/psyche_dark_purple"
                 android:centerColor="@color/psyche_dark_purple"
                 android:type="linear"
-                android:centerY="40%"/>
+                android:centerY="45%"/>
         </shape>
     </item>
 </selector>
