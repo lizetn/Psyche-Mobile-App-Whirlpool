@@ -104,7 +104,7 @@ public class FacebookActivity extends ListFragment {
     {
         new GraphRequest(
             accessToken,
-            "/1598743977091187/feed?fields=id,message,picture,story,created_time", null,
+            "/1598743977091187/feed?fields=id,message,full_picture,story,created_time", null,
             HttpMethod.GET,
             new GraphRequest.Callback() {
 
@@ -126,9 +126,9 @@ public class FacebookActivity extends ListFragment {
                             }
                             String pic;
                             String story;
-                            if (objectdata.has("picture"))
+                            if (objectdata.has("full_picture"))
                             {
-                                pic = objectdata.getString("picture");
+                                pic = objectdata.getString("full_picture");
                             }
                             else
                             {

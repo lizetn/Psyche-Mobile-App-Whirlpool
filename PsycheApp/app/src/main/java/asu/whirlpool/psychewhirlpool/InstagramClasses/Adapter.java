@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -20,6 +21,8 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
+import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -51,8 +54,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
     public void onBindViewHolder(final Adapter.myholder holder, final int position)
     {
         //holder.imgs.setBackgroundResource(R.drawable.ripp);
-        Glide.with(ctx).load(path.get(position).getImage_url()).into(holder.imgs);
-        Glide.with(ctx).load(MainInstagramActivity.profile_img).into(holder.iv_profile);
+
+        //Picasso.with(ctx).load(path.get(position).getImage_url()).into(holder.imgs);
+        //Picasso.with(ctx).load(path.get(position).getImage_url()).into(holder.iv_profile);
+       // Glide.with(ctx).load(path.get(position).getImage_url()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(holder.imgs);
+        //Glide.with(ctx).load(path.get(position).getImage_url()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(holder.iv_profile);
+       Glide.with(ctx).load(path.get(position).getImage_url()).into(holder.imgs);
+       Glide.with(ctx).load(MainInstagramActivity.profile_img).into(holder.iv_profile);
         holder.name.setText(MainInstagramActivity.profile_name);
 
         DecimalFormat formatter = new DecimalFormat("#,###,###");
@@ -60,6 +68,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
         holder.likes.setText(likes);
         String comments = formatter.format(Integer.parseInt(path.get(position).getComments()));
         holder.comments.setText(comments);
+
 
 
         final SpannableStringBuilder sb = new SpannableStringBuilder("Readmore..");
@@ -84,6 +93,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
                 ctx.startActivity(i);
             }
         });
+
+        holder.hearts.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Uri uri = Uri.parse("https://www.instagram.com/nasapsyche");
+                Intent in = new Intent(Intent.ACTION_VIEW, uri);
+                ctx.startActivity(in);
+            }
+            });
+        holder.commentImg.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Uri uri = Uri.parse("https://www.instagram.com/nasapsyche");
+                Intent in = new Intent(Intent.ACTION_VIEW, uri);
+                ctx.startActivity(in);
+            }
+        });
     }
     public int getItemCount() {
         return path.size();
@@ -92,6 +120,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
     {
         CardView cv;
         ImageView imgs;
+        ImageView hearts;
+        ImageView commentImg;
         CircleImageView iv_profile;
         TextView name,
                 likes,
@@ -103,6 +133,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
             super(itemView);
             cv = (CardView) itemView.findViewById(R.id.card_view);
             imgs = (ImageView) itemView.findViewById(R.id.main_imgs);
+            hearts = (ImageView) itemView.findViewById(R.id.hearts);
+            commentImg = (ImageView) itemView.findViewById(R.id.commentsPic);
             iv_profile = (CircleImageView) itemView.findViewById(R.id.iv_profile);
             name = (TextView) itemView.findViewById(R.id.name);
             likes = (TextView) itemView.findViewById(R.id.likes);
