@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
 import asu.whirlpool.psychewhirlpool.GameActivity;
-import asu.whirlpool.psychewhirlpool.ImageAdapter;
 import asu.whirlpool.psychewhirlpool.MainActivity;
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.SocialMediaTabs;

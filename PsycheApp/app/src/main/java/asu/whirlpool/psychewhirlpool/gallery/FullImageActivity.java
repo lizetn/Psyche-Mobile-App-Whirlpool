@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import asu.whirlpool.psychewhirlpool.ImageAdapter;
 import asu.whirlpool.psychewhirlpool.R;
 
 /**

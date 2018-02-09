@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import asu.whirlpool.psychewhirlpool.ImageAdapter;
+import java.util.ArrayList;
+
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
@@ -22,16 +23,12 @@ import asu.whirlpool.psychewhirlpool.R;
 public class GalleryImageFragment extends Fragment
 {
     private View view;
-
     public static final String IMAGE_KEY = "image_key";
 
     /**
      * Initializes the Fragment.
      *
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return                      Instantiated Gallery Image Fragment
+     * @return          Instantiated Gallery Image Fragment
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -51,6 +48,7 @@ public class GalleryImageFragment extends Fragment
                 startActivity(intent);
             }
         });
+
         return view;
     }
 }
