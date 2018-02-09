@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -19,6 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class CountdownActivity extends AppCompatActivity {
@@ -63,7 +63,7 @@ public class CountdownActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(CountdownActivity.this, GalleryActivity.class);
+                    intent = new Intent(CountdownActivity.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:

@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
+
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity
         {
             Intent intent;
 
-            switch (item.getItemId()) {
+            switch (item.getItemId())
+            {
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_timeline:
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(MainActivity.this, GalleryActivity.class);
+                    intent = new Intent(MainActivity.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:
