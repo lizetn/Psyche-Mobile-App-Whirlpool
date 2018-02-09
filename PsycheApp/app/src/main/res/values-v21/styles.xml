@@ -24,9 +24,9 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/psyche_mustard</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@color/psyche_gold</item>
+        <item name="colorAccent">@color/psyche_gold</item>
+        <item name="android:statusBarColor">@color/psyche_mustard</item>
     </style>
 </resources>
