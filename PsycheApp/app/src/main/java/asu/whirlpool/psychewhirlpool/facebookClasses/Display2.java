@@ -13,9 +13,11 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import asu.whirlpool.psychewhirlpool.InstagramClasses.Adapter;
 import asu.whirlpool.psychewhirlpool.R;
 //used when image is clicked, full view of image
 public class Display2 extends AppCompatActivity {
@@ -25,10 +27,9 @@ public class Display2 extends AppCompatActivity {
         setContentView(R.layout.activity_facebookdisplay);
         Intent intent = getIntent();
         int position = intent.getExtras().getInt("Pos");
-        Log.d("POS VALUES", String.valueOf(position));
         imageView = (ImageView) findViewById(R.id.imageView);
         Glide.with(getApplicationContext()).load(ListAdapter.fbList.get(position).getPicture()).into(imageView);
-
+        //Picasso.with(getApplicationContext()).load(ListAdapter.fbList.get(position).getPicture()).into(imageView);
     }
 
     public void onBackPressed() {

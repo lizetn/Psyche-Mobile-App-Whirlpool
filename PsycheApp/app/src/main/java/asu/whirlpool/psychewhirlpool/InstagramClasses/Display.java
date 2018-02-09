@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import asu.whirlpool.psychewhirlpool.R;
 //used when image is clicked, full view of image
@@ -26,6 +27,8 @@ public class Display extends AppCompatActivity {
         int position = intent.getExtras().getInt("Pos");
         imageView = (ImageView) findViewById(R.id.imageView);
         Glide.with(getApplicationContext()).load(Adapter.path.get(position).getImage_url()).into(imageView);
+        //Picasso.with(getApplicationContext()).load(Adapter.path.get(position).getImage_url()).into(imageView);
+       // Glide.with(getApplicationContext()).load(Adapter.path.get(position).getImage_url()).into(imageView);
 
     }
 

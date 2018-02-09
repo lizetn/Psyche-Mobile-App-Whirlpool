@@ -61,6 +61,9 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
+        <meta-data android:name="asu.whirlpool.psychewhirlpool.GlideConfiguration"
+            android:value="GlideModule"/>
+
         <activity android:name=".FullImageActivity" />
         <activity
             android:name=".timeline.TimelineTab"
