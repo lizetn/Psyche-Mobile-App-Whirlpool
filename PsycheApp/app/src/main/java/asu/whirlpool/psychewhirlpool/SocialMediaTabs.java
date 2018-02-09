@@ -257,24 +257,12 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                 case 1:
                     FacebookActivity facebook = new FacebookActivity();
                     return facebook;
-//                    return PlaceholderFragment.newInstance(position + 1);
                 case 2:
-                    Log.d("SHIT", "getItem: ");
-
                     MainInstagramActivity instagramActivity;
 
                     instagramActivity = new MainInstagramActivity();
-                    //return instagramActivity;
-                   /*MainInstagramActivity instagram = new MainInstagramActivity();
-                    getFragmentManager()
-                            .beginTransaction()
-                            .add(R.id.Container
-                                    ,instagram)
-                            .commit();*/
                     return instagramActivity;
-                   //return PlaceholderFragment.newInstance(position + 1);
                 default:
-                    Log.d(TAG, "In getItem default!!!");
                     return null;
             }
         }
