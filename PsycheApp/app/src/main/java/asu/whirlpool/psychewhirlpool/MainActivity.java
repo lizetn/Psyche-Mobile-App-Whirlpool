@@ -3,7 +3,6 @@ package asu.whirlpool.psychewhirlpool;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -13,13 +12,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
+
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
-    private ImageView mButtonsImage;
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -84,6 +82,7 @@ public class MainActivity extends AppCompatActivity
     public void displayCountdown(View view)
     {
         Intent intent = new Intent(this, CountdownActivity.class);
+        finish();
         startActivity(intent);
     }
 
@@ -94,6 +93,7 @@ public class MainActivity extends AppCompatActivity
     public void displayFacts(View view)
     {
         Intent intent = new Intent(this, FactsActivity.class);
+        finish();
         startActivity(intent);
     }
 
@@ -106,14 +106,14 @@ public class MainActivity extends AppCompatActivity
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
-            startActivity(intent);
+            finish();
+            startActivity(getIntent());
         }
         else
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
-            startActivity(intent);
+            finish();
+            startActivity(getIntent());
         }
     }
 }
