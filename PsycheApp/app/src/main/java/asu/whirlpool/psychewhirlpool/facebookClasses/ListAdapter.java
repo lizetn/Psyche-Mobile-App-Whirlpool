@@ -2,6 +2,7 @@ package asu.whirlpool.psychewhirlpool.facebookClasses;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
+import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -62,11 +65,14 @@ public class ListAdapter extends BaseAdapter
         View v = LayoutInflater.from(contexts).inflate(R.layout.fbframe,viewGroup,false);
         TextView ids,msg,story,times;
         ImageView pic;
+        ImageView profilePic;
         //ids = (TextView) v.findViewById(R.id.ids);
         msg = (TextView) v.findViewById(R.id.msg);
         story = (TextView) v.findViewById(R.id.story);
         times = (TextView) v.findViewById(R.id.times);
         pic = (ImageView) v.findViewById(R.id.pic);
+        profilePic =   (ImageView) v.findViewById(R.id.profilePic);
+
         if(!fbList.get(i).getId().isEmpty()) 
         {
 
@@ -110,7 +116,9 @@ public class ListAdapter extends BaseAdapter
         if(!fbList.get(i).getPicture().isEmpty())
         {
             //Glide used for the image
+           // Picasso.with(contexts).load(fbList.get(i).getPicture()).into(pic);
             Glide.with(contexts).load(fbList.get(i).getPicture()).into(pic);
+            //Glide.with(contexts).load(fbList.get(i).getPicture()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(pic);
             pic.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
                 {
@@ -125,6 +133,14 @@ public class ListAdapter extends BaseAdapter
         {
             pic.setVisibility(View.GONE);
         }
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                Uri uri = Uri.parse("https://www.facebook.com/NASAPsyche/");
+                Intent in = new Intent(Intent.ACTION_VIEW, uri);
+                contexts.startActivity(in);
+            }
+        });
         return v;
     }
 
@@ -196,7 +212,6 @@ public class ListAdapter extends BaseAdapter
                 break;
             default:
                 wordMonth = String.valueOf(calendar.get(Calendar.MONTH));
-                Log.d("CALENDAR", wordMonth);
         }
 
         return wordMonth;

@@ -1,10 +1,10 @@
-package asu.whirlpool.psychewhirlpool.timeline;
+package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,26 +20,21 @@ import asu.whirlpool.psychewhirlpool.GameActivity;
 import asu.whirlpool.psychewhirlpool.MainActivity;
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
-import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineFragment;
+import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**
- * TimelineTab implements a tab system to sort the timeline into Past-Present-Future
- * sections for easy navigation.
+ * GalleryTab implements a tab system to divide the Gallery section
+ * into two parts: images and videos.
  *
- * {@link TimelineFragment} is used to create the fragments that are displayed when the User
- * changes tabs.
+ * {@link GalleryImageFragment} and GalleryVideoFragment are used to create the fragments
+ * that are displayed when the User navigates through the Gallery.
  *
  * @author  Erick Ramirez Cordero
- * @date    1/2/2018
+ * @date    1/25/2018
  */
-public class TimelineTab extends FragmentActivity
+public class GalleryTab extends AppCompatActivity
 {
-    // Constant strings denoting different phases
-    public final static String PHASE_KEY = "Phase";
-    public final static String PHASE_PAST = "Past";
-    public final static String PHASE_PRESENT = "Present";
-    public final static String PHASE_FUTURE = "Future";
-
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -56,6 +51,9 @@ public class TimelineTab extends FragmentActivity
     private ViewPager mViewPager;
     private TabLayout tabLayout;
 
+    private final int GALLERY_NAV_INDEX = 2;
+    private final int TAB_COUNT = 2;
+
     /**
      * Handles navigation between different sections of the Psyche App.
      */
@@ -70,21 +68,21 @@ public class TimelineTab extends FragmentActivity
             switch (item.getItemId())
             {
                 case R.id.navigation_home:
-                    intent = new Intent(TimelineTab.this, MainActivity.class);
+                    intent = new Intent(GalleryTab.this, MainActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
-                    return true;
-                case R.id.navigation_gallery:
-                    intent = new Intent(TimelineTab.this, GalleryTab.class);
+                    intent = new Intent(GalleryTab.this, TimelineTab.class);
                     startActivity(intent);
                     return true;
+                case R.id.navigation_gallery:
+                    return true;
                 case R.id.navigation_social_media:
-                    intent = new Intent(TimelineTab.this, SocialMediaTabs.class);
+                    intent = new Intent(GalleryTab.this, SocialMediaTabs.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_game:
-                    intent = new Intent(TimelineTab.this, GameActivity.class);
+                    intent = new Intent(GalleryTab.this, GameActivity.class);
                     startActivity(intent);
                     return true;
             }
@@ -97,7 +95,7 @@ public class TimelineTab extends FragmentActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timeline_tab);
+        setContentView(R.layout.activity_gallery_tab);
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -115,33 +113,28 @@ public class TimelineTab extends FragmentActivity
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
-        MenuItem menuItem = menu.getItem(1);
+        MenuItem menuItem = menu.getItem(GALLERY_NAV_INDEX);
         menuItem.setChecked(true);
     }
 
     /**
      * Inflate the menu; this adds items to the action bar if it is present.
-     * @param menu
-     * @return
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.menu_timeline_tab, menu);
+        getMenuInflater().inflate(R.menu.menu_gallery_tab, menu);
         return true;
     }
 
     /**
      * Handles action bar item clicks.
-     * @param item
-     * @return
+     *
+     * Note: Parent activity must be specified in AndroidManifest.xml.
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -159,8 +152,7 @@ public class TimelineTab extends FragmentActivity
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter
     {
-        private String tabTitles[] = new String[] {"Past", "Present", "Future"};
-        public final int TAB_COUNT = 3;
+        private String[] tabTitles = {"Images", "Videos"};
 
         public SectionsPagerAdapter(FragmentManager fm)
         {
@@ -176,28 +168,23 @@ public class TimelineTab extends FragmentActivity
         @Override
         public Fragment getItem(int position)
         {
-            TimelineFragment timeFragment = new TimelineFragment();
-            Bundle args = new Bundle();
+            Fragment fragment;
 
             switch (position)
             {
                 case 0:
-                    args.putString(PHASE_KEY, PHASE_PAST);
+                    fragment = new GalleryImageFragment();
                     break;
                 case 1:
-                    args.putString(PHASE_KEY, PHASE_PRESENT);
-                    break;
-                case 2:
-                    args.putString(PHASE_KEY, PHASE_FUTURE);
+                    fragment = new GalleryVideoFragment();
                     break;
                 default:
-                    Log.d("Error:", "Default case reached in TimelineTab");
-                    args.putString(PHASE_KEY, getString(R.string.error_message));
+                    Log.d("Error:", "Default case reached in GalleryTab");
+                    fragment = null;
                     break;
             }
 
-            timeFragment.setArguments(args);
-            return timeFragment;
+            return fragment;
         }
 
         /**
@@ -210,7 +197,7 @@ public class TimelineTab extends FragmentActivity
         }
 
         /**
-         * Gets Tab name from tabTitles array.
+         * Gets tab name from tabTitles array.
          * @param position
          * @return
          */

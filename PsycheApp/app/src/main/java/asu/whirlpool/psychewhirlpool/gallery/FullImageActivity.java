@@ -1,9 +1,11 @@
-package asu.whirlpool.psychewhirlpool;
+package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * {@link FullImageActivity} displays a full-screen version of the image selected in
