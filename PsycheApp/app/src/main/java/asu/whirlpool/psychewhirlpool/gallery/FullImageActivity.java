@@ -11,12 +11,20 @@ import asu.whirlpool.psychewhirlpool.R;
  * {@link FullImageActivity} displays a full-screen version of the image selected in
  * the {@link GalleryActivity}.
  *
- * Revised variables and constants.
- * @revision    Erick Ramirez Cordero
- * @date        1/10/2018
+ * @author      Diana Chavez
+ *
+ * Revision:    Changed variables and constants. Changed image key to work with new
+ *              version of Gallery.
+ *
+ * @author      Erick Ramirez Cordero
+ * @version     2/15/2018
  */
 public class FullImageActivity extends AppCompatActivity
 {
+    /**
+     * Display a full screen version of an image based on the resource
+     * ID passed by the {@link ImageRecycleAdapter}.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -24,11 +32,17 @@ public class FullImageActivity extends AppCompatActivity
         setContentView(R.layout.activity_full_image);
 
         Intent intent = getIntent();
-
-        int position = intent.getExtras().getInt(GalleryActivity.IMAGE_KEY);
-        ImageAdapter adapter = new ImageAdapter(this);
-
         ImageView imageView = findViewById(R.id.imageView);
-        imageView.setImageResource(adapter.images[position]);
+
+        try
+        {
+            int resId = intent.getExtras().getInt(ImageRecycleAdapter.IMAGE_KEY);
+            imageView.setImageResource(resId);
+        }
+        catch (Exception ex)
+        {
+            // Display error image
+            imageView.setImageResource(R.drawable.psyche_icon_bw);
+        }
     }
 }

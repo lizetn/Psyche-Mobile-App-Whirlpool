@@ -1,4 +1,4 @@
-package asu.whirlpool.psychewhirlpool.gallery;
+package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
 /**
  * MediaInterface defines the methods needed for media playback.

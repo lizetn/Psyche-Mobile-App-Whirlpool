@@ -1,53 +1,52 @@
 package asu.whirlpool.psychewhirlpool.gallery;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.GridView;
-
-import java.util.ArrayList;
 
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * GalleryImageFragment displays the Gallery images.
+ * GalleryImageFragment handles the Image tab in the Gallery section of the Psyche App.
+ * Images are displayed in a {@link RecyclerView} with a {@link GridLayoutManager}.
+ * Additionally, the {@link ImageRecycleAdapter} is used to instantiate and display the
+ * images.
  *
- * @author Erick Ramirez Cordero
- * @date 1/25/2018.
+ * When an image is selected, a {@link FullImageActivity} will display a full screen version
+ * of the image.
+ *
+ * @author      Erick Ramirez Cordero
+ * @version     2/15/2018
  */
-
 public class GalleryImageFragment extends Fragment
 {
+    private ImageRecycleAdapter imageAdapter;
     private View view;
-    public static final String IMAGE_KEY = "image_key";
+    private final int NUMBER_OF_COLUMNS = 3;
 
     /**
-     * Initializes the Fragment.
+     * Initializes the Fragment. A {@link GridLayoutManager} is used for the layout and
+     * an {@link ImageRecycleAdapter} is set to the {@link RecyclerView} to instantiate
+     * and display the images.
      *
-     * @return          Instantiated Gallery Image Fragment
+     * @return          Instantiated Gallery Image Fragment {@link View}.
      */
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.fragment_gallery_images, container, false);
+        view = inflater.inflate(R.layout.fragment_gallery_images_recycle, container, false);
 
-        // Set up ImageAdapter
-        GridView gridView = view.findViewById(R.id.gridView);
-        gridView.setAdapter(new ImageAdapter(view.getContext()));
+        // Set up the GridLayoutManager and ImageRecycleAdapter
+        RecyclerView recyclerView = view.findViewById(R.id.ImageRecyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), NUMBER_OF_COLUMNS));
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id)
-            {
-                Intent intent = new Intent(view.getContext().getApplicationContext(), FullImageActivity.class);
-                intent.putExtra(IMAGE_KEY, position);
-                startActivity(intent);
-            }
-        });
+        imageAdapter = new ImageRecycleAdapter(view.getContext());
+        recyclerView.setAdapter(imageAdapter);
 
         return view;
     }
