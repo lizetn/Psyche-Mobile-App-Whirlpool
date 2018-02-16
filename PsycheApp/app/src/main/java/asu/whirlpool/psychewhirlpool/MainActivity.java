@@ -19,6 +19,8 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
+    private BottomNavigationView navigation;
+    private boolean navTitles = false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
@@ -95,6 +97,15 @@ public class MainActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this, FactsActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * Displays titles on the navigation buttons.
+     * @param view
+     */
+    public void displayHelp(View view)
+    {
+
     }
 
     /**
