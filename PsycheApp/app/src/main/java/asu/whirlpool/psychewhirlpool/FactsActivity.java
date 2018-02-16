@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,11 +25,12 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
  * @date        11/10/2017
  * @updated     1/15/2018
  */
-public class FactsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class FactsActivity extends AppCompatActivity //implements AdapterView.OnItemSelectedListener
 {
     private TextView mTextMessage;
     private TextView faqTextView;
     private TypedArray faqArray;
+    private ListView mListView;
 
     /**
      * Handles navigation between different sections of the Psyche App.
@@ -79,23 +81,47 @@ public class FactsActivity extends AppCompatActivity implements AdapterView.OnIt
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        // Instantiate array of FAQ String references
+//        // Instantiate array of FAQ String references
+//        faqArray = getResources().obtainTypedArray(R.array.faq_array);
+//
+//        // Instantiate Spinner
+//        Spinner faqSpinner = findViewById(R.id.faqSpinner);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                this,
+//                R.array.faq_options,
+//                android.R.layout.simple_spinner_dropdown_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        faqSpinner.setAdapter(adapter);
+//        faqSpinner.setOnItemSelectedListener(this);
+//
+//        // Instantiate FAQ Information
+//        faqTextView = findViewById(R.id.faqTextView);
+//        faqTextView.setText(R.string.faq_intro);
+
+        //ListView
+
         faqArray = getResources().obtainTypedArray(R.array.faq_array);
 
-        // Instantiate Spinner
-        Spinner faqSpinner = findViewById(R.id.faqSpinner);
+        //Create ListView object and fills it will text on the options
+        mListView = (ListView) findViewById(R.id.FactsList);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.faq_options,
-                android.R.layout.simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        faqSpinner.setAdapter(adapter);
-        faqSpinner.setOnItemSelectedListener(this);
+                android.R.layout.simple_selectable_list_item);
+        mListView.setAdapter(adapter);
 
         // Instantiate FAQ Information
-        faqTextView = findViewById(R.id.faqTextView);
-        faqTextView.setText(R.string.faq_intro);
-    }
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(), );
+            }
+
+        });
+
+
+    };
+
 
     /**
      * When an item is selected, the information displayed changes to match the selected option.
@@ -104,25 +130,25 @@ public class FactsActivity extends AppCompatActivity implements AdapterView.OnIt
      * @param view
      * @param pos       The position of the item selected
      * @param id
-     */
-    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id)
-    {
-        try
-        {
-            faqTextView.setText(faqArray.getText(pos));
-        }
-        catch(Exception exception)
-        {
-            faqTextView.setText(R.string.error_message);
-        }
-    }
+//     */
+//    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id)
+//    {
+//        try
+//        {
+//            faqTextView.setText(faqArray.getText(pos));
+//        }
+//        catch(Exception exception)
+//        {
+//            faqTextView.setText(R.string.error_message);
+//        }
+//    }
 
     /**
      * Handles behavior for when no option is selected.
      * @param parent
      */
-    public void onNothingSelected(AdapterView<?> parent)
-    {
-        // Another interface callback
-    }
+//    public void onNothingSelected(AdapterView<?> parent)
+//    {
+//        // Another interface callback
+//    }
 }

@@ -64,10 +64,10 @@
             android:value="@string/facebook_app_id" />
 
         <activity android:name=".gallery.FullImageActivity" />
-      
+
         <meta-data android:name="asu.whirlpool.psychewhirlpool.GlideConfiguration"
             android:value="GlideModule"/>
-      
+
         <activity
             android:name=".timeline.TimelineTab"
             android:label="@string/timeline_title"
