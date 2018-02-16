@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FactsActivity"
+            android:name=".facts.FactsActivity"
             android:label="@string/title_activity_facts"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -65,8 +65,9 @@
 
         <activity android:name=".gallery.FullImageActivity" />
 
-        <meta-data android:name="asu.whirlpool.psychewhirlpool.GlideConfiguration"
-            android:value="GlideModule"/>
+        <meta-data
+            android:name="asu.whirlpool.psychewhirlpool.GlideConfiguration"
+            android:value="GlideModule" />
 
         <activity
             android:name=".timeline.TimelineTab"
@@ -88,7 +89,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-        <activity android:name=".gallery.VideoActivity"></activity>
+        <activity android:name=".gallery.VideoActivity" />
+        <activity
+            android:name=".facts.FactContentActivity"
+            android:label="@string/title_activity_fact_content"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/PsycheLightTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
