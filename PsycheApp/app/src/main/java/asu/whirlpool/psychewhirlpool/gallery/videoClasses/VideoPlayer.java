@@ -1,10 +1,8 @@
-package asu.whirlpool.psychewhirlpool.gallery;
+package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.util.Log;
-
-import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * VideoPlayer implements {@link MediaInterface} and uses {@link MediaPlayer} to

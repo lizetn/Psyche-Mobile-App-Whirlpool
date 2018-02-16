@@ -1,4 +1,4 @@
-package asu.whirlpool.psychewhirlpool.gallery;
+package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

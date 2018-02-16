@@ -18,15 +18,15 @@ import asu.whirlpool.psychewhirlpool.R;
  *
  * Fixed a bug where the activity would freeze when too many images were loaded.
  * Bug: Images will overlap on smaller screens due to fixed image size
- * @revision    Erick Ramirez Cordero
- * @date        1/10/2018
+ * @author      Erick Ramirez Cordero
+ * @version     1/10/2018
  */
 public class ImageAdapter extends BaseAdapter
 {
     private final int PADDING = 8;
     private Context mContext;
 
-    public Integer[] images = {
+    public int[] images = {
             R.drawable.thumbnail_1, R.drawable.thumbnail_2,
             R.drawable.thumbnail_3, R.drawable.thumbnail_4,
             R.drawable.thumbnail_5, R.drawable.game_icon,

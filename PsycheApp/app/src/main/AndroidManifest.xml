@@ -89,7 +89,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-        <activity android:name=".gallery.VideoActivity" />
         <activity
             android:name=".facts.FactContentActivity"
             android:label="@string/title_activity_fact_content"
@@ -99,6 +98,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
+        <activity android:name=".gallery.videoClasses.VideoActivity"></activity>
     </application>
 
 </manifest>
