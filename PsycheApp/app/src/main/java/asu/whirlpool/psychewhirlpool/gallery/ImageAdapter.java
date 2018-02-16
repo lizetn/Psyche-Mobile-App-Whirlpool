@@ -26,7 +26,7 @@ public class ImageAdapter extends BaseAdapter
     private final int PADDING = 8;
     private Context mContext;
 
-    public Integer[] images = {
+    public int[] images = {
             R.drawable.thumbnail_1, R.drawable.thumbnail_2,
             R.drawable.thumbnail_3, R.drawable.thumbnail_4,
             R.drawable.thumbnail_5, R.drawable.game_icon,
