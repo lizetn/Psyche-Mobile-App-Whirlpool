@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity
     public void displayCountdown(View view)
     {
         Intent intent = new Intent(this, CountdownActivity.class);
-        finish();
         startActivity(intent);
     }
 
@@ -95,7 +94,6 @@ public class MainActivity extends AppCompatActivity
     public void displayFacts(View view)
     {
         Intent intent = new Intent(this, FactsActivity.class);
-        finish();
         startActivity(intent);
     }
 
@@ -109,13 +107,17 @@ public class MainActivity extends AppCompatActivity
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             finish();
+            overridePendingTransition(0,0);
             startActivity(getIntent());
+            overridePendingTransition(0,0);
         }
         else
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             finish();
+            overridePendingTransition(0,0);
             startActivity(getIntent());
+            overridePendingTransition(0,0);
         }
     }
 }
