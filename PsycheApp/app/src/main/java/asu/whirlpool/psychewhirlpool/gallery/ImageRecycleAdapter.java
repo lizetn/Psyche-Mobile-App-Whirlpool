@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * {@link ImageViewHolder} is an implementation of {@link RecyclerView.Adapter}. This adapter
- * handles initialization of the {@link ImageView} used for each image in the Gallery.
+ * {@link ImageRecycleAdapter} is an implementation of {@link RecyclerView.Adapter}.
+ * This adapter handles initialization of the {@link ImageView} used for images in the Gallery.
  *
  * @author      Erick Ramirez Cordero
  * @version     2/15/2018
  */
-public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageRecycleAdapter.ImageViewHolder>
+public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
 {
     public static final String IMAGE_KEY = "image_key";
 
@@ -88,22 +88,5 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageRecycleAdapte
     public int getItemCount()
     {
         return imageData.length;
-    }
-
-    /**
-     * Custom implementation of {@link RecyclerView.ViewHolder} that handles an {@link ImageView}.
-     *
-     * @author      Erick Ramirez Cordero
-     * @version     2/15/2018
-     */
-    class ImageViewHolder extends RecyclerView.ViewHolder
-    {
-        ImageView imageView;
-
-        ImageViewHolder(View itemView)
-        {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.imageView);
-        }
     }
 }
