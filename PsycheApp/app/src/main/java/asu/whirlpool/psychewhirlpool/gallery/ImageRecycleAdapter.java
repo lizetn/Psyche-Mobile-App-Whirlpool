@@ -11,10 +11,11 @@ import android.widget.ImageView;
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * {@link ImageViewHolder} is an implementation of {@link RecyclerView.Adapter}.
+ * {@link ImageViewHolder} is an implementation of {@link RecyclerView.Adapter}. This adapter
+ * handles initialization of the {@link ImageView} used for each image in the Gallery.
  *
  * @author      Erick Ramirez Cordero
- * @date        2/8/2018
+ * @version     2/15/2018
  */
 public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageRecycleAdapter.ImageViewHolder>
 {
@@ -42,6 +43,9 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageRecycleAdapte
         mLayoutInflater = LayoutInflater.from(context);
     }
 
+    /**
+     * Instantiates a new {@link ImageViewHolder} with an {@link ImageView}
+     */
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
@@ -50,22 +54,26 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageRecycleAdapte
     }
 
     /**
-     * ???
+     * Sets an {@link ImageViewHolder} to a specific image.
+     *
+     * Also sets an {@link android.view.View.OnClickListener} that will display
+     * a full screen version of its respective image when selected.
      *
      * @param holder        An {@link ImageViewHolder}
      * @param position      Position in image resources array
      */
     @Override
-    public void onBindViewHolder(ImageViewHolder holder, final int position)
+    public void onBindViewHolder(ImageViewHolder holder, int position)
     {
         final int resId = imageData[position];
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(view.getContext(), FullImageActivity.class);
-                intent.putExtra(IMAGE_KEY, position);
+                intent.putExtra(IMAGE_KEY, resId);
                 view.getContext().startActivity(intent);
             }
         });
@@ -83,12 +91,12 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageRecycleAdapte
     }
 
     /**
-     * Custom implementation of {@link RecyclerView.ViewHolder} with a {@link View.OnClickListener}.
+     * Custom implementation of {@link RecyclerView.ViewHolder} that handles an {@link ImageView}.
      *
-     * @author  Erick Ramirez Cordero
-     * @date    2/14/2018.
+     * @author      Erick Ramirez Cordero
+     * @version     2/15/2018
      */
-    public class ImageViewHolder extends RecyclerView.ViewHolder
+    class ImageViewHolder extends RecyclerView.ViewHolder
     {
         ImageView imageView;
 

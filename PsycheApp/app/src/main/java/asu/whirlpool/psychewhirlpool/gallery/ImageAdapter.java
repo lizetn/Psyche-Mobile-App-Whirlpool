@@ -18,8 +18,8 @@ import asu.whirlpool.psychewhirlpool.R;
  *
  * Fixed a bug where the activity would freeze when too many images were loaded.
  * Bug: Images will overlap on smaller screens due to fixed image size
- * @revision    Erick Ramirez Cordero
- * @date        1/10/2018
+ * @author      Erick Ramirez Cordero
+ * @version     1/10/2018
  */
 public class ImageAdapter extends BaseAdapter
 {
