@@ -9,10 +9,10 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
 
+import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
