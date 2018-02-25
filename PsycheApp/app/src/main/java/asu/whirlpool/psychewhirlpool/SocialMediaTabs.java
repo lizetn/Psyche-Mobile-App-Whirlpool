@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -89,6 +90,11 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.PsycheDarkTheme);
+        } else {
+            setTheme(R.style.PsycheLightTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
 

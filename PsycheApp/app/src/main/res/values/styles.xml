@@ -29,6 +29,7 @@
         <item name="android:textColorSecondary">@color/psyche_black</item>
         <item name="android:horizontalDivider">@color/psyche_black</item>
         <item name="android:verticalDivider">@color/psyche_black</item>
+        <item name="android:textAppearance">@color/psyche_dark_purple</item>
     </style>
 
     <style name="PsycheDarkTheme" parent="AppTheme">
@@ -41,6 +42,7 @@
         <item name="android:horizontalDivider">@android:color/white</item>
         <item name="android:verticalDivider">@android:color/white</item>
         <item name="android:colorBackground">@color/psyche_dark_purple</item>
+        <item name="android:textAppearance">@android:color/white</item>
     </style>
 
     <style name="PsycheLightTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
