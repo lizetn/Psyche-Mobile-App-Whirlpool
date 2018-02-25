@@ -42,18 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countdownTitle">
 
-        <ProgressBar
-            android:id="@+id/progressBarYearsA"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="16dp"
-            android:max="10"
-            android:progress="4"
-            android:progressTint="@color/psyche_dark_purple"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/textViewYearsLabelA"
             android:layout_width="wrap_content"
@@ -73,26 +61,12 @@
             android:id="@+id/textViewYearsA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:text="10"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="36sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/progressBarYearsA"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ProgressBar
-            android:id="@+id/progressBarMonthsA"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:max="12"
-            android:progress="3"
-            android:progressTint="@color/psyche_dark_purple"
-            android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@+id/textViewYearsA"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -112,13 +86,13 @@
             android:id="@+id/textViewMonthsA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:text="10"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="36sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/progressBarYearsA"
+            app:layout_constraintStart_toEndOf="@+id/textViewYearsA"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.507" />
 

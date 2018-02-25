@@ -52,12 +52,12 @@
 
         <ImageView
             android:id="@+id/homeFactsIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:adjustViewBounds="false"
             android:background="@drawable/ic_info_outline_black_50dp"
             android:backgroundTint="?android:attr/textColorPrimary"
@@ -76,15 +76,15 @@
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
-            android:onClick="displayCountdown"
+            android:onClick="displayHelp"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_help"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/liveStreamButton"
-            app:layout_constraintTop_toBottomOf="@+id/liveStreamButton" />
+            app:layout_constraintStart_toStartOf="@+id/newsButton"
+            app:layout_constraintTop_toBottomOf="@+id/newsButton" />
 
         <ImageView
             android:id="@+id/homeHelpIcon"
@@ -110,7 +110,7 @@
             android:layout_height="3dp"
             android:background="@drawable/horizontal_line"
             android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/liveStreamButton"
+            app:layout_constraintBottom_toTopOf="@+id/newsButton"
             app:layout_constraintEnd_toEndOf="@+id/factsButton"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -138,14 +138,14 @@
 
         <ImageView
             android:id="@+id/homeClockIcon"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
             android:adjustViewBounds="false"
-            android:background="@drawable/hourglass_purple_200"
+            android:background="@drawable/countdown_clock_300"
             android:backgroundTint="?android:attr/textColorPrimary"
             android:cropToPadding="false"
             android:elevation="20dp"
@@ -183,7 +183,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="14dp"
             android:adjustViewBounds="false"
-            android:background="@drawable/crescent_moon_white_200"
+            android:background="@drawable/night_mode_300"
             android:backgroundTint="?android:attr/textColorPrimary"
             android:elevation="20dp"
             android:scaleType="fitCenter"
@@ -198,29 +198,28 @@
             android:layout_width="140dp"
             android:layout_height="130dp"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
-            android:onClick="displayFacts"
-            android:paddingStart="@dimen/cardview_default_radius"
+            android:onClick="displayNASAWebsite"
             android:paddingLeft="2dp"
+            android:paddingStart="@dimen/cardview_default_radius"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_nasa"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/liveStreamButton"
-            app:layout_constraintTop_toTopOf="@+id/liveStreamButton" />
+            app:layout_constraintStart_toEndOf="@+id/newsButton"
+            app:layout_constraintTop_toTopOf="@+id/newsButton" />
 
         <ImageView
             android:id="@+id/homeNASAIcon"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:adjustViewBounds="false"
             android:background="@drawable/nasa_meatball_white"
             android:backgroundTint="?android:attr/textColorPrimary"
@@ -246,7 +245,7 @@
             app:layout_constraintStart_toStartOf="@+id/countdownButton" />
 
         <Button
-            android:id="@+id/liveStreamButton"
+            android:id="@+id/newsButton"
             android:layout_width="140dp"
             android:layout_height="130dp"
             android:layout_marginTop="2dp"
@@ -254,7 +253,7 @@
             android:elevation="16dp"
             android:onClick="displayFacts"
             android:paddingTop="@dimen/tw__composer_close_size"
-            android:text="@string/button_home_stream"
+            android:text="@string/button_home_news"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
@@ -277,8 +276,8 @@
             android:elevation="20dp"
             app:layout_constraintBottom_toTopOf="@+id/horDividerHome2"
             app:layout_constraintEnd_toStartOf="@+id/verticalDividerHome"
-            app:layout_constraintStart_toStartOf="@+id/liveStreamButton"
-            app:layout_constraintTop_toTopOf="@+id/liveStreamButton"
+            app:layout_constraintStart_toStartOf="@+id/newsButton"
+            app:layout_constraintTop_toTopOf="@+id/newsButton"
             app:layout_constraintVertical_bias="0.25" />
 
     </android.support.constraint.ConstraintLayout>
@@ -351,5 +350,160 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/homeHelpWindow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/colorBackground"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeTitleLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/homeHelpCloseButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="closeHelp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+        <ImageView
+            android:id="@+id/homeIconHelp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/ic_home_black_24dp"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/helpTitle"
+            app:layout_constraintTop_toBottomOf="@+id/helpTitle" />
+
+        <ImageView
+            android:id="@+id/gameIconHelp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gold_game_icon_200"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/socialIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/socialIconHelp" />
+
+        <ImageView
+            android:id="@+id/socialIconHelp"
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gold_social_icon_200"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/galleryIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/galleryIconHelp" />
+
+        <ImageView
+            android:id="@+id/galleryIconHelp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gold_gallery_icon_200"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/timelineIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/timelineIconHelp" />
+
+        <ImageView
+            android:id="@+id/timelineIconHelp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gold_timeline_icon_200"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/homeIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/homeIconHelp" />
+
+        <TextView
+            android:id="@+id/galleryIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/title_activity_gallery"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/galleryIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/galleryIconHelp" />
+
+        <TextView
+            android:id="@+id/socialIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/title_activity_social_media"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/socialIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/socialIconHelp" />
+
+        <TextView
+            android:id="@+id/gameIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/title_activity_game"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/gameIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/gameIconHelp" />
+
+        <TextView
+            android:id="@+id/helpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/title_help"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timelineIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/timeline_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/timelineIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/timelineIconHelp" />
+
+        <TextView
+            android:id="@+id/homeIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/title_activity_home"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/homeIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/homeIconHelp" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
