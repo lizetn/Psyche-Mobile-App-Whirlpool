@@ -29,7 +29,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/defaultTimer"
-        android:layout_width="wrap_content"
+        android:layout_width="369dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:visibility="visible"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Months"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewMonthsA"
@@ -58,122 +58,122 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Years"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textViewYearsA"
             app:layout_constraintStart_toStartOf="@+id/textViewYearsA"
             app:layout_constraintTop_toBottomOf="@+id/textViewYearsA" />
 
-        <TextView
+        <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/textViewYearsA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewMonthsA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="10"
             android:textSize="36sp"
             android:visibility="visible"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.578" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/textViewMonthsA"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="22dp"
+            android:layout_marginStart="4dp"
+            android:text="10"
+            android:textSize="36sp"
+            android:visibility="visible"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewYearsA"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.507" />
+            app:layout_constraintVertical_bias="0.673"
+            android:layout_marginLeft="4dp" />
 
-        <TextView
+        <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/textViewDaysA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
             android:text="10"
             android:textSize="36sp"
             android:visibility="visible"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewMonthsA"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.507" />
+            app:layout_constraintVertical_bias="0.508"
+            android:layout_marginLeft="4dp" />
 
-        <TextView
-            android:id="@+id/textViewColonDtoH"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/countdown_colonDelin"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewDaysA"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
+        <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/textViewHoursA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="24"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="8dp"
             android:textSize="36sp"
             android:visibility="visible"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewColonDtoH"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewDaysA"
+            tools:layout_editor_absoluteX="186dp" />
 
-        <TextView
-            android:id="@+id/textViewColonHtoM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/countdown_colonDelin"
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/textViewMinutesA"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="5dp"
             android:textSize="36sp"
             android:visibility="visible"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewHoursA"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textViewHoursA"
+            app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textViewMinutesA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="60"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewColonHtoM"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewColonMtoS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/countdown_colonDelin"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewMinutesA"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
+        <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/textViewSecondsA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="60"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="-8dp"
             android:textSize="36sp"
             android:visibility="visible"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewColonMtoS"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textViewMinutesA"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.578"
+            android:layout_marginLeft="-8dp" />
 
         <TextView
             android:id="@+id/textViewDaysLabel"
@@ -182,7 +182,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Days"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewDaysA"
@@ -192,9 +192,9 @@
             android:id="@+id/textViewHoursLabel"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="Hours"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="@+id/textViewHoursA"
             app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" />
@@ -203,9 +203,9 @@
             android:id="@+id/textViewSecondsLabel"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="Secs"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="@+id/textViewSecondsA"
             app:layout_constraintTop_toBottomOf="@+id/textViewSecondsA" />
@@ -214,9 +214,10 @@
             android:id="@+id/textViewMinutesLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
             android:text="Mins"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="@+id/textViewMinutesA"
             app:layout_constraintTop_toBottomOf="@+id/textViewMinutesA" />
@@ -236,163 +237,173 @@
         app:layout_constraintTop_toBottomOf="@+id/countdownTitle">
 
         <TextView
-            android:id="@+id/textViewYears2"
+            android:id="@+id/textViewYearLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10"
-            android:textSize="36sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Years"
+            android:textSize="14sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.507" />
+            android:layout_marginLeft="8dp" />
 
         <TextView
-            android:id="@+id/textViewMonths2"
+            android:id="@+id/textViewMonthLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="10"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewYears2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.507" />
-
-        <TextView
-            android:id="@+id/textViewDays2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="10"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewMonths2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.507" />
-
-        <TextView
-            android:id="@+id/textViewColonDtoH2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
-            android:text="@string/countdown_colonDelin"
-            android:textSize="36sp"
+            android:text="Months"
+            android:textSize="14sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewDays2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.507" />
-
-        <TextView
-            android:id="@+id/textViewHours2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="24"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewColonDtoH2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503" />
-
-        <TextView
-            android:id="@+id/textViewColonHtoM2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/countdown_colonDelin"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewHours2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewMinutes2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="60"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewColonHtoM2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503" />
-
-        <TextView
-            android:id="@+id/textViewColonMtoS2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/countdown_colonDelin"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewMinutes2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503" />
-
-        <TextView
-            android:id="@+id/textViewSeconds2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="60"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewColonMtoS2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.503" />
+            app:layout_constraintStart_toEndOf="@+id/textViewYearLabel2"
+            android:layout_marginLeft="8dp" />
 
         <TextView
             android:id="@+id/textViewDaysLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
             android:text="Days"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@+id/textViewDays2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDays2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewMonthLabel2"
+            android:layout_marginLeft="8dp" />
 
         <TextView
             android:id="@+id/textViewHoursLabel2"
-            android:layout_width="49dp"
+            android:layout_width="38dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
             android:text="Hours"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@+id/textViewHours2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewHours2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewDaysLabel2" />
 
         <TextView
             android:id="@+id/textViewSecondsLabel2"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Secs"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@+id/textViewSeconds2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSeconds2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewMinutesLabel2"
+            app:layout_constraintTop_toBottomOf="@+id/arc_progresssecs"
+            android:layout_marginLeft="8dp" />
 
         <TextView
             android:id="@+id/textViewMinutesLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
             android:text="Mins"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@+id/textViewMinutes2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMinutes2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewHoursLabel2"
+            android:layout_marginLeft="12dp" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/arc_progresssecs"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="4dp"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/arc_progressmins"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.452"
+            android:layout_marginLeft="4dp" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/arc_progressmonths"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toTopOf="@+id/textViewMonthLabel2"
+            app:layout_constraintStart_toEndOf="@+id/arc_progress"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/arc_progresshours"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toTopOf="@+id/textViewHoursLabel2"
+            app:layout_constraintStart_toEndOf="@+id/arc_progressdays"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.891" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/arc_progressmins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toTopOf="@+id/textViewMinutesLabel2"
+            app:layout_constraintStart_toEndOf="@+id/arc_progresshours"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.888" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/arc_progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toTopOf="@+id/textViewYearLabel2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/arc_progressdays"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:donut_background_color="@color/tw__composer_white"
+            app:donut_prefix_text=""
+            app:donut_progress="0"
+            app:donut_suffix_text=""
+            app:layout_constraintBottom_toTopOf="@+id/textViewDaysLabel2"
+            app:layout_constraintStart_toEndOf="@+id/arc_progressmonths"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>
 

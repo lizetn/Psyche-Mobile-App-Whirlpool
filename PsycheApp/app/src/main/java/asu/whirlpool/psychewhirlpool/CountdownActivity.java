@@ -12,25 +12,36 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.lzyzsd.circleprogress.DonutProgress;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryActivity;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class CountdownActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private DonutProgress yearss;
+    private DonutProgress monthss;
+    private DonutProgress dayss;
+    private DonutProgress hourss;
+    private DonutProgress minutess;
+    private DonutProgress secondss;
     private CountDownTimer mCountDownTimer1;
     private CountDownTimer mCountDownTimer2;
-    private TextView textViewYears;
-    private TextView textViewMonths;
-    private TextView textViewDays;
-    private TextView textViewHours;
-    private TextView textViewMins;
-    private TextView textViewSecs;
+    private DonutProgress textViewYears;
+    private DonutProgress textViewMonths;
+    private DonutProgress textViewDays;
+    private DonutProgress textViewHours;
+    private DonutProgress textViewMins;
+    private DonutProgress textViewSecs;
     private ImageView mTitleImage;
     private ConstraintLayout mConstraint;
     private boolean nightMode;
@@ -81,8 +92,20 @@ public class CountdownActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countdown);
-
+        Log.d("MAKES", "onCreate: ");
         nightMode = getIntent().getExtras().getBoolean("nightMode");
+        textViewYears = (DonutProgress) findViewById(R.id.textViewYearsA);
+        textViewMonths = (DonutProgress) findViewById(R.id.textViewMonthsA);
+        textViewDays = (DonutProgress) findViewById(R.id.textViewDaysA);
+        textViewHours = (DonutProgress) findViewById(R.id.textViewHoursA);
+        textViewMins = (DonutProgress) findViewById(R.id.textViewMinutesA);
+        textViewSecs = (DonutProgress) findViewById(R.id.textViewSecondsA);
+        yearss = (DonutProgress) findViewById(R.id.arc_progress);
+        monthss = (DonutProgress) findViewById(R.id.arc_progressmonths);
+        dayss = (DonutProgress) findViewById(R.id.arc_progressdays);
+        hourss = (DonutProgress) findViewById(R.id.arc_progresshours);
+        minutess = (DonutProgress) findViewById(R.id.arc_progressmins);
+        secondss = (DonutProgress) findViewById(R.id.arc_progresssecs);
         mTitleImage = (ImageView) findViewById(R.id.countdownTitle);
         mConstraint = (ConstraintLayout) findViewById(R.id.container);
 
@@ -115,12 +138,13 @@ public class CountdownActivity extends AppCompatActivity {
      * with the correct values once the timer is started.
      */
     private void initTextViews(int years, int months, int days, int hours, int minutes, int seconds) {
-        textViewYears = (TextView) findViewById(years);
-        textViewMonths = (TextView) findViewById(months);
-        textViewDays = (TextView) findViewById(days);
-        textViewHours = (TextView) findViewById(hours);
-        textViewMins = (TextView) findViewById(minutes);
-        textViewSecs = (TextView) findViewById(seconds);
+        textViewYears = (DonutProgress) findViewById(years);
+        textViewMonths = (DonutProgress) findViewById(months);
+        textViewDays = (DonutProgress) findViewById(days);
+        textViewHours = (DonutProgress) findViewById(hours);
+        textViewMins = (DonutProgress) findViewById(minutes);
+        textViewSecs = (DonutProgress) findViewById(seconds);
+        //yearss.setDonut_progress(String.valueOf(years));
     }
 
 
@@ -160,8 +184,8 @@ public class CountdownActivity extends AppCompatActivity {
                 startDate = startDate - 1;
                 Long countdownSeconds = (millisUntilFinished - startDate) / 1000;
 
-                initTextViews(R.id.textViewYearsA, R.id.textViewMonthsA, R.id.textViewDaysA,
-                        R.id.textViewHoursA, R.id.textViewMinutesA, R.id.textViewSecondsA);
+                //initTextViews(R.id.textViewYearsA, R.id.textViewMonthsA, R.id.textViewDaysA,
+                      //  R.id.textViewHoursA, R.id.textViewMinutesA, R.id.textViewSecondsA);
 
                 /*String daysLeft = String.format("%d", countdownSeconds / 86400);
                 textViewDays.setText(daysLeft);
@@ -183,12 +207,64 @@ public class CountdownActivity extends AppCompatActivity {
                 calendar.setTimeInMillis(countdownSeconds * 1000);
 
                 textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
+                int progs = ((calendar.get(Calendar.YEAR) - 1970));
+                double nm = (1.0 / progs);
+                double sum = (nm * 100.0);
+                int yr = (int) sum;
+                Log.d(String.valueOf(yr), "onTick: ");
+                textViewYears.setDonut_progress(String.valueOf(yr));
+
+                int progs2 = ((calendar.get(Calendar.MONTH)));
+                double nm2 = (progs2 / 12.0);
+                double sum2 = (nm2 * 100.0);
+                Log.d(String.valueOf(sum2), "onTick: sss");
+                int mths = (int) sum2;
+                Log.d(String.valueOf(mths), "onTick: ");
+                textViewMonths.setDonut_progress(String.valueOf(mths));
+
+
+                int progs3 = ((calendar.get(Calendar.DAY_OF_MONTH)));
+                double nm3 = (progs3 / 31.0);
+                double sum3 = (nm3 * 100.0);
+                Log.d(String.valueOf(sum3), "onTick: sss");
+                int dys = (int) sum3;
+                Log.d(String.valueOf(dys), "onTick: ");
+                textViewDays.setDonut_progress(String.valueOf(dys));
+
+                int progs4 = ((calendar.get(Calendar.HOUR_OF_DAY)));
+                double nm4 = (progs4 / 24.0);
+                double sum4 = (nm4 * 100.0);
+                Log.d(String.valueOf(sum4), "onTick: sss");
+                int hrs = (int) sum4;
+                Log.d(String.valueOf(hrs), "onTick: ");
+                textViewHours.setDonut_progress(String.valueOf(hrs));
+
+                int progs5 = ((calendar.get(Calendar.MINUTE)));
+                double nm5 = (progs5 / 60.0);
+                double sum5 = (nm5 * 100.0);
+                Log.d(String.valueOf(sum5), "onTick: sss");
+                int mins = (int) sum5;
+                Log.d(String.valueOf(mins), "onTick: ");
+                textViewMins.setDonut_progress(String.valueOf(mins));
+
+
+                int progs6 = ((calendar.get(Calendar.SECOND)));
+                double nm6 = (progs6 / 60.0);
+                double sum6 = (nm6 * 100.0);
+                Log.d(String.valueOf(sum6), "onTick: sss");
+                int secs = (int) sum6;
+                Log.d(String.valueOf(secs), "onTick: ");
+                textViewSecs.setDonut_progress(String.valueOf(secs));
+
+
+                textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
                 textViewMonths.setText(String.format("%d", calendar.get(Calendar.MONTH)));
                 textViewDays.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
                 textViewHours.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
                 textViewMins.setText(String.format("%d", calendar.get(Calendar.MINUTE)));
                 textViewSecs.setText(String.format("%d",calendar.get(Calendar.SECOND)));
 
+                //yearss.setProgress(Integer.parseInt(String.valueOf(textViewYears.getText())));
                 /*Calendar startCalendar = GregorianCalendar.getInstance();
                 Calendar endCalendar = GregorianCalendar.getInstance();
                 endCalendar.setTimeInMillis(millisUntilFinished);*/
@@ -215,18 +291,75 @@ public class CountdownActivity extends AppCompatActivity {
                 startDate = startDate - 1;
                 Long countdownSeconds = (millisUntilFinished - startDate) / 1000;
 
-                initTextViews(R.id.textViewYears2, R.id.textViewMonths2, R.id.textViewDays2,
-                        R.id.textViewHours2, R.id.textViewMinutes2, R.id.textViewSeconds2);
+                //initTextViews(R.id.textViewYears2, R.id.textViewMonths2, R.id.textViewDays2,
+                     //   R.id.textViewHours2, R.id.textViewMinutes2, R.id.textViewSeconds2);
 
                 Calendar calendar = GregorianCalendar.getInstance();
                 calendar.setTimeInMillis(countdownSeconds * 1000);
 
-                textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
-                textViewMonths.setText(String.format("%d", calendar.get(Calendar.MONTH)));
-                textViewDays.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
-                textViewHours.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
-                textViewMins.setText(String.format("%d", calendar.get(Calendar.MINUTE)));
-                textViewSecs.setText(String.format("%d",calendar.get(Calendar.SECOND)));
+               // textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
+
+                yearss.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
+                int progs = ((calendar.get(Calendar.YEAR) - 1970));
+                double nm = (1.0 / progs);
+                double sum = (nm * 100.0);
+                int yr = (int) sum;
+                Log.d(String.valueOf(yr), "onTick: ");
+                yearss.setDonut_progress(String.valueOf(yr));
+
+                int progs2 = ((calendar.get(Calendar.MONTH)));
+                double nm2 = (progs2 / 12.0);
+                double sum2 = (nm2 * 100.0);
+                Log.d(String.valueOf(sum2), "onTick: sss");
+                int mths = (int) sum2;
+                Log.d(String.valueOf(mths), "onTick: ");
+                monthss.setDonut_progress(String.valueOf(mths));
+
+
+                int progs3 = ((calendar.get(Calendar.DAY_OF_MONTH)));
+                double nm3 = (progs3 / 31.0);
+                double sum3 = (nm3 * 100.0);
+                Log.d(String.valueOf(sum3), "onTick: sss");
+                int dys = (int) sum3;
+                Log.d(String.valueOf(dys), "onTick: ");
+                dayss.setDonut_progress(String.valueOf(dys));
+
+                int progs4 = ((calendar.get(Calendar.HOUR_OF_DAY)));
+                double nm4 = (progs4 / 24.0);
+                double sum4 = (nm4 * 100.0);
+                Log.d(String.valueOf(sum4), "onTick: sss");
+                int hrs = (int) sum4;
+                Log.d(String.valueOf(hrs), "onTick: ");
+                hourss.setDonut_progress(String.valueOf(hrs));
+
+                int progs5 = ((calendar.get(Calendar.MINUTE)));
+                double nm5 = (progs5 / 60.0);
+                double sum5 = (nm5 * 100.0);
+                Log.d(String.valueOf(sum5), "onTick: sss");
+                int mins = (int) sum5;
+                Log.d(String.valueOf(mins), "onTick: ");
+                minutess.setDonut_progress(String.valueOf(mins));
+
+
+                int progs6 = ((calendar.get(Calendar.SECOND)));
+                double nm6 = (progs6 / 60.0);
+                double sum6 = (nm6 * 100.0);
+                Log.d(String.valueOf(sum6), "onTick: sss");
+                int secs = (int) sum6;
+                Log.d(String.valueOf(secs), "onTick: ");
+                secondss.setDonut_progress(String.valueOf(secs));
+
+                //Log.d(String.format("%.0f",calendar.get(Calendar.YEAR) - 1970), "onTick: ");
+               // textViewMonths.setText(String.format("%d", calendar.get(Calendar.MONTH)));
+                monthss.setText(String.format("%d", calendar.get(Calendar.MONTH)));
+                //textViewDays.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
+                dayss.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
+                //textViewHours.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
+                hourss.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
+                //textViewMins.setText(String.format("%d", calendar.get(Calendar.MINUTE)));
+                minutess.setText((String.format("%d", calendar.get(Calendar.MINUTE))));
+                //textViewSecs.setText(String.format("%d",calendar.get(Calendar.SECOND)));
+                secondss.setText(String.format("%d",calendar.get(Calendar.SECOND)));
             }
 
             @Override

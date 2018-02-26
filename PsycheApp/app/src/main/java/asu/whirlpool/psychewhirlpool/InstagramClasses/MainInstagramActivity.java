@@ -1,37 +1,25 @@
 package asu.whirlpool.psychewhirlpool.InstagramClasses;
 
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import asu.whirlpool.psychewhirlpool.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
-import android.support.v4.app.ListFragment;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookfeedList;
-import asu.whirlpool.psychewhirlpool.facebookClasses.ListAdapter;
 import cz.msebera.android.httpclient.Header;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
  * Created by jperez60 on 1/4/2018.
@@ -96,8 +84,6 @@ public class MainInstagramActivity extends Fragment
             }
             public void onSuccess(int statusCode, Header[] headers, String responseString)
             {
-                Log.d("SUCCESS", "onSuccess: ");
-                //Toast.makeText(getActivity(), ""+responseString, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject obj = new JSONObject(responseString);
                     JSONObject user = obj.getJSONObject("user");
@@ -131,10 +117,7 @@ public class MainInstagramActivity extends Fragment
         });
     }
 
-
-
-
-
+    //used for constant updating
     public void loadmoredata(String newid)
     {
         final AsyncHttpClient client = new AsyncHttpClient();

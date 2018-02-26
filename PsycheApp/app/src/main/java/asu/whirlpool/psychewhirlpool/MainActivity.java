@@ -3,25 +3,25 @@ package asu.whirlpool.psychewhirlpool;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
+
+import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
-    private ImageView mTitleImage;
-    private ImageView mButtonsImage;
-    private ConstraintLayout mConstraint;
-
-    private boolean nightMode = false;
+    private BottomNavigationView navigation;
+    private boolean navTitles = false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity
         {
             Intent intent;
 
-            switch (item.getItemId()) {
+            switch (item.getItemId())
+            {
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_timeline:
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(MainActivity.this, GalleryActivity.class);
+                    intent = new Intent(MainActivity.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:
@@ -58,17 +59,25 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.PsycheDarkTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     /**
@@ -78,8 +87,9 @@ public class MainActivity extends AppCompatActivity
     public void displayCountdown(View view)
     {
         Intent intent = new Intent(this, CountdownActivity.class);
-        intent.putExtra("nightMode", nightMode);
+        Log.d("hmm", "displayCountdown: ");
         startActivity(intent);
+
     }
 
     /**
@@ -93,28 +103,35 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
+     * Displays titles on the navigation buttons.
+     * @param view
+     */
+    public void displayHelp(View view)
+    {
+
+    }
+
+    /**
      * Toggles color scheme on home page.
      * @param view
      */
     public void toggleHomeNightMode(View view)
     {
-        mTitleImage = (ImageView) findViewById(R.id.homePageTitle);
-        mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
-        mConstraint = (ConstraintLayout) findViewById(R.id.container);
-
-        if (nightMode)
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
-            mTitleImage.setImageResource(R.drawable.home_title);
-            mButtonsImage.setImageResource(R.drawable.white_title_buttons);
-            mConstraint.setBackgroundResource(R.color.tw__composer_white);
-            nightMode = false;
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            finish();
+            overridePendingTransition(0,0);
+            startActivity(getIntent());
+            overridePendingTransition(0,0);
         }
         else
         {
-            mTitleImage.setImageResource(R.drawable.night_home_title);
-            mButtonsImage.setImageResource(R.drawable.night_title_buttons);
-            mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
-            nightMode = true;
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            finish();
+            overridePendingTransition(0,0);
+            startActivity(getIntent());
+            overridePendingTransition(0,0);
         }
     }
 }

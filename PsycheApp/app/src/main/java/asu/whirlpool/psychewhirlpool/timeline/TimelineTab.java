@@ -16,11 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
-import asu.whirlpool.psychewhirlpool.GalleryActivity;
 import asu.whirlpool.psychewhirlpool.GameActivity;
 import asu.whirlpool.psychewhirlpool.MainActivity;
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 
 /**
  * TimelineTab implements a tab system to sort the timeline into Past-Present-Future
@@ -76,7 +76,7 @@ public class TimelineTab extends FragmentActivity
                 case R.id.navigation_timeline:
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(TimelineTab.this, GalleryActivity.class);
+                    intent = new Intent(TimelineTab.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:

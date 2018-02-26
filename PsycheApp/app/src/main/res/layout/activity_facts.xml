@@ -5,62 +5,26 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.whirlpool.psychewhirlpool.FactsActivity">
-
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/title_activity_facts"
-        android:textAlignment="center"
-        android:textColor="@color/psyche_black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="?android:attr/windowBackground"
+    tools:context="asu.whirlpool.psychewhirlpool.facts.FactsActivity">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="fill_parent"
-        android:layout_height="400dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:fillViewport="true"
-        android:scrollbars="vertical"
+    <ListView
+        android:id="@+id/FactsList"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
-        app:layout_constraintVertical_bias="0.533">
-
-        <TextView
-            android:id="@+id/faqTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:text="@string/large_text"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="259dp" />
-    </ScrollView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
