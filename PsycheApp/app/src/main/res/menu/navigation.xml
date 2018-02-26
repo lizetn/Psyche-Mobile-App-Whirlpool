@@ -7,15 +7,15 @@
 
     <item
         android:id="@+id/navigation_timeline"
-        android:icon="@drawable/psyche_icon_bw" />
+        android:icon="@drawable/gold_timeline_icon_200" />
     <item
         android:id="@+id/navigation_gallery"
-        android:icon="@android:drawable/ic_menu_gallery" />
+        android:icon="@drawable/gold_gallery_icon_200" />
     <item
         android:id="@+id/navigation_social_media"
-        android:icon="@android:drawable/ic_menu_share" />
+        android:icon="@drawable/gold_social_icon_200" />
     <item
         android:id="@+id/navigation_game"
-        android:icon="@drawable/game_icon" />
+        android:icon="@drawable/gold_game_icon_200" />
 
 </menu>

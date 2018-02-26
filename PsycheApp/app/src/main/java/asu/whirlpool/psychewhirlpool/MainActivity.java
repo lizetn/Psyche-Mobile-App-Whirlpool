@@ -1,8 +1,10 @@
 package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
-    private boolean navTitles = false;
+    private ConstraintLayout mHelpBox;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -100,12 +102,31 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Displays titles on the navigation buttons.
-     * @param view
+     * Displays help box for navigation icon titles.
      */
     public void displayHelp(View view)
     {
+        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
+        mHelpBox.setVisibility(View.VISIBLE);
+    }
 
+    /**
+     * Hides help box for navigation icon titles.
+     */
+    public void closeHelp(View view)
+    {
+        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
+        mHelpBox.setVisibility(View.INVISIBLE);
+    }
+
+    /**
+     * Closes the app and displays NASA website in browser.
+     */
+    public void displayNASAWebsite(View view)
+    {
+        Uri nasaUrl = Uri.parse("https://www.nasa.gov/");
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, nasaUrl);
+        startActivity(launchBrowser);
     }
 
     /**
