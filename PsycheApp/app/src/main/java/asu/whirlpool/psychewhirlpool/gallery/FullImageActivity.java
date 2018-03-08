@@ -9,7 +9,7 @@ import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * {@link FullImageActivity} displays a full-screen version of the image selected in
- * the {@link GalleryActivity}.
+ * the {@link GalleryTab}.
  *
  * @author      Diana Chavez
  *

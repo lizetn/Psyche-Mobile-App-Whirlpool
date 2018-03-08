@@ -10,14 +10,14 @@ import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * VideoActivity manages the playback of a video selected from the Gallery.
- * @author  Erick Ramirez Cordero
- * @date    1/25/2018
+ * TODO: Implement an API to load online videos.
+ *
+ * @author      Erick Ramirez Cordero
+ * @version     3/7/2018
  */
 public class VideoActivity extends AppCompatActivity
 {
-    public int ResourceId;
     private VideoView videoView;
-    //private MediaInterface videoPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,21 +29,17 @@ public class VideoActivity extends AppCompatActivity
         String psycheUri = "android.resource://" + getPackageName() + "/" + R.raw.psyche_test_video;
         Uri uri = Uri.parse(psycheUri);
 
-        // Set up VideoViewer
+        // Set up VideoView
         videoView = findViewById(R.id.videoView);
         videoView.setMediaController(new MediaController(this));
         videoView.setVideoURI(uri);
         videoView.requestFocus();
-
-        // Initialize Video Player
-        //videoPlayer = new VideoPlayer(this);
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
-        //videoPlayer.load(ResourceId);
         videoView.start();
     }
 
