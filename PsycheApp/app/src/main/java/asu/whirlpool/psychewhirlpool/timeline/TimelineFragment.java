@@ -40,7 +40,7 @@ public class TimelineFragment extends Fragment
 
         String[] titleData = view.getContext().getResources().getStringArray(R.array.phase_titles);
         TextView textView = view.findViewById(R.id.titleTextView);
-        
+
         switch (phase)
         {
             case TimelineTab.PHASE_A:
