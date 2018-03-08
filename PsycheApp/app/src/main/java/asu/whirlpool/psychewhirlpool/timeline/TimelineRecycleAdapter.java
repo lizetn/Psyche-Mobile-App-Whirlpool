@@ -41,20 +41,20 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
                 detailData = context.getResources().getStringArray(R.array.phase_B_details);
                 break;
             case TimelineTab.PHASE_C:
-                summaryData = context.getResources().getStringArray(R.array.phase_A_summary);
-                detailData = context.getResources().getStringArray(R.array.phase_A_details);
+                summaryData = context.getResources().getStringArray(R.array.phase_C_summary);
+                detailData = context.getResources().getStringArray(R.array.phase_C_details);
                 break;
             case TimelineTab.PHASE_D:
-                summaryData = context.getResources().getStringArray(R.array.phase_A_summary);
-                detailData = context.getResources().getStringArray(R.array.phase_A_details);
+                summaryData = context.getResources().getStringArray(R.array.phase_D_summary);
+                detailData = context.getResources().getStringArray(R.array.phase_D_details);
                 break;
             case TimelineTab.PHASE_E:
-                summaryData = context.getResources().getStringArray(R.array.phase_A_summary);
-                detailData = context.getResources().getStringArray(R.array.phase_A_details);
+                summaryData = context.getResources().getStringArray(R.array.phase_E_summary);
+                detailData = context.getResources().getStringArray(R.array.phase_E_details);
                 break;
             case TimelineTab.PHASE_F:
-                summaryData = context.getResources().getStringArray(R.array.phase_A_summary);
-                detailData = context.getResources().getStringArray(R.array.phase_A_details);
+                summaryData = context.getResources().getStringArray(R.array.phase_F_summary);
+                detailData = context.getResources().getStringArray(R.array.phase_F_details);
                 break;
             default:
                 summaryData = new String[]{context.getString(R.string.error_message)};
