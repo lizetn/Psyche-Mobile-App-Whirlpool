@@ -1,7 +1,10 @@
 package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import asu.whirlpool.psychewhirlpool.R;
 
@@ -13,7 +16,8 @@ import asu.whirlpool.psychewhirlpool.R;
 public class VideoActivity extends AppCompatActivity
 {
     public int ResourceId;
-    private MediaInterface videoPlayer;
+    private VideoView videoView;
+    //private MediaInterface videoPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,15 +25,26 @@ public class VideoActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
+        // Set up Uri
+        String psycheUri = "android.resource://" + getPackageName() + "/" + R.raw.psyche_test_video;
+        Uri uri = Uri.parse(psycheUri);
+
+        // Set up VideoViewer
+        videoView = findViewById(R.id.videoView);
+        videoView.setMediaController(new MediaController(this));
+        videoView.setVideoURI(uri);
+        videoView.requestFocus();
+
         // Initialize Video Player
-        videoPlayer = new VideoPlayer(this);
+        //videoPlayer = new VideoPlayer(this);
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
-        videoPlayer.load(ResourceId);
+        //videoPlayer.load(ResourceId);
+        videoView.start();
     }
 
     @Override
@@ -37,9 +52,9 @@ public class VideoActivity extends AppCompatActivity
     {
         super.onStop();
 
-        if (isChangingConfigurations() && videoPlayer.isPlaying())
+        if (isChangingConfigurations() && videoView.isPlaying())
         {
-            //
+            videoView.stopPlayback();
         }
     }
 }
