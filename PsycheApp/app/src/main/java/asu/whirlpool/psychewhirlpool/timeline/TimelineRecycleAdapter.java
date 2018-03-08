@@ -37,8 +37,8 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
                 detailData = context.getResources().getStringArray(R.array.phase_A_details);
                 break;
             case TimelineTab.PHASE_B:
-                summaryData = context.getResources().getStringArray(R.array.phase_A_summary);
-                detailData = context.getResources().getStringArray(R.array.phase_A_details);
+                summaryData = context.getResources().getStringArray(R.array.phase_B_summary);
+                detailData = context.getResources().getStringArray(R.array.phase_B_details);
                 break;
             case TimelineTab.PHASE_C:
                 summaryData = context.getResources().getStringArray(R.array.phase_A_summary);

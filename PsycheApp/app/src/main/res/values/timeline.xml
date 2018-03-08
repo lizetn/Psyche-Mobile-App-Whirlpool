@@ -6,9 +6,6 @@
         "1852: Asteroid discovered by Italian astronomer Annibale de Gasparis\n\n"
         "2010: Composition of asteroid Psyche discovered to be all metal\n\n"
     </string>
-    <string name="timeline_present_info">
-        "Information missing\n\n"
-    </string>
     <string name="timeline_future_info">
         "2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL\n\n"
         "2023: Psyche spacecraft flyby of Mars\n\n"
@@ -25,7 +22,7 @@
     </string-array>
     <string-array name="phase_titles">
         <item>Phase A: CONCEPT STUDY</item>
-        <item>Phase B: PRELIMINARY DESIGN</item>
+        <item>Phase B: PRELIMINARY DESIGN OF ALL INSTRUMENTS AND SPACECRAFT</item>
         <item>Phase C: CRITICAL DESIGN AND BUILD</item>
         <item>Phase D: INSTRUMENT AND SPACECRAFT BUILD, SHIP AND LAUNCH</item>
         <item>Phase E: GRAVITY ASSIST, ARRIVAL AND ORBIT</item>
@@ -36,12 +33,20 @@
         <item>Item 2</item>
     </string-array>
     <string-array name="phase_A_summary">
+        <item>1852: Asteroid discovered by Italian astronomer Annibale de Gasparis</item>
+        <item>2010: Composition of asteroid Psyche discovered to be all metal</item>
         <item>September 2015: Psyche Mission selected for NASA concept study</item>
         <item>Details about Concept Study</item>
         <item>November 2016: Presentation for NASA\'s Discovery Program</item>
         <item>Details about NASA on-site Presentation</item>
     </string-array>
     <string-array name="phase_A_details">
+        <item>
+            "1852: Asteroid discovered by Italian astronomer Annibale de Gasparis\n\n"
+        </item>
+        <item>
+            "2010: Composition of asteroid Psyche discovered to be all metal\n\n"
+        </item>
         <item>
             "In September of 2015, the Psyche Mission (as it was proposed in Step 1) was selected "
             "by NASA to develop a detailed concept study for consideration for NASA\’s "
@@ -50,8 +55,66 @@
             "since 2011 and submitted a 256 page Step 1 proposal that was selected for the "
             "Phase A concept study.\n\n"
         </item>
-        <item>Details about Concept Study</item>
-        <item>November 2016: Presentation for NASA\'s Discovery Program</item>
-        <item>Details about NASA on-site Presentation</item>
+        <item>
+            "A large team worked on the study, led by the Principal Investigator, "
+            "Lindy Elkins-Tanton, and consisting of an expansive team that included scientists, "
+            "engineers, project managers, schedulers, financial modelers, graphic designers, "
+            "and marketing leads from ASU, JPL, SSL, as well as more than a dozen other "
+            "universities and research organizations.\n\n"
+        </item>
+        <item>
+            "In November of 2016, the team presented the proposed mission to 30 NASA reviewers "
+            "during a nine-hour \“site visit\” which included a tour of SSL\’s high bay, "
+            "where the Psyche chassis will be built.\n\n"
+        </item>
+        <item>
+            "The site visit is an intense, highly technical in-person review done by a select "
+            "group of science, technical, and industry experts. They review every detail of the "
+            "proposed mission, from concept and design, to execution and science application, "
+            "as well as how the mission personnel from different institutions work together "
+            "as a team.\n\n"
+        </item>
+    </string-array>
+    <string-array name="phase_B_summary">
+        <item>January 2017: Science and engineering teams</item>
+        <item>March 2019: Preliminary Design Review</item>
+        <item>May 2019: Key Decision Point C</item>
+    </string-array>
+    <string-array name="phase_B_details">
+        <item>
+            "Science and engineering teams on the mission are designing the spacecraft and the instruments that will be used to analyze the asteroid.\n\n"
+        </item>
+        <item>
+            "March 2019, the team will undergo project and flight system Preliminary Design Review.\n\n"
+        </item>
+        <item>
+            "May 2019, the team reaches Key Decision Point C, which will give the team the official approval to move to the next phase (Phase C).\n\n"
+        </item>
+    </string-array>
+    <string-array name="phase_C_summary">
+        <item>May 2019: Science and engineering teams begin to build</item>
+        <item>April 2020: Project and Flight System Critical Design Review</item>
+        <item>May 2020: Spacecraft body completion</item>
+        <item>January 2021: Systems Integration Review</item>
+    </string-array>
+    <string-array name="phase_C_details">
+        <item>
+            "Science and engineering teams begin to build their instruments.\n\n"
+            "The instruments consist of a magnetometer, a multispectral imager, and a gamma ray and neutron spectrometer.\n\n"
+            "The mission will use an X-band radio telecommunications system to measure Psyche\’s gravity field to high precision. When combined with topography derived from onboard imagery, this will provide information on the interior structure of Psyche.\n\n"
+            "The mission will also test a sophisticated new laser communication technology that encodes data in photons (rather than radio waves) to communicate between a probe in deep space and Earth. Using light instead of radio allows the spacecraft to communicate more data in a given amount of time.\n\n"
+        </item>
+        <item>
+            "April 2020, the teams will undergo Project and Flight System Critical Design Review, this is an integral step in the instrument engineering process.\n\n"
+        </item>
+        <item>
+            "The bus or \“body\” of the spacecraft will be completed by May 2020.\n\n"
+        </item>
+        <item>
+            "In January 2021, the team will conduct the Systems Integration Review to ensure that the system is ready to be integrated. The last step in Phase C is Key Decision Point D that will give the team the official approval to move to the next phase.\n\n"
+        </item>
+    </string-array>
+    <string-array name="phase_D_summary">
+        <item>DDD</item>
     </string-array>
 </resources>
