@@ -53,11 +53,11 @@
             <ImageView
                 android:id="@+id/nodeImageView"
                 android:layout_width="match_parent"
-                android:layout_height="313dp"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:contentDescription="@string/title_activity_gallery"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"

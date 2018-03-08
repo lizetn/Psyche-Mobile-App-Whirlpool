@@ -21,10 +21,19 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
 {
     public static final String TITLE_KEY = "title_key";
     public static final String DATA_KEY = "text_key";
+    public static final String IMAGE_KEY = "image_key";
 
     private LayoutInflater mLayoutInflater;
     private String[] summaryData;
     private String[] detailData;
+
+    // TODO: Set up arrays for each phase to have their own set of images
+    private int[] imageData = {
+            R.drawable.thumbnail_1, R.drawable.thumbnail_2,
+            R.drawable.thumbnail_3, R.drawable.thumbnail_4,
+            R.drawable.thumbnail_5, R.drawable.nasa_meatball_white,
+    };
+    private int imageId;
 
     public TimelineRecycleAdapter(Context context, char phaseLetter)
     {
@@ -35,29 +44,36 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
             case TimelineTab.PHASE_A:
                 summaryData = context.getResources().getStringArray(R.array.phase_A_summary);
                 detailData = context.getResources().getStringArray(R.array.phase_A_details);
+                imageId = imageData[0];
                 break;
             case TimelineTab.PHASE_B:
                 summaryData = context.getResources().getStringArray(R.array.phase_B_summary);
                 detailData = context.getResources().getStringArray(R.array.phase_B_details);
+                imageId = imageData[1];
                 break;
             case TimelineTab.PHASE_C:
                 summaryData = context.getResources().getStringArray(R.array.phase_C_summary);
                 detailData = context.getResources().getStringArray(R.array.phase_C_details);
+                imageId = imageData[2];
                 break;
             case TimelineTab.PHASE_D:
                 summaryData = context.getResources().getStringArray(R.array.phase_D_summary);
                 detailData = context.getResources().getStringArray(R.array.phase_D_details);
+                imageId = imageData[3];
                 break;
             case TimelineTab.PHASE_E:
                 summaryData = context.getResources().getStringArray(R.array.phase_E_summary);
                 detailData = context.getResources().getStringArray(R.array.phase_E_details);
+                imageId = imageData[4];
                 break;
             case TimelineTab.PHASE_F:
                 summaryData = context.getResources().getStringArray(R.array.phase_F_summary);
                 detailData = context.getResources().getStringArray(R.array.phase_F_details);
+                imageId = imageData[5];
                 break;
             default:
                 summaryData = new String[]{context.getString(R.string.error_message)};
+                imageId = R.drawable.psyche_help_purple;
                 break;
         }
     }
@@ -86,6 +102,7 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
                 Intent intent = new Intent(view.getContext(), TimelineNodeActivity.class);
                 intent.putExtra(TITLE_KEY, phaseInfo);
                 intent.putExtra(DATA_KEY, detailInfo);
+                intent.putExtra(IMAGE_KEY, imageId);
                 view.getContext().startActivity(intent);
             }
         });
