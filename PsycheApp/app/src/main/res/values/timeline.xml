@@ -15,4 +15,43 @@
         "2026: Psyche spacecraft arrives in asteroid’s orbit\n\n"
         "2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months\n\n"
     </string>
+    <string-array name="phase_letters">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+    </string-array>
+    <string-array name="phase_titles">
+        <item>Phase A: CONCEPT STUDY</item>
+        <item>Phase B: PRELIMINARY DESIGN</item>
+        <item>Phase C: CRITICAL DESIGN AND BUILD</item>
+        <item>Phase D: INSTRUMENT AND SPACECRAFT BUILD, SHIP AND LAUNCH</item>
+        <item>Phase E: GRAVITY ASSIST, ARRIVAL AND ORBIT</item>
+        <item>Phase F: MISSION CLOSEOUT</item>
+    </string-array>
+    <string-array name="phase_A_info">
+        <item>Item 1</item>
+        <item>Item 2</item>
+    </string-array>
+    <string-array name="phase_A_summary">
+        <item>September 2015: Psyche Mission selected for NASA concept study</item>
+        <item>Details about Concept Study</item>
+        <item>November 2016: Presentation for NASA\'s Discovery Program</item>
+        <item>Details about NASA on-site Presentation</item>
+    </string-array>
+    <string-array name="phase_A_details">
+        <item>
+            "In September of 2015, the Psyche Mission (as it was proposed in Step 1) was selected "
+            "by NASA to develop a detailed concept study for consideration for NASA\’s "
+            "Discovery Program.\n\n"
+            "Step 1 is the initial proposal stage; the team had been working on the idea "
+            "since 2011 and submitted a 256 page Step 1 proposal that was selected for the "
+            "Phase A concept study.\n\n"
+        </item>
+        <item>Details about Concept Study</item>
+        <item>November 2016: Presentation for NASA\'s Discovery Program</item>
+        <item>Details about NASA on-site Presentation</item>
+    </string-array>
 </resources>
