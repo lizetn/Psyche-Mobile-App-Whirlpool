@@ -21,12 +21,10 @@ import asu.whirlpool.psychewhirlpool.R;
  * of the image.
  *
  * @author      Erick Ramirez Cordero
- * @version     2/15/2018
+ * @version     3/7/2018
  */
 public class GalleryImageFragment extends Fragment
 {
-    private ImageRecycleAdapter imageAdapter;
-    private View view;
     private final int NUMBER_OF_COLUMNS = 3;
 
     /**
@@ -39,13 +37,13 @@ public class GalleryImageFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.fragment_gallery_images_recycle, container, false);
+        View view = inflater.inflate(R.layout.fragment_gallery_images_recycle, container, false);
 
         // Set up the GridLayoutManager and ImageRecycleAdapter
         RecyclerView recyclerView = view.findViewById(R.id.ImageRecyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), NUMBER_OF_COLUMNS));
 
-        imageAdapter = new ImageRecycleAdapter(view.getContext());
+        ImageRecycleAdapter imageAdapter = new ImageRecycleAdapter(view.getContext());
         recyclerView.setAdapter(imageAdapter);
 
         return view;
