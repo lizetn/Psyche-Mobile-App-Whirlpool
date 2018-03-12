@@ -1,19 +1,23 @@
 package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * VideoActivity manages the playback of a video selected from the Gallery.
- * @author  Erick Ramirez Cordero
- * @date    1/25/2018
+ * TODO: Implement an API to load online videos.
+ *
+ * @author      Erick Ramirez Cordero
+ * @version     3/7/2018
  */
 public class VideoActivity extends AppCompatActivity
 {
-    public int ResourceId;
-    private MediaInterface videoPlayer;
+    private VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,15 +25,22 @@ public class VideoActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
-        // Initialize Video Player
-        videoPlayer = new VideoPlayer(this);
+        // Set up Uri
+        String psycheUri = "android.resource://" + getPackageName() + "/" + R.raw.psyche_test_video;
+        Uri uri = Uri.parse(psycheUri);
+
+        // Set up VideoView
+        videoView = findViewById(R.id.videoView);
+        videoView.setMediaController(new MediaController(this));
+        videoView.setVideoURI(uri);
+        videoView.requestFocus();
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
-        videoPlayer.load(ResourceId);
+        videoView.start();
     }
 
     @Override
@@ -37,9 +48,9 @@ public class VideoActivity extends AppCompatActivity
     {
         super.onStop();
 
-        if (isChangingConfigurations() && videoPlayer.isPlaying())
+        if (isChangingConfigurations() && videoView.isPlaying())
         {
-            //
+            videoView.stopPlayback();
         }
     }
 }

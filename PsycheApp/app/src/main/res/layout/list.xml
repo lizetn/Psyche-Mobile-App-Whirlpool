@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -64,11 +63,14 @@
 
                 <RelativeLayout
                     android:id="@+id/progress"
-                    android:layout_width="match_parent"
-                    android:layout_height="230dp"
+                    android:layout_width="360dp"
+                    android:layout_height="276dp"
                     android:layout_below="@+id/profile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
                     android:paddingLeft="8dp"
-                    android:paddingRight="8dp">
+                    android:paddingRight="8dp"
+                    android:scaleType="fitXY">
 
                     <ProgressBar
                         android:layout_width="50dp"
@@ -79,10 +81,12 @@
                     <ImageView
                         android:id="@+id/main_imgs"
                         android:layout_width="match_parent"
-                        android:layout_height="230dp"
+                        android:layout_height="match_parent"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
                         android:background="@drawable/ripp"
                         android:scaleType="fitXY" />
                 </RelativeLayout>
