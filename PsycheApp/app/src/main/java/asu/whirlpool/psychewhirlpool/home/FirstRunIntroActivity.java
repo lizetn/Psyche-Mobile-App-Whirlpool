@@ -1,7 +1,5 @@
 package asu.whirlpool.psychewhirlpool.home;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,6 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.R;
@@ -36,6 +37,9 @@ public class FirstRunIntroActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private int page = 0;
+    private ImageButton mNextBtn;
+    private Button mSkipBtn, mFinishBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +51,60 @@ public class FirstRunIntroActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mNextBtn = (ImageButton) findViewById(R.id.intro_btn_next);
+        mSkipBtn = (Button) findViewById(R.id.intro_btn_skip);
+        mFinishBtn = (Button) findViewById(R.id.intro_btn_finish);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(page);
+        updateIndicators(page);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                page = position;
+                updateIndicators(page);
+
+                mNextBtn.setVisibility(position == 2 ? View.GONE : View.VISIBLE);
+                mFinishBtn.setVisibility(position == 2 ? View.VISIBLE : View.GONE);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
 
-    }
+        mNextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page += 1;
+                mViewPager.setCurrentItem(page, true);
+            }
+        });
 
+        mSkipBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        mFinishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,6 +126,19 @@ public class FirstRunIntroActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    void updateIndicators(int position) {
+        ImageView[] indicators = {findViewById(R.id.intro_dot_indicator_0),
+                findViewById(R.id.intro_dot_indicator_1),
+                findViewById(R.id.intro_dot_indicator_2)};
+
+        for (int i = 0; i < indicators.length; i++) {
+            indicators[i].setBackgroundResource(
+                    i == position ? R.drawable.dot_indicator_selected :
+                            R.drawable.dot_indicator_unselected
+            );
+        }
     }
 
     /**
@@ -142,6 +197,19 @@ public class FirstRunIntroActivity extends AppCompatActivity {
         public int getCount() {
             // Show 3 total pages.
             return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "FIRST PAGE";
+                case 1:
+                    return "SECOND PAGE";
+                case 2:
+                    return "THIRD PAGE";
+            }
+            return null;
         }
     }
 }
