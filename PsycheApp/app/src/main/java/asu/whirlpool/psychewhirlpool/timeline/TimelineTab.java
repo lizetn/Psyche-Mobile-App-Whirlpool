@@ -11,16 +11,17 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
-import asu.whirlpool.psychewhirlpool.GalleryActivity;
 import asu.whirlpool.psychewhirlpool.GameActivity;
 import asu.whirlpool.psychewhirlpool.MainActivity;
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 
 /**
  * TimelineTab implements a tab system to sort the timeline into Past-Present-Future
@@ -36,9 +37,13 @@ public class TimelineTab extends FragmentActivity
 {
     // Constant strings denoting different phases
     public final static String PHASE_KEY = "Phase";
-    public final static String PHASE_PAST = "Past";
-    public final static String PHASE_PRESENT = "Present";
-    public final static String PHASE_FUTURE = "Future";
+    public final static char PHASE_A = 'A';
+    public final static char PHASE_B = 'B';
+    public final static char PHASE_C = 'C';
+    public final static char PHASE_D = 'D';
+    public final static char PHASE_E = 'E';
+    public final static char PHASE_F = 'F';
+    public final static char ERROR_CHAR = 'n';
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -76,7 +81,7 @@ public class TimelineTab extends FragmentActivity
                 case R.id.navigation_timeline:
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(TimelineTab.this, GalleryActivity.class);
+                    intent = new Intent(TimelineTab.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:
@@ -96,6 +101,15 @@ public class TimelineTab extends FragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            setTheme(R.style.PsycheDarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.PsycheLightTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline_tab);
 
@@ -121,8 +135,6 @@ public class TimelineTab extends FragmentActivity
 
     /**
      * Inflate the menu; this adds items to the action bar if it is present.
-     * @param menu
-     * @return
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -133,15 +145,10 @@ public class TimelineTab extends FragmentActivity
 
     /**
      * Handles action bar item clicks.
-     * @param item
-     * @return
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -159,12 +166,12 @@ public class TimelineTab extends FragmentActivity
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter
     {
-        private String tabTitles[] = new String[] {"Past", "Present", "Future"};
-        public final int TAB_COUNT = 3;
+        private String tabTitles[];
 
         public SectionsPagerAdapter(FragmentManager fm)
         {
             super(fm);
+            tabTitles = getApplicationContext().getResources().getStringArray(R.array.phase_letters);
         }
 
         /**
@@ -182,17 +189,26 @@ public class TimelineTab extends FragmentActivity
             switch (position)
             {
                 case 0:
-                    args.putString(PHASE_KEY, PHASE_PAST);
+                    args.putChar(PHASE_KEY, PHASE_A);
                     break;
                 case 1:
-                    args.putString(PHASE_KEY, PHASE_PRESENT);
+                    args.putChar(PHASE_KEY, PHASE_B);
                     break;
                 case 2:
-                    args.putString(PHASE_KEY, PHASE_FUTURE);
+                    args.putChar(PHASE_KEY, PHASE_C);
+                    break;
+                case 3:
+                    args.putChar(PHASE_KEY, PHASE_D);
+                    break;
+                case 4:
+                    args.putChar(PHASE_KEY, PHASE_E);
+                    break;
+                case 5:
+                    args.putChar(PHASE_KEY, PHASE_F);
                     break;
                 default:
                     Log.d("Error:", "Default case reached in TimelineTab");
-                    args.putString(PHASE_KEY, getString(R.string.error_message));
+                    args.putChar(PHASE_KEY, ERROR_CHAR);
                     break;
             }
 
@@ -206,7 +222,7 @@ public class TimelineTab extends FragmentActivity
         @Override
         public int getCount()
         {
-            return TAB_COUNT;
+            return tabTitles.length;
         }
 
         /**

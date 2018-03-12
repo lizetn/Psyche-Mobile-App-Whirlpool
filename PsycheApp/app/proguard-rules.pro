@@ -19,3 +19,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+-keepnames class asu.whirlpool.psychewhirlpool.GlideConfiguration
+# or more generally:
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+-dontwarn com.squareup.okhttp.**
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule

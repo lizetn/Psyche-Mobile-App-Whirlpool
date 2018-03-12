@@ -1,27 +1,30 @@
 package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
+
+import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
+import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
-    private ImageView mTitleImage;
-    private ImageView mButtonsImage;
-    private ConstraintLayout mConstraint;
-
-    private boolean nightMode = false;
+    private BottomNavigationView navigation;
+    private ConstraintLayout mHelpBox;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -31,7 +34,8 @@ public class MainActivity extends AppCompatActivity
         {
             Intent intent;
 
-            switch (item.getItemId()) {
+            switch (item.getItemId())
+            {
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_timeline:
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(MainActivity.this, GalleryActivity.class);
+                    intent = new Intent(MainActivity.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:
@@ -58,17 +62,27 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.PsycheDarkTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        checkLastVersionRun();
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     /**
@@ -78,7 +92,6 @@ public class MainActivity extends AppCompatActivity
     public void displayCountdown(View view)
     {
         Intent intent = new Intent(this, CountdownActivity.class);
-        intent.putExtra("nightMode", nightMode);
         startActivity(intent);
     }
 
@@ -93,28 +106,91 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
+     * Displays help box for navigation icon titles.
+     */
+    public void displayHelp(View view)
+    {
+        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
+        mHelpBox.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * Hides help box for navigation icon titles.
+     */
+    public void closeHelp(View view)
+    {
+        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
+        mHelpBox.setVisibility(View.INVISIBLE);
+    }
+
+    /**
+     * Closes the app and displays NASA website in browser.
+     */
+    public void displayNASAWebsite(View view)
+    {
+        Uri nasaUrl = Uri.parse("https://www.nasa.gov/");
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, nasaUrl);
+        startActivity(launchBrowser);
+    }
+
+    /**
      * Toggles color scheme on home page.
      * @param view
      */
     public void toggleHomeNightMode(View view)
     {
-        mTitleImage = (ImageView) findViewById(R.id.homePageTitle);
-        mButtonsImage = (ImageView) findViewById(R.id.homePageButtons);
-        mConstraint = (ConstraintLayout) findViewById(R.id.container);
-
-        if (nightMode)
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
-            mTitleImage.setImageResource(R.drawable.home_title);
-            mButtonsImage.setImageResource(R.drawable.white_title_buttons);
-            mConstraint.setBackgroundResource(R.color.tw__composer_white);
-            nightMode = false;
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            finish();
+            overridePendingTransition(0,0);
+            startActivity(getIntent());
+            overridePendingTransition(0,0);
         }
         else
         {
-            mTitleImage.setImageResource(R.drawable.night_home_title);
-            mButtonsImage.setImageResource(R.drawable.night_title_buttons);
-            mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
-            nightMode = true;
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            finish();
+            overridePendingTransition(0,0);
+            startActivity(getIntent());
+            overridePendingTransition(0,0);
         }
+    }
+
+    /**
+     * Checks shared preferences to see if this is the first time the app is
+     * being run or if the app has had important updates.
+     */
+    private void checkLastVersionRun() {
+
+        final String PREFS_NAME = "PsychePrefsFile";
+        final String PREF_VERSION_NUMBER = "version_number";
+        final int IS_FIRST_RUN = -1;
+
+        // Get current version code
+        int currentVersionCode = BuildConfig.VERSION_CODE;
+
+        // Get saved version code
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        int savedVersionCode = prefs.getInt(PREF_VERSION_NUMBER, IS_FIRST_RUN);
+
+        // Check for first run or upgrade
+        if (currentVersionCode == savedVersionCode) {
+            // This is just a normal run
+            return;
+
+        } else if (savedVersionCode == IS_FIRST_RUN) {
+            // This is the first run or preferences were cleared
+            Intent intent = new Intent(this, FirstRunIntroActivity.class);
+            startActivity(intent);
+
+        } else if (currentVersionCode > savedVersionCode) {
+            // The app has been upgraded
+            // TODO Add activity for info upon upgrade
+            return;
+        }
+
+        // Update the shared preferences with the current version code
+        prefs.edit().putInt(PREF_VERSION_NUMBER, currentVersionCode).apply();
     }
 }

@@ -96,8 +96,6 @@ public class MainInstagramActivity extends Fragment
             }
             public void onSuccess(int statusCode, Header[] headers, String responseString)
             {
-                Log.d("SUCCESS", "onSuccess: ");
-                //Toast.makeText(getActivity(), ""+responseString, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject obj = new JSONObject(responseString);
                     JSONObject user = obj.getJSONObject("user");
@@ -131,10 +129,7 @@ public class MainInstagramActivity extends Fragment
         });
     }
 
-
-
-
-
+    //used for constant updating
     public void loadmoredata(String newid)
     {
         final AsyncHttpClient client = new AsyncHttpClient();

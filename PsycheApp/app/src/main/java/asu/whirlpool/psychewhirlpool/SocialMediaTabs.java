@@ -7,14 +7,13 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +24,7 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity;
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookActivity;
+import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class SocialMediaTabs extends FragmentActivity implements android.app.ActionBar.TabListener
@@ -72,7 +72,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                     startActivity(intent);
                     return true;
                 case R.id.navigation_gallery:
-                    intent = new Intent(SocialMediaTabs.this, GalleryActivity.class);
+                    intent = new Intent(SocialMediaTabs.this, GalleryTab.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_social_media:
@@ -90,6 +90,11 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.PsycheDarkTheme);
+        } else {
+            setTheme(R.style.PsycheLightTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
 
@@ -257,24 +262,12 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                 case 1:
                     FacebookActivity facebook = new FacebookActivity();
                     return facebook;
-//                    return PlaceholderFragment.newInstance(position + 1);
                 case 2:
-                    Log.d("SHIT", "getItem: ");
-
                     MainInstagramActivity instagramActivity;
 
                     instagramActivity = new MainInstagramActivity();
-                    //return instagramActivity;
-                   /*MainInstagramActivity instagram = new MainInstagramActivity();
-                    getFragmentManager()
-                            .beginTransaction()
-                            .add(R.id.Container
-                                    ,instagram)
-                            .commit();*/
                     return instagramActivity;
-                   //return PlaceholderFragment.newInstance(position + 1);
                 default:
-                    Log.d(TAG, "In getItem default!!!");
                     return null;
             }
         }
