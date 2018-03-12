@@ -1,6 +1,7 @@
 package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import com.facebook.FacebookSdk;
 
 import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
+import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        checkLastVersionRun();
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
@@ -151,5 +155,42 @@ public class MainActivity extends AppCompatActivity
             startActivity(getIntent());
             overridePendingTransition(0,0);
         }
+    }
+
+    /**
+     * Checks shared preferences to see if this is the first time the app is
+     * being run or if the app has had important updates.
+     */
+    private void checkLastVersionRun() {
+
+        final String PREFS_NAME = "PsychePrefsFile";
+        final String PREF_VERSION_NUMBER = "version_number";
+        final int IS_FIRST_RUN = -1;
+
+        // Get current version code
+        int currentVersionCode = BuildConfig.VERSION_CODE;
+
+        // Get saved version code
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        int savedVersionCode = prefs.getInt(PREF_VERSION_NUMBER, IS_FIRST_RUN);
+
+        // Check for first run or upgrade
+        if (currentVersionCode == savedVersionCode) {
+            // This is just a normal run
+            return;
+
+        } else if (savedVersionCode == IS_FIRST_RUN) {
+            // This is the first run or preferences were cleared
+            Intent intent = new Intent(this, FirstRunIntroActivity.class);
+            startActivity(intent);
+
+        } else if (currentVersionCode > savedVersionCode) {
+            // The app has been upgraded
+            // TODO Add activity for info upon upgrade
+            return;
+        }
+
+        // Update the shared preferences with the current version code
+        prefs.edit().putInt(PREF_VERSION_NUMBER, currentVersionCode).apply();
     }
 }

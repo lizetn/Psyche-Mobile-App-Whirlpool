@@ -120,4 +120,5 @@
     <string name="error_message">Error</string>
     <string name="title_activity_gallery_tab">GalleryTabActivity</string>
     <string name="title_activity_fact_content">FactContentActivity</string>
+    <string name="title_activity_first_run_intro">FirstRunIntroActivity</string>
 </resources>
