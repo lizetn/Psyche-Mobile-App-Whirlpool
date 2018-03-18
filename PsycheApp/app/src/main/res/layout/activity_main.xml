@@ -13,10 +13,13 @@
         android:id="@+id/homeButtonsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeTitleLayout">
+        app:layout_constraintTop_toBottomOf="@+id/homeTitleLayout"
+        app:layout_constraintVertical_bias="0.32999998">
 
         <ImageView
             android:id="@+id/verticalDividerHome"
@@ -34,13 +37,13 @@
             android:id="@+id/factsButton"
             android:layout_width="140dp"
             android:layout_height="106dp"
-            android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayFacts"
-            android:paddingStart="@dimen/cardview_default_radius"
             android:paddingLeft="2dp"
+            android:paddingStart="@dimen/cardview_default_radius"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_facts"
             android:textAlignment="center"
@@ -163,8 +166,8 @@
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="toggleHomeNightMode"
-            android:paddingStart="@dimen/cardview_default_radius"
             android:paddingLeft="2dp"
+            android:paddingStart="@dimen/cardview_default_radius"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_nightmode"
             android:textAlignment="center"
@@ -294,7 +297,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.00999999">
 
         <TextView
             android:id="@+id/homeTitleTextLarge"

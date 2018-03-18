@@ -194,8 +194,7 @@ public class FirstRunIntroActivity extends AppCompatActivity {
                 case 1: return SecondIntroFragment.newInstance(
                         getString(R.string.intro_tag_line_beginning),
                         getString(R.string.intro_tag_line_ending));
-                case 2: return FirstIntroFragment.newInstance(getString(R.string.title_home_large),
-                        getString(R.string.title_home_small));
+                case 2: return ThirdIntroFragment.newInstance();
                 default: return FirstIntroFragment.newInstance(getString(R.string.title_home_large),
                         getString(R.string.title_home_small));
             }
