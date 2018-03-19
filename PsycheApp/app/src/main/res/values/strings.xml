@@ -4,6 +4,9 @@
     <string name="client_secret">afe54954c60b42899c40c674ee988d71</string>
     <string name="title_home_large">PSYCHE</string>
     <string name="title_home_small">JOURNEY TO A METAL WORLD</string>
+    <string name="intro_tag_line_beginning">For the first time ever, we are exploring a world
+                                            made not of rock or ice, </string>
+    <string name="intro_tag_line_ending">but of metal.</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_home">Home</string>
@@ -121,4 +124,7 @@
     <string name="title_activity_gallery_tab">GalleryTabActivity</string>
     <string name="title_activity_fact_content">FactContentActivity</string>
     <string name="title_activity_first_run_intro">FirstRunIntroActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

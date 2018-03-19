@@ -96,15 +96,18 @@ public class FacebookActivity extends Fragment {
             public void onLoadMore(int current_page) {
                 //setLoadMoreEnable(true);
 
-                if (list_arr.size() >= 12){
+                if (list_arr.size() >= 20){
 
                 }
 
             }
         };
         list1.setLayoutManager(layoutManager);
-        list1.setHasFixedSize(true);
+        list1.setHasFixedSize(false);
         list1.addOnScrollListener(listener);
+        ListAdapter b = new ListAdapter(getActivity(),list_arr);
+        Log.d("IIIIIIIIIIIIIII", "onCompleted: ");
+        list1.setAdapter(b);
         //try catch required for callbackManager, graph API methods
         try {
             callbackManager = CallbackManager.Factory.create();
@@ -179,6 +182,7 @@ public class FacebookActivity extends Fragment {
                             }
                             ListAdapter adapter = new ListAdapter(getApplicationContext(),list_arr);
                             list1.setNestedScrollingEnabled(false);
+
                             list1.setAdapter(adapter);
                         }catch (Exception e) {
                             e.printStackTrace();

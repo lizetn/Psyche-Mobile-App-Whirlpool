@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
-    private ConstraintLayout mHelpBox;
+    private ConstraintLayout mHelpBox, mButtonsBox;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -112,6 +112,9 @@ public class MainActivity extends AppCompatActivity
     {
         mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
         mHelpBox.setVisibility(View.VISIBLE);
+
+        mButtonsBox = (ConstraintLayout) findViewById(R.id.homeButtonsLayout);
+        mButtonsBox.setVisibility(View.GONE);
     }
 
     /**
@@ -119,8 +122,11 @@ public class MainActivity extends AppCompatActivity
      */
     public void closeHelp(View view)
     {
+        mButtonsBox = (ConstraintLayout) findViewById(R.id.homeButtonsLayout);
+        mButtonsBox.setVisibility(View.VISIBLE);
+
         mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
-        mHelpBox.setVisibility(View.INVISIBLE);
+        mHelpBox.setVisibility(View.GONE);
     }
 
     /**
