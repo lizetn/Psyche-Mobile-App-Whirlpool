@@ -7,18 +7,37 @@
     android:layout_height="match_parent"
     tools:context="asu.whirlpool.psychewhirlpool.CountdownActivity">
 
-    <Spinner
-        android:id="@+id/dynamic_spinner"
-        android:layout_width="32dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toEndOf="@+id/countdownTitle"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/defaultTimer"
+        app:layout_constraintVertical_bias="0.965"
+        app:menu="@menu/navigation" />
+
+    <ImageView
+        android:id="@+id/countdownTitle"
+        android:layout_width="314dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="Countdown Title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_countdown_title" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/defaultTimer"
         android:layout_width="369dp"
-        android:layout_height="400dp"
+        android:layout_height="426dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -27,23 +46,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countdownTitle">
 
+        <Spinner
+            android:id="@+id/dynamic_spinner"
+            android:layout_width="32dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toEndOf="@+id/defaultClockTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/defaultClockTextView"
-            android:layout_width="349dp"
+            android:layout_width="273dp"
             android:layout_height="33dp"
             android:layout_marginLeft="16dp"
+            android:gravity="start"
+            android:lines="2"
+            android:maxLines="2"
             android:text="Launch of Psyche Spacecraft:"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@+id/defaultTimer" />
 
         <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/textViewYearsA"
             android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="28dp"
-            android:text="10"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
 
+            android:text="10"
             android:textSize="36sp"
             android:visibility="visible"
             app:donut_background_color="@color/tw__composer_white"
@@ -52,13 +81,12 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/defaultClockTextView" />
 
         <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/textViewMonthsA"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginTop="2dp"
             android:text="10"
             android:textSize="36sp"
             android:visibility="visible"
@@ -73,7 +101,7 @@
             android:id="@+id/textViewDaysA"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
             android:text="10"
             android:textSize="36sp"
             android:visibility="visible"
@@ -89,7 +117,6 @@
             android:id="@+id/textViewHoursA"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_marginTop="2dp"
             android:textSize="36sp"
             android:visibility="visible"
             app:donut_background_color="@color/tw__composer_white"
@@ -103,13 +130,13 @@
             android:id="@+id/textViewMinutesA"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="2dp"
             android:textSize="16sp"
             android:visibility="visible"
             app:donut_background_color="@color/tw__composer_white"
             app:donut_prefix_text=""
             app:donut_progress="0"
             app:donut_suffix_text=""
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" />
@@ -123,41 +150,99 @@
             android:visibility="visible"
             app:donut_background_color="@color/tw__composer_white"
             app:donut_finished_stroke_width="5dp"
-            app:donut_progress="0"
-            app:donut_suffix_text=" "
             app:donut_inner_bottom_text="Secs"
             app:donut_inner_bottom_text_size="5dp"
+            app:donut_progress="0"
+            app:donut_suffix_text=" "
             app:donut_unfinished_stroke_width="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewMinutesA"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/yearlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:text="Years"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintStart_toEndOf="@+id/textViewYearsA"
+            app:layout_constraintTop_toBottomOf="@+id/dynamic_spinner" />
+
+        <TextView
+            android:id="@+id/monthlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:text="Months"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.191"
+            app:layout_constraintStart_toEndOf="@+id/textViewMonthsA"
+            app:layout_constraintTop_toBottomOf="@+id/yearlabel" />
+
+        <TextView
+            android:id="@+id/daylabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="204dp"
+            android:text="Days"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintStart_toEndOf="@+id/textViewDaysA"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hourslabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:text="Hours"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintStart_toEndOf="@+id/textViewHoursA"
+            app:layout_constraintTop_toBottomOf="@+id/daylabel" />
+
+        <TextView
+            android:id="@+id/minutelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:text="Minutes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.234"
+            app:layout_constraintStart_toEndOf="@+id/textViewMinutesA"
+            app:layout_constraintTop_toBottomOf="@+id/hourslabel" />
+
+        <TextView
+            android:id="@+id/secondlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Seconds"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.217"
+            app:layout_constraintStart_toEndOf="@+id/textViewSecondsA"
+            app:layout_constraintTop_toBottomOf="@+id/minutelabel"
+            app:layout_constraintVertical_bias="0.379" />
 
     </android.support.constraint.ConstraintLayout>
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
-
-    <ImageView
-        android:id="@+id/countdownTitle"
-        android:layout_width="314dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="Countdown Title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/white_countdown_title" />
 
 </android.support.constraint.ConstraintLayout>
 

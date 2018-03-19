@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context="asu.whirlpool.psychewhirlpool.facebookClasses.Display2">
 
     <ImageView
@@ -12,5 +13,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:clickable="false"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        />
 </android.support.constraint.ConstraintLayout>

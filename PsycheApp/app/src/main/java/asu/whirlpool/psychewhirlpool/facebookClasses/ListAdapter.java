@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -37,6 +39,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
 {
     Context contexts;
     public static ArrayList<FacebookfeedList> fbList;
+    int w;
     public ListAdapter(Context contexts, ArrayList<FacebookfeedList> fbList)
     {
 
@@ -69,6 +72,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
     @Override
     public void onBindViewHolder(ListAdapter.myholder holder, final int position)
     {
+
 
 
         if(!fbList.get(position).getId().isEmpty())
@@ -116,7 +120,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
         {
             //Glide used for the image
             // Picasso.with(contexts).load(fbList.get(i).getPicture()).into(pic);
-            Glide.with(contexts).load(fbList.get(position).getPicture()).into(holder.pic);
+            Log.d(String.valueOf(holder.itemView.getWidth()), "onBindViewHolder: ");
+            Glide.with(contexts).load(fbList.get(position).getPicture()).fitCenter().into(holder.pic);
             //Glide.with(contexts).load(fbList.get(i).getPicture()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(pic);
             holder.pic.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
@@ -306,10 +311,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
         TextView ids,msg,story,times;
         ImageView pic;
         ImageView profilePic;
+        int w;
+        RelativeLayout rlayout;
+
         //ids = (TextView) v.findViewById(R.id.ids);
         public myholder(View itemView)
         {
             super(itemView);
+            rlayout = (RelativeLayout) itemView.findViewById(R.id.rlayout);
+            Log.d(String.valueOf(itemView.getWidth()), "myholder: ");
+            w = rlayout.getWidth();
             msg = (TextView) itemView.findViewById(R.id.msg);
             story = (TextView) itemView.findViewById(R.id.story);
             times = (TextView) itemView.findViewById(R.id.times);
