@@ -1,6 +1,7 @@
 package asu.whirlpool.psychewhirlpool.facts;
 
 import android.content.Intent;
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -88,14 +89,10 @@ public class FactsActivity extends AppCompatActivity
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //ListView
-        //faqArray = getResources().obtainTypedArray(R.array.faq_options);
 
         //Create ListView object and fills it will text on the options
         mListView = findViewById(R.id.FactsList);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.faq_options,
-                android.R.layout.simple_selectable_list_item);
+        ListViewAdapter adapter = new ListViewAdapter(this);
         mListView.setAdapter(adapter);
 
         // Instantiate FAQ Information
