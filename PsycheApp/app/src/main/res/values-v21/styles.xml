@@ -28,6 +28,7 @@
         <item name="colorPrimary">@color/psyche_mustard</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/psyche_gold</item>
-        <item name="android:statusBarColor">@color/psyche_mustard</item>
+        <item name="android:statusBarColor">@color/psyche_dark_purple</item>
+        <item name="android:textColorPrimary">@color/psyche_dark_purple</item>
     </style>
 </resources>
