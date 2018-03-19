@@ -48,6 +48,13 @@ public class CountdownActivity extends AppCompatActivity {
     private DonutProgress textViewSecs;
     private ImageView mTitleImage;
     private TextView titleMessage;
+    private TextView yearMessage;
+    private TextView monthMessage;
+    private TextView dayMessage;
+    private TextView hourMessage;
+    private TextView minutesMessage;
+    private TextView secondMessage;
+
     String[] endTimes;
 
     //private ConstraintLayout mConstraint;
@@ -132,11 +139,27 @@ public class CountdownActivity extends AppCompatActivity {
         Log.d("BEFORE", "onCreate: ");
         endTimes[0] = "11.30.2027, 13:00:00";
         if (VERBOSE) Log.v(TAG, "+++ ON CREATE +++");
-        startCountdown();
 
         mTextMessage = (TextView) findViewById(R.id.message);
         titleMessage = (TextView) findViewById(R.id.defaultClockTextView);
         titleMessage.setText("Phase F: Mission Closeout");
+
+        yearMessage = (TextView) findViewById(R.id.yearlabel);
+        monthMessage = (TextView) findViewById(R.id.monthlabel);
+        dayMessage = (TextView) findViewById(R.id.daylabel);
+        hourMessage = (TextView) findViewById(R.id.hourslabel);
+        minutesMessage = (TextView) findViewById(R.id.minutelabel);
+        secondMessage = (TextView) findViewById(R.id.secondlabel);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            yearMessage.setTextColor(Color.WHITE);
+            monthMessage.setTextColor(Color.WHITE);;
+            dayMessage.setTextColor(Color.WHITE);;
+            hourMessage.setTextColor(Color.WHITE);;
+            minutesMessage.setTextColor(Color.WHITE);;
+            secondMessage.setTextColor(Color.WHITE);;
+
+        }
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -160,19 +183,18 @@ public class CountdownActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
-                        AlertDialog.Builder nxt = new AlertDialog.Builder(CountdownActivity.this,R.style.PsycheDarkTheme );
-                        nxt.setTitle("Phase A has already been completed");
-                        nxt.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                {
+                        titleMessage.setText("Phase A: Completed");
+                        textViewYears.setText("0");
+                        textViewMonths.setText("0");
+                        textViewDays.setText("0");
+                        textViewHours.setText("0");
+                        textViewMins.setText("0");
+                        textViewSecs.setText("0");
 
-
-                                }
-                            }
-                        });
-                        final AlertDialog dialog3 = nxt.create();
-                        dialog3.show();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
+                        break;
                         /*
                         textViewYears.setVisibility(View.INVISIBLE);
                         textViewMonths.setVisibility(View.INVISIBLE);
@@ -184,26 +206,19 @@ public class CountdownActivity extends AppCompatActivity {
                        /* endTime1 = "01.01.2026, 06:00:00";
                         mCountDownTimer1.cancel();
                         startCountdown();*/
-                        break;
+
                     case 1:
-                        String s= "Phase B is in progress";
-                        SpannableString ss=  new SpannableString(s);
-                        ss.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 5, 0);
+                        titleMessage.setText("Phase B: Is in progress");
+                        textViewYears.setText("0");
+                        textViewMonths.setText("0");
+                        textViewDays.setText("0");
+                        textViewHours.setText("0");
+                        textViewMins.setText("0");
+                        textViewSecs.setText("0");
 
-
-                        AlertDialog.Builder nxt2 = new AlertDialog.Builder(CountdownActivity.this,R.style.PsycheDarkTheme);
-                        nxt2.setTitle(ss);
-                        nxt2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                {
-
-
-                                }
-                            }
-                        });
-                        final AlertDialog dialog2 = nxt2.create();
-                        dialog2.show();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
                         /*
                         textViewYears.setVisibility(View.INVISIBLE);
                         textViewMonths.setVisibility(View.INVISIBLE);
@@ -219,25 +234,33 @@ public class CountdownActivity extends AppCompatActivity {
                     case 2:
                         titleMessage.setText("Phase C: Critical Design & Build");
                         endTimes[0] = "05.30.2019, 13:00:00";
-                        mCountDownTimer[0].cancel();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
                         startCountdown();
                         break;
                     case 3:
                         titleMessage.setText("Phase D: Instrument & Spacecraft Build, Ship & Launch");
                         endTimes[0] = "01.30.2021, 13:00:00";
-                        mCountDownTimer[0].cancel();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
                         startCountdown();
                         break;
                     case 4:
                         titleMessage.setText("Phase E: Gravity Assist, Arrival, & Orbit");
                         endTimes[0] = "05.30.2023, 13:00:00";
-                        mCountDownTimer[0].cancel();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
                         startCountdown();
                         break;
                     case 5:
                         titleMessage.setText("Phase F: Mission Closeout");
                         endTimes[0] = "11.30.2027, 13:00:00";
-                        mCountDownTimer[0].cancel();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
                         startCountdown();
                         break;
                     case 6:
@@ -245,7 +268,9 @@ public class CountdownActivity extends AppCompatActivity {
                     default:
                         titleMessage.setText("Phase F: Mission Closeout");
                         endTimes[0] = "11.30.2027, 13:00:00";
-                        mCountDownTimer[0].cancel();
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
                         startCountdown();
                         break;
 
