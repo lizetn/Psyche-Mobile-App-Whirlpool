@@ -62,9 +62,7 @@ public class MainInstagramActivity extends Fragment
 
         rv = (RecyclerView) view.findViewById(R.id.rv);
         prog = (ProgressBar) view.findViewById(R.id.prog);
-        Log.d("FFFFFF", "onCreateView: ");
         Graphcall();
-        Log.d("GGGGGGG", "onCreateView: ");
         layoutManager = new LinearLayoutManager(this.getActivity());
         listener = new EndlessRecycleOnScrollListener(layoutManager) {
             @Override
@@ -80,12 +78,11 @@ public class MainInstagramActivity extends Fragment
 
             }
         };
-        Log.d("HHHHHHHH", "onCreateView: ");
+
         rv.setLayoutManager(layoutManager);
         rv.setHasFixedSize(false);
         rv.addOnScrollListener(listener);
         Adapter b = new Adapter(getActivity(),list);
-        Log.d("IIIIIIIIIIIIIII", "onCompleted: ");
         rv.setAdapter(b);
         return view;
     }
@@ -93,7 +90,6 @@ public class MainInstagramActivity extends Fragment
     public void Graphcall()
     {
         final AsyncHttpClient client = new AsyncHttpClient();
-        Log.d("GRAPH", "Graphcall: ");
         client.get("https://www.instagram.com/nasapsyche/?__a=1", new TextHttpResponseHandler()
         {
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable)
@@ -105,68 +101,45 @@ public class MainInstagramActivity extends Fragment
             {
                 Log.d(responseString, "onSuccess: ");
                 try {
-                    Log.d("WTF", "onSuccess: ");
                     JSONObject obj = new JSONObject(responseString);
-                    Log.d("WTF2222222", "onSuccess: ");
                     JSONObject graphql = obj.getJSONObject("graphql");
-                    Log.d(graphql.getJSONObject("user").toString(), "onSuccess1111: ");
                     JSONObject user = graphql.getJSONObject("user");
-                    Log.d(user.getJSONObject("edge_owner_to_timeline_media").toString(), "onSuccess121212121: ");
-
 
                     JSONObject media = user.getJSONObject("edge_owner_to_timeline_media");
                     Log.d( media.getJSONArray("edges").toString(), "onSuccess2121212121: ");
                     JSONArray edges = media.getJSONArray("edges");
-                    Log.d("WTF4444444", "onSuccess: ");
 
-                    for (int i=0;i<edges.length();i++)
-                    {
-                        Log.d(edges.getJSONObject(i).get("node").toString(), "onSuccess444444444: ");
-                        Log.d("WTF555555", "onSuccess: ");
-                        JSONObject edge = edges.getJSONObject(i);
-                        JSONObject nodes1 = edge.getJSONObject("node");
-                        //JSONArray nodes2 = nodes1.getJSONArray("");
-                       // Log.d(nodes1.getJSONObject("edge_media_to_caption").toString(), "onSuccess: ");
-                        JSONObject nodeEdges = nodes1.getJSONObject("edge_media_to_caption");
-                        Log.d(nodeEdges.getJSONArray("edges").toString(), "onSuccess: ");
-                        JSONArray nodeEdgesArray =  nodeEdges.getJSONArray("edges");
-                        Log.d("WTF66666", "onSuccess: ");
-
-                        JSONObject edge2 = nodeEdgesArray.getJSONObject(0);
-                        JSONObject nodes2 = edge2.getJSONObject("node");
-                        //text is "caption"
-                       Log.d(nodes2.getString("text"), "onSuccess FUCKK: ");
-                        Log.d("WTF77777", "onSuccess: ");
-
-                        Log.d(nodes1.get("thumbnail_src").toString(), "onSuccess444444444: ");
-                        Log.d(nodes1.getJSONObject("edge_media_to_comment").getString("count"), "onSuccess: ");
-                        Log.d(nodes1.getJSONObject("edge_liked_by").getString("count"), "onSuccess: ");
+                    if(edges.length() > 0) {
+                        for (int i = 0; i < edges.length(); i++) {
+                            JSONObject edge = edges.getJSONObject(i);
+                            JSONObject nodes1 = edge.getJSONObject("node");
+                            JSONObject nodeEdges = nodes1.getJSONObject("edge_media_to_caption");
+                            Log.d(nodeEdges.getJSONArray("edges").toString(), "onSuccess: ");
+                            JSONArray nodeEdgesArray = nodeEdges.getJSONArray("edges");
 
 
-                        Model m = new Model();
-                        m.setImage_url(nodes1.get("thumbnail_src").toString());
-                        m.setContent(nodes2.getString("text"));
-                        m.setComments(nodes1.getJSONObject("edge_media_to_comment").getString("count"));
-                        m.setLikes(nodes1.getJSONObject("edge_liked_by").getString("count"));
-                        list.add(m);
+                            JSONObject edge2 = nodeEdgesArray.getJSONObject(0);
+                            JSONObject nodes2 = edge2.getJSONObject("node");
 
+
+                            Model m = new Model();
+                            m.setImage_url(nodes1.get("thumbnail_src").toString());
+                            m.setContent(nodes2.getString("text"));
+                            m.setComments(nodes1.getJSONObject("edge_media_to_comment").getString("count"));
+                            m.setLikes(nodes1.getJSONObject("edge_liked_by").getString("count"));
+                            list.add(m);
+
+                        }
                     }
                     profile_name = user.getString("username");
-                    Log.d(media.getJSONObject("page_info").getString("has_next_page"), "onSuccess: ");
-                    Log.d(media.getJSONObject("page_info").getString("end_cursor"), "onSuccess: ");
-                    Log.d(user.getString("username"), "onSuccess55555555: ");
-                    Log.d(user.getString("profile_pic_url"), "onSuccess55555555: ");
                     profile_img = user.getString("profile_pic_url");
-                   Log.d( "WTF888888888888", "onSuccess444444444: ");
                     isnext = Boolean.parseBoolean(media.getJSONObject("page_info").getString("has_next_page"));
                     nextid = media.getJSONObject("page_info").getString("end_cursor");
 
                     a = new Adapter(getActivity(),list);
 
-                    Log.d("IIIIIIIIIIIIIII", "onCompleted: ");
                     rv.setAdapter(a);
 
-                    Log.d("IIIIIIIIIIIIIII", "onCompleted: ");
                     prog.setVisibility(View.GONE);
 
                 }catch (Exception e){
@@ -197,18 +170,40 @@ public class MainInstagramActivity extends Fragment
             {
                 try {
                     JSONObject obj = new JSONObject(responseString);
-                    JSONObject user = obj.getJSONObject("user");
-                    JSONObject media = user.getJSONObject("media");
-                    JSONArray nodes = media.getJSONArray("nodes");
-                    for (int i=0;i<nodes.length();i++)
-                    {
-                        Model m = new Model();
-                        m.setImage_url(nodes.getJSONObject(i).getString("thumbnail_src"));
-                        m.setContent(nodes.getJSONObject(i).getString("caption"));
-                        m.setComments(nodes.getJSONObject(i).getJSONObject("comments").getString("count"));
-                        m.setLikes(nodes.getJSONObject(i).getJSONObject("likes").getString("count"));
-                        list.add(m);
+                    JSONObject graphql = obj.getJSONObject("graphql");
+                    Log.d(graphql.getJSONObject("user").toString(), "onSuccess1111: ");
+                    JSONObject user = graphql.getJSONObject("user");
+                    Log.d(user.getJSONObject("edge_owner_to_timeline_media").toString(), "onSuccess121212121: ");
 
+
+                    JSONObject media = user.getJSONObject("edge_owner_to_timeline_media");
+                    Log.d( media.getJSONArray("edges").toString(), "onSuccess2121212121: ");
+                    JSONArray edges = media.getJSONArray("edges");
+
+                    if(edges.length() > 0) {
+                        for (int i = 0; i < edges.length(); i++) {
+                            JSONObject edge = edges.getJSONObject(i);
+                            JSONObject nodes1 = edge.getJSONObject("node");
+                            //JSONArray nodes2 = nodes1.getJSONArray("");
+                            // Log.d(nodes1.getJSONObject("edge_media_to_caption").toString(), "onSuccess: ");
+                            JSONObject nodeEdges = nodes1.getJSONObject("edge_media_to_caption");
+                            Log.d(nodeEdges.getJSONArray("edges").toString(), "onSuccess: ");
+                            JSONArray nodeEdgesArray = nodeEdges.getJSONArray("edges");
+
+
+                            JSONObject edge2 = nodeEdgesArray.getJSONObject(0);
+                            JSONObject nodes2 = edge2.getJSONObject("node");
+                            //text is "caption"
+
+
+                            Model m = new Model();
+                            m.setImage_url(nodes1.get("thumbnail_src").toString());
+                            m.setContent(nodes2.getString("text"));
+                            m.setComments(nodes1.getJSONObject("edge_media_to_comment").getString("count"));
+                            m.setLikes(nodes1.getJSONObject("edge_liked_by").getString("count"));
+                            list.add(m);
+
+                        }
                     }
                     isnext = Boolean.parseBoolean(media.getJSONObject("page_info").getString("has_next_page"));
                     nextid = media.getJSONObject("page_info").getString("end_cursor");

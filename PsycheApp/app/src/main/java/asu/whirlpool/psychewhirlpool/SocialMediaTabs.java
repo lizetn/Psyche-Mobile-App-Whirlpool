@@ -51,7 +51,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
     private int[] imageResId = {
             R.drawable.tw__composer_logo_blue,
             R.drawable.com_facebook_button_icon_blue,
-            R.drawable.ic_dashboard_black_24dp };
+            R.drawable.insta };
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
