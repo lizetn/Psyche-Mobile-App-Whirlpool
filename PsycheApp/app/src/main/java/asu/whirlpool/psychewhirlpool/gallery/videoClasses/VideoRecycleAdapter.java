@@ -61,9 +61,14 @@ public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
             @Override
             public void onClick(View view)
             {
+                /*
                 Intent intent = new Intent(view.getContext(), VideoActivity.class);
                 intent.putExtra(VIDEO_KEY, resId);
                 view.getContext().startActivity(intent);
+                */
+
+                Intent youTubeIntent = new Intent(view.getContext(), YouTubeActivity.class);
+                view.getContext().startActivity(youTubeIntent);
             }
         });
 
