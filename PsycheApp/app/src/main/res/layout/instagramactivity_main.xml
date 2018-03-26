@@ -5,7 +5,7 @@
     android:id="@+id/conn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/ic_launcher_foreground2"
+    android:background="?android:attr/windowBackground"
     tools:context="asu.whirlpool.psychewhirlpool.InstagramClasses.MainInstagramActivity">
 
     <RelativeLayout

@@ -55,13 +55,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
     public void onBindViewHolder(final Adapter.myholder holder, final int position)
     {
 
-        Log.d("GGGGGGGGGGGGGGGG", "onBindViewHolder: ");
-        //holder.imgs.setBackgroundResource(R.drawable.ripp);
-
-        //Picasso.with(ctx).load(path.get(position).getImage_url()).into(holder.imgs);
-        //Picasso.with(ctx).load(path.get(position).getImage_url()).into(holder.iv_profile);
-       // Glide.with(ctx).load(path.get(position).getImage_url()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(holder.imgs);
-        //Glide.with(ctx).load(path.get(position).getImage_url()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(holder.iv_profile);
        Glide.with(ctx).load(path.get(position).getImage_url()).into(holder.imgs);
        Glide.with(ctx).load(MainInstagramActivity.profile_img).into(holder.iv_profile);
         holder.name.setText(MainInstagramActivity.profile_name);
@@ -77,7 +70,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myholder>
         final SpannableStringBuilder sb = new SpannableStringBuilder("Readmore..");
         final ForegroundColorSpan fcs = new ForegroundColorSpan(ctx.getResources().getColor(R.color.colorPrimary));
         sb.setSpan(fcs, 0, sb.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        //yourTextView.setText(sb);
 
         holder.content.setText(path.get(position).getContent());
         holder.content.setVisibility(View.VISIBLE);

@@ -48,16 +48,8 @@ public class CountdownActivity extends AppCompatActivity {
     private DonutProgress textViewSecs;
     private ImageView mTitleImage;
     private TextView titleMessage;
-    private TextView yearMessage;
-    private TextView monthMessage;
-    private TextView dayMessage;
-    private TextView hourMessage;
-    private TextView minutesMessage;
-    private TextView secondMessage;
 
     String[] endTimes;
-
-    //private ConstraintLayout mConstraint;
 
     private static final String TAG = "CountdownActivity";
     long startDate = System.currentTimeMillis();
@@ -144,34 +136,19 @@ public class CountdownActivity extends AppCompatActivity {
         titleMessage = (TextView) findViewById(R.id.defaultClockTextView);
         titleMessage.setText("Phase F: Mission Closeout");
 
-        yearMessage = (TextView) findViewById(R.id.yearlabel);
-        monthMessage = (TextView) findViewById(R.id.monthlabel);
-        dayMessage = (TextView) findViewById(R.id.daylabel);
-        hourMessage = (TextView) findViewById(R.id.hourslabel);
-        minutesMessage = (TextView) findViewById(R.id.minutelabel);
-        secondMessage = (TextView) findViewById(R.id.secondlabel);
-
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            yearMessage.setTextColor(Color.WHITE);
-            monthMessage.setTextColor(Color.WHITE);;
-            dayMessage.setTextColor(Color.WHITE);;
-            hourMessage.setTextColor(Color.WHITE);;
-            minutesMessage.setTextColor(Color.WHITE);;
-            secondMessage.setTextColor(Color.WHITE);;
-
-        }
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
+        final Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
 
-        String[] items = new String[] { "Phase A: Concept Study", "Phase B:Preliminary Design", "Phase C: Critical Design","Phase D: Instrument & Spacecraft Build","Phase E: Mars Gravity Assist","Phase F: Mission Closeout" };
+        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design", "Phase C: Critical Design","Phase D: Instrument & Spacecraft Build","Phase E: Mars Gravity Assist","Phase F: Mission Closeout" };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, items);
+                R.layout.spinner_item, items);
 
         dynamicSpinner.setAdapter(adapter);
+        dynamicSpinner.setSelection(2);
 
         dynamicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -195,18 +172,6 @@ public class CountdownActivity extends AppCompatActivity {
                             mCountDownTimer[0].cancel();
                         }
                         break;
-                        /*
-                        textViewYears.setVisibility(View.INVISIBLE);
-                        textViewMonths.setVisibility(View.INVISIBLE);
-                        textViewDays.setVisibility(View.INVISIBLE);
-                        textViewHours.setVisibility(View.INVISIBLE);
-                        textViewMins.setVisibility(View.INVISIBLE);
-                        textViewSecs.setVisibility(View.INVISIBLE);*/
-
-                       /* endTime1 = "01.01.2026, 06:00:00";
-                        mCountDownTimer1.cancel();
-                        startCountdown();*/
-
                     case 1:
                         titleMessage.setText("Phase B: Is in progress");
                         textViewYears.setText("0");
@@ -219,17 +184,6 @@ public class CountdownActivity extends AppCompatActivity {
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();
                         }
-                        /*
-                        textViewYears.setVisibility(View.INVISIBLE);
-                        textViewMonths.setVisibility(View.INVISIBLE);
-                        textViewDays.setVisibility(View.INVISIBLE);
-                        textViewHours.setVisibility(View.INVISIBLE);
-                        textViewMins.setVisibility(View.INVISIBLE);
-                        textViewSecs.setVisibility(View.INVISIBLE);*/
-                        /*
-                        endTime1 = "05.31.2019, 13:00:00";
-                        mCountDownTimer1.cancel();
-                        startCountdown();*/
                         break;
                     case 2:
                         titleMessage.setText("Phase C: Critical Design & Build");
@@ -273,50 +227,15 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-
                 }
                 Log.v("item", (String) parent.getItemAtPosition(position));
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
+
             }
         });
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            titleMessage.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewYears.setFinishedStrokeColor(Color.parseColor("#FF8C00"));
-            textViewYears.setInnerBackgroundColor(Color.parseColor("#302144"));
-            textViewYears.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewYears.setUnfinishedStrokeColor(Color.parseColor("#592651"));
-
-            textViewMonths.setFinishedStrokeColor(Color.parseColor("#FF8C00"));
-            textViewMonths.setInnerBackgroundColor(Color.parseColor("#302144"));
-            textViewMonths.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewMonths.setUnfinishedStrokeColor(Color.parseColor("#592651"));
-
-            textViewHours.setFinishedStrokeColor(Color.parseColor("#FF8C00"));
-            textViewHours.setInnerBackgroundColor(Color.parseColor("#302144"));
-            textViewHours.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewHours.setUnfinishedStrokeColor(Color.parseColor("#592651"));
-
-            textViewDays.setFinishedStrokeColor(Color.parseColor("#FF8C00"));
-            textViewDays.setInnerBackgroundColor(Color.parseColor("#302144"));
-            textViewDays.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewDays.setUnfinishedStrokeColor(Color.parseColor("#592651"));
-
-            textViewMins.setFinishedStrokeColor(Color.parseColor("#FF8C00"));
-            textViewMins.setInnerBackgroundColor(Color.parseColor("#302144"));
-            textViewMins.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewMins.setUnfinishedStrokeColor(Color.parseColor("#592651"));
-
-            textViewSecs.setFinishedStrokeColor(Color.parseColor("#FF8C00"));
-            textViewSecs.setInnerBackgroundColor(Color.parseColor("#302144"));
-            textViewSecs.setTextColor(Color.parseColor("#FFFFFF"));
-            textViewSecs.setUnfinishedStrokeColor(Color.parseColor("#592651"));
-
-        }
-
     }
 
     @Override
@@ -324,16 +243,13 @@ public class CountdownActivity extends AppCompatActivity {
         super.onStart();
 
         mTitleImage = (ImageView) findViewById(R.id.countdownTitle);
-        //mConstraint = (ConstraintLayout) findViewById(R.id.container);
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             mTitleImage.setImageResource(R.drawable.night_countdown_title);
-            //mConstraint.setBackgroundResource(R.color.psyche_dark_purple);
         }
         else {
 
             mTitleImage.setImageResource(R.drawable.white_countdown_title);
-            //mConstraint.setBackgroundResource(R.color.tw__composer_white);
         }
 
         if (VERBOSE) Log.v(TAG, "++ ON START ++");
@@ -361,8 +277,6 @@ public class CountdownActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //fillTextViewIDs();
-
         /**
          * This needs to be refactored and encapsulated, but the basic functionality is
          * still being figured out, so that will be done later.
@@ -376,9 +290,6 @@ public class CountdownActivity extends AppCompatActivity {
 
                     startDate = startDate - 1;
                     Long countdownSeconds = (millisUntilFinished - startDate) / 1000;
-
-                   // initTextViews(textViewIDs[index][0], textViewIDs[index][1], textViewIDs[index][2],
-                         //   textViewIDs[index][3], textViewIDs[index][4], textViewIDs[index][5]);
 
                     Calendar calendar = GregorianCalendar.getInstance();
                     calendar.setTimeInMillis(countdownSeconds * 1000);
@@ -437,6 +348,7 @@ public class CountdownActivity extends AppCompatActivity {
                     String yearsLeft = String.format("%d", calendar.get(Calendar.YEAR) - 1970);
                     String monthsLeft = String.format("%d", calendar.get(Calendar.MONTH));
 
+                    // Something that could be used to account for leap year.
                     /*String daysLeft;
                     long daysLeftNum = countdownSeconds / 86400;
                     if (daysLeftNum > 769)
@@ -470,65 +382,6 @@ public class CountdownActivity extends AppCompatActivity {
                 }
             };
         }
-        /* This is being kept so that parts of it may be used to find a better timer method
-            if necessary
-
-        mCountDownTimer1 = new CountDownTimer(milliseconds1, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-
-                startDate = startDate - 1;
-                Long countdownSeconds = (millisUntilFinished - startDate) / 1000;
-
-                initTextViews(R.id.textViewYearsA, R.id.textViewMonthsA, R.id.textViewDaysA,
-                        R.id.textViewHoursA, R.id.textViewMinutesA, R.id.textViewSecondsA);
-
-                *//*String daysLeft = String.format("%d", countdownSeconds / 86400);
-                textViewDays.setText(daysLeft);
-                if (VERBOSE) Log.d("daysLeft",daysLeft);
-
-                String hoursLeft = String.format("%d", (countdownSeconds % 86400) / 3600);
-                textViewHours.setText(hoursLeft);
-                if (VERBOSE) Log.d("hoursLeft",hoursLeft);
-
-                String minutesLeft = String.format("%d", ((countdownSeconds % 86400) % 3600) / 60);
-                textViewMins.setText(minutesLeft);
-                if (VERBOSE) Log.d("minutesLeft",minutesLeft);
-
-                String secondsLeft = String.format("%d", ((countdownSeconds % 86400) % 3600) % 60);
-                textViewSecs.setText(secondsLeft);
-                if (VERBOSE) Log.d("secondsLeft",secondsLeft);*//*
-
-                Calendar calendar = GregorianCalendar.getInstance();
-                calendar.setTimeInMillis(countdownSeconds * 1000);
-
-                textViewYears.setText(String.format("%d", calendar.get(Calendar.YEAR) - 1970));
-                textViewMonths.setText(String.format("%d", calendar.get(Calendar.MONTH)));
-                textViewDays.setText(String.format("%d", calendar.get(Calendar.DAY_OF_MONTH)));
-                textViewHours.setText(String.format("%d", calendar.get(Calendar.HOUR_OF_DAY)));
-                textViewMins.setText(String.format("%d", calendar.get(Calendar.MINUTE)));
-                textViewSecs.setText(String.format("%d",calendar.get(Calendar.SECOND)));
-
-                *//*Calendar startCalendar = GregorianCalendar.getInstance();
-                Calendar endCalendar = GregorianCalendar.getInstance();
-                endCalendar.setTimeInMillis(millisUntilFinished);*//*
-
-                *//*String yearsLeft = String.format("%d", );
-                textViewYears.setText();
-
-                textViewMonths.setText();
-                textViewDays.setText();
-                textViewHours.setText();
-                textViewMins.setText();
-                textViewSecs.setText();*//*
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        };
-        */
 
         for (int j = 0; j < mCountDownTimer.length; j++) {
             mCountDownTimer[j].start();
@@ -579,23 +432,4 @@ public class CountdownActivity extends AppCompatActivity {
         textViewMins = (DonutProgress) findViewById(minutes);
         textViewSecs = (DonutProgress) findViewById(seconds);
     }
-
-    /**
-     * Fills the textViewIDs array with the necessary numbers from all of the TextViews
-     */
-    /*
-    private void fillTextViewIDs() {
-        textViewIDs[0][0] = R.id.textViewYearsA;
-        textViewIDs[0][1] = R.id.textViewMonthsA;
-        textViewIDs[0][2] = R.id.textViewDaysA;
-        textViewIDs[0][3] = R.id.textViewHoursA;
-        textViewIDs[0][4] = R.id.textViewMinutesA;
-        textViewIDs[0][5] = R.id.textViewSecondsA;
-        textViewIDs[1][0] = R.id.textViewYears2;
-        textViewIDs[1][1] = R.id.textViewMonths2;
-        textViewIDs[1][2] = R.id.textViewDays2;
-        textViewIDs[1][3] = R.id.textViewHours2;
-        textViewIDs[1][4] = R.id.textViewMinutes2;
-        textViewIDs[1][5] = R.id.textViewSeconds2;
-    }*/
 }
