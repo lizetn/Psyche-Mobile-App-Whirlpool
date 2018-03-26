@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import asu.whirlpool.psychewhirlpool.R;
 import asu.whirlpool.psychewhirlpool.gallery.ImageViewHolder;
 
@@ -15,21 +17,31 @@ import asu.whirlpool.psychewhirlpool.gallery.ImageViewHolder;
  * This adapter handles initialization of video thumbnails displayed in the Video section of
  * the Gallery.
  *
+ * Video thumbnails are retrieved from YouTube.
+ *
  * @author      Erick Ramirez Cordero
- * @version     2/15/2018
+ * @version     3/26/2018
  */
 
 public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
 {
+    private Context mContext;
     private LayoutInflater mLayoutInflater;
-    private final String VIDEO_KEY = "video_key";
 
-    private int[] thumbnailData = {
-            R.drawable.game_icon, R.drawable.game_icon
+    public static final String VIDEO_KEY = "VIDEO_KEY";
+    private final String THUMBNAIL_URI_START = "http://img.youtube.com/vi/";
+    private final String THUMBNAIL_URI_END = "/hqdefault.jpg";
+
+    private String[] videoIDs = {
+            "cSMhurC_fm0", "h2pm1RPY6Bc",
+            "jOvNzYMfkJo", "bxhcddsmA3o",
+            "jOZNIrxI3MI", "JX8m2UJClsw",
+            "6i4UbDUOq70", "7B8-mwJLulw"
     };
 
     public VideoRecycleAdapter(Context context)
     {
+        mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
     }
 
@@ -41,7 +53,7 @@ public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     }
 
     /**
-     * Sets an {@link ImageViewHolder} to a specific image.
+     * Sets an {@link ImageViewHolder} to a specific YouTube thumbnail.
      *
      * Also sets an {@link android.view.View.OnClickListener} that will display the related
      * full screen video when selected.
@@ -49,30 +61,24 @@ public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
      * @param holder        An {@link ImageViewHolder}
      * @param position      Position in video resources array
      *
-     * TODO: The resId passed to {@link VideoActivity} should be the resource ID of a video, NOT an image!
      */
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position)
     {
-        final int resId = thumbnailData[position];
-
+        final String videoID = videoIDs[position];
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                /*
-                Intent intent = new Intent(view.getContext(), VideoActivity.class);
-                intent.putExtra(VIDEO_KEY, resId);
-                view.getContext().startActivity(intent);
-                */
-
                 Intent youTubeIntent = new Intent(view.getContext(), YouTubeActivity.class);
+                youTubeIntent.putExtra(VIDEO_KEY, videoID);
                 view.getContext().startActivity(youTubeIntent);
             }
         });
 
-        holder.imageView.setImageResource(resId);
+        String videoUri = THUMBNAIL_URI_START + videoID + THUMBNAIL_URI_END;
+        Picasso.with(mContext).load(videoUri).into(holder.imageView);
     }
 
     /**
@@ -81,6 +87,6 @@ public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     @Override
     public int getItemCount()
     {
-        return thumbnailData.length;
+        return videoIDs.length;
     }
 }
