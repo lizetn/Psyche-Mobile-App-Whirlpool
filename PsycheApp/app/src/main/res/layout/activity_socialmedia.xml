@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@mipmap/ic_launcher_foreground2"
+        android:divider="?android:attr/windowBackground"
         android:dividerHeight="5dp"
         android:drawSelectorOnTop="false" />
 </android.support.constraint.ConstraintLayout>

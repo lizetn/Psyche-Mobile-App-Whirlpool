@@ -1,60 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:id="@+id/rlayout"
-    android:background="#f3f3f3">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:background="#ffffff"
         android:orientation="vertical"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
-        >
 
-        <ImageView
-            android:id="@+id/profilePic"
-            android:layout_width="49dp"
-            android:layout_height="47dp"
-            android:layout_gravity="left"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/profilepics"
-            app:srcCompat="@android:drawable/btn_star" />
-
-        <TextView
-            android:id="@+id/story"
-            android:layout_width="249dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/profilePic"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="-60dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="7dp"
-            android:paddingRight="10dp"
-            android:text="story"
-            android:textColor="#000000"
-            android:textSize="17dp"
-            app:layout_constraintLeft_toLeftOf="@+id/profilePic"
-            app:layout_constraintStart_toStartOf="@+id/profilePic" />
+            android:layout_gravity="left">
 
-        <TextView
-            android:id="@+id/times"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingLeft="7dp"
-            android:paddingTop="0dp"
-            android:text="Time"
-            android:textColor="@color/com_facebook_button_background_color_disabled"
-            android:textSize="12dp"
-            app:layout_constraintLeft_toLeftOf="@+id/profilePic"
-            app:layout_constraintStart_toStartOf="@+id/profilePic" />/>
+            <ImageView
+                android:id="@+id/profilePic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/profilepics" />
+
+            <TextView
+                android:id="@+id/story"
+                android:layout_width="249dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="story"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toTopOf="@+id/times"
+                app:layout_constraintLeft_toLeftOf="@+id/profilePic"
+                app:layout_constraintStart_toStartOf="@+id/profilePic" />
+
+            <TextView
+                android:id="@+id/times"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-250dp"
+                android:layout_marginTop="58dp"
+                android:paddingTop="10dp"
+                android:text="Time"
+                android:textColor="@color/com_facebook_button_background_color_disabled"
+                android:textSize="12dp"
+                app:layout_constraintLeft_toLeftOf="@+id/profilePic"
+                app:layout_constraintStart_toStartOf="@+id/profilePic"
+                app:layout_constraintTop_toBottomOf="@+id/story" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -94,14 +97,15 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/fbdivider"
         android:layout_width="match_parent"
         android:layout_height="6dp"
-        android:layout_alignLeft="@+id/linearLayout2"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="24dp"
-        android:scaleType="centerCrop"
-        android:background="@mipmap/ic_launcher_foreground2">
+        android:background="?android:attr/windowBackground"
+        android:scaleType="centerCrop">
 
 
     </RelativeLayout>
