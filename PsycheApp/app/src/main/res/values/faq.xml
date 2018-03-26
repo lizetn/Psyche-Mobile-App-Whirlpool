@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="fact_options">
+    <string-array name="faq_options">
         <item>Intro</item>
         <item>Timeline Summary</item>
         <item>Psyche the Asteroid</item>
@@ -14,21 +14,21 @@
         <item>More Information</item>
         <item>References</item>
     </string-array>
-    <array name="fact_array">
-        <item>@string/fact_intro</item>
-        <item>@string/fact_timeline_summary</item>
-        <item>@string/fact_asteroid</item>
-        <item>@string/fact_spacecraft</item>
-        <item>@string/fact_propulsion</item>
-        <item>@string/fact_mission_cost</item>
-        <item>@string/fact_mission_science_goals</item>
-        <item>@string/fact_mission_science_objectives</item>
-        <item>@string/fact_instruments_and_investigations</item>
-        <item>@string/fact_mission_team</item>
-        <item>@string/fact_more_info</item>
-        <item>@string/fact_references</item>
+    <array name="faq_array">
+        <item>@string/faq_intro</item>
+        <item>@string/faq_timeline_summary</item>
+        <item>@string/faq_asteroid</item>
+        <item>@string/faq_spacecraft</item>
+        <item>@string/faq_propulsion</item>
+        <item>@string/faq_mission_cost</item>
+        <item>@string/faq_mission_science_goals</item>
+        <item>@string/faq_mission_science_objectives</item>
+        <item>@string/faq_instruments_and_investigations</item>
+        <item>@string/faq_mission_team</item>
+        <item>@string/faq_more_info</item>
+        <item>@string/faq_references</item>
     </array>
-    <string name="fact_intro">
+    <string name="faq_intro">
         "What is Psyche?\n"
         "Psyche is the name of an asteroid orbiting the Sun between Mars and Jupiter and "
         "the name of a NASA space mission to visit that asteroid, led by ASU. Psyche is "
@@ -41,14 +41,14 @@
         "Psyche is the 14th mission selected for NASA’s Discovery Program, a series of "
         "relatively low-cost missions to solar system targets.\n\n"
     </string>
-    <string name="fact_timeline_summary">
+    <string name="faq_timeline_summary">
         "What is the timeline of the Psyche mission?\n"
         "• 2022: Launch of Psyche spacecraft from NASA’s Kennedy Space Center, FL\n"
         "• 2023: Psyche spacecraft flyby of Mars\n"
         "• 2026: Psyche spacecraft arrives in asteroid’s orbit\n"
         "• 2026-2027: Psyche spacecraft orbits the Psyche asteroid for 21 months\n\n"
     </string>
-    <string name="fact_propulsion">
+    <string name="faq_propulsion">
         "How will the Psyche spacecraft get to Psyche?\n"
         "The Psyche spacecraft will use solar-electric (low-thrust) propulsion. Solar electric "
         "propulsion uses electricity from solar arrays to create electromagnetic fields to accelerate "
@@ -64,7 +64,7 @@
         "are accelerated. It also is inert and has a high storage density; therefore, it is well "
         "suited for storing on spacecraft.”[3]\n\n"
     </string>
-    <string name="fact_spacecraft">
+    <string name="faq_spacecraft">
         "How big will the Psyche spacecraft be?\n"
         "The full spacecraft, including the solar panels, is 24.76 meters (~81 feet) long by 7.34 meters (~24 feet) wide. "
         "That is about the size of a (singles) tennis court.\n\n"
@@ -74,7 +74,7 @@
         "To help you visualize this, it is slightly bigger than a Smart Car; "
         "it about the size of a garden storage shed. It is as tall as a regulation basketball hoop!\n\n"
     </string>
-    <string name="fact_mission_cost">
+    <string name="faq_mission_cost">
         "Mission cost:\n"
         "•Estimated $850 million (includes mission development, operations, and science)\n"
         "•Amount does not include cost for the launch service which is procured separately\n"
@@ -86,7 +86,7 @@
         "This amount does not include cost for the launch service, which is procured separately. "
         "It does not include the cost for the Deep Space Optical Communications demonstration hardware or operations.\n\n"
     </string>
-    <string name="fact_asteroid"><![CDATA[
+    <string name="faq_asteroid"><![CDATA[
         "When was the Psyche asteroid discovered?\n"
         "The asteroid, Psyche, was discovered in 1852 by Italian astronomer Annibale de Gasparis. "
         "It was the 16th asteroid to be discovered, so is sometimes referred to as (16) Psyche. "
@@ -163,7 +163,7 @@
         "has seen the Psyche asteroid yet, so we will not know what it actually looks like until the "
         "spacecraft arrives. This is the best look we have from radar observations: [Insert Picture here?]\n\n"
     ]]></string>
-    <string name="fact_mission_science_goals">
+    <string name="faq_mission_science_goals">
         "What are the Psyche mission science goals?\n"
         "The Psyche mission science goals are to:\n"
         "• Understand a previously unexplored building block of planet formation: iron cores.\n
@@ -171,7 +171,7 @@
         "differentiated body, which otherwise could not be seen.\n"
         "• Explore a new type of world. For the first time, examine a world made not of rock and ice, but metal.\n\n"
     </string>
-    <string name="fact_mission_science_objectives">
+    <string name="faq_mission_science_objectives">
         "What are the Psyche mission science objectives?\n"
         "The Psyche mission science objectives are to:\n"
         "• Determine whether Psyche is a core, or if it is unmelted material.\n"
@@ -180,7 +180,7 @@
         "• Determine whether Psyche was formed under conditions more oxidizing or more reducing than Earth’s core.\n"
         "• Characterize Psyche’s morphology.\n\n"
     </string>
-    <string name="fact_instruments_and_investigations">
+    <string name="faq_instruments_and_investigations">
         "What instruments are on the Psyche mission?\n"
         "The Psyche spacecraft will carry a multispectral imager, a gamma ray and neutron spectrometer, "
         "and a magnetometer, and will conduct radio science.\n\n"
@@ -215,7 +215,7 @@
         "• Using light instead of radio allows the spacecraft to communicate more data in a given amount of time.\n"
         "• The DSOC team is based at the Jet Propulsion Laboratory\n\n"
     </string>
-    <string name="fact_mission_team">
+    <string name="faq_mission_team">
         "Who is on the Psyche mission team?\n"
         "The Principal Investigator is Lindy Elkins-Tanton, Arizona State University (ASU) and the "
         "Deputy Principal Investigator is Jim Bell, ASU.  Other co-investigators are:\n"
@@ -280,7 +280,7 @@
         "• University of California Los Angeles (UCLA)\n"
         "• Yale University\n\n"
     </string>
-    <string name="fact_more_info">
+    <string name="faq_more_info">
         "Who is building the Psyche mission?\n"
         "The mission is led by Arizona State University. NASA’s Jet Propulsion Laboratory is responsible "
         "for mission management, operations and navigation. The spacecraft’s solar-electric propulsion "
@@ -296,7 +296,7 @@
         "Facebook: NASAPsyche\n"
         "Instagram: @nasapsyche\n"
     </string>
-    <string name="fact_references">
+    <string name="faq_references">
         "References:\n\n"
 
         "[1] https://www.nasa.gov/content/how-will-nasas-asteroid-redirect-mission-help-humans-reach-mars\n\n"

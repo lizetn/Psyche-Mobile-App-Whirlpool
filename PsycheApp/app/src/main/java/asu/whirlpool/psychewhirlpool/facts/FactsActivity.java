@@ -27,14 +27,10 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
  * the Psyche App.
  *
  * @author      Erick Ramirez Cordero
- * @date        11/10/2017
- * @updated     1/15/2018
+ * @version     1/15/2018
  */
 public class FactsActivity extends AppCompatActivity
 {
-    private TextView mTextMessage;
-    private TextView faqTextView;
-    private TypedArray faqArray;
     private ListView mListView;
 
     public static final String FAQ_KEY = "faq_key";
@@ -83,12 +79,9 @@ public class FactsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
 
-        mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        //ListView
 
         //Create ListView object and fills it will text on the options
         mListView = findViewById(R.id.FactsList);
