@@ -82,8 +82,8 @@ public class MainInstagramActivity extends Fragment
         rv.setLayoutManager(layoutManager);
         rv.setHasFixedSize(false);
         rv.addOnScrollListener(listener);
-        Adapter b = new Adapter(getActivity(),list);
-        rv.setAdapter(b);
+        a = new Adapter(getActivity(),list);
+        rv.setAdapter(a);
         return view;
     }
     //Retrieves Instagram profile in a JSON format using a web services call
