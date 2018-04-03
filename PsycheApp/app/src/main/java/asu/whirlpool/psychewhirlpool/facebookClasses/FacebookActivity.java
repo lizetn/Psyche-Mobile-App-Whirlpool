@@ -49,7 +49,7 @@ public class FacebookActivity extends Fragment {
     ArrayList<FacebookfeedList> list_arr;
     EndlessRecycleOnScrollListener listener;
     LinearLayoutManager layoutManager;
-
+    ListAdapter adapter;
     AccessToken accessToken = new AccessToken(
             "1499176063510395|ZI2GBERxLbDOoC1keO1AMsi5TmU",
             "1499176063510395","1598743977091187",
@@ -106,8 +106,8 @@ public class FacebookActivity extends Fragment {
         list1.setLayoutManager(layoutManager);
         list1.setHasFixedSize(false);
         list1.addOnScrollListener(listener);
-        ListAdapter b = new ListAdapter(getActivity(),list_arr);
-        list1.setAdapter(b);
+        adapter = new ListAdapter(getActivity(),list_arr);
+        list1.setAdapter(adapter);
         //try catch required for callbackManager, graph API methods
         try {
             callbackManager = CallbackManager.Factory.create();
@@ -180,7 +180,7 @@ public class FacebookActivity extends Fragment {
                                 fbFeedList.setPicture(pic);
                                 list_arr.add(fbFeedList);
                             }
-                            ListAdapter adapter = new ListAdapter(getApplicationContext(),list_arr);
+                            adapter = new ListAdapter(getApplicationContext(),list_arr);
                             list1.setNestedScrollingEnabled(false);
 
                             list1.setAdapter(adapter);
