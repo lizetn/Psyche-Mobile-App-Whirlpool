@@ -1,6 +1,7 @@
 package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -35,6 +36,11 @@ public class YouTubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     @Override
     protected void onCreate(Bundle bundle)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            setTheme(R.style.PsycheDarkTheme);
+        }
+
         super.onCreate(bundle);
         setContentView(R.layout.activity_youtube_player);
 
