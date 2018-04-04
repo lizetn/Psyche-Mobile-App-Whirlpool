@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/contstraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_background_gradient">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/introTitleGroup"
@@ -20,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/title_home_large"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_dark_purple"
             android:textSize="60sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -44,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_home_small"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_dark_purple"
             android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="@+id/introTitle"
             app:layout_constraintStart_toStartOf="@+id/introTitle"

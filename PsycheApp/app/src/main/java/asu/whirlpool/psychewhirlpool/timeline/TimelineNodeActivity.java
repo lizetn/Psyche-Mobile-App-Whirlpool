@@ -3,6 +3,7 @@ package asu.whirlpool.psychewhirlpool.timeline;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,14 @@ public class TimelineNodeActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            setTheme(R.style.PsycheDarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.PsycheLightTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline_node);
 

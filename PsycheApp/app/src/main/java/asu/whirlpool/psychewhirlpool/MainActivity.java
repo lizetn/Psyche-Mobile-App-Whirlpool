@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
      */
     public void displayNASAWebsite(View view)
     {
-        Uri nasaUrl = Uri.parse("https://www.nasa.gov/");
+        Uri nasaUrl = Uri.parse("https://www.nasa.gov/psyche");
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, nasaUrl);
         startActivity(launchBrowser);
     }

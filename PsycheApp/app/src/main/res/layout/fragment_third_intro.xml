@@ -4,6 +4,7 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/intro_background_gradient"
     tools:context="asu.whirlpool.psychewhirlpool.home.ThirdIntroFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -26,7 +27,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/ic_home_black_24dp"
-            android:backgroundTint="?android:attr/textColorPrimary"
+            android:backgroundTint="@color/psyche_mustard"
             app:layout_constraintEnd_toStartOf="@+id/helpTitle"
             app:layout_constraintTop_toBottomOf="@+id/helpTitle" />
 
@@ -36,7 +37,6 @@
             android:layout_height="35dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/gold_game_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
             app:layout_constraintStart_toStartOf="@+id/socialIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/socialIconHelp" />
 
@@ -46,7 +46,6 @@
             android:layout_height="33dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/gold_social_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
             app:layout_constraintStart_toStartOf="@+id/galleryIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/galleryIconHelp" />
 
@@ -56,7 +55,6 @@
             android:layout_height="35dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/gold_gallery_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
             app:layout_constraintStart_toStartOf="@+id/timelineIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/timelineIconHelp" />
 
@@ -66,7 +64,6 @@
             android:layout_height="35dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/gold_timeline_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
             app:layout_constraintStart_toStartOf="@+id/homeIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/homeIconHelp" />
 
@@ -77,7 +74,7 @@
             android:layout_marginBottom="3dp"
             android:layout_marginStart="32dp"
             android:text="@string/title_activity_gallery"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_mustard"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/galleryIconHelp"
@@ -90,7 +87,7 @@
             android:layout_marginBottom="3dp"
             android:layout_marginStart="32dp"
             android:text="@string/title_activity_social_media"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_mustard"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/socialIconHelp"
@@ -103,7 +100,7 @@
             android:layout_marginBottom="3dp"
             android:layout_marginStart="32dp"
             android:text="@string/title_activity_game"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_mustard"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/gameIconHelp"
@@ -115,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/title_help"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_mustard"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -129,7 +126,7 @@
             android:layout_marginBottom="3dp"
             android:layout_marginStart="32dp"
             android:text="@string/timeline_title"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_mustard"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/timelineIconHelp"
@@ -142,7 +139,7 @@
             android:layout_marginBottom="3dp"
             android:layout_marginStart="32dp"
             android:text="@string/title_activity_home"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/psyche_mustard"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/homeIconHelp"
