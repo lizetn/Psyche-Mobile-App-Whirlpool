@@ -2,10 +2,13 @@ package asu.whirlpool.psychewhirlpool;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +18,15 @@ import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.github.lzyzsd.circleprogress.DonutProgress;
 
@@ -101,12 +107,54 @@ public class CountdownActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countdown);
+        int height= Resources.getSystem().getDisplayMetrics().heightPixels;
+        Log.d(String.valueOf(height), "onCreate22: ");
         textViewYears = (DonutProgress) findViewById(R.id.textViewYearsA);
         textViewMonths = (DonutProgress) findViewById(R.id.textViewMonthsA);
         textViewDays = (DonutProgress) findViewById(R.id.textViewDaysA);
         textViewHours = (DonutProgress) findViewById(R.id.textViewHoursA);
         textViewMins = (DonutProgress) findViewById(R.id.textViewMinutesA);
         textViewSecs = (DonutProgress) findViewById(R.id.textViewSecondsA);
+
+        if(height < 900)
+        {
+            /*ViewGroup.LayoutParams ls = textViewYears.getLayoutParams();
+            ls.height =75;
+            ls.width = 75;
+            textViewYears.setLayoutParams(ls);
+            //textViewMonths.setLayoutParams(ls);
+            //textViewDays.setLayoutParams(ls);
+            //textViewHours.setLayoutParams(ls);
+            textViewMins.setLayoutParams(ls);
+            ConstraintSet set = new ConstraintSet();*/
+           // set.clone(textViewYears);
+           /* set.connect(R.id.clocksAndLabels,ConstraintSet.LEFT,R.id.defaultTimer,ConstraintSet.LEFT,0);
+            set.connect(R.id.clocksAndLabels, ConstraintSet.RIGHT, R.id.defaultTimer, ConstraintSet.RIGHT, 0);
+            set.connect(R.id.clocksAndLabels, ConstraintSet.TOP, R.id.dynamic_spinner, ConstraintSet.TOP, 0);
+            set.connect(R.id.clocksAndLabels, ConstraintSet.BOTTOM, R.id.defaultTimer, ConstraintSet.BOTTOM, 0);
+           */// set.applyTo(ls);
+            //textViewSecs.setLayoutParams(ls);
+           /* ConstraintLayout ls = (ConstraintLayout) findViewById(R.id.clocksAndLabels);
+            ConstraintLayout ls2 = ls;
+            ConstraintSet set = new ConstraintSet();
+            ConstraintLayout.LayoutParams ns;
+            ns = (ConstraintLayout.LayoutParams) ls2.getLayoutParams();
+            ns.height = 40;
+            ns.width = 40;
+            textViewYears.setLayoutParams(ns);
+            set.clone(ls);
+            set.connect(R.id.clocksAndLabels,ConstraintSet.LEFT,R.id.defaultTimer,ConstraintSet.LEFT,0);
+            set.connect(R.id.clocksAndLabels, ConstraintSet.RIGHT, R.id.defaultTimer, ConstraintSet.RIGHT, 0);
+            set.connect(R.id.clocksAndLabels, ConstraintSet.TOP, R.id.dynamic_spinner, ConstraintSet.TOP, 0);
+            set.connect(R.id.clocksAndLabels, ConstraintSet.BOTTOM, R.id.defaultTimer, ConstraintSet.BOTTOM, 0);
+            set.applyTo(ls);*/
+            //ViewGroup.LayoutParams params = ls.getLayoutParams();
+// Changes the height and width to the specified *pixels*
+            //params.height = 40;
+            //params.width = 40;
+
+            Log.d(String.valueOf(textViewYears.getLayoutParams().height), "onCreate: ");
+        }
 
         textViewSecs.setUnfinishedStrokeWidth((float) 10.0);
         textViewSecs.setFinishedStrokeWidth((float) 10.0);

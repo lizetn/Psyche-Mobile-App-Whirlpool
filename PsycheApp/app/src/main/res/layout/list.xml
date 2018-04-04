@@ -163,7 +163,8 @@
                                 android:layout_marginLeft="12dp"
                                 android:layout_marginTop="10dp"
                                 android:maxLength="150"
-                                android:text="listAdapter = new HomeAdapter(getActivity(),globalvariable.globallisthome);rv_fragmentcommunication.setAdapter(listAdapter);dialog.dismiss();swipe_refresh_home.setRefreshing(false);"
+                                android:text=""
+                                android:typeface="normal"
                                 android:textColor="#222222" />
                         </LinearLayout>
 
