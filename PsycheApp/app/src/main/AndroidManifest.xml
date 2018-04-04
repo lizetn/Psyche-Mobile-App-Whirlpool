@@ -94,8 +94,9 @@
         <activity
             android:name=".home.FirstRunIntroActivity"
             android:label="@string/title_activity_first_run_intro"
-            android:theme="@style/PsycheLightTheme"></activity>
-        <activity android:name=".timeline.TimelineNodeActivity"></activity>
+            android:theme="@style/PsycheLightTheme"/>
+        <activity android:name=".timeline.TimelineNodeActivity"/>
+        <activity android:name=".gallery.videoClasses.YouTubeActivity" />
     </application>
 
 </manifest>

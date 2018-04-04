@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
     tools:context="asu.whirlpool.psychewhirlpool.gallery.FullImageActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:contentDescription="@string/title_activity_gallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-     />
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/title_activity_gallery"
+        android:scaleType="fitCenter" />
 </android.support.constraint.ConstraintLayout>

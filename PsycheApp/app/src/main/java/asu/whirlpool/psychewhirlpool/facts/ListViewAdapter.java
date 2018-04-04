@@ -8,52 +8,59 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * Created by Diana on 3/18/2018.
+ * {@link ListViewAdapter} sets the images displayed in the FAQ menu.
+ *
+ * @author      Diana Chavez
+ * @version     3/18/2018
  */
 
-public class ListViewAdapter extends BaseAdapter {
-
+public class ListViewAdapter extends BaseAdapter
+{
     String[] faqoptions;
     LayoutInflater layoutListView;
-    int[] faqImages = {
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-    };
 
-    public ListViewAdapter(Context context) {
+    int[] faqImages;
+
+    public ListViewAdapter(Context context)
+    {
         layoutListView = LayoutInflater.from(context);
         faqoptions = context.getResources().getStringArray(R.array.faq_options);
     }
 
+    public ListViewAdapter(Context context, int[] data)
+    {
+        this(context);
+        faqImages = data;
+    }
+
     @Override
-    public int getCount(){
+    public int getCount()
+    {
         return faqoptions.length;
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
+    public Object getItem(int position)
+    {
+        return faqImages[position];
     }
 
     @Override
-    public long getItemId(int position) {
-        return 0;
+    public long getItemId(int position)
+    {
+        return faqImages[position];
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
         View view = convertView;
 
-        if(view == null){
+        if(view == null)
+        {
             view = layoutListView.inflate(R.layout.facts_listview, parent, false);
         }
 

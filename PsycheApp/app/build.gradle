@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "asu.whirlpool.psychewhirlpool"
         minSdkVersion 15
@@ -15,6 +14,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -50,7 +50,6 @@ dependencies {
     compile 'com.android.support:cardview-v7:26.1.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.github.lzyzsd:circleprogress:1.2.1'
-
     compile project(":PsycheWhirlpoolGame-debug")
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
