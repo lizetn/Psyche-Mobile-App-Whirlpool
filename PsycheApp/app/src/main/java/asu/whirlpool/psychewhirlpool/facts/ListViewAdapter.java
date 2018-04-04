@@ -22,19 +22,18 @@ public class ListViewAdapter extends BaseAdapter
     String[] faqoptions;
     LayoutInflater layoutListView;
 
-    int[] faqImages = {
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-    };
+    int[] faqImages;
 
     public ListViewAdapter(Context context)
     {
         layoutListView = LayoutInflater.from(context);
         faqoptions = context.getResources().getStringArray(R.array.faq_options);
+    }
+
+    public ListViewAdapter(Context context, int[] data)
+    {
+        this(context);
+        faqImages = data;
     }
 
     @Override
