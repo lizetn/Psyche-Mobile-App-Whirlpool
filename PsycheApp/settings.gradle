@@ -1,1 +1,1 @@
-include ':app', ':PsycheWhirlpoolGame-debug'
+include ':app'//, ':PsycheWhirlpoolGame-debug'
