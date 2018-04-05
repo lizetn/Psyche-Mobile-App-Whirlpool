@@ -1,14 +1,17 @@
 package asu.whirlpool.psychewhirlpool.facebookClasses;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.AccessToken;
@@ -31,6 +34,7 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class FacebookActivity extends Fragment {
 
     private TextView mTextMessage;
+    private RelativeLayout divider;
     String mp = "";
     ProgressBar prog;
     CountDownTimer mCountDownTimer;
@@ -45,7 +49,7 @@ public class FacebookActivity extends Fragment {
     ArrayList<FacebookfeedList> list_arr;
     EndlessRecycleOnScrollListener listener;
     LinearLayoutManager layoutManager;
-
+    ListAdapter adapter;
     AccessToken accessToken = new AccessToken(
             "1499176063510395|ZI2GBERxLbDOoC1keO1AMsi5TmU",
             "1499176063510395","1598743977091187",
@@ -85,11 +89,8 @@ public class FacebookActivity extends Fragment {
         };
 
         mCountDownTimer.start();
-        Log.d("HERE", "onCreateView: ");
         list1 = (RecyclerView) view.findViewById(android.R.id.list);
         list_arr = new ArrayList<>();
-        Log.d("HERE2", "onCreateView: ");
-        Log.d("HERE3", "onCreateView: ");
         layoutManager = new LinearLayoutManager(this.getActivity());
         listener = new EndlessRecycleOnScrollListener(layoutManager) {
             @Override
@@ -105,9 +106,8 @@ public class FacebookActivity extends Fragment {
         list1.setLayoutManager(layoutManager);
         list1.setHasFixedSize(false);
         list1.addOnScrollListener(listener);
-        ListAdapter b = new ListAdapter(getActivity(),list_arr);
-        Log.d("IIIIIIIIIIIIIII", "onCompleted: ");
-        list1.setAdapter(b);
+        adapter = new ListAdapter(getActivity(),list_arr);
+        list1.setAdapter(adapter);
         //try catch required for callbackManager, graph API methods
         try {
             callbackManager = CallbackManager.Factory.create();
@@ -180,7 +180,7 @@ public class FacebookActivity extends Fragment {
                                 fbFeedList.setPicture(pic);
                                 list_arr.add(fbFeedList);
                             }
-                            ListAdapter adapter = new ListAdapter(getApplicationContext(),list_arr);
+                            adapter = new ListAdapter(getApplicationContext(),list_arr);
                             list1.setNestedScrollingEnabled(false);
 
                             list1.setAdapter(adapter);

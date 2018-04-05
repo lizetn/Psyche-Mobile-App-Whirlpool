@@ -1,18 +1,15 @@
 package asu.whirlpool.psychewhirlpool.facts;
 
 import android.content.Intent;
-import android.content.Context;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
 import asu.whirlpool.psychewhirlpool.GameActivity;
@@ -27,17 +24,26 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
  * the Psyche App.
  *
  * @author      Erick Ramirez Cordero
- * @date        11/10/2017
- * @updated     1/15/2018
+ * @version     1/15/2018
  */
 public class FactsActivity extends AppCompatActivity
 {
-    private TextView mTextMessage;
-    private TextView faqTextView;
-    private TypedArray faqArray;
     private ListView mListView;
 
     public static final String FAQ_KEY = "faq_key";
+
+    public int[] tabDayImages = {R.drawable.mission_tab_light1, R.drawable.mission_tab_light2,
+                                   R.drawable.mission_tab_light3, R.drawable.mission_tab_light4,
+                                   R.drawable.mission_tab_light5, R.drawable.mission_tab_light6,
+                                   R.drawable.mission_tab_light7, R.drawable.mission_tab_light8,
+                                   R.drawable.mission_tab_light9, R.drawable.mission_tab_light10,
+                                   R.drawable.mission_tab_light11, R.drawable.mission_tab_light12};
+    public int[] tabNightImages = {R.drawable.mission_tab_dark1, R.drawable.mission_tab_dark2,
+                                     R.drawable.mission_tab_dark3, R.drawable.mission_tab_dark4,
+                                     R.drawable.mission_tab_dark5, R.drawable.mission_tab_dark6,
+                                     R.drawable.mission_tab_dark7, R.drawable.mission_tab_dark8,
+                                     R.drawable.mission_tab_dark9, R.drawable.mission_tab_dark10,
+                                     R.drawable.mission_tab_dark11, R.drawable.mission_tab_dark12};
 
     /**
      * Handles navigation between different sections of the Psyche App.
@@ -80,19 +86,27 @@ public class FactsActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        ListViewAdapter adapter;
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            setTheme(R.style.PsycheDarkTheme);
+            adapter = new ListViewAdapter(this, tabNightImages);
+        }
+        else
+        {
+            adapter = new ListViewAdapter(this, tabDayImages);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
 
-        mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //ListView
-
         //Create ListView object and fills it will text on the options
         mListView = findViewById(R.id.FactsList);
-        ListViewAdapter adapter = new ListViewAdapter(this);
         mListView.setAdapter(adapter);
 
         // Instantiate FAQ Information
