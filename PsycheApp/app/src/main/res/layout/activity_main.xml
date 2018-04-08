@@ -178,7 +178,7 @@
             app:layout_constraintVertical_bias="0.498" />
 
         <ImageView
-            android:id="@+id/homeStreamIcon"
+            android:id="@+id/homeNewsIcon"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:adjustViewBounds="false"
@@ -211,9 +211,11 @@
 
         <Button
             android:id="@+id/nasaButton"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:background="@drawable/nasa_meatball_white"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/nasa_insignia_darkpurple_300"
             android:elevation="16dp"
             android:onClick="displayNASAWebsite"
             android:paddingLeft="2dp"
@@ -223,21 +225,16 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/homeTitleText"
             app:layout_constraintStart_toEndOf="@+id/homeTitleText"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/homeTitleText" />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/homeTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/nasaButton"
-            app:layout_constraintStart_toEndOf="@+id/homeTitleLogo"
-            app:layout_constraintTop_toTopOf="@+id/nasaButton"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/homeTitleTextLarge"
@@ -267,15 +264,11 @@
             android:id="@+id/homeTitleLogo"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="28dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
             android:contentDescription="Psyche: Journey to a Metal World"
             app:layout_constraintBottom_toBottomOf="@+id/nasaButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/homeTitleText"
             app:layout_constraintTop_toTopOf="@+id/nasaButton"
             app:srcCompat="@drawable/psyche_icon_color" />
 

@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
 
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity
     private TextView mTextMessage;
     private BottomNavigationView navigation;
     private ConstraintLayout mHelpBox, mButtonsBox, mBackground;
+    private ImageView mImageView;
+    private Button mButton;
     final int sdk = android.os.Build.VERSION.SDK_INT;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -66,12 +70,6 @@ public class MainActivity extends AppCompatActivity
     {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.PsycheDarkTheme);
-            mBackground = (ConstraintLayout) findViewById(R.id.container);
-            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
-            } else {
-                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
-            }
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -91,6 +89,47 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            mButton = (Button) findViewById(R.id.nasaButton);
+            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
+            } else {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
+            }
+            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_countdownclock_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_nightmode_mustard_solid_300));
+        } else {
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            mButton = (Button) findViewById(R.id.nasaButton);
+            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_darkpurple_300));
+            } else {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_darkpurple_300));
+            }
+            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.countdown_clock_300));
+            mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.night_mode_300));
+        }
     }
 
     /**
