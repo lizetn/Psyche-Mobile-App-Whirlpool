@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
-    private ConstraintLayout mHelpBox, mButtonsBox;
+    private ConstraintLayout mHelpBox, mButtonsBox, mBackground;
+    final int sdk = android.os.Build.VERSION.SDK_INT;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
@@ -64,6 +66,12 @@ public class MainActivity extends AppCompatActivity
     {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.PsycheDarkTheme);
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+            } else {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+            }
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
