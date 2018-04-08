@@ -2,6 +2,7 @@ package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,6 +14,8 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,6 +23,7 @@ import com.facebook.FacebookSdk;
 
 import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
+import asu.whirlpool.psychewhirlpool.home.AppCreditsActivity;
 import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
@@ -92,12 +96,12 @@ public class MainActivity extends AppCompatActivity
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
             mButton = (Button) findViewById(R.id.nasaButton);
-            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
-                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
-            } else {
+            if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
                 mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
                 mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
+            } else {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
             }
             mImageView = (ImageView) findViewById(R.id.homeClockIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_countdownclock_mustard_solid_300));
@@ -149,6 +153,16 @@ public class MainActivity extends AppCompatActivity
     public void displayFacts(View view)
     {
         Intent intent = new Intent(this, FactsActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Navigates to {@link asu.whirlpool.psychewhirlpool.home.AppCreditsActivity}
+     * @param view
+     */
+    public void displayCredits(View view)
+    {
+        Intent intent = new Intent(this, AppCreditsActivity.class);
         startActivity(intent);
     }
 

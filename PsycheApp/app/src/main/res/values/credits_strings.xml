@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_credits_text">
+        "BEHIND THE APP
+
+APP DESIGN
+
+Roshae Jameson
+
+PROGRAMMING
+
+Kyle Chapman
+Diana Chavez
+Erick Ramirez Cordero
+Natalie Fleischaker
+Javier Perez
+
+MOBILE APP TEAM: WHIRLPOOL
+
+Lizet Nevarez (Project Manager)
+Roshae Jameson (Graphic Designer)
+Kyle Chapman (Computer Scientist)
+Diana Chavez (Computer Scientist)
+Erick Ramirez Cordero (Computer Scientist)
+Natalie Fleischaker (Computer Scientist)
+Javier Perez (Computer Scientist)
+
+SPECIAL THANKS
+
+NASA
+Arizona State University
+School of Earth and Space Exploration
+
+Investigators
+Lindy Elkins-Tanton (Principal Investigator)
+Jim Bell (Deputy Principal Investigator)
+
+Co-Investigators
+Erik Asphaug (ASU)
+David Bercovici (Yale University)
+Bruce Bills (JPL)
+Richard Binzel (MIT)
+William Bottke (SwRI)
+Catherine Bowman (ASU)
+Ralf Jaumann (DLR)
+Insoo Jun (JPL)
+David Lawrence (APL)
+Simone Marchi (SwRI)
+Timothy McCoy (Smithsonian Institute)
+Ryan Park (JPL)
+Patrick Peplowski (John Hopkins University, APL)
+Carol Polanskey (JPL)
+Thomas Prettyman (Planetary Science Institute)
+Carol Raymond (JPL)
+Chris Russell (UCLA)
+Benjamin Weiss (MIT)
+Dan Wenkert (JPL)
+Mark Wieczorek (Observatoire de la Côte d’Azur)
+David Williams (ASU)
+Maria Zuber (MIT)
+
+Mission Leadership
+Diane Brown (Program Executive, NASA HQ)
+Sarah Noble (Program Scientist, NASA HQ)
+Belinda Wright (Mission Manager, NASA MSFC)
+Henry Stone (Project Manager (JPL)
+Robert Mase (Deputy Project Manager, JPL)
+Deborah Bass (Mission System Manager, JPL)
+Brian Johnson (Project Business Manager, JPL)
+David Oh (Project System Engineer, JPL)
+Kalyani Sukhatme (Payload Manager, JPL)
+Rob Menke (Mission Assurance Manager, JPL)
+Mark Brown (Flight System Manager, JPL)
+Steve Scott (SEP Chassis Program Manager, SSL)
+Peter Lord (SEP Chassis Deputy Program Manager, SSL)
+Tess Calvert (Project Manager, ASU)
+
+Psyche Partners
+Applied Physics Laboratory (APL)
+Arizona State University: School of Earth and Space Exploration (ASU SESE)
+Deutsches Zentrum für Luft- und Raumfahrt (DLR)
+Jet Propulsion Laboratory (JPL)
+Massachusetts Institute of Technology (MIT)
+Malin Space Science System (MSSS)
+Observatoire De La Côte d’Azur
+Planetary Science Institute (PSI)
+Smithsonian Institution
+Southwest Research Institute (SwRI)
+Secure Socket Layer (SSL)
+University of Arizona (UoA)
+University of Califonia Los Angeles (UCLA)
+Yale University
+
+Media
+nasa.gov/psyche
+psyche.asu.edu
+medium.com/the-nasa-psyche-mission-journey-to-a-metal-world
+
+Twitter
+@NASAPsyche
+
+Instagram
+@NASAPsyche
+
+Facebook
+facebook.com/NASAPsyche/
+\n\n"
+    </string>
+
+</resources>

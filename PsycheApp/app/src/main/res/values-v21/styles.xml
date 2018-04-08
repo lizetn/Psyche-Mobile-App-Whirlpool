@@ -22,7 +22,7 @@
         <item name="colorPrimaryDark">@color/tw__composer_white</item>
         <item name="colorAccent">@color/psyche_dark_purple</item>
         <item name="android:textColorSecondary">@color/psyche_black</item>
-        <item name="android:colorForeground">@color/psyche_coral</item>
+        <item name="android:colorForeground">@color/psyche_magenta</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">

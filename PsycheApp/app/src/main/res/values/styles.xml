@@ -32,7 +32,7 @@
         <item name="android:horizontalDivider">@color/psyche_black</item>
         <item name="android:verticalDivider">@color/psyche_black</item>
         <item name="android:textAppearance">@color/psyche_dark_purple</item>
-        <item name="android:colorForeground">@color/psyche_coral</item>
+        <item name="android:colorForeground">@color/psyche_magenta</item>
 
     </style>
 
