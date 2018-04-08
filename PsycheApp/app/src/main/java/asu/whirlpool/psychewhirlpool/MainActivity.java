@@ -177,12 +177,22 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Closes the app and displays NASA website in browser.
+     * Closes the app and displays NASA website in chosen browser.
      */
     public void displayNASAWebsite(View view)
     {
         Uri nasaUrl = Uri.parse("https://www.nasa.gov/psyche");
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, nasaUrl);
+        startActivity(launchBrowser);
+    }
+
+    /**
+     * Closes the app and displays ASU Psyche Mission website in chosen browser.
+     */
+    public void displayASUPsycheWebsite(View view)
+    {
+        Uri asuPsycheUrl = Uri.parse("https://psyche.asu.edu/");
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, asuPsycheUrl);
         startActivity(launchBrowser);
     }
 
