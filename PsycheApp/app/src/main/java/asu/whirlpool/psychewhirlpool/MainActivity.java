@@ -2,21 +2,28 @@ package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
 
 import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
+import asu.whirlpool.psychewhirlpool.home.AppCreditsActivity;
 import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
@@ -24,7 +31,10 @@ public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
-    private ConstraintLayout mHelpBox, mButtonsBox;
+    private ConstraintLayout mHelpBox, mButtonsBox, mBackground;
+    private ImageView mImageView;
+    private Button mButton;
+    final int sdk = android.os.Build.VERSION.SDK_INT;
 
     private final String NEWS_URI = "https://psyche.asu.edu/category/news/";
 
@@ -85,6 +95,47 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            mButton = (Button) findViewById(R.id.nasaButton);
+            if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
+            } else {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
+            }
+            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_countdownclock_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_nightmode_mustard_solid_300));
+        } else {
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            mButton = (Button) findViewById(R.id.nasaButton);
+            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_darkpurple_300));
+            } else {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_darkpurple_300));
+            }
+            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.countdown_clock_300));
+            mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.night_mode_300));
+        }
     }
 
     /**
@@ -115,6 +166,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
+     * Navigates to {@link asu.whirlpool.psychewhirlpool.home.AppCreditsActivity}
+     * @param view
+     */
+    public void displayCredits(View view)
+    {
+        Intent intent = new Intent(this, AppCreditsActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * Displays help box for navigation icon titles.
      */
     public void displayHelp(View view)
@@ -139,12 +200,22 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Closes the app and displays NASA website in browser.
+     * Closes the app and displays NASA website in chosen browser.
      */
     public void displayNASAWebsite(View view)
     {
         Uri nasaUrl = Uri.parse("https://www.nasa.gov/psyche");
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, nasaUrl);
+        startActivity(launchBrowser);
+    }
+
+    /**
+     * Closes the app and displays ASU Psyche Mission website in chosen browser.
+     */
+    public void displayASUPsycheWebsite(View view)
+    {
+        Uri asuPsycheUrl = Uri.parse("https://psyche.asu.edu/");
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, asuPsycheUrl);
         startActivity(launchBrowser);
     }
 
