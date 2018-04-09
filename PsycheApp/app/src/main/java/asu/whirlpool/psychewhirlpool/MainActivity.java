@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity
     private BottomNavigationView navigation;
     private ConstraintLayout mHelpBox, mButtonsBox;
 
+    private final String NEWS_URI = "https://psyche.asu.edu/category/news/";
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
     {
@@ -103,6 +105,13 @@ public class MainActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this, FactsActivity.class);
         startActivity(intent);
+    }
+
+    public void displayNews(View view)
+    {
+        Uri newsUrl = Uri.parse(NEWS_URI);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, newsUrl);
+        startActivity(launchBrowser);
     }
 
     /**
