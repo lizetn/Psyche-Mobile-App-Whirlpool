@@ -254,7 +254,7 @@
             android:layout_marginTop="2dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
-            android:onClick="displayFacts"
+            android:onClick="displayNews"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_news"
             android:textAlignment="center"
