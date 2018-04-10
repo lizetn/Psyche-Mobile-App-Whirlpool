@@ -25,7 +25,7 @@ import asu.whirlpool.psychewhirlpool.R;
  */
 public class GalleryImageFragment extends Fragment
 {
-    private final int NUMBER_OF_COLUMNS = 3;
+    private final int NUMBER_OF_COLUMNS = 2;
 
     /**
      * Initializes the Fragment. A {@link GridLayoutManager} is used for the layout and
