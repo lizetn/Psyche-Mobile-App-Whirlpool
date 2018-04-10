@@ -17,7 +17,7 @@ import asu.whirlpool.psychewhirlpool.R;
  * This adapter handles initialization of the {@link ImageView} used for images in the Gallery.
  *
  * @author      Erick Ramirez Cordero
- * @version     2/15/2018
+ * @version     4/10/2018
  */
 public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
 {
@@ -26,22 +26,6 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     public static final int RES_ERROR = -1;
 
     private LayoutInflater mLayoutInflater;
-
-    private int[] imageData = {
-            R.drawable.thumbnail_1, R.drawable.thumbnail_2,
-            R.drawable.thumbnail_3, R.drawable.thumbnail_4,
-            R.drawable.thumbnail_5, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon
-    };
-
     private TypedArray imageResources;
     private TypedArray imageDescriptions;
 
@@ -76,7 +60,7 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position)
     {
-        final int resId = imageResources.getResourceId(position, RES_ERROR);//imageData[position];
+        final int resId = imageResources.getResourceId(position, RES_ERROR);
         final CharSequence desId = imageDescriptions.getText(position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
