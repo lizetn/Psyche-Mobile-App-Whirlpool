@@ -34,6 +34,7 @@
         android:id="@+id/defaultTimer"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
@@ -77,13 +78,17 @@
             android:id="@+id/clocksAndLabels"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:layout_marginBottom="32dp"
+            android:maxHeight="450dp"
+            android:minHeight="339dp"
             android:weightSum="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defaultClockTextView">
+            app:layout_constraintTop_toBottomOf="@+id/defaultClockTextView"
+            app:layout_constraintVertical_bias="0.36">
 
             <com.github.lzyzsd.circleprogress.DonutProgress
                 android:id="@+id/textViewMinutesA"
