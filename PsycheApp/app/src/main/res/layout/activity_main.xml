@@ -46,8 +46,6 @@
         android:id="@+id/nasaButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:background="@drawable/nasa_insignia_color_700"
         android:elevation="16dp"
         android:onClick="displayNASAWebsite"
@@ -59,6 +57,7 @@
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/homeTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/homeTitleText"
         app:layout_constraintTop_toTopOf="@+id/homeTitleText" />
 
@@ -249,10 +248,10 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/homeButtonsLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
@@ -265,11 +264,14 @@
             android:id="@+id/factsButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayFacts"
+            android:paddingLeft="2dp"
             android:paddingStart="@dimen/cardview_default_radius"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_facts"
@@ -300,7 +302,9 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="4dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="4dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayHelp"
@@ -333,6 +337,7 @@
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="4dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayCountdown"
@@ -349,27 +354,30 @@
 
         <ImageView
             android:id="@+id/homeClockIcon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="1dp"
             android:adjustViewBounds="false"
             android:background="@drawable/countdown_clock_300"
             android:backgroundTint="?android:attr/textColorPrimary"
             android:cropToPadding="false"
             android:elevation="20dp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/guideMidRight"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideMidLeft"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/countdownButton"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/countdownButton"
+            app:layout_constraintTop_toTopOf="@+id/countdownButton" />
 
         <Button
             android:id="@+id/nightModeButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginBottom="4dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="toggleHomeNightMode"
+            android:paddingLeft="2dp"
             android:paddingStart="@dimen/cardview_default_radius"
             android:paddingTop="@dimen/tw__composer_close_size"
             android:text="@string/button_home_nightmode"
@@ -384,16 +392,15 @@
 
         <ImageView
             android:id="@+id/homeMoonIcon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:adjustViewBounds="false"
             android:background="@drawable/night_mode_300"
             android:backgroundTint="?android:attr/textColorPrimary"
             android:elevation="20dp"
             android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/guideMidRight"
-            app:layout_constraintStart_toStartOf="@+id/guideMidLeft"
+            app:layout_constraintEnd_toEndOf="@+id/nightModeButton"
+            app:layout_constraintStart_toStartOf="@+id/nightModeButton"
             app:layout_constraintTop_toTopOf="@+id/nightModeButton" />
 
         <Button
@@ -417,43 +424,36 @@
 
         <ImageView
             android:id="@+id/homeNewsIcon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:adjustViewBounds="false"
             android:background="@drawable/home_news_darkpurple_solid_psyche_300"
             android:backgroundTint="?android:attr/textColorPrimary"
             android:cropToPadding="false"
             android:elevation="20dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/guideMidRight"
-            app:layout_constraintStart_toStartOf="@+id/guideMidLeft"
+            app:layout_constraintEnd_toEndOf="@+id/newsButton"
+            app:layout_constraintStart_toStartOf="@+id/newsButton"
             app:layout_constraintTop_toTopOf="@+id/newsButton" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideMidRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="129dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="225dp"
             android:layout_marginLeft="186dp"
-            android:layout_marginRight="129dp"
+            android:layout_marginRight="225dp"
             android:layout_marginStart="186dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="186dp"
+            app:layout_constraintGuide_begin="233dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideMidLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="184dp"
-            android:layout_marginLeft="131dp"
-            android:layout_marginRight="184dp"
-            android:layout_marginStart="131dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="131dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintGuide_begin="178dp" />
 
     </android.support.constraint.ConstraintLayout>
 

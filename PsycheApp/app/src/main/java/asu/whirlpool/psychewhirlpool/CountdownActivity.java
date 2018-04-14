@@ -204,7 +204,10 @@ public class CountdownActivity extends AppCompatActivity {
 
         final Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
 
-        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design", "Phase C: Critical Design","Phase D: Instrument & Spacecraft Build","Phase E: Mars Gravity Assist","Phase F: Mission Closeout" };
+        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design",
+                "Phase C: Critical Design", "Phase D: Build, Ship & Launch",
+                "Spacecraft Launch", "Phase E: Mars Gravity Assist",
+                "Phase F: Mission Closeout" };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.spinner_item, items);
@@ -256,7 +259,8 @@ public class CountdownActivity extends AppCompatActivity {
                         startCountdown();
                         break;
                     case 3:
-                        titleMessage.setText("Phase D: Instrument & Spacecraft Build, Ship & Launch");
+                        titleMessage.setText("Phase D: Instrument & Spacecraft\n" +
+                                                "Build, Ship & Launch");
                         endTimes[0] = "01.30.2021, 13:00:00";
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();
@@ -264,6 +268,14 @@ public class CountdownActivity extends AppCompatActivity {
                         startCountdown();
                         break;
                     case 4:
+                        titleMessage.setText("Spacecraft Launch");
+                        endTimes[0] = "08.24.2022, 13:00:00";
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
+                        startCountdown();
+                        break;
+                    case 5:
                         titleMessage.setText("Phase E: Gravity Assist, Arrival, & Orbit");
                         endTimes[0] = "05.30.2023, 13:00:00";
                         if(mCountDownTimer[0] != null) {
@@ -271,7 +283,7 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-                    case 5:
+                    case 6:
                         titleMessage.setText("Phase F: Mission Closeout");
                         endTimes[0] = "11.30.2027, 13:00:00";
                         if(mCountDownTimer[0] != null) {
@@ -279,10 +291,8 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-                    case 6:
-                        break;
                     default:
-                        titleMessage.setText("Phase F: Mission Closeout");
+                        titleMessage.setText("Spacecraft Launch");
                         endTimes[0] = "11.30.2027, 13:00:00";
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();

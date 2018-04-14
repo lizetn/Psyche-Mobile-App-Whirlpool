@@ -10,16 +10,13 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="46dp"
         android:background="?attr/colorPrimaryDark"
         android:paddingTop="@dimen/nav_bar_padding_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/defaultTimer"
-        app:layout_constraintVertical_bias="0.965"
         app:menu="@menu/navigation" />
 
     <ImageView
@@ -35,17 +32,18 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/defaultTimer"
-        android:layout_width="369dp"
-        android:layout_height="426dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countdownTitle">
+        app:layout_constraintTop_toBottomOf="@+id/countdownTitle"
+        app:layout_constraintVertical_bias="0.0">
 
         <Spinner
             android:id="@+id/dynamic_spinner"
@@ -62,7 +60,7 @@
         <TextView
             android:id="@+id/defaultClockTextView"
             android:layout_width="wrap_content"
-            android:layout_height="33dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="36dp"
             android:layout_marginStart="2dp"
             android:gravity="start"
@@ -78,16 +76,14 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clocksAndLabels"
             android:layout_width="wrap_content"
-            android:layout_height="330dp"
-            android:layout_marginTop="2dp"
+            android:layout_height="0dp"
             android:weightSum="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dynamic_spinner"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/defaultClockTextView">
 
             <com.github.lzyzsd.circleprogress.DonutProgress
                 android:id="@+id/textViewMinutesA"
@@ -104,9 +100,8 @@
                 app:donut_text_color="?android:attr/textColorPrimary"
                 app:donut_unfinished_color="?attr/colorPrimaryDark"
                 app:layout_constraintBottom_toTopOf="@+id/textViewSecondsA"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHoursA"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="240dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" />
 
             <TextView
                 android:id="@+id/hourslabel"
@@ -120,7 +115,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewHoursA"
                 app:layout_constraintStart_toEndOf="@+id/textViewHoursA"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDaysA" />
+                app:layout_constraintTop_toTopOf="@+id/textViewHoursA" />
 
             <TextView
                 android:id="@+id/monthlabel"
@@ -132,9 +127,9 @@
                 android:text="Months"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewDaysA"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMonthsA"
                 app:layout_constraintStart_toEndOf="@+id/textViewMonthsA"
-                app:layout_constraintTop_toBottomOf="@+id/textViewYearsA" />
+                app:layout_constraintTop_toTopOf="@+id/textViewMonthsA" />
 
             <TextView
                 android:id="@+id/minutelabel"
@@ -229,6 +224,7 @@
                 android:id="@+id/textViewYearsA"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
+                android:layout_marginTop="4dp"
                 android:layout_weight="1"
                 android:text="10"
                 android:textSize="36sp"
@@ -247,6 +243,8 @@
                 android:id="@+id/textViewSecondsA"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="42dp"
                 android:layout_weight="1"
                 android:textSize="36sp"
                 android:visibility="visible"
@@ -255,12 +253,13 @@
                 app:donut_finished_stroke_width="5dp"
                 app:donut_progress="0"
                 app:donut_suffix_text=" "
+
                 app:donut_text_color="?android:attr/textColorPrimary"
                 app:donut_unfinished_color="?attr/colorPrimaryDark"
                 app:donut_unfinished_stroke_width="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/clocksAndLabels"
-
-                app:layout_constraintStart_toStartOf="parent" />/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMinutesA" />/>
 
             <com.github.lzyzsd.circleprogress.DonutProgress
                 android:id="@+id/textViewDaysA"
