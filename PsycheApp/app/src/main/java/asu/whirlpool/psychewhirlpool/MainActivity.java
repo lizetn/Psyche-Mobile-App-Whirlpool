@@ -3,17 +3,22 @@ package asu.whirlpool.psychewhirlpool;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -85,6 +90,17 @@ public class MainActivity extends AppCompatActivity
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
+        for (int i = 0; i < menuView.getChildCount(); i++) {
+            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            // navigation icon height set here
+            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            // navigation icon width set here
+            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            iconView.setLayoutParams(layoutParams);
+        }
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
@@ -97,40 +113,34 @@ public class MainActivity extends AppCompatActivity
         super.onStart();
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
-            mButton = (Button) findViewById(R.id.nasaButton);
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
                 mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
-                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
             } else {
                 mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
-                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_mustard_300));
             }
             mImageView = (ImageView) findViewById(R.id.homeClockIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_countdownclock_mustard_solid_300));
             mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_mustard_solid_300));
             mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
-            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_mustard_solid_300));
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_mustard_solid_psyche_300));
             mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_mustard_solid_300));
             mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_nightmode_mustard_solid_300));
         } else {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
-            mButton = (Button) findViewById(R.id.nasaButton);
             if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
                 mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
-                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_darkpurple_300));
             } else {
                 mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
-                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.nasa_insignia_darkpurple_300));
             }
             mImageView = (ImageView) findViewById(R.id.homeClockIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.countdown_clock_300));
             mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_darkpurple_solid_300));
             mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
-            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_darkpurple_solid_300));
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_darkpurple_solid_psyche_300));
             mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_darkpurple_solid_300));
             mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
