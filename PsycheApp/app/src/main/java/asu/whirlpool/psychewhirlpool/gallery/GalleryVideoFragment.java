@@ -23,7 +23,7 @@ import asu.whirlpool.psychewhirlpool.gallery.videoClasses.VideoRecycleAdapter;
  */
 public class GalleryVideoFragment extends Fragment
 {
-    private final int NUMBER_OF_COLUMNS = 3;
+    private final int NUMBER_OF_COLUMNS = 2;
 
     /**
      * Initializes the Fragment. A {@link GridLayoutManager} is used with the {@link RecyclerView}.

@@ -18,14 +18,14 @@ import asu.whirlpool.psychewhirlpool.R;
  * images.
  *
  * When an image is selected, a {@link FullImageActivity} will display a full screen version
- * of the image.
+ * of the image with a description mode.
  *
  * @author      Erick Ramirez Cordero
- * @version     3/7/2018
+ * @version     4/10/2018
  */
 public class GalleryImageFragment extends Fragment
 {
-    private final int NUMBER_OF_COLUMNS = 3;
+    private final int NUMBER_OF_COLUMNS = 2;
 
     /**
      * Initializes the Fragment. A {@link GridLayoutManager} is used for the layout and

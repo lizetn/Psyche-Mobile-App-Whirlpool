@@ -2,6 +2,8 @@ package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,32 +17,25 @@ import asu.whirlpool.psychewhirlpool.R;
  * This adapter handles initialization of the {@link ImageView} used for images in the Gallery.
  *
  * @author      Erick Ramirez Cordero
- * @version     2/15/2018
+ * @version     4/10/2018
  */
 public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
 {
     public static final String IMAGE_KEY = "image_key";
+    public static final String DESCRIPTION_KEY = "description_key";
+    public static final int RES_ERROR = -1;
 
     private LayoutInflater mLayoutInflater;
-
-    private int[] imageData = {
-            R.drawable.thumbnail_1, R.drawable.thumbnail_2,
-            R.drawable.thumbnail_3, R.drawable.thumbnail_4,
-            R.drawable.thumbnail_5, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon,
-            R.drawable.game_icon, R.drawable.game_icon
-    };
+    private TypedArray imageResources;
+    private TypedArray imageDescriptions;
 
     public ImageRecycleAdapter(Context context)
     {
         mLayoutInflater = LayoutInflater.from(context);
+
+        Resources resources = context.getResources();
+        imageResources = resources.obtainTypedArray(R.array.image_resources);
+        imageDescriptions = resources.obtainTypedArray(R.array.image_description_array);
     }
 
     /**
@@ -65,7 +60,8 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position)
     {
-        final int resId = imageData[position];
+        final int resId = imageResources.getResourceId(position, RES_ERROR);
+        final CharSequence desId = imageDescriptions.getText(position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {
@@ -74,11 +70,20 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
             {
                 Intent intent = new Intent(view.getContext(), FullImageActivity.class);
                 intent.putExtra(IMAGE_KEY, resId);
+                intent.putExtra(DESCRIPTION_KEY, desId);
                 view.getContext().startActivity(intent);
             }
         });
 
         holder.imageView.setImageResource(resId);
+    }
+
+    @Override
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView)
+    {
+        super.onDetachedFromRecyclerView(recyclerView);
+        imageResources.recycle();
+        imageDescriptions.recycle();
     }
 
     /**
@@ -87,6 +92,6 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     @Override
     public int getItemCount()
     {
-        return imageData.length;
+        return imageResources.length();
     }
 }

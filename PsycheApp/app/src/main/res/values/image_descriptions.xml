@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="image_resources">
+        <item>@drawable/gallery_thumb_ccedarleaf_project2_metalworld_171208_640x420</item>
+        <item>@drawable/gallery_thumb_sgarcia_project1_pixelatedpsyche_171115_640x420</item>
+        <item>@drawable/game_icon</item>
+        <item>@drawable/game_icon</item>
+    </integer-array>
+    <string-array name="image_description_array">
+        <item>@string/backyard_telescope</item>
+        <item>@string/psyche_comic</item>
+        <item>@string/psyche_comic</item>
+        <item>@string/psyche_comic</item>
+    </string-array>
+    <string name="backyard_telescope">
+        "Artist: Caralie Cedarleaf"
+        "\nDate: April 3, 2018"
+        "\nMajor: sculpture"
+        "\nGenre/Medium: cast iron, acrylic, LEDs, copper wire, dichroic film, aluminum ducting"
+        "\n\nAbout the work: Backyard Telescope represents the accessibility of the asteroid (16) Psyche to scientists and non-scientists alike because of the Psyche Mission. Images and information collected during NASA-led missions are made available as part of the public domain, allowing amateur astronomers a chance to learn about space. This diorama returns to a childlike fascination with exploration and learning."
+        "\n\nThe asteroid in the center is cast in iron, an element in Psyche’s composition. The laser cut Psyche spacecraft orbits the asteroid on a copper wire, referencing Arizona’s role in the mission. The star patterns are designed after sculptures of the goddess Psyche from the era of the asteroid’s discovery. The dichroic film – which was developed in the late 1950s by NASA and the Department of Defense to protect sensitive instruments from cosmic radiation and to shield astronauts’ vision from unfiltered sunlight – represents the decades of great scientists and engineers who have made and continue to make space exploration possible."
+    </string>
+    <string name="psyche_comic">
+        "Artist: Sofia Garcia"
+        "\nDate: April 2, 2018"
+        "\nMajor: painting"
+        "\nGenre/Medium: digital illustration"
+        "\n\nAbout the work: This work is a fictional story of the development of Psyche. A friendship between a human and a spacecraft, discovering what is beyond the metal world."
+    </string>
+</resources>
