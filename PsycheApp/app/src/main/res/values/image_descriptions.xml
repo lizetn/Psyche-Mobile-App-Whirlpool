@@ -5,12 +5,14 @@
         <item>@drawable/gallery_thumb_ksanford_project5_wordcloud_180328_640x420</item>
         <item>@drawable/gallery_thumb_aweibel_project4_psycheinspiredportraits_180327_640x420</item>
         <item>@drawable/gallery_thumb_nbacalzo_anorenberg_project4_psychepop_up_180323_640x420</item>
+        <item>@drawable/gallery_thumb_cvasquez_project5_heavymetallightshow_180321_640x420</item>
     </integer-array>
     <string-array name="image_description_array">
         <item>@string/psyche_comic</item>
         <item>@string/psyche_word_cloud</item>
         <item>@string/psyche_inspired_intern_portraits</item>
         <item>@string/psyche_pop_up_book</item>
+        <item>@string/heavy_metal_light_show</item>
     </string-array>
     <string name="backyard_telescope">
         "Artist: Caralie Cedarleaf"
@@ -48,5 +50,12 @@
         "\nMajor: graphic design (Nikka); digital culture (Anne)"
         "\nGenre/Medium: paper art and graphics"
         "\n\nAbout the work: This informative book was a collaboration between Nikka Bacalzo and Annie Norenberg. Annie designed the pages of the book and Nikka elevated the pictures with foam core as well as added the pull-tabs and pop-ups with cardstock, cut with an X-Acto. The book outlines a little history of Psyche, its instruments, the launch date and the purpose of the mission. Dimensions are ~8″ x 7″."
+    </string>
+    <string name="heavy_metal_light_show">
+        "Artist: Chris Vasquez"
+        "\nDate: March 21, 2018"
+        "\nMajor: drawing"
+        "\nGenre/Medium: wire and LED string lights"
+        "\n\nAbout the work: With Psyche, you never have to take down your holiday lights! Inspired by festive holiday light sculptures, I wanted to create something reminiscent of those while keeping true to the design of Psyche."
     </string>
 </resources>
