@@ -9,13 +9,16 @@ import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -185,12 +188,26 @@ public class CountdownActivity extends AppCompatActivity {
         titleMessage.setText("Phase F: Mission Closeout");
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
+        for (int i = 0; i < menuView.getChildCount(); i++) {
+            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            // navigation icon height set here
+            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            // navigation icon width set here
+            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            iconView.setLayoutParams(layoutParams);
+        }
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         final Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
 
-        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design", "Phase C: Critical Design","Phase D: Instrument & Spacecraft Build","Phase E: Mars Gravity Assist","Phase F: Mission Closeout" };
+        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design",
+                "Phase C: Critical Design", "Phase D: Build, Ship & Launch",
+                "Spacecraft Launch", "Phase E: Mars Gravity Assist",
+                "Phase F: Mission Closeout" };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.spinner_item, items);
@@ -242,7 +259,8 @@ public class CountdownActivity extends AppCompatActivity {
                         startCountdown();
                         break;
                     case 3:
-                        titleMessage.setText("Phase D: Instrument & Spacecraft Build, Ship & Launch");
+                        titleMessage.setText("Phase D: Instrument & Spacecraft\n" +
+                                                "Build, Ship & Launch");
                         endTimes[0] = "01.30.2021, 13:00:00";
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();
@@ -250,6 +268,14 @@ public class CountdownActivity extends AppCompatActivity {
                         startCountdown();
                         break;
                     case 4:
+                        titleMessage.setText("Spacecraft Launch");
+                        endTimes[0] = "08.24.2022, 13:00:00";
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
+                        startCountdown();
+                        break;
+                    case 5:
                         titleMessage.setText("Phase E: Gravity Assist, Arrival, & Orbit");
                         endTimes[0] = "05.30.2023, 13:00:00";
                         if(mCountDownTimer[0] != null) {
@@ -257,7 +283,7 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-                    case 5:
+                    case 6:
                         titleMessage.setText("Phase F: Mission Closeout");
                         endTimes[0] = "11.30.2027, 13:00:00";
                         if(mCountDownTimer[0] != null) {
@@ -265,10 +291,8 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-                    case 6:
-                        break;
                     default:
-                        titleMessage.setText("Phase F: Mission Closeout");
+                        titleMessage.setText("Spacecraft Launch");
                         endTimes[0] = "11.30.2027, 13:00:00";
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();

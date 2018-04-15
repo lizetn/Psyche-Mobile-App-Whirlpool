@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="image_resources">
-        <item>@drawable/gallery_thumb_ccedarleaf_project2_metalworld_171208_640x420</item>
-        <item>@drawable/gallery_thumb_sgarcia_project1_pixelatedpsyche_171115_640x420</item>
-        <item>@drawable/game_icon</item>
-        <item>@drawable/game_icon</item>
+        <item>@drawable/gallery_thumb_sgarcia_project3_manyminds_180221_640x420</item>
+        <item>@drawable/gallery_thumb_ksanford_project5_wordcloud_180328_640x420</item>
+        <item>@drawable/gallery_thumb_aweibel_project4_psycheinspiredportraits_180327_640x420</item>
+        <item>@drawable/gallery_thumb_nbacalzo_anorenberg_project4_psychepop_up_180323_640x420</item>
     </integer-array>
     <string-array name="image_description_array">
-        <item>@string/backyard_telescope</item>
         <item>@string/psyche_comic</item>
-        <item>@string/psyche_comic</item>
-        <item>@string/psyche_comic</item>
+        <item>@string/psyche_word_cloud</item>
+        <item>@string/psyche_inspired_intern_portraits</item>
+        <item>@string/psyche_pop_up_book</item>
     </string-array>
     <string name="backyard_telescope">
         "Artist: Caralie Cedarleaf"
@@ -26,5 +26,27 @@
         "\nMajor: painting"
         "\nGenre/Medium: digital illustration"
         "\n\nAbout the work: This work is a fictional story of the development of Psyche. A friendship between a human and a spacecraft, discovering what is beyond the metal world."
+    </string>
+    <string name="psyche_word_cloud">
+        "Artist: Kari Sanford"
+        "\nDate: March 28, 2018"
+        "\nMajor: engineering management"
+        "\nGenre/Medium: word cloud"
+        "\n\nAbout the work: I wanted to tell the stories of the minds and hearts behind the Psyche Mission. With the team’s help, I approached scientists, engineers, journalists, and students associated with this mission and solicited their feedback. All of the words/phrases in this word cloud are their own. The most frequent, and inspiring, feedback that I saw was, ‘More than me,’ or ‘Bigger than me.’ This mission has helped people look beyond their own skillset and find ways to help others grow. Psyche has created a community through engagement: we are all connected through our pursuit of knowledge in deep space."
+        "\n\nSpecial thanks to the contributors: Rona Oran | Steven Dibb | William Bottke | Tess Calvert | Dave Williams | Lindy Elkins-Tanton | Tim McCoy | Hannah L Bercovici | Brooke Owen | Mark Wieczorek | Sofia Garcia | Abigail Weibel | Karin Valentine | Erick Ramirez Cordero | Makenzie Kundrat | John Christoph | Stone Woodham | Brendan Scobie | Rachael Tjahjo | Isaac Wisdom"
+    </string>
+    <string name="psyche_inspired_intern_portraits">
+        "Artist: Abigail Weibel"
+        "\nDate: March 27, 2018"
+        "\nMajor: geology"
+        "\nGenre/Medium: photography"
+        "\n\nAbout the work: Headshots of (most of) the inaugural Psyche Inspired interns taken for the Psyche website. (My headshot was taken by Brooke Owen, the Psyche Inspired student manager.)"
+    </string>
+    <string name="psyche_pop_up_book">
+        "Artists: Nikka Bacalzo and Anne Norenberg"
+        "\nDate: March 23, 2018"
+        "\nMajor: graphic design (Nikka); digital culture (Anne)"
+        "\nGenre/Medium: paper art and graphics"
+        "\n\nAbout the work: This informative book was a collaboration between Nikka Bacalzo and Annie Norenberg. Annie designed the pages of the book and Nikka elevated the pictures with foam core as well as added the pull-tabs and pop-ups with cardstock, cut with an X-Acto. The book outlines a little history of Psyche, its instruments, the launch date and the purpose of the mission. Dimensions are ~8″ x 7″."
     </string>
 </resources>
