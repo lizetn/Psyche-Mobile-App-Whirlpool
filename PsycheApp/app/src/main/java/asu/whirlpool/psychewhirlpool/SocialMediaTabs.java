@@ -98,6 +98,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media_tabs);
 
+
         //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.

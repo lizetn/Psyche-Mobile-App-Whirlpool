@@ -9,7 +9,7 @@
         <item name="colorPrimary">@color/psyche_mustard</item>
         <item name="colorPrimaryDark">@color/psyche_dark_purple</item>
         <item name="colorAccent">@color/psyche_mustard</item>
-        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/psyche_mustard</item>
         <item name="android:colorBackground">@color/psyche_dark_purple</item>
         <item name="android:colorForeground">@color/psyche_mustard</item>
     </style>

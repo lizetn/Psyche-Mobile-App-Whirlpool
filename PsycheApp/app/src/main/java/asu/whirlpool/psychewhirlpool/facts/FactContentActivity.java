@@ -83,10 +83,6 @@ public class FactContentActivity extends AppCompatActivity
         {
             contentTextView.setText(R.string.error_message);
         }
-        finally
-        {
-            contentArray.recycle();
-        }
     }
 
 }

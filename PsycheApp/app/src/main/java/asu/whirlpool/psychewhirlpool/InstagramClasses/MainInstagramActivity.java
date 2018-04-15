@@ -20,12 +20,22 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import asu.whirlpool.psychewhirlpool.R;
+
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.MySSLSocketFactory;
 import com.loopj.android.http.TextHttpResponseHandler;
 import android.support.v4.app.ListFragment;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.security.KeyStore;
 import java.util.ArrayList;
 
 import asu.whirlpool.psychewhirlpool.facebookClasses.FacebookfeedList;
@@ -33,7 +43,15 @@ import asu.whirlpool.psychewhirlpool.facebookClasses.ListAdapter;
 import cz.msebera.android.httpclient.Header;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
+import static com.twitter.sdk.android.core.internal.CommonUtils.streamToString;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 /**
  * Created by jperez60 on 1/4/2018.
  */
@@ -62,7 +80,11 @@ public class MainInstagramActivity extends Fragment
 
         rv = (RecyclerView) view.findViewById(R.id.rv);
         prog = (ProgressBar) view.findViewById(R.id.prog);
-        Graphcall();
+        try {
+            Graphcall();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         layoutManager = new LinearLayoutManager(this.getActivity());
         listener = new EndlessRecycleOnScrollListener(layoutManager) {
             @Override
@@ -87,20 +109,92 @@ public class MainInstagramActivity extends Fragment
         return view;
     }
     //Retrieves Instagram profile in a JSON format using a web services call
-    public void Graphcall()
-    {
+
+    public void Graphcall() throws MalformedURLException {
+        /*
+        AccessToken accessToken = new AccessToken(
+                "EAACFLGslDMIBAHCVyu4L54wx1XvNbfWzS6UxkewZARuZC4I4R9Si5BcZBuzQblO1tFZCPfLK0GJoH0ZBulpGW3EMZCmd2g7wPtAftbELUXTskSBgd7pHlZCzHxlSWSuOaAGY6Bt0Tq80YRgmSGpzV3M3wfSnEriS4OY8j1QBQeTFAZDZD",
+                "1499176063510395","1684541201617848",
+                null,
+                null,
+                null,
+                null,
+                null);
+
+        new GraphRequest(
+                accessToken,
+                "1684541201617848/?fields=caption,media_type", null,
+                HttpMethod.GET,
+                new GraphRequest.Callback() {
+
+                    @Override
+                    public void onCompleted(GraphResponse graphResponse) {
+                        try {
+                            System.out.print( "MAKES IT");
+                            JSONObject obj = graphResponse.getJSONObject();
+                            JSONObject graphql = obj.getJSONObject("graphql");
+                            JSONObject user = graphql.getJSONObject("user");
+
+                            JSONObject media = user.getJSONObject("edge_owner_to_timeline_media");
+                            Log.d( media.getJSONArray("edges").toString(), "onSuccess2121212121: ");
+                            JSONArray edges = media.getJSONArray("edges");
+
+                            if(edges.length() > 0) {
+                                for (int i = 0; i < edges.length(); i++) {
+                                    JSONObject edge = edges.getJSONObject(i);
+                                    JSONObject nodes1 = edge.getJSONObject("node");
+                                    JSONObject nodeEdges = nodes1.getJSONObject("edge_media_to_caption");
+                                    Log.d(nodeEdges.getJSONArray("edges").toString(), "onSuccess: ");
+                                    JSONArray nodeEdgesArray = nodeEdges.getJSONArray("edges");
+
+
+                                    JSONObject edge2 = nodeEdgesArray.getJSONObject(0);
+                                    JSONObject nodes2 = edge2.getJSONObject("node");
+
+
+                                    Model m = new Model();
+                                    m.setImage_url(nodes1.get("thumbnail_src").toString());
+                                    m.setContent(nodes2.getString("text"));
+                                    m.setComments(nodes1.getJSONObject("edge_media_to_comment").getString("count"));
+                                    m.setLikes(nodes1.getJSONObject("edge_liked_by").getString("count"));
+                                    list.add(m);
+
+                                }
+                            }
+                            profile_name = user.getString("username");
+                            profile_img = user.getString("profile_pic_url");
+                            isnext = Boolean.parseBoolean(media.getJSONObject("page_info").getString("has_next_page"));
+                            nextid = media.getJSONObject("page_info").getString("end_cursor");
+
+                            a = new Adapter(getActivity(),list);
+
+                            rv.setAdapter(a);
+
+                            prog.setVisibility(View.GONE);
+
+                        }catch (Exception e){
+                            Log.d("NOT WORKING", "onSuccess: ");
+
+                        }
+                    }
+                }
+        ).executeAsync();*/
+        Log.d("AFTER graphcall", "Graphcall: ");
+        /*
         final AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://www.instagram.com/nasapsyche/?__a=1", new TextHttpResponseHandler()
+        //client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
+        client.get("https://www.instagram.com/explore/tags/nasapsyche/?__a=1", new TextHttpResponseHandler()
         {
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable)
             {
-                Log.d("FAILS", "onFailure: ");
+                Log.d(responseString, "onFailure!!!: ");
               //  Toast.makeText(getActivity(), ""+responseString, Toast.LENGTH_SHORT).show();
             }
             public void onSuccess(int statusCode, Header[] headers, String responseString)
             {
                 Log.d(responseString, "onSuccess: ");
                 try {
+
                     JSONObject obj = new JSONObject(responseString);
                     JSONObject graphql = obj.getJSONObject("graphql");
                     JSONObject user = graphql.getJSONObject("user");
@@ -148,6 +242,24 @@ public class MainInstagramActivity extends Fragment
                 }
             }
         });
+        */
+        try {
+            System.out.println("HERE 1");
+            URL url = new URL("https://www.instagram.com/graphql/query/?query_hash=42323d64886122307be10013ad2dcc44&variables={\"id\":\"1526908735\",\"first\":12,\"after\":\"2015\"}");
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            System.out.println("HERE 2");
+            //urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.connect();
+            System.out.println( urlConnection.getResponseMessage() + "HERE 3");
+
+            String response = streamToString(urlConnection.getInputStream());
+            System.out.println("fuck !!!" + response);
+        }
+        catch (Exception e){
+                 Toast.makeText(getActivity(), ""+e.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     //used for constant updating
