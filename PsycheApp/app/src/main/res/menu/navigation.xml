@@ -10,7 +10,7 @@
         android:icon="@drawable/gold_timeline_icon_200" />
     <item
         android:id="@+id/navigation_gallery"
-        android:icon="@drawable/gold_gallery_icon_200" />
+        android:icon="@drawable/mustard_filled_gallery_icon_200" />
     <item
         android:id="@+id/navigation_social_media"
         android:icon="@drawable/gold_social_icon_200" />
