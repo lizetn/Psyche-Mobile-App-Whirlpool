@@ -25,18 +25,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/backgroundImageView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:cropToPadding="false"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:srcCompat="@drawable/thumbnail_1" />
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
