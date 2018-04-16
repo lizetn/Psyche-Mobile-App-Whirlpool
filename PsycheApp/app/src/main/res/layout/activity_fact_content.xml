@@ -21,8 +21,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/PsycheLightTheme.PopupOverlay"
             app:title="@string/button_home_facts" />
 
     </android.support.design.widget.AppBarLayout>

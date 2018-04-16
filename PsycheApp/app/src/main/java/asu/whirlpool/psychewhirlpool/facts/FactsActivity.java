@@ -36,18 +36,18 @@ public class FactsActivity extends AppCompatActivity
 
     public static final String FAQ_KEY = "faq_key";
 
-    public int[] tabDayImages = {R.drawable.mission_tab_light1, R.drawable.mission_tab_light2,
-                                   R.drawable.mission_tab_light3, R.drawable.mission_tab_light4,
-                                   R.drawable.mission_tab_light5, R.drawable.mission_tab_light6,
-                                   R.drawable.mission_tab_light7, R.drawable.mission_tab_light8,
-                                   R.drawable.mission_tab_light9, R.drawable.mission_tab_light10,
-                                   R.drawable.mission_tab_light11, R.drawable.mission_tab_light12};
-    public int[] tabNightImages = {R.drawable.mission_tab_dark1, R.drawable.mission_tab_dark2,
-                                     R.drawable.mission_tab_dark3, R.drawable.mission_tab_dark4,
-                                     R.drawable.mission_tab_dark5, R.drawable.mission_tab_dark6,
-                                     R.drawable.mission_tab_dark7, R.drawable.mission_tab_dark8,
-                                     R.drawable.mission_tab_dark9, R.drawable.mission_tab_dark10,
-                                     R.drawable.mission_tab_dark11, R.drawable.mission_tab_dark12};
+    public int[] tabDayImages = {R.drawable.mission_tab_light6, R.drawable.mission_tab_light10,
+                                   R.drawable.mission_tab_light2, R.drawable.mission_tab_light11,
+                                   R.drawable.mission_tab_light3, R.drawable.mission_tab_light8,
+                                   R.drawable.mission_tab_light9, R.drawable.mission_tab_light1,
+                                   R.drawable.mission_tab_light7, R.drawable.mission_tab_light12,
+                                   R.drawable.mission_tab_light5, R.drawable.mission_tab_light4};
+    public int[] tabNightImages = {R.drawable.mission_tab_dark6, R.drawable.mission_tab_dark10,
+                                     R.drawable.mission_tab_dark2, R.drawable.mission_tab_dark11,
+                                     R.drawable.mission_tab_dark3, R.drawable.mission_tab_dark8,
+                                     R.drawable.mission_tab_dark9, R.drawable.mission_tab_dark1,
+                                     R.drawable.mission_tab_dark7, R.drawable.mission_tab_dark12,
+                                     R.drawable.mission_tab_dark5, R.drawable.mission_tab_dark4};
 
     /**
      * Handles navigation between different sections of the Psyche App.
