@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity
 
     private final String NEWS_URI = "https://psyche.asu.edu/category/news/";
 
+    /**
+     * Handles navigation between different sections of the Psyche App.
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
     {
@@ -89,6 +92,8 @@ public class MainActivity extends AppCompatActivity
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
+
+        // Set up navigation bar
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
         for (int i = 0; i < menuView.getChildCount(); i++) {
@@ -111,6 +116,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
+
+        // if the app should be in night mode, change all icons to gold versions and switch background
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
@@ -128,7 +135,9 @@ public class MainActivity extends AppCompatActivity
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_mustard_solid_300));
             mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
             mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_nightmode_mustard_solid_300));
-        } else {
+        }
+        // if not in night mode, make sure icons and background are changed back to defaults
+        else {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
             if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
                 mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
