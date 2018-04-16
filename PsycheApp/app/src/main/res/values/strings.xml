@@ -16,7 +16,7 @@
     <string name="title_activity_countdown">Countdown to Launch of Psyche Spacecraft</string>
     <string name="title_activity_game">Psyche Game</string>
     <string name="title_activity_social_media">Social Media</string>
-    <string name="title_help">Navigation Icon Help</string>
+    <string name="title_help">HELP</string>
     <string name="button_home_countdown">Countdown Clock</string>
     <string name="button_home_facts">Mission Facts</string>
     <string name="button_home_news">News</string>
@@ -129,4 +129,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_app_credits">AppCreditsActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
 </resources>
