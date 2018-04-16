@@ -1,0 +1,87 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:1-15:12
+	package
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:70-115
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:163-188
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:116-162
+	xmlns:android
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:189-212
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+	android:installLocation
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:2:213-253
+supports-screens
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:3:3-163
+	android:largeScreens
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:3:78-105
+	android:smallScreens
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:3:21-48
+	android:normalScreens
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:3:49-77
+	android:xlargeScreens
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:3:106-134
+	android:anyDensity
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:3:135-160
+application
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:4:3-5:17
+uses-sdk
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:6:3-7:54
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:6:3-7:54
+INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:6:3-7:54
+	android:targetSdkVersion
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:6:40-69
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml
+	tools:ignore
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:7:7-51
+	android:minSdkVersion
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:6:13-39
+uses-feature#0x00020000
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:8:3-52
+	android:glEsVersion
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:8:17-49
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:9:3-65
+	android:name
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:9:20-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:10:3-80
+	android:name
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:10:20-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:11:3-79
+	android:name
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:11:20-75
+uses-feature#android.hardware.touchscreen
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:12:3-88
+	android:required
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:12:61-85
+	android:name
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:12:17-60
+uses-feature#android.hardware.touchscreen.multitouch
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:13:3-99
+	android:required
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:13:72-96
+	android:name
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:13:17-71
+uses-feature#android.hardware.touchscreen.multitouch.distinct
+ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:14:3-108
+	android:required
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:14:81-105
+	android:name
+		ADDED from C:\Users\jperez60\Desktop\4142018\Psyche-Mobile-App-Whirlpool-Dev\PsycheApp\PsycheWhirlpoolGame\src\main\AndroidManifest.xml:14:17-80

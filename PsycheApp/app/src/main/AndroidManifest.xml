@@ -18,6 +18,7 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -44,6 +45,9 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.YourCompanyName.YourProductName.UnityPlayerActivity">
         </activity>
         <activity
             android:name=".SocialMediaTabs"
@@ -99,7 +103,7 @@
         <activity
             android:name=".home.AppCreditsActivity"
             android:label="@string/title_activity_app_credits"
-            android:theme="@style/PsycheLightTheme" />
+            android:theme="@style/PsycheLightTheme"></activity>
     </application>
 
 </manifest>

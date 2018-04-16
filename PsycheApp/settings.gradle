@@ -1,1 +1,2 @@
-include ':app'//, ':PsycheWhirlpoolGame-debug'
+include ':app', ':PsycheWhirlpoolGame-debug'//, ':PsycheWhirlpoolGame'
+project(':PsycheWhirlpoolGame-debug').projectDir = new File('PsycheWhirlpoolGame')

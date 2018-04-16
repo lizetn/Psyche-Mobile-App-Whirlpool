@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PsycheApp.iml" filepath="$PROJECT_DIR$/PsycheApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PsycheWhirlpoolGame/PsycheWhirlpoolGame-debug.iml" filepath="$PROJECT_DIR$/PsycheWhirlpoolGame/PsycheWhirlpoolGame-debug.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -9,10 +9,9 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
-
+import com.YourCompanyName.YourProductName.UnityPlayerActivity;
 public class GameActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -55,6 +54,10 @@ public class GameActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        Intent intent = new Intent(GameActivity.this, UnityPlayerActivity.class);
+
+        startActivity(intent);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
