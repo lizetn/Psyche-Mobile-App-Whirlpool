@@ -56,6 +56,9 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
             R.drawable.com_facebook_button_icon_blue,
             R.drawable.insta };
 
+    /**
+     * Handles navigation between different sections of the Psyche App.
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
     {
