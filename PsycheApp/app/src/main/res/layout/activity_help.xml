@@ -2,33 +2,23 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraint"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_help_background_light"
     tools:context="asu.whirlpool.psychewhirlpool.home.HelpActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/iconsAndText"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         app:layout_constraintBottom_toTopOf="@+id/homeHelpCreditsButton"
         app:layout_constraintStart_toStartOf="@+id/homeHelpCloseButton"
-        app:layout_constraintTop_toBottomOf="@+id/homeHelpCloseButton">
-
-        <TextView
-            android:id="@+id/socialIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="@string/title_activity_social_media"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/socialIconHelp"
-            app:layout_constraintTop_toTopOf="@+id/socialIconHelp" />
+        app:layout_constraintTop_toBottomOf="@+id/homeHelpCloseButton"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/gameIconLabel"
@@ -37,43 +27,47 @@
             android:layout_marginStart="32dp"
             android:text="@string/title_activity_game"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
             app:layout_constraintStart_toEndOf="@+id/gameIconHelp"
             app:layout_constraintTop_toTopOf="@+id/gameIconHelp" />
 
         <TextView
-            android:id="@+id/galleryIconLabel"
+            android:id="@+id/socialIconLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="@string/title_activity_gallery"
+            android:text="@string/title_activity_social_media"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/galleryIconHelp"
-            app:layout_constraintTop_toTopOf="@+id/galleryIconHelp" />
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintStart_toEndOf="@+id/socialIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/socialIconHelp" />
 
-        <ImageView
-            android:id="@+id/homeIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/ic_home_black_24dp"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/timelineIconHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread" />
-
-        <ImageView
-            android:id="@+id/timelineIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/gold_timeline_icon_200"
-            app:layout_constraintBottom_toTopOf="@+id/galleryIconHelp"
-            app:layout_constraintStart_toStartOf="@+id/homeIconHelp"
-            app:layout_constraintTop_toBottomOf="@+id/homeIconHelp" />
+        <TextView
+            android:id="@+id/homeIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/title_activity_home"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="20sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintStart_toEndOf="@+id/homeIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/homeIconHelp" />
 
         <TextView
             android:id="@+id/timelineIconLabel"
@@ -82,50 +76,79 @@
             android:layout_marginStart="32dp"
             android:text="@string/timeline_title"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
             app:layout_constraintStart_toEndOf="@+id/timelineIconHelp"
             app:layout_constraintTop_toTopOf="@+id/timelineIconHelp" />
 
+        <TextView
+            android:id="@+id/galleryIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/title_activity_gallery"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintStart_toEndOf="@+id/galleryIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/galleryIconHelp" />
+
+        <ImageView
+            android:id="@+id/homeIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/white_outline_home_icon_300"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/timelineIconHelp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <ImageView
+            android:id="@+id/timelineIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/white_outline_timeline_icon_300"
+            app:layout_constraintBottom_toTopOf="@+id/galleryIconHelp"
+            app:layout_constraintStart_toStartOf="@+id/homeIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/homeIconHelp" />
+
         <ImageView
             android:id="@+id/socialIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="33dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/gold_social_icon_200"
+            android:background="@drawable/white_outline_social_icon_300"
             app:layout_constraintBottom_toTopOf="@+id/gameIconHelp"
             app:layout_constraintStart_toStartOf="@+id/galleryIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/galleryIconHelp" />
 
-        <TextView
-            android:id="@+id/homeIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="@string/title_activity_home"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/homeIconHelp"
-            app:layout_constraintTop_toTopOf="@+id/homeIconHelp" />
-
         <ImageView
             android:id="@+id/galleryIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/gold_gallery_icon_200"
+            android:background="@drawable/white_outline_gallery_icon_300"
             app:layout_constraintBottom_toTopOf="@+id/socialIconHelp"
             app:layout_constraintStart_toStartOf="@+id/timelineIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/timelineIconHelp" />
 
         <ImageView
             android:id="@+id/gameIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/gold_game_icon_200"
+            android:background="@drawable/white_outline_game_icon_300"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/socialIconHelp"
             app:layout_constraintTop_toBottomOf="@+id/socialIconHelp" />
@@ -150,33 +173,37 @@
 
     <Button
         android:id="@+id/homeHelpCloseButton"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="closeHelp"
         android:textColor="@color/psyche_dark_purple"
         app:layout_constraintEnd_toStartOf="@+id/helpTitle"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/helpTitle"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+        app:layout_constraintTop_toTopOf="@+id/helpTitle" />
 
     <Button
         android:id="@+id/homeHelpCreditsButton"
-        android:layout_width="93dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/help_credits_button_dark_400"
         android:onClick="displayCredits"
-        android:text="Credits"
         android:textColor="@color/psyche_dark_purple"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <TextView
@@ -191,8 +218,21 @@
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="36sp"
         android:textStyle="bold"
+        app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="25dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintStart_toStartOf="@+id/homeHelpCloseButton"
+        app:layout_constraintTop_toTopOf="@+id/homeHelpCloseButton"
+        app:srcCompat="@drawable/purple_back_arrow" />
 
 </android.support.constraint.ConstraintLayout>

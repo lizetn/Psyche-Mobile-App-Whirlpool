@@ -109,24 +109,30 @@ public class HelpActivity extends AppCompatActivity {
         // if the app is in night mode, change button to gold version and switch background
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
+            mButton = (Button) findViewById(R.id.homeHelpCreditsButton);
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_help_background_dark));
+                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.help_credits_button_light_400));
             } else {
-                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_background_dark));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.help_credits_button_light_400));
             }
-            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
-            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_countdownclock_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.arrow);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.white_back_arrow));
         }
         // if not in night mode, make sure button and background are changed back to defaults
         else {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
-            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+            mButton = (Button) findViewById(R.id.homeHelpCreditsButton);
+            if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_help_background_light));
+                mButton.setBackground(ContextCompat.getDrawable(this, R.drawable.help_credits_button_dark_400));
             } else {
-                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_background_light));
+                mButton.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.help_credits_button_dark_400));
             }
-            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
-            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.countdown_clock_300));
+            mImageView = (ImageView) findViewById(R.id.arrow);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.purple_back_arrow));
         }
     }
 
