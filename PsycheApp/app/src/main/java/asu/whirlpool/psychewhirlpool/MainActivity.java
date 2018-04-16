@@ -30,15 +30,15 @@ import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.home.AppCreditsActivity;
 import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
+import asu.whirlpool.psychewhirlpool.home.HelpActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
-    private ConstraintLayout mHelpBox, mButtonsBox, mBackground;
+    private ConstraintLayout mBackground;
     private ImageView mImageView;
-    private Button mButton;
     final int sdk = android.os.Build.VERSION.SDK_INT;
 
     private final String NEWS_URI = "https://psyche.asu.edu/category/news/";
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
 
-        // if the app should be in night mode, change all icons to gold versions and switch background
+        // if the app is in night mode, change all icons to gold versions and switch background
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             mBackground = (ConstraintLayout) findViewById(R.id.container);
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
@@ -177,6 +177,9 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    /**
+     * Closes the app and displays Psyche news website in chosen browser.
+     */
     public void displayNews(View view)
     {
         Uri newsUrl = Uri.parse(NEWS_URI);
@@ -185,37 +188,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Navigates to {@link asu.whirlpool.psychewhirlpool.home.AppCreditsActivity}
-     * @param view
-     */
-    public void displayCredits(View view)
-    {
-        Intent intent = new Intent(this, AppCreditsActivity.class);
-        startActivity(intent);
-    }
-
-    /**
-     * Displays help box for navigation icon titles.
+     * Displays help activity for help with navigation icon titles.
      */
     public void displayHelp(View view)
     {
-        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
-        mHelpBox.setVisibility(View.VISIBLE);
-
-        mButtonsBox = (ConstraintLayout) findViewById(R.id.homeButtonsLayout);
-        mButtonsBox.setVisibility(View.GONE);
-    }
-
-    /**
-     * Hides help box for navigation icon titles.
-     */
-    public void closeHelp(View view)
-    {
-        mButtonsBox = (ConstraintLayout) findViewById(R.id.homeButtonsLayout);
-        mButtonsBox.setVisibility(View.VISIBLE);
-
-        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
-        mHelpBox.setVisibility(View.GONE);
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -225,16 +203,6 @@ public class MainActivity extends AppCompatActivity
     {
         Uri nasaUrl = Uri.parse("https://www.nasa.gov/psyche");
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, nasaUrl);
-        startActivity(launchBrowser);
-    }
-
-    /**
-     * Closes the app and displays ASU Psyche Mission website in chosen browser.
-     */
-    public void displayASUPsycheWebsite(View view)
-    {
-        Uri asuPsycheUrl = Uri.parse("https://psyche.asu.edu/");
-        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, asuPsycheUrl);
         startActivity(launchBrowser);
     }
 
