@@ -70,6 +70,8 @@
             android:text="Launch of Psyche Spacecraft:"
             android:textAlignment="textStart"
             android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/defaultTimer" />
@@ -78,7 +80,6 @@
             android:id="@+id/clocksAndLabels"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginBottom="32dp"
             android:maxHeight="450dp"
             android:minHeight="339dp"
             android:weightSum="1"
@@ -90,37 +91,18 @@
             app:layout_constraintTop_toBottomOf="@+id/defaultClockTextView"
             app:layout_constraintVertical_bias="0.36">
 
-            <com.github.lzyzsd.circleprogress.DonutProgress
-                android:id="@+id/textViewMinutesA"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:textSize="36sp"
-                android:visibility="visible"
-                app:donut_background_color="@android:color/transparent"
-                app:donut_finished_color="?android:attr/colorForeground"
-                app:donut_prefix_text=""
-                app:donut_progress="0"
-                app:donut_suffix_text=""
-                app:donut_text_color="?android:attr/textColorPrimary"
-                app:donut_unfinished_color="?attr/colorPrimaryDark"
-                app:layout_constraintBottom_toTopOf="@+id/textViewSecondsA"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" />
-
             <TextView
-                android:id="@+id/hourslabel"
+                android:id="@+id/yearlabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Hours"
+                android:text="Years"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewHoursA"
-                app:layout_constraintStart_toEndOf="@+id/textViewHoursA"
-                app:layout_constraintTop_toTopOf="@+id/textViewHoursA" />
+                android:textSize="24sp"
+                app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewYearsA"
+                app:layout_constraintStart_toEndOf="@+id/textViewYearsA"
+                app:layout_constraintTop_toTopOf="@+id/textViewYearsA" />
 
             <TextView
                 android:id="@+id/monthlabel"
@@ -131,53 +113,11 @@
                 android:layout_marginTop="8dp"
                 android:text="Months"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="18sp"
+                android:textSize="24sp"
+                app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewMonthsA"
                 app:layout_constraintStart_toEndOf="@+id/textViewMonthsA"
                 app:layout_constraintTop_toTopOf="@+id/textViewMonthsA" />
-
-            <TextView
-                android:id="@+id/minutelabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Minutes"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewSecondsA"
-                app:layout_constraintStart_toEndOf="@+id/textViewMinutesA"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" />
-
-            <com.github.lzyzsd.circleprogress.DonutProgress
-                android:id="@+id/textViewHoursA"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:textSize="36sp"
-                android:visibility="visible"
-                app:donut_background_color="@android:color/transparent"
-                app:donut_finished_color="?android:attr/colorForeground"
-                app:donut_progress="0"
-                app:donut_suffix_text=""
-                app:donut_text_color="?android:attr/textColorPrimary"
-                app:donut_unfinished_color="?attr/colorPrimaryDark"
-                app:layout_constraintBottom_toTopOf="@+id/textViewMinutesA"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDaysA" />/>
-
-            <TextView
-                android:id="@+id/yearlabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Years"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewYearsA"
-                app:layout_constraintStart_toEndOf="@+id/textViewYearsA"
-                app:layout_constraintTop_toTopOf="@+id/textViewYearsA" />
 
             <TextView
                 android:id="@+id/daylabel"
@@ -188,28 +128,41 @@
                 android:layout_marginTop="8dp"
                 android:text="Days"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="18sp"
+                android:textSize="24sp"
+                app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewDaysA"
                 app:layout_constraintStart_toEndOf="@+id/textViewDaysA"
                 app:layout_constraintTop_toTopOf="@+id/textViewDaysA" />
 
-            <com.github.lzyzsd.circleprogress.DonutProgress
-                android:id="@+id/textViewMonthsA"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:text="10"
-                android:textSize="36sp"
-                android:visibility="visible"
-                app:donut_background_color="@android:color/transparent"
-                app:donut_finished_color="?android:attr/colorForeground"
-                app:donut_progress="0"
-                app:donut_suffix_text=""
-                app:donut_text_color="?android:attr/textColorPrimary"
-                app:donut_unfinished_color="?attr/colorPrimaryDark"
-                app:layout_constraintBottom_toTopOf="@+id/textViewDaysA"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewYearsA" />
+            <TextView
+                android:id="@+id/hourslabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Hours"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="24sp"
+                app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewHoursA"
+                app:layout_constraintStart_toEndOf="@+id/textViewHoursA"
+                app:layout_constraintTop_toTopOf="@+id/textViewHoursA" />
+
+            <TextView
+                android:id="@+id/minutelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Minutes"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="24sp"
+                app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+                app:layout_constraintBottom_toTopOf="@+id/textViewSecondsA"
+                app:layout_constraintStart_toEndOf="@+id/textViewMinutesA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" />
 
             <TextView
                 android:id="@+id/secondlabel"
@@ -220,7 +173,8 @@
                 android:layout_marginTop="8dp"
                 android:text="Seconds"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="18sp"
+                android:textSize="24sp"
+                app:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewSecondsA"
                 app:layout_constraintStart_toEndOf="@+id/textViewSecondsA"
                 app:layout_constraintTop_toTopOf="@+id/textViewSecondsA" />
@@ -245,6 +199,87 @@
                 app:layout_constraintVertical_chainStyle="spread_inside" />
 
             <com.github.lzyzsd.circleprogress.DonutProgress
+                android:id="@+id/textViewMonthsA"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="36sp"
+                android:visibility="visible"
+                app:donut_background_color="@android:color/transparent"
+                app:donut_finished_color="?android:attr/colorForeground"
+                app:donut_progress="0"
+                app:donut_suffix_text=""
+                app:donut_text_color="?android:attr/textColorPrimary"
+                app:donut_unfinished_color="?attr/colorPrimaryDark"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDaysA"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewYearsA" />
+
+            <com.github.lzyzsd.circleprogress.DonutProgress
+                android:id="@+id/textViewDaysA"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="10"
+                android:textSize="36sp"
+                android:visibility="visible"
+                app:donut_background_color="@android:color/transparent"
+                app:donut_finished_color="?android:attr/colorForeground"
+                app:donut_progress="0"
+                app:donut_suffix_text=""
+                app:donut_text_color="?android:attr/textColorPrimary"
+                app:donut_unfinished_color="?attr/colorPrimaryDark"
+                app:layout_constraintBottom_toTopOf="@+id/textViewHoursA"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMonthsA" />
+
+            <com.github.lzyzsd.circleprogress.DonutProgress
+                android:id="@+id/textViewHoursA"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:visibility="visible"
+                app:donut_background_color="@android:color/transparent"
+                app:donut_finished_color="?android:attr/colorForeground"
+                app:donut_progress="0"
+                app:donut_suffix_text=""
+                app:donut_text_color="?android:attr/textColorPrimary"
+                app:donut_unfinished_color="?attr/colorPrimaryDark"
+                app:layout_constraintBottom_toTopOf="@+id/textViewMinutesA"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDaysA" />
+
+            <com.github.lzyzsd.circleprogress.DonutProgress
+                android:id="@+id/textViewMinutesA"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:visibility="visible"
+                app:donut_background_color="@android:color/transparent"
+                app:donut_finished_color="?android:attr/colorForeground"
+                app:donut_prefix_text=""
+                app:donut_progress="0"
+                app:donut_suffix_text=""
+                app:donut_text_color="?android:attr/textColorPrimary"
+                app:donut_unfinished_color="?attr/colorPrimaryDark"
+                app:layout_constraintBottom_toTopOf="@+id/textViewSecondsA"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHoursA" /><![CDATA[
+
+            />
+
+
+
+
+
+
+
+            ]]>
+
+            <com.github.lzyzsd.circleprogress.DonutProgress
                 android:id="@+id/textViewSecondsA"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
@@ -264,25 +299,10 @@
                 app:donut_unfinished_stroke_width="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewMinutesA" />/>
+                app:layout_constraintTop_toBottomOf="@+id/textViewMinutesA" /><![CDATA[/>
 
-            <com.github.lzyzsd.circleprogress.DonutProgress
-                android:id="@+id/textViewDaysA"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:text="10"
-                android:textSize="36sp"
-                android:visibility="visible"
-                app:donut_background_color="@android:color/transparent"
-                app:donut_finished_color="?android:attr/colorForeground"
-                app:donut_progress="0"
-                app:donut_suffix_text=""
-                app:donut_text_color="?android:attr/textColorPrimary"
-                app:donut_unfinished_color="?attr/colorPrimaryDark"
-                app:layout_constraintBottom_toTopOf="@+id/textViewHoursA"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewMonthsA" />/>
+            />
+        ]]>
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
