@@ -28,7 +28,8 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
  * the Psyche App.
  *
  * @author      Erick Ramirez Cordero
- * @version     1/15/2018
+ * @author      Diana Chavez
+ * @version     4/15/2018
  */
 public class FactsActivity extends AppCompatActivity
 {

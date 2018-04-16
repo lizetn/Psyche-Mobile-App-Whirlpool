@@ -22,13 +22,15 @@ import asu.whirlpool.psychewhirlpool.R;
  * views a section of the FAQ.
  *
  * @author      Erick Ramirez Cordero
- * @version     2/15/2018
+ * @author      Diana Chavez
+ * @version     4/15/2018
  */
 public class FactContentActivity extends AppCompatActivity
 {
     private TypedArray contentArray;
     private TextView contentTextView;
     private ConstraintLayout missionBackground;
+    private Toolbar contentToolbar;
 
     private int[] backgroundDayImages = {R.drawable.tab_background_light6, R.drawable.tab_background_light10,
             R.drawable.tab_background_light2, R.drawable.tab_background_light11,
@@ -47,7 +49,6 @@ public class FactContentActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         boolean nightMode;
-
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
             setTheme(R.style.PsycheDarkTheme);
@@ -70,10 +71,12 @@ public class FactContentActivity extends AppCompatActivity
         final int sdk = android.os.Build.VERSION.SDK_INT;
         contentArray = getResources().obtainTypedArray(R.array.faq_array);
         contentTextView = findViewById(R.id.factTextView);
+        contentToolbar = (Toolbar) findViewById(R.id.toolbar);
 
         if (nightMode)
         {
             contentTextView.setTextColor(Color.WHITE);
+            contentToolbar.setBackgroundColor(getResources().getColor(R.color.psyche_black));
 
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN)
             {
@@ -87,6 +90,7 @@ public class FactContentActivity extends AppCompatActivity
         else
         {
             contentTextView.setTextColor(getResources().getColor(R.color.psyche_black));
+            contentToolbar.setBackgroundColor(getResources().getColor(R.color.psyche_gold));
 
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN)
             {
