@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity
     private BottomNavigationView navigation;
     private ConstraintLayout mBackground;
     private ImageView mImageView;
-    private Button mButton;
     final int sdk = android.os.Build.VERSION.SDK_INT;
 
     private final String NEWS_URI = "https://psyche.asu.edu/category/news/";
