@@ -264,7 +264,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
 
         /**
          * getItem is called to instantiate the fragment for the given page.
-         * Return a PlaceholderFragment (defined as a static inner class below).
+         * Return a IntroFragment (defined as a static inner class below).
          * @param position
          * @return
          */
@@ -276,7 +276,7 @@ public class SocialMediaTabs extends FragmentActivity implements android.app.Act
                 case 0:
                     TwitterActivity twitter = new TwitterActivity();
                     return twitter;
-//                    return PlaceholderFragment.newInstance(position + 1);
+//                    return IntroFragment.newInstance(position + 1);
                 case 1:
                     FacebookActivity facebook = new FacebookActivity();
                     return facebook;

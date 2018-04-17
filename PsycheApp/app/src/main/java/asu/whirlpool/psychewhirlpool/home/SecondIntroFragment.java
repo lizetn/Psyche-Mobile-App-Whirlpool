@@ -14,13 +14,21 @@ import asu.whirlpool.psychewhirlpool.R;
  * Activities that contain this fragment must implement the
  * Use the {@link SecondIntroFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ *
  */
 public class SecondIntroFragment extends Fragment {
-    private static final String TAG_BEGIN = "beginning";
-    private static final String TAG_END = "ending";
+    private static final String LINE1 = "1";
+    private static final String LINE2 = "2";
+    private static final String LINE3 = "3";
+    private static final String LINE4 = "4";
+    private static final String LINE5 = "5";
 
-    private String mTagBegin;
-    private String mTagEnd;
+    private String mLine1;
+    private String mLine2;
+    private String mLine3;
+    private String mLine4;
+    private String mLine5;
 
     public SecondIntroFragment() {
         // Required empty public constructor
@@ -30,15 +38,19 @@ public class SecondIntroFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param tagBeginning Parameter 1.
-     * @param tagEnding Parameter 2.
+     * @param line1 First line of text.
+     * @param line2 Second line of text.
      * @return A new instance of fragment SecondIntroFragment.
      */
-    public static SecondIntroFragment newInstance(String tagBeginning, String tagEnding) {
+    public static SecondIntroFragment newInstance(String line1, String line2, String line3,
+                                                String line4, String line5) {
         SecondIntroFragment fragment = new SecondIntroFragment();
         Bundle args = new Bundle();
-        args.putString(TAG_BEGIN, tagBeginning);
-        args.putString(TAG_END, tagEnding);
+        args.putString(LINE1, line1);
+        args.putString(LINE2, line2);
+        args.putString(LINE3, line3);
+        args.putString(LINE4, line4);
+        args.putString(LINE5, line5);
         fragment.setArguments(args);
         return fragment;
     }
@@ -47,8 +59,11 @@ public class SecondIntroFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mTagBegin = getArguments().getString(TAG_BEGIN);
-            mTagEnd = getArguments().getString(TAG_END);
+            mLine1 = getArguments().getString(LINE1);
+            mLine2 = getArguments().getString(LINE2);
+            mLine3 = getArguments().getString(LINE3);
+            mLine4 = getArguments().getString(LINE4);
+            mLine5 = getArguments().getString(LINE5);
         }
     }
 
@@ -58,11 +73,20 @@ public class SecondIntroFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_second_intro, container, false);
 
-        TextView beginTextView = (TextView) view.findViewById(R.id.tagLineBeginning);
-        beginTextView.setText(getArguments().getString(TAG_BEGIN));
+        TextView mQuote1 = (TextView) view.findViewById(R.id.quote1);
+        mQuote1.setText(getArguments().getString(LINE1));
 
-        TextView endTextView = (TextView) view.findViewById(R.id.tagLineEnding);
-        endTextView.setText(getArguments().getString(TAG_END));
+        TextView mQuote2 = (TextView) view.findViewById(R.id.quote2);
+        mQuote2.setText(getArguments().getString(LINE2));
+
+        TextView mQuote3 = (TextView) view.findViewById(R.id.quote3);
+        mQuote3.setText(getArguments().getString(LINE3));
+
+        TextView mQuote4 = (TextView) view.findViewById(R.id.quote4);
+        mQuote4.setText(getArguments().getString(LINE4));
+
+        TextView mQuote5 = (TextView) view.findViewById(R.id.quote5);
+        mQuote5.setText(getArguments().getString(LINE5));
 
         return view;
     }

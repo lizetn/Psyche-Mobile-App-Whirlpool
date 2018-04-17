@@ -4,25 +4,29 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/psyche_close_up_background"
+    android:background="@drawable/intro_second_background_gradient"
     tools:context="asu.whirlpool.psychewhirlpool.home.SecondIntroFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <android.support.constraint.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39999998">
 
         <TextView
-            android:id="@+id/tagLineBeginning"
-            android:layout_width="305dp"
+            android:id="@+id/quote1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/intro_tag_line_beginning"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="44sp"
+            android:contentDescription="@string/intro_quote_1"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:gravity="fill_horizontal"
+            android:text="@string/intro_quote_1"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
             android:theme="@style/AppTheme"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -30,17 +34,66 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tagLineEnding"
-            android:layout_width="305dp"
+            android:id="@+id/quote2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-2dp"
-            android:text="@string/intro_tag_line_ending"
-            android:textColor="@color/psyche_magenta"
-            android:textSize="44sp"
+            android:contentDescription="@string/intro_quote_2"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:gravity="fill_horizontal"
+            android:text="@string/intro_quote_2"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:theme="@style/AppTheme"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tagLineBeginning" />
+            app:layout_constraintTop_toBottomOf="@+id/quote1" />
+
+        <TextView
+            android:id="@+id/quote3"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/intro_quote_3"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:text="@string/intro_quote_3"
+            android:textColor="@android:color/white"
+            android:textSize="110sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quote2" />
+
+        <TextView
+            android:id="@+id/quote4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/intro_quote_4"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:gravity="fill_horizontal"
+            android:text="@string/intro_quote_4"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:theme="@style/AppTheme"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quote3" />
+
+        <TextView
+            android:id="@+id/quote5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/intro_quote_5"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:gravity="fill_horizontal"
+            android:text="@string/intro_quote_5"
+            android:textColor="@android:color/white"
+            android:textSize="54sp"
+            android:theme="@style/AppTheme"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quote4" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
