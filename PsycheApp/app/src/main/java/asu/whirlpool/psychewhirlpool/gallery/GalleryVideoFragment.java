@@ -20,8 +20,10 @@ import asu.whirlpool.psychewhirlpool.gallery.videoClasses.VideoRecycleAdapter;
  * Additionally, the {@link VideoRecycleAdapter} is used to instantiate and display the
  * thumbnails.
  *
+ * Videos are obtained and streamed from the YouTube Data API.
+ *
  * @author      Erick Ramirez Cordero
- * @version     3/7/2018
+ * @version     4/17/2018
  */
 public class GalleryVideoFragment extends Fragment
 {

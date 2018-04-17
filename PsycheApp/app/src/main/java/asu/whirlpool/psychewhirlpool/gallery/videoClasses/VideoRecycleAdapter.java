@@ -18,11 +18,11 @@ import asu.whirlpool.psychewhirlpool.gallery.ImageViewHolder;
  * the Gallery.
  *
  * Video thumbnails are retrieved from YouTube.
+ * TODO: Implement method of getting thumbnails without hardcoded IDs.
  *
  * @author      Erick Ramirez Cordero
- * @version     3/26/2018
+ * @version     4/17/2018
  */
-
 public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
 {
     private Context mContext;
@@ -36,7 +36,8 @@ public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
             "cSMhurC_fm0", "h2pm1RPY6Bc",
             "jOvNzYMfkJo", "bxhcddsmA3o",
             "jOZNIrxI3MI", "JX8m2UJClsw",
-            "6i4UbDUOq70", "7B8-mwJLulw"
+            "6i4UbDUOq70", "7B8-mwJLulw",
+            "NjCcl52M7Vg", "C0tmkD0ZRTE"
     };
 
     public VideoRecycleAdapter(Context context)

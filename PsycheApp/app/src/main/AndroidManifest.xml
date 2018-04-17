@@ -102,7 +102,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="asu.whirlpool.psychewhirlpool.MainActivity" />
         </activity>
-        <activity android:name=".gallery.videoClasses.VideoActivity" />
         <activity
             android:name=".home.FirstRunIntroActivity"
             android:label="@string/title_activity_first_run_intro"
