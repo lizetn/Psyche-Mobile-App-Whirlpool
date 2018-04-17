@@ -4,9 +4,174 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/intro_background_gradient"
+    android:background="@drawable/intro_third_background_gradient"
     tools:context="asu.whirlpool.psychewhirlpool.home.ThirdIntroFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/introNavTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:autoSizeMaxTextSize="42sp"
+        android:autoSizeMinTextSize="36sp"
+        android:autoSizeStepGranularity="2sp"
+        android:text="@string/intro_navigation_title"
+        android:textColor="@android:color/white"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/iconsAndText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:maxHeight="490dp"
+        android:minHeight="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introNavTitle">
+
+        <TextView
+            android:id="@+id/introGameIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeStepGranularity="2sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:text="@string/title_activity_game"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/gameIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/gameIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/gameIconHelp" />
+
+        <TextView
+            android:id="@+id/introSocialMediaLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeStepGranularity="2sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:text="@string/title_activity_social_media"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/socialIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/socialIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/socialIconHelp" />
+
+        <TextView
+            android:id="@+id/introHomeIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeStepGranularity="2sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:text="@string/title_activity_home"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/homeIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/homeIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/homeIconHelp" />
+
+        <TextView
+            android:id="@+id/introTimelineIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeStepGranularity="2sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:text="@string/timeline_title"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/timelineIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/timelineIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/timelineIconHelp" />
+
+        <TextView
+            android:id="@+id/introGalleryIconLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeStepGranularity="2sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            android:text="@string/title_activity_gallery"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/galleryIconHelp"
+            app:layout_constraintStart_toEndOf="@+id/galleryIconHelp"
+            app:layout_constraintTop_toTopOf="@+id/galleryIconHelp" />
+
+        <ImageView
+            android:id="@+id/homeIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/white_outline_home_icon_300"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/timelineIconHelp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <ImageView
+            android:id="@+id/timelineIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/white_outline_timeline_icon_300"
+            app:layout_constraintBottom_toTopOf="@+id/galleryIconHelp"
+            app:layout_constraintStart_toStartOf="@+id/homeIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/homeIconHelp" />
+
+        <ImageView
+            android:id="@+id/socialIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/white_outline_social_icon_300"
+            app:layout_constraintBottom_toTopOf="@+id/gameIconHelp"
+            app:layout_constraintStart_toStartOf="@+id/galleryIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/galleryIconHelp" />
+
+        <ImageView
+            android:id="@+id/galleryIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/white_outline_gallery_icon_300"
+            app:layout_constraintBottom_toTopOf="@+id/socialIconHelp"
+            app:layout_constraintStart_toStartOf="@+id/timelineIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/timelineIconHelp" />
+
+        <ImageView
+            android:id="@+id/gameIconHelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/white_outline_game_icon_300"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/socialIconHelp"
+            app:layout_constraintTop_toBottomOf="@+id/socialIconHelp" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

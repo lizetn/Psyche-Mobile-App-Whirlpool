@@ -4,9 +4,15 @@
     <string name="client_secret">afe54954c60b42899c40c674ee988d71</string>
     <string name="title_home_large">PSYCHE</string>
     <string name="title_home_small">JOURNEY TO A METAL WORLD</string>
-    <string name="intro_tag_line_beginning">For the first time ever, we are exploring a world
-                                            made not of rock or ice, </string>
-    <string name="intro_tag_line_ending">but of metal.</string>
+    <string name="intro_quote_1">FOR THE FIRST TIME EVER,</string>
+    <string name="intro_quote_2">WE ARE EXPLORING A</string>
+    <string name="intro_quote_3">WORLD</string>
+    <string name="intro_quote_4">MADE NOT OF ROCK OR ICE</string>
+    <string name="intro_quote_5">BUT OF METAL.</string>
+    <string name="intro_nav_buttons_skip">SKIP INTRO</string>
+    <string name="intro_nav_buttons_next">NEXT</string>
+    <string name="intro_nav_buttons_finish">FINISH</string>
+    <string name="intro_navigation_title">NAVIGATION</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_home">Home</string>
