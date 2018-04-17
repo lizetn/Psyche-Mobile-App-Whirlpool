@@ -142,7 +142,6 @@ public class CountdownActivity extends AppCompatActivity {
         textViewMins.setUnfinishedStrokeWidth((float) 10.0);
 
         endTimes = new String[numTimers];
-        Log.d("BEFORE", "onCreate: ");
         endTimes[0] = "11.30.2027, 13:00:00";
         if (VERBOSE) Log.v(TAG, "+++ ON CREATE +++");
 
@@ -328,32 +327,32 @@ public class CountdownActivity extends AppCompatActivity {
                     double nm = (1.0 / progs);
                     double sum = (nm * 100.0);
                     int yr = (int) sum;
-                    if (VERBOSE) Log.d(String.valueOf(yr), "onTick: YEAR ");
+
                     textViewYears.setDonut_progress(String.valueOf(yr));
 
                     int progs2 = ((calendar.get(Calendar.MONTH)));
                     double nm2 = (progs2 / 12.0);
                     double sum2 = (nm2 * 100.0);
-                    if (VERBOSE) Log.d(String.valueOf(sum2), "onTick: sss");
+
                     int mths = (int) sum2;
-                    if (VERBOSE) Log.d(String.valueOf(mths), "onTick: ");
+
                     textViewMonths.setDonut_progress(String.valueOf(mths));
 
 
                     int progs3 = ((calendar.get(Calendar.DAY_OF_MONTH)));
                     double nm3 = (progs3 / 31.0);
                     double sum3 = (nm3 * 100.0);
-                    if (VERBOSE) Log.d(String.valueOf(sum3), "onTick: sss");
+
                     int dys = (int) sum3;
-                    if (VERBOSE) Log.d(String.valueOf(dys), "onTick: ");
+
                     textViewDays.setDonut_progress(String.valueOf(dys));
 
                     int progs4 = ((calendar.get(Calendar.HOUR_OF_DAY)));
                     double nm4 = (progs4 / 24.0);
                     double sum4 = (nm4 * 100.0);
-                    if (VERBOSE) Log.d(String.valueOf(sum4), "onTick: sss");
+
                     int hrs = (int) sum4;
-                    if (VERBOSE) Log.d(String.valueOf(hrs), "onTick: ");
+
                     textViewHours.setDonut_progress(String.valueOf(hrs));
 
                     int progs5 = ((calendar.get(Calendar.MINUTE)));
@@ -361,18 +360,16 @@ public class CountdownActivity extends AppCompatActivity {
                     double sum5 = (nm5 * 100.0);
                     if (VERBOSE) Log.d(String.valueOf(sum5), "onTick: sss");
                     int mins = (int) sum5;
-                    if (VERBOSE)Log.d(String.valueOf(mins), "onTick: ");
+
                     textViewMins.setDonut_progress(String.valueOf(mins));
 
 
                     int progs6 = ((calendar.get(Calendar.SECOND)));
                     double nm6 = (progs6 / 60.0);
                     double sum6 = (nm6 * 100.0);
-                    if (VERBOSE) Log.d(String.valueOf(sum6), "onTick: sss");
+
                     int secs = (int) sum6;
-                    if (VERBOSE) Log.d(String.valueOf(secs), "onTick: ");
                     textViewSecs.setDonut_progress(String.valueOf(secs));
-                    if (VERBOSE) Log.d(textViewSecs.getText(), "onTick: SECCCCSSS");
 
                     String yearsLeft = String.format("%d", calendar.get(Calendar.YEAR) - 1970);
                     String monthsLeft = String.format("%d", calendar.get(Calendar.MONTH));

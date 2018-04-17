@@ -2,7 +2,8 @@ package asu.whirlpool.psychewhirlpool.InstagramClasses;
 import asu.whirlpool.psychewhirlpool.R;
 /**
  * Created by jperez60 on 1/4/2018.
- */
+ * Model to hold the Json objects for date, image, content, number of likes and number of comments */
+
 
 public class Model
 {

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -236,7 +237,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
         int w;
         RelativeLayout rlayout;
         RelativeLayout divider;
-
         public myholder(View itemView)
         {
             super(itemView);

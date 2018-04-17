@@ -61,7 +61,6 @@
                     app:layout_constraintStart_toStartOf="@+id/profilePic"
                     app:layout_constraintTop_toBottomOf="@+id/story" />
             </android.support.constraint.ConstraintLayout>
-
         </LinearLayout>
 
         <RelativeLayout
@@ -79,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:paddingBottom="4dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
