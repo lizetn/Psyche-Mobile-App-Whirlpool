@@ -14,6 +14,9 @@ import asu.whirlpool.psychewhirlpool.R;
  * introduction.
  * Use the {@link FirstIntroFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * @author      Natalie Fleischaker
+ * @version     3/18/2018
  */
 public class FirstIntroFragment extends Fragment {
     private static final String TITLE = "title";
@@ -36,7 +39,6 @@ public class FirstIntroFragment extends Fragment {
      * @param subtitle Text for the subtitle TextView.
      * @return A new instance of fragment FirstIntroFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static FirstIntroFragment newInstance(String title, String subtitle) {
         FirstIntroFragment fragment = new FirstIntroFragment();
         Bundle args = new Bundle();
@@ -46,6 +48,9 @@ public class FirstIntroFragment extends Fragment {
         return fragment;
     }
 
+    /**
+     * Set get strings of the contents of the two TextViews
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="image_thumbnails">
-        <item>@drawable/gallery_thumb_sgarcia_project3_manyminds_180221_640x420</item>
+        <item>@drawable/gallery_thumb_ccedarleaf_project3_backyardtelescope_180403_640x420</item>
+        <item>@drawable/gallery_thumb_sgarcia_project4_psychecomic_180402_640x420</item>
         <item>@drawable/gallery_thumb_ksanford_project5_wordcloud_180328_640x420</item>
         <item>@drawable/gallery_thumb_aweibel_project4_psycheinspiredportraits_180327_640x420</item>
         <item>@drawable/gallery_thumb_nbacalzo_anorenberg_project4_psychepop_up_180323_640x420</item>
         <item>@drawable/gallery_thumb_cvasquez_project5_heavymetallightshow_180321_640x420</item>
         <item>@drawable/gallery_thumb_aweibel_project3_psychecrossstitch_180319_640x420</item>
         <item>@drawable/gallery_thumb_nbacalzo_project4_psychestopmotion_180316_640x420</item>
+        <item>@drawable/gallery_thumb_ksanford_project4_poems_180306_640x420</item>
+        <item>@drawable/gallery_thumb_borrill_project4_asteroidbelt_180227_640x420</item>
+        <item>@drawable/gallery_thumb_iwisdom_project3_journey_180222_640x420</item>
+        <item>@drawable/gallery_thumb_sgarcia_project3_manyminds_180221_640x420</item>
+        <item>@drawable/gallery_thumb_anorenberg_project3_psycheeyechart_180220_640x420</item>
+        <item>@drawable/gallery_thumb_borrill_project3_psycheperspective_180219_640x420</item>
+        <item>@drawable/gallery_thumb_cvasquez_project4_mylarpsyche_180208_531x420</item>
+        <item>@drawable/gallery_thumb_jdomenico_project2_iron_180206_640x420</item>
+        <item>@drawable/gallery_thumb_new_psyche_image_640x420</item>
+        <item>@drawable/gallery_thumb_mbromley_project2_psychezine_180205_640x420</item>
+        <item>@drawable/gallery_thumb_iwisdom_project2_construction_180108_640x420</item>
+        <item>@drawable/gallery_thumb_nbacalzo_project3_psychepaperquilling_180130_640x420</item>
     </integer-array>
     <string-array name="image_urls">
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/04/Psyche_Inspired_17-18_CCedarleaf_Project3_BackyardTelescope_180403-796x1024.jpg</item>
         <item>https://psyche.asu.edu/wp-content/uploads/2018/04/Psyche_Inspired_17-18_SGarcia_Project4_PsycheComic_180402-791x1024.jpg</item>
         <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_KSanford_Project5_WordCloud_180328-1024x791.png</item>
         <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_AWeibel_Project4_PsycheInspiredPortraits_180327-906x1024.jpg</item>
@@ -17,8 +31,21 @@
         <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_CVasquez_Project5_HeavyMetalLightShow_180321.jpg</item>
         <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_AWeibel_Project3_PsycheCrossStitch_180319-1024x683.jpg</item>
         <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_NBacalzo_Project4_PsycheStopMotion_180316.png</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_KSanford_Project4_Poems_180306-1024x551.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_BOrrill_Project4_AsteroidBelt_180227-1024x1024.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_IWisdom_Project3_Journey_180222-1024x699.png</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_SGarcia_Project3_ManyMinds_180221-731x1024.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_ANorenberg_Project3_PsycheEyeChart_180220-1024x768.png</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_BOrrill_Project3_PsychePerspective_180219-752x1024.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_CVasquez_Project4_MylarPsyche_180208.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_JDomenico_Project2_Iron_180206-1024x991.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2015/10/new-psyche-image.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_MBromley_Project2_PsycheZine_180205-790x1024.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/02/Psyche_Inspired_17-18_IWisdom_Project2_Construction_180108.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/01/Psyche_Inspired_17-18_NBacalzo_Project3_PsychePaperQuilling_180130-1024x419.jpg</item>
     </string-array>
     <string-array name="image_description_array">
+        <item>@string/backyard_telescope</item>
         <item>@string/psyche_comic</item>
         <item>@string/psyche_word_cloud</item>
         <item>@string/psyche_inspired_intern_portraits</item>
@@ -26,6 +53,18 @@
         <item>@string/heavy_metal_light_show</item>
         <item>@string/cross_stitch</item>
         <item>@string/stop_motion</item>
+        <item>@string/psyche_poems</item>
+        <item>@string/asteroid_belt</item>
+        <item>@string/journey</item>
+        <item>@string/many_minds</item>
+        <item>@string/psyche_eye_chart</item>
+        <item>@string/psyche_perspective</item>
+        <item>@string/mylar_psyche</item>
+        <item>@string/iron</item>
+        <item>@string/artist_conception</item>
+        <item>@string/psyche_zine</item>
+        <item>@string/construction</item>
+        <item>@string/psyche_paper_quilling</item>
     </string-array>
     <string name="backyard_telescope">
         "Artist: Caralie Cedarleaf"
@@ -76,9 +115,98 @@
         "\nDate: March 19, 2018"
         "\nMajor: geology"
         "\nGenre/Medium: cloth and thread, 8\" x 10\""
-        "About the work: This cross stitch is based off the current artist rendering of the Psyche asteroid. I chose to exaggerate the image by using a lot of color to help it pop off the black background (and because there are only so many choices of grey thread!). If you are interested in cross-stitching your own Psyche, the pattern I created and thread color recommendations can be downloaded"
+        "\n\nAbout the work: This cross stitch is based off the current artist rendering of the Psyche asteroid. I chose to exaggerate the image by using a lot of color to help it pop off the black background (and because there are only so many choices of grey thread!). If you are interested in cross-stitching your own Psyche, the pattern I created and thread color recommendations can be downloaded"
     </string>
     <string name="stop_motion">
-        ""
+        "Artist: Nikka Bacalzo"
+        "\nDate: March 16, 2018"
+        "\nMajor: graphic design"
+        "\nGenre/Medium: paper art stop motion film"
+        "\n\nAbout the work: This stop motion shows Psyche leaving Earth, passing the Moon, Mars, and a few meteoroids on its way to Psyche. All pieces were hand-cut from weighted cardstock. Dimensions of the Psyche spacecraft are 2\” x 0.75\”. The music is a piece called \“Ideas\” written by fellow Psyche Inspired intern Isaac Wisdom! Cinematography by Matthew Berger."
+    </string>
+    <string name="psyche_poems">
+        "Artist: Kari Sanford"
+        "\nDate: March 6, 2018"
+        "\nMajor: engineering management"
+        "\nGenre/Medium: poetry"
+        "\n\nAbout the work: For the ASU Open Door public event on February 24, I wrote approximately 30 personalized poems, with space words chosen by the participants. These half-sheets also have a link to the Psyche website, coupled with coloring images of the Psyche Logo and an artist’s rendition of the asteroid."
+
+        "\n\nMy favorite poem I wrote that day was:"
+
+        "\n\n Staring up high, guided by an azimuth,"
+        "\nI spy a star hidden in a labyrinth."
+    </string>
+    <string name="asteroid_belt">
+        "Artist: Brianna Orrill"
+        "\nDate: March 2, 2018"
+        "\nMajor: astrobiology"
+        "\nGenre/Medium: chalk on concrete"
+        "\n\nAbout the work: In this piece I wanted to create a fun interactive piece that not only engaged the public but also shared a little history. In the ASU Asteroid Belt, I included three asteroids that humans have already visited, Eros, Vesta and Ceres, as well as Psyche, which will be visited in 2026. The public were welcome to fill in the smaller surrounding asteroids, creating an amazing mash up of imagination and creativity. ASU’s Asteroid Belt embraces the combination of science and art, just like the Psyche Inspired program does."
+    </string>
+    <string name="journey">
+        "Artist: Isaac Wisdom"
+        "\nDate: February 22, 2018"
+        "\nMajor: music and electrical engineering"
+        "\nGenre/Medium: composition"
+        "\n\nAbout the work: Journey is a piece I wrote to capture the feelings of the Psyche probe’s journey to its namesake, the asteroid Psyche. My inspiration came from the balance between the solemn yet dignified solitude the probe will experience and the knowledge that ultimately, it is coming from a place of great knowledge and going somewhere to accomplish something greater. I had assistance from Dr. Rockmaker of ASU’s School of Music, who guided me through the specifics of classically oriented composition. The form of my piece was inspired by the exposition of a typical sonata, featuring a first theme in Db major, a second theme in Ab major, and ending with a recapitulation back in Db. The cover art was designed and illustrated by fellow Psyche Inspired intern Brianna Orrill."
+    </string>
+    <string name="many_minds">
+        "Artist: Sofia Garcia"
+        "\nDate: February 21, 2018"
+        "\nMajor: painting"
+        "\nGenre/Medium: digital illustration"
+        "\n\nAbout the work: This is a work reflecting the many minds that make the Psyche mission. It all began somewhere. The inspiration and motivation to live out what is beyond human comprehension. This is based off a story I created for the Psyche mission. Young minds inspired to live out the unimaginable."
+    </string>
+    <string name="psyche_eye_chart">
+        "Artist: Anne Norenberg"
+        "\nDate: February 20, 2018"
+        "\nMajor: digital culture (design)"
+        "\nGenre/Medium: digital illustration"
+        "\n\nAbout the work: This work was inspired by Luke Dubois’ Hindsight is Always 20/20 project. I made a Psyche Stylized Snellen eye chart, which helps determine a patient’s eyesight from the ability to measure the distance from the chart while reading the letters. I also took words that were important to the Psyche mission and included them as the lines on the eye chart."
+    </string>
+    <string name="psyche_perspective">
+        "Artist: Brianna Orrill"
+        "\nDate: February 19, 2018 Major: astrobiology"
+        "\nGenre/Medium: watercolor"
+        "\n\nAbout the work: This is a painting of the asteroid inspired by the artist rendition in most of Psyche’s videos. The piece is from the perspective of the spacecraft as it is coming over one side of the asteroid. I used watercolor, with a special focus on some metallic watercolors to create the metallic feel for the asteroid."
+    </string>
+    <string name="mylar_psyche">
+        "Artist: Chris Vasquez"
+        "\nDate: February 8, 2018"
+        "\nMajor: drawing Genre/Medium: Mylar and drawing"
+        "\n\nAbout the work: I created a custom Psyche asteroid Mylar balloon so you have the opportunity to see the metal body floating through space. Your party has never been more metal!"
+    </string>
+    <string name="iron">
+        "Artist: John Domenico"
+        "\nDate: February 6, 2018"
+        "\nMajor: ceramics/materials science (double major)"
+        "\nGenre/Medium: stoneware"
+        "\n\nAbout the work: I find it intriguing to think about how the element iron exists in space compared to its presence on Earth. Iron on Earth, in the presence of oxygen, naturally oxidizes. These oxide states of iron have a vast array of color possibilities ranging from red to brown to yellow to black. The exterior of this piece reflects on the spectrum of color we are familiar with in reference to iron. The form then adds a layer of curiosity in that, as a lidded vessel, there is an interior surface that is hidden from the viewer. This introduces the kind of unknown that I associate with Psyche. What will be the state of the iron on Psyche be?"
+    </string>
+    <string name="artist_conception">
+        "Artist: Peter Rubin"
+        "\nDate: February 6, 2018"
+        "\n\nAbout the work: This artist’s conception shows a close-up of the Psyche asteroid."
+    </string>
+    <string name="psyche_zine">
+        "Artist: Megan Bromley"
+        "\nDate: February 5, 2018"
+        "\nMajor: biogeoscience/English (double major)"
+        "\nGenre/Medium: paper and ink"
+        "\n\nAbout the work: This work is a one-page ‘zine’ about Psyche that anyone can make and read. It is printed all on one side of a page and, when folded correctly, makes a small 8-page book. There are both images and written facts and poetry about Psyche. It is designed in black and white so the reader can color it and add their own art to it."
+    </string>
+    <string name="construction">
+        "Artist: Isaac Wisdom"
+        "\nDate: January 8, 2018"
+        "\nMajor: music and electrical engineering"
+        "\nGenre/Medium: composition and performance"
+        "\n\nAbout the work: ‘Construction’ is my interpretation of the build process for the construction of the Psyche spacecraft. The tune is upbeat and happy, which I feel fits the emotions the technicians will feel as they fit together the pieces that will become Psyche. Along with the written score is a live recording and a music video where I play the parts of the piece. This video features me playing the trumpet, trombone, alto and tenor saxophone, upright bass, and piano. I recorded and edited the music using Apple’s GarageBand software, and I created the video using Adobe’s Premiere Pro CC software."
+    </string>
+    <string name="psyche_paper_quilling">
+        "Artist: Nikka Bacalzo"
+        "\nDate: January 31, 2018"
+        "\nMajor: graphic design"
+        "\nGenre/Medium: paper quilling"
+        "\n\nAbout the work: I outlined the word Psyche with white cardstock and chose colors similar to the Psyche logo to fill in the letters. I chose to run the yellow colors through the middle of each letter, and surround the letters with white wavy pieces to create more movement, since Psyche will be orbiting! I also included Psyche the asteroid in between the \“Y\” and \“C\” as a focal point. Dimensions: 17\″ x 6\″."
     </string>
 </resources>
