@@ -35,8 +35,8 @@ import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
  * {@link TimelineFragment} is used to create the fragments that are displayed when the User
  * changes tabs.
  *
- * @author  Erick Ramirez Cordero
- * @date    1/2/2018
+ * @author      Erick Ramirez Cordero
+ * @version     4/17/2018
  */
 public class TimelineTab extends FragmentActivity
 {
@@ -132,7 +132,8 @@ public class TimelineTab extends FragmentActivity
         // Set up navigation bar
         BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
-        for (int i = 0; i < menuView.getChildCount(); i++) {
+        for (int i = 0; i < menuView.getChildCount(); i++)
+        {
             final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
             final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
             final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
@@ -142,6 +143,7 @@ public class TimelineTab extends FragmentActivity
             layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
             iconView.setLayoutParams(layoutParams);
         }
+
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
