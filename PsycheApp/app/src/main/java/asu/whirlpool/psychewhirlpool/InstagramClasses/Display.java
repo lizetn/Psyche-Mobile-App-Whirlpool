@@ -27,8 +27,7 @@ public class Display extends AppCompatActivity {
         int position = intent.getExtras().getInt("Pos");
         imageView = (ImageView) findViewById(R.id.imageView);
         Glide.with(getApplicationContext()).load(Adapter.path.get(position).getImage_url()).into(imageView);
-        //Picasso.with(getApplicationContext()).load(Adapter.path.get(position).getImage_url()).into(imageView);
-       // Glide.with(getApplicationContext()).load(Adapter.path.get(position).getImage_url()).into(imageView);
+
 
     }
 
