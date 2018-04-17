@@ -38,8 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|center"
-            android:text="Skip"
-            android:textColor="?android:attr/textColorPrimaryNoDisable" />
+            android:text="@string/intro_nav_buttons_skip"
+            android:textColor="@android:color/white" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -74,25 +74,16 @@
         </LinearLayout>
 
         <!-- This overlaps the next button in the last slide -->
-        <Button
-            android:id="@+id/intro_btn_finish"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|center"
-            android:text="Finish"
-            android:textColor="?android:attr/textColorPrimary"
-            android:visibility="gone" />
 
-        <ImageButton
+        <Button
             android:id="@+id/intro_btn_next"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:src="@android:drawable/ic_media_next"
-            android:tint="?android:attr/textColorPrimaryNoDisable" />
+            android:text="@string/intro_nav_buttons_next"
+            android:textColor="@android:color/white"
+            android:visibility="visible" />
 
     </FrameLayout>
 

@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Navigates to {@link CountdownActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayCountdown(View view)
     {
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Navigates to {@link FactsActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayFacts(View view)
     {
@@ -179,6 +179,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Closes the app and displays Psyche news website in chosen browser.
+     * @param view  View from which the method is called.
      */
     public void displayNews(View view)
     {
@@ -189,6 +190,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Displays help activity for help with navigation icon titles.
+     * @param view  View from which the method is called.
      */
     public void displayHelp(View view)
     {
@@ -198,6 +200,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Closes the app and displays NASA website in chosen browser.
+     * @param view  View from which the method is called.
      */
     public void displayNASAWebsite(View view)
     {
@@ -208,7 +211,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Toggles color scheme on home page.
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void toggleHomeNightMode(View view)
     {
@@ -259,7 +262,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (currentVersionCode > savedVersionCode) {
             // The app has been upgraded
-            // TODO Add activity for info upon upgrade
+            // TODO Add activity for info upon upgrade if that functionality is desired
             return;
         }
 

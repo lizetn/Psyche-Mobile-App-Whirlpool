@@ -26,7 +26,6 @@ public class ThirdIntroFragment extends Fragment {
      *
      * @return A new instance of fragment ThirdIntroFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ThirdIntroFragment newInstance() {
         ThirdIntroFragment fragment = new ThirdIntroFragment();
         Bundle args = new Bundle();
