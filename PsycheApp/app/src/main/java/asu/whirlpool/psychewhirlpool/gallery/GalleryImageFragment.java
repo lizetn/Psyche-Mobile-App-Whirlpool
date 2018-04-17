@@ -2,7 +2,9 @@ package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,7 +23,7 @@ import asu.whirlpool.psychewhirlpool.R;
  * of the image with a description mode.
  *
  * @author      Erick Ramirez Cordero
- * @version     4/10/2018
+ * @version     4/17/2018
  */
 public class GalleryImageFragment extends Fragment
 {
@@ -38,6 +40,16 @@ public class GalleryImageFragment extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_gallery_images_recycle, container, false);
+        ConstraintLayout constraintLayout = view.findViewById(R.id.constraintLayout);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            constraintLayout.setBackgroundResource(R.drawable.background_timeline_dark);
+        }
+        else
+        {
+            constraintLayout.setBackgroundResource(R.drawable.background_timeline_light);
+        }
 
         // Set up the GridLayoutManager and ImageRecycleAdapter
         RecyclerView recyclerView = view.findViewById(R.id.ImageRecyclerView);
