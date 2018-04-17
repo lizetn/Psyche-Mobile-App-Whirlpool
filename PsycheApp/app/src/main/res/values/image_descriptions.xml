@@ -6,6 +6,8 @@
         <item>@drawable/gallery_thumb_aweibel_project4_psycheinspiredportraits_180327_640x420</item>
         <item>@drawable/gallery_thumb_nbacalzo_anorenberg_project4_psychepop_up_180323_640x420</item>
         <item>@drawable/gallery_thumb_cvasquez_project5_heavymetallightshow_180321_640x420</item>
+        <item>@drawable/gallery_thumb_aweibel_project3_psychecrossstitch_180319_640x420</item>
+        <item>@drawable/gallery_thumb_nbacalzo_project4_psychestopmotion_180316_640x420</item>
     </integer-array>
     <string-array name="image_urls">
         <item>https://psyche.asu.edu/wp-content/uploads/2018/04/Psyche_Inspired_17-18_SGarcia_Project4_PsycheComic_180402-791x1024.jpg</item>
@@ -22,6 +24,8 @@
         <item>@string/psyche_inspired_intern_portraits</item>
         <item>@string/psyche_pop_up_book</item>
         <item>@string/heavy_metal_light_show</item>
+        <item>@string/cross_stitch</item>
+        <item>@string/stop_motion</item>
     </string-array>
     <string name="backyard_telescope">
         "Artist: Caralie Cedarleaf"
@@ -66,5 +70,15 @@
         "\nMajor: drawing"
         "\nGenre/Medium: wire and LED string lights"
         "\n\nAbout the work: With Psyche, you never have to take down your holiday lights! Inspired by festive holiday light sculptures, I wanted to create something reminiscent of those while keeping true to the design of Psyche."
+    </string>
+    <string name="cross_stitch">
+        "Artist: Abigail Weibel"
+        "\nDate: March 19, 2018"
+        "\nMajor: geology"
+        "\nGenre/Medium: cloth and thread, 8\" x 10\""
+        "About the work: This cross stitch is based off the current artist rendering of the Psyche asteroid. I chose to exaggerate the image by using a lot of color to help it pop off the black background (and because there are only so many choices of grey thread!). If you are interested in cross-stitching your own Psyche, the pattern I created and thread color recommendations can be downloaded"
+    </string>
+    <string name="stop_motion">
+        ""
     </string>
 </resources>
