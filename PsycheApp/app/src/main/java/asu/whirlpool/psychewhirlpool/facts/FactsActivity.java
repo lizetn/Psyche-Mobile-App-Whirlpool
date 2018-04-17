@@ -24,7 +24,7 @@ import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
 /**
- * FactsActivity handles the loading of information for the FAQ / Mission Facts section of
+ * FactsActivity handles the loading of information for the Mission Facts section of
  * the Psyche App.
  *
  * @author      Erick Ramirez Cordero
@@ -34,9 +34,7 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 public class FactsActivity extends AppCompatActivity
 {
     private ListView mListView;
-
     public static final String FAQ_KEY = "faq_key";
-
     public int[] tabDayImages = {R.drawable.mission_tab_light6, R.drawable.mission_tab_light10,
                                    R.drawable.mission_tab_light2, R.drawable.mission_tab_light11,
                                    R.drawable.mission_tab_light3, R.drawable.mission_tab_light8,

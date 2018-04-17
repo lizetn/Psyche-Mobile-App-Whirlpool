@@ -157,8 +157,7 @@
         "This model shows evidence for two crater-like depressions. It suggests that there is significant "
         "variation in the metal content and color of the asteroid over the surface. But remember, no one "
         "has seen the Psyche asteroid yet, so we will not know what it actually looks like until the "
-        "spacecraft arrives. This is the best look we have from radar observations: [Insert Picture here?]"]]>
-        <item>@drawable/mission_tab_light6</item>
+        "spacecraft arrives.
     </string>
     <string name="faq_mission_science_goals">
         "<b>What are the Psyche mission science goals?</b>"

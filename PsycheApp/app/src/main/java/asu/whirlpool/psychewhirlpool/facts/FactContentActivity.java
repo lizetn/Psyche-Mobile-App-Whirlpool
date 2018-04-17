@@ -90,8 +90,6 @@ public class FactContentActivity extends AppCompatActivity
         else
         {
             contentTextView.setTextColor(getResources().getColor(R.color.psyche_black));
-            contentToolbar.setBackgroundColor(getResources().getColor(R.color.psyche_gold));
-
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN)
             {
                 missionBackground.setBackground(ContextCompat.getDrawable(this, backgroundDayImages[position]));
