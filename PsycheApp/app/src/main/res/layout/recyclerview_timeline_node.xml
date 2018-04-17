@@ -23,6 +23,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="8dp"
+        android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="24sp"
         app:fontFamily="@font/knockout_htf30juniorwelterwt_regular" />
