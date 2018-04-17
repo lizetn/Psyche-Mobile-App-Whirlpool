@@ -18,6 +18,12 @@ import asu.whirlpool.psychewhirlpool.R;
  */
 public class TimelineNodeActivity extends AppCompatActivity
 {
+    /**
+     * Instantiates the activity based on day/night mode and the node that was selected
+     * in {@link TimelineFragment}.
+     *
+     * The node's information is sent in an {@link Intent} from {@link TimelineRecycleAdapter}.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

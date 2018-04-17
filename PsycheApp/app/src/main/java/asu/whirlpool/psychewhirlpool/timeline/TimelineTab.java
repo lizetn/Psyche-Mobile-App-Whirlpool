@@ -29,11 +29,11 @@ import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 
 /**
- * TimelineTab implements a tab system to sort the timeline into Past-Present-Future
- * sections for easy navigation.
+ * TimelineTab implements a tab system to divide the timeline into its various phases
+ * for navigation.
  *
- * {@link TimelineFragment} is used to create the fragments that are displayed when the User
- * changes tabs.
+ * {@link TimelineFragment} is used to create the fragments that are displayed when the
+ * User changes tabs.
  *
  * @author      Erick Ramirez Cordero
  * @version     4/17/2018
@@ -103,6 +103,9 @@ public class TimelineTab extends FragmentActivity
         }
     };
 
+    /**
+     * Instantiates the tab system and navigation bar.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -118,8 +121,7 @@ public class TimelineTab extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline_tab);
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
+        // Create the adapter that will return a fragment for each section
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
@@ -245,8 +247,6 @@ public class TimelineTab extends FragmentActivity
 
         /**
          * Gets Tab name from tabTitles array.
-         * @param position
-         * @return
          */
         @Override
         public CharSequence getPageTitle(int position)

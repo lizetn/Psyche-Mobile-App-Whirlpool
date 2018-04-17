@@ -12,7 +12,8 @@ import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * {@link TimelineRecycleAdapter} is an implementation of {@link RecyclerView.Adapter}.
- * This adapter handles initialization of the {@link TextView} used for images in the Gallery.
+ * This adapter handles initialization with {@link TextViewHolder} to add nodes with
+ * a summary of the node's event and an icon on the side.
  *
  * @author      Erick Ramirez Cordero
  * @version     4/17/2018
@@ -27,6 +28,10 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
     private String[] detailData;
     private int nodeResource;
 
+    /**
+     * Instantiate the {@link RecyclerView} with information based on the currently
+     * selected phase.
+     */
     public TimelineRecycleAdapter(Context context, char phaseLetter, int[] nodeData)
     {
         mLayoutInflater = LayoutInflater.from(context);
@@ -71,7 +76,7 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
     }
 
     /**
-     * Instantiates a new {@link TextViewHolder} with a {@link TextView}
+     * Instantiates a new {@link TextViewHolder} with a {@link TextView} and node icon.
      */
     @Override
     public TextViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
@@ -80,6 +85,9 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
         return new TextViewHolder(view);
     }
 
+    /**
+     * Sets up the {@link TextViewHolder} and onClick method for every node in the timeline.
+     */
     @Override
     public void onBindViewHolder(TextViewHolder holder, int position)
     {
@@ -88,6 +96,10 @@ public class TimelineRecycleAdapter extends RecyclerView.Adapter<TextViewHolder>
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {
+            /**
+             * When a {@link TextViewHolder} is clicked, a detailed description of the event
+             * will be displayed on another activity: {@link TimelineNodeActivity}.
+             */
             @Override
             public void onClick(View view)
             {
