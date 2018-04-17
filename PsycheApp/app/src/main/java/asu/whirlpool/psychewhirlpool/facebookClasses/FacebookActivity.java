@@ -50,6 +50,7 @@ public class FacebookActivity extends Fragment {
     EndlessRecycleOnScrollListener listener;
     LinearLayoutManager layoutManager;
     ListAdapter adapter;
+    //Access token is storeed here, will need to get moved somewhere else, possibly to cloud.
     AccessToken accessToken = new AccessToken(
             "1499176063510395|ZI2GBERxLbDOoC1keO1AMsi5TmU",
             "1499176063510395","1598743977091187",

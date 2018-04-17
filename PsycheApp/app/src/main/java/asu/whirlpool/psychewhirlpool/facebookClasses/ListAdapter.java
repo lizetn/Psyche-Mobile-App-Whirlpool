@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -152,10 +153,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
         });
     }
     /**
-     * Takes in the time format received from facebook and returns a calendar object in
+     * Takes in the time format received from facebook and returns a Calendar object in
      * the default time zone.
-     * @param facebookTime
-     * @return calendar
+     * @param facebookTime  Time as returned by facebook API call.
+     * @return calendar     Calendar object containing the date/time returned by facebook.
      */
     public Calendar toCalendar(String facebookTime) {
         TimeZone currentZone = TimeZone.getDefault();
@@ -176,6 +177,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
         return calendar;
     }
 
+    /**
+     * Takes a Calendar object and returns the name of the month in that object.
+     * @param calendar  Calender object for which you would like the name of the month.
+     * @return  Name of the month in the given Calendar object.
+     */
     public String monthName(Calendar calendar) {
         String wordMonth;
 
@@ -231,7 +237,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.myholder>
         int w;
         RelativeLayout rlayout;
         RelativeLayout divider;
-
         public myholder(View itemView)
         {
             super(itemView);
