@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,8 @@ public class TimelineFragment extends Fragment
             R.drawable.timeline_future_dark, R.drawable.timeline_indicator_dark
     };
 
+    private final String KNOCKOUT_FONT_PATH = "Fonts/knockout.otf";
+
     /**
      * Initializes the Fragment with information about the phase currently selected.
      */
@@ -65,6 +68,8 @@ public class TimelineFragment extends Fragment
 
         String[] titleData = view.getContext().getResources().getStringArray(R.array.phase_titles);
         TextView textView = view.findViewById(R.id.titleTextView);
+        Typeface knockoutFont = Typeface.createFromAsset(getContext().getAssets(), KNOCKOUT_FONT_PATH);
+        textView.setTypeface(knockoutFont);
 
         switch (phase)
         {

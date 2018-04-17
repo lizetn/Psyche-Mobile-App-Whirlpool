@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool.timeline;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,11 +19,14 @@ public class TextViewHolder extends RecyclerView.ViewHolder
 {
     public TextView textView;
     public ImageView nodeImageView;
+    private final String KNOCKOUT_FONT_PATH = "Fonts/knockout.otf";
 
     public TextViewHolder(View itemView)
     {
         super(itemView);
         textView = itemView.findViewById(R.id.textView);
         nodeImageView = itemView.findViewById(R.id.nodeImageView);
+        Typeface knockoutFont = Typeface.createFromAsset(itemView.getContext().getAssets(), KNOCKOUT_FONT_PATH);
+        textView.setTypeface(knockoutFont);
     }
 }
