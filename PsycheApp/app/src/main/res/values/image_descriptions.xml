@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer-array name="image_resources">
+    <integer-array name="image_thumbnails">
         <item>@drawable/gallery_thumb_sgarcia_project3_manyminds_180221_640x420</item>
         <item>@drawable/gallery_thumb_ksanford_project5_wordcloud_180328_640x420</item>
         <item>@drawable/gallery_thumb_aweibel_project4_psycheinspiredportraits_180327_640x420</item>
         <item>@drawable/gallery_thumb_nbacalzo_anorenberg_project4_psychepop_up_180323_640x420</item>
         <item>@drawable/gallery_thumb_cvasquez_project5_heavymetallightshow_180321_640x420</item>
     </integer-array>
+    <string-array name="image_urls">
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/04/Psyche_Inspired_17-18_SGarcia_Project4_PsycheComic_180402-791x1024.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_KSanford_Project5_WordCloud_180328-1024x791.png</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_AWeibel_Project4_PsycheInspiredPortraits_180327-906x1024.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_NBacalzo_ANorenberg_Project4_PsychePop-Up_180323-1024x656.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_CVasquez_Project5_HeavyMetalLightShow_180321.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_AWeibel_Project3_PsycheCrossStitch_180319-1024x683.jpg</item>
+        <item>https://psyche.asu.edu/wp-content/uploads/2018/03/Psyche_Inspired_17-18_NBacalzo_Project4_PsycheStopMotion_180316.png</item>
+    </string-array>
     <string-array name="image_description_array">
         <item>@string/psyche_comic</item>
         <item>@string/psyche_word_cloud</item>

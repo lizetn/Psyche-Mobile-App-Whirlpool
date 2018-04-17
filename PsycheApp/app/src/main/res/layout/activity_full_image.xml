@@ -8,17 +8,6 @@
     tools:context="asu.whirlpool.psychewhirlpool.gallery.FullImageActivity">
 
     <ImageView
-        android:id="@+id/fullImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:onClick="toggleDescription"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/desImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +17,6 @@
         android:contentDescription="@string/title_activity_gallery"
         android:scaleType="fitCenter"
         android:visibility="visible"
-        android:onClick="toggleDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
