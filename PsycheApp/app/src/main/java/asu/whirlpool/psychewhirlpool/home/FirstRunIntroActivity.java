@@ -21,6 +21,14 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.R;
 
+/**
+ * Displays a ViewPager with three fragments as the introduction to the app.
+ * Only runs the first time that the app is run or after app data is cleared.
+ *
+ * @author      Natalie Fleischaker
+ * @version     3/12/2018
+ *
+ */
 public class FirstRunIntroActivity extends AppCompatActivity {
 
     /**
@@ -40,6 +48,9 @@ public class FirstRunIntroActivity extends AppCompatActivity {
     private int page = 0;
     private Button mNextBtn;
     private Button mSkipBtn;
+    private ImageView mFirstDot;
+    private ImageView mSecondDot;
+    private ImageView mThirdDot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +64,9 @@ public class FirstRunIntroActivity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mNextBtn = (Button) findViewById(R.id.intro_btn_next);
         mSkipBtn = (Button) findViewById(R.id.intro_btn_skip);
+        mFirstDot = (ImageView) findViewById(R.id.intro_dot_indicator_0);
+        mSecondDot = (ImageView) findViewById(R.id.intro_dot_indicator_1);
+        mThirdDot = (ImageView) findViewById(R.id.intro_dot_indicator_2);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -94,6 +108,30 @@ public class FirstRunIntroActivity extends AppCompatActivity {
                     page += 1;
                     mViewPager.setCurrentItem(page, true);
                 }
+            }
+        });
+
+        mFirstDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page = 0;
+                mViewPager.setCurrentItem(page, true);
+            }
+        });
+
+        mSecondDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page = 1;
+                mViewPager.setCurrentItem(page, true);
+            }
+        });
+
+        mThirdDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page = 2;
+                mViewPager.setCurrentItem(page, true);
             }
         });
 
@@ -217,5 +255,10 @@ public class FirstRunIntroActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    protected void displayPage(int position) {
+        page = position;
+        mViewPager.setCurrentItem(position, true);
     }
 }
