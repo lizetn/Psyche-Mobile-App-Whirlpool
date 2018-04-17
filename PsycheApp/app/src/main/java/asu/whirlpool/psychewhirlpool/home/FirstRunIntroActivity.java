@@ -99,6 +99,9 @@ public class FirstRunIntroActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * OnClick behavior for the Next/Enter App button.
+         */
         mNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,30 +114,39 @@ public class FirstRunIntroActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * OnClick behavior for the first indicator dot.
+         */
         mFirstDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                page = 0;
-                mViewPager.setCurrentItem(page, true);
+                displayPage(0);
             }
         });
 
+        /**
+         * OnClick behavior for the second indicator dot.
+         */
         mSecondDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                page = 1;
-                mViewPager.setCurrentItem(page, true);
+                displayPage(1);
             }
         });
 
+        /**
+         * OnClick behavior for the third indicator dot.
+         */
         mThirdDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                page = 2;
-                mViewPager.setCurrentItem(page, true);
+                displayPage(2);
             }
         });
 
+        /**
+         * OnClick behavior for the skip button.
+         */
         mSkipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -257,6 +269,10 @@ public class FirstRunIntroActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Changes page global variable and displays that page.
+     * @param position  Desired page to display.
+     */
     protected void displayPage(int position) {
         page = position;
         mViewPager.setCurrentItem(position, true);
