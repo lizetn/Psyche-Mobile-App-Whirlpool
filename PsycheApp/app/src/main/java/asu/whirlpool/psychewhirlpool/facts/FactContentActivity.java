@@ -77,6 +77,7 @@ public class FactContentActivity extends AppCompatActivity
 
         //Sets up the toolbar
         contentToolbar = (Toolbar) findViewById(R.id.toolbar);
+        //contentToolbar.set
 
         //Checks the current sdk
         final int sdk = android.os.Build.VERSION.SDK_INT;
