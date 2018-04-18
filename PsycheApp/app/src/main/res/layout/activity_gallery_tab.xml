@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:addStatesFromChildren="false"
-            android:background="?android:attr/colorPrimaryDark"
+            android:background="?attr/colorPrimaryDark"
             android:clickable="true"
             android:focusable="true"
             android:soundEffectsEnabled="true"
