@@ -60,7 +60,13 @@ public class MainInstagramActivity extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
 
-        //Access token is storeed here, will need to get moved somewhere else, possibly to cloud.
+        /*  Access token is stored here, will need to get moved somewhere else, possibly to cloud.
+        *   Once instagram_basic permission has been obtained, use https://developers.facebook.com/tools/explorer/
+        *   to obtain new access token. Go to Application->click app account name in our case it was Whirlpool Psyche App -> Get Token ->
+        *   chose between page and or user token with instagram_basic checked-> from  there put the application id
+        *   and userid (userid will most likely remain the same )from the facebook/developer site
+        *   as well as the access token obtained from the graph api explorer.
+        */
         AccessToken accessToken = new AccessToken(
                 "1499176063510395|ZI2GBERxLbDOoC1keO1AMsi5TmU",
                 "1499176063510395","1598743977091187",
@@ -108,6 +114,7 @@ public class MainInstagramActivity extends Fragment
     *   They are not reviewing at this time.Once they review the permissions, utilizing the graph call made in the
      */
 
+    //this can be removed once Graph API has been implemented
     public String loadJSONFromAsset() {
         String json = null;
         try {

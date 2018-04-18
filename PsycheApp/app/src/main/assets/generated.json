@@ -1,0 +1,1025 @@
+{
+  "data": {
+    "user": {
+      "edge_owner_to_timeline_media": {
+        "count": 18,
+        "page_info": {
+          "has_next_page": false,
+          "end_cursor": "AQCKvtXBKNIxMXkeMydKk81coaWaOP3Dezqe4mv4JwXcxtM6Gq5NYf4zdArjGaBq96k"
+        },
+        "edges": [
+          {
+            "node": {
+              "id": 1726358859571599000,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Check out the latest creative contribution from @nasapsyche Inspired's @_briannart_  titled, \"Asteroid Belt\" 💫🚀🤘☄️😊🛰️✨🎨#journeytoametalworld #heavymetalfun #sopsyched #soinspired {Learn more and get inspired at: psyche.asu.edu}"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bf1QjxznRcC",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1520018034,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/aa6ff5ed077e1882b83b5286843cda2d/5B582E7C/t51.2885-15/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+              "edge_media_preview_like": {
+                "count": 47
+              },
+              "gating_info": null,
+              "media_preview": "ACoq2PKbs2D+dKYcfxZP0qYA0E+tKyFdlGRSF5PFRbc8mrMh+U1XB9qmWmiKWurGhcnuRUu32o3nGBTM+9Ck1vv94NXLYnOORmozMSfSqxlHXp2pVlBxnmnewrD2bd68/wBKNoHvSLhmJGNvYd6eyHHFNBqMAGM4P55pfKX3owyjgA89Pal2tUtj1KbEt060nb0/lTRU0Rwau1ilrqPQbHAPf/CpixYkenT/ABqoP9aPbP8ASrJ7UhLccOv+fypfM9qEpuKS0Qnqz//Z",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/7878624049152d8bcc80d097a69d0373/5B610056/t51.2885-15/s640x640/sh0.08/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/08110dab44a0a6b0a6ca533e23ca610b/5B6A452B/t51.2885-15/s150x150/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/171f24badda3e8aa47c2de20527ca11f/5B66ADBF/t51.2885-15/s240x240/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/c588944d9f600978fbc9a3310d71454f/5B63CA1B/t51.2885-15/s320x320/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/b462c5e5df7ea3b4385daa402a734ec7/5B51AA43/t51.2885-15/s480x480/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/7878624049152d8bcc80d097a69d0373/5B610056/t51.2885-15/s640x640/sh0.08/e35/28432796_1979028242346280_7358189511114752000_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1705191726753763000,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Feast your eyes 👀 on these #PSYCHEdelic pieces from Psyche Inspired members: Morgan Baerwaldt, @cvasque_art , and Sofia Garcia. Starting at the top, in a clockwise direction, we have—“Psyche Pop,” “Hypercolor Psyche” and “Surreal Psyche” 😍💥🌌🛰️🌠☄️🔮✨ #sopsyched #soinspired #psycheinspired #journeytoametalworld #TBT\n\nLearn more about these “far-out” pieces and check out our newly launched website here 👉🏻 bit.ly/2DRnCUl"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BeqDtdLF885",
+              "edge_media_to_comment": {
+                "count": 1
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1517494716,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/d53f7b3bb4987d1bff22db595bb0f138/5B50F617/t51.2885-15/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+              "edge_media_preview_like": {
+                "count": 63
+              },
+              "gating_info": null,
+              "media_preview": "ACoqzwo/iP5ZJ/wpSVB+UFv97/61WtrdMH8qdtGOjZpOX9XOzlIbd9rbn4U/LkcYzj/P0rSI2/dYZ9GOf/r1nuhGCAM9iQ3H4Acn0zmq4iQA71kZvUDAP55P+elYTgpvmu/uvf79CbuOm5qpK4HzhT/usP6/41MHU9/5VgbXH3Ux/wAByfzOaj8p/wC6fyNS8On1t6L/AIIudrp/X3Go10WGVG0EZBPPcjp+HrUUd3kfOWb6AAD9c1AgK5DYwfU4/wA/jVm3jDAqR1OQcEg464I7j07+tbKEdv6+8zdSW4j3kUYxtbB9uv60z7WuPlVx74z+mahvEC8jkZA+nB4qvHPs4GcVrGCt7upSqS2lp8i6l6e/zH0wAf50v9ox+jfp/jVZirLv7jrVLNVyIbqSVv8AhzcTTg/zfw9Tz+nH/wBf608ztGNkPyKDk8Z59OeAP1ouHZVUgkEAYIPvinXHDRDsRyPXjvWOtjJWvqjPuyzqvAAJ7DHr2qr5SgfMSD9P/r89qs3B+UHvvP8AKqe4nuetbQ+E05U9f62JCg24Uk/hjiq5GOKeGPqajzVA0kf/2Q==",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/894951ddf583e583ce1ed2bf4f044acc/5B625276/t51.2885-15/s640x640/sh0.08/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/0456f11362af61e7d8bede05105cd089/5B56D372/t51.2885-15/s150x150/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/7519f6fe3153df5065ff20937352cd29/5B64FD4D/t51.2885-15/s240x240/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/fdb902261ee0db29eeb4371b00e089f0/5B5F5835/t51.2885-15/s320x320/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/0bda6a78d67a9fa17b02f00923552e19/5B6C49B3/t51.2885-15/s480x480/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/894951ddf583e583ce1ed2bf4f044acc/5B625276/t51.2885-15/s640x640/sh0.08/e35/26873007_153695625421011_3213339534087421952_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1705180585684013000,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Did you know, Psyche Inspired art includes musical pieces too?! Check out Psyche Inspired member, @isaacwisdom’s first two incredible pieces: “Ideas” and “Construction”! The latter even includes a FULL video performance of the piece—go check it out NOW! 🎼🎶🎷🎺🎹🎙️🎸 #psycheinspired #soinspired #journeytoametalworld #soPSYCHEd #heavymetal #newyearnewtunes🤘🏼💫🛰 Learn more, listen, watch...or even download Isaac's complete scores at: bit.ly/2DRnCUl\n\nAnd if you know of any K-12 bands that might like to try performing either work—let us know!"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BeqBLVPlo_i",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1517493387,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/c2dfc5275c14771f2d43b07ad82dbd5d/5B6A22A9/t51.2885-15/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+              "edge_media_preview_like": {
+                "count": 34
+              },
+              "gating_info": null,
+              "media_preview": "ACoqX7UDKqIw2/xZHf2NTNLJEzMSuzHyjvn3/XNUGt0U5QsQrgHjpn+IY7Z9amvCWXuNrEfX3qTQ2IJw6g8ZI6D171DPc5JUEbSMZ9/x4P0qvZAohJ43HOOvFUnTe7Nn5Q38/wAP50gL0kwgi+YqHxhQe5/CmLeIQM7c45we9Ur2PcFZj32+vv8A0qgTk5oA17e3uopDlflyf4lyQfxq5J9rMyOqHy1GCMrk569+/H0rSMhzwp4PXjn9RR5rf3G/T/GrIuZ84nJ3JHkkDgso9ff6Vltp9y03mBCFOMjcvXH1rot27nafzH+NPEpP8J/T/GlYLmBLYTyRbSvO8HqOmee/pWd/ZN3/AHP/AB5f8a67zSf4T+BFTjpTC5VZsE/vMcnjjj26Ugb/AKafy/wqwyjHQUzA/WgRHnH/AC1H47f8KTcD/wAtf/QasKoPYUjqOOB/kGgCAkf89P1H+FWx0HeolUZ6CpaAP//Z",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/383cc04e6fefc3fb33bb74f2a341fbd2/5B7039C8/t51.2885-15/s640x640/sh0.08/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/0462dcfbbe49d43172a7ea8364e68cae/5B5AA1CC/t51.2885-15/s150x150/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/23a31ad108551a6525d2ccca8203db9d/5B6AE5F3/t51.2885-15/s240x240/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/d380381ed82db3ba34bb0078b4d77ec0/5B521A8B/t51.2885-15/s320x320/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/7738f4c97081ef72f9cf79f7b92a7f13/5B755C0D/t51.2885-15/s480x480/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/383cc04e6fefc3fb33bb74f2a341fbd2/5B7039C8/t51.2885-15/s640x640/sh0.08/e35/26864739_146633146020841_1281950151904067584_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1705169691222617300,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "#TBT 👀 Throwing it back to Psyche Inspired member, @_briannart_ ’s first artistic piece: “History of Space Exploration”—because, WOW!✂️📃 Brianna explains: \"This piece is based on the Japanese art style of Notan, which focuses on stark contrasts. Designs and shapes are cut into black paper and reflected to the outside, creating a mirror image. The piece takes the overall shape of the Psyche spacecraft, while cut into the main structure is the history of space exploration. In this piece you can see: Goddard's first fuel rocket, Sputnik, the first human space flight, a Saturn rocket used for the Apollo missions, the lunar landing, Skylab I, the Space Shuttle, Mir, the Hubble telescope, the International Space Station, Voyager, the Spirit rover, the Curiosity rover, and finally Psyche, the next step in our exploration of space.\" I spy Curiosity—what else can you find?? 🕵🏻‍♀️ Read more about this “far-out” piece and check out our newly launched website here 👉🏻 bit.ly/2DRnCUl #psycheinspired #soinspired #journeytoametalworld #soPSYCHEd 🤘🏼💫🛰🎨"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bep-sy_Fiyt",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1517492089,
+              "dimensions": {
+                "height": 604,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/a55c640a3d02161e7a5c51ac66c500a8/5B6FD881/t51.2885-15/e35/27576388_155287015128062_6214775453488513024_n.jpg",
+              "edge_media_preview_like": {
+                "count": 37
+              },
+              "gating_info": null,
+              "media_preview": "ACoX6N3CKWPRRk/hUNtOJs4O7HfjkHOOnb9fWsq+iufnZTgEHBAzlccg+meOgJ461Ts7e4JYJhSNueMDoemOOcEn36igDqSQOvemyNtUsOwJqhLHL+6C9hyPfj+XXFQ3sU5ZivCkcEZJ6c5Gcfp0oAvWsxlU7sEr3HcevQY7j8KtVzNsLqZ22sBgLkZ4HXH0I5JA7mugjEgUBsEgDJ98c9qAHuu5SvrxUdvAIRgc+/r+QA/zzRRQBPTWGQR6iiigCOKIRj6+w/n357nmpqKKAP/Z",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/999b58d5742c062111bb5ca229eba31b/5B64A476/t51.2885-15/e35/c238.0.604.604/27576388_155287015128062_6214775453488513024_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/97652070c4d5119578e2b8a5e1c1fd3b/5B57447A/t51.2885-15/s150x150/e35/c238.0.604.604/27576388_155287015128062_6214775453488513024_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/b63393a14ebfb1e94980794b7c1c9c51/5B4F4CEC/t51.2885-15/s240x240/e35/c238.0.604.604/27576388_155287015128062_6214775453488513024_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/dcb6a22cf5656f5d2208357e569c093e/5B4EA704/t51.2885-15/s320x320/e35/c238.0.604.604/27576388_155287015128062_6214775453488513024_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/009abb77e2053893decf51a81edfaa26/5B5BFC2D/t51.2885-15/s480x480/e35/c238.0.604.604/27576388_155287015128062_6214775453488513024_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/999b58d5742c062111bb5ca229eba31b/5B64A476/t51.2885-15/e35/c238.0.604.604/27576388_155287015128062_6214775453488513024_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1668252038868757500,
+              "__typename": "GraphVideo",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Day 2 of #AGU2017! Looks like our NOLA friends have joined in on the Psyche celebration! 🎊🎉✨🛰 If you’re at AGU, don’t forget to stop by our @sese_at_asu booth and say hi! 👋🏼"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bcm0mP8l-vc",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1513091513,
+              "dimensions": {
+                "height": 750,
+                "width": 750
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/f429fd755556b6a43ead806ea29891ca/5AD8F6E5/t51.2885-15/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+              "edge_media_preview_like": {
+                "count": 31
+              },
+              "gating_info": null,
+              "media_preview": "ACoqlRACsh529v0/MU95o3PJyu4ZHYCsBnYHnIIPQ+o65qzHJv55wOtJ7Fbs2oURDIR86q24Y5G1x8wHr349RRM5DBlx8nyg+qnsf89s00WskfyggseeDj6/5NQurg4PB9OP6ZrNx6prQvQfNfmIDJJJ9P51TOqv2zVZ337ixxztH0HXH1NWFtQwBwORnrT5Ype8O7exU1CRXk3KCpPXOOvrwT1702BzBlypJ/hB4X8e/TpUcrrKVGMY4J/Hr+FIWliID845HuOnXrj2PSqtpYzvrc1LW4ypdflIwM56nFRS3cqnPUn29O/FULaQgkdM849xVkSp54AyoAxjOOTyfwNVay20Hvr1GRzrnc3LH/vnn9RVj+0JRwFGB061UulVWG305z9T/SlE47qCf8+9Typ6ju0VZCc4IxgYqefLr5nbIT8QM/1qvKcuxPqasn/j1/7a/wDstUZkEP3x/ntVmZAwDDkr1+n/AOuq0X3vwP8AKr9qMkA8g1a2ZaK62znDuCquflPr/wDW96DbEHtXQ3v+q+lZSscDk9KyUirH/9k=",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/428c1c66049cc22265236a2b0c4efe95/5AD89892/t51.2885-15/s640x640/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/d625042f13f436d300e8546bc3e8631a/5AD82632/t51.2885-15/s150x150/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/07c9c1246133fbd1204bf5e7ca88a209/5AD82566/t51.2885-15/s240x240/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/2bc139ade1383dd423d9ca059d9a492b/5AD81902/t51.2885-15/s320x320/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/3e723a2afb02e4bbe01bba408feae9dd/5AD8225A/t51.2885-15/s480x480/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/428c1c66049cc22265236a2b0c4efe95/5AD89892/t51.2885-15/s640x640/e15/25005341_2020500338217856_9134313639409352704_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": true,
+              "video_view_count": 0
+            }
+          },
+          {
+            "node": {
+              "id": 1667050373263926500,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "All in a day’s work ☄️🛰 Science Team Meeting SUCCESS! Complete with—ALL THE SWAG. #soinspired #journeytoametalworld #sopsyched #harnessinggreatness #teamworkmakesthedreamwork #lookingood #scienceROCKS #heavymetal"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BcijXtpFCVv",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1512947912,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/6830684c3bba44d1fcfaa17da1e24421/5B7224A2/t51.2885-15/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+              "edge_media_preview_like": {
+                "count": 44
+              },
+              "gating_info": null,
+              "media_preview": "ACoqrC5jVgd5I49fTv7549MCrEt2mBjIOeoPHIOKykiBDMeAARnrnkevTr25pFbcnIGBwBnHPJz6cDj8aixVzSW4J5zxgnP0HPftVgTfu85G/wB/8+4ArHjLBRgfdHOTyRnJ2+5Aq2Wt5JCx3hP93JHyjr14znj1waLAWRcO2MY5BPr0qL7cfUfp/hUCTCIbIfmDAck8g/5AzR5Htn39fei3cPQsfZsrjJ59uOw9e+BUcVpHk8EgHqfX2qW21I7RDtAB7nnt3GOmfyqNpPvnPzEHIHQY6fjnmnqOyLLRIgBA/ix+P9R71YyV9Dj06f8A1qyrVpJ2AZi3bmtRAJSUiUFRwznpx6DIyc9M/WqcWlqC12I2uEQBmT7wJByOgOD05p32qL+6aotzHLvUZXHI6jJ6Y6cio1WfAxgClYl6DNLi8yU8ZwpP06YqRgczZ4xnp9cVJpXAcjrkf1pHUKZQBgcdKXX7h9CO2TgHPGcEAgE+3P61oOXf7zrHEo+6hwfTrWRUijNbbu7JvbbQtlo8CKP+JugIYnGCSfw6dqn+yx/7X5D/ABqmigEEDBzTmdsnk9fWpkuZ9hJ28z//2Q==",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/dc307eb1788de7a12eaba56fb8ef674c/5B7395C3/t51.2885-15/s640x640/sh0.08/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/c92f258b03ffc28ab268193f392de2c0/5B57C7C7/t51.2885-15/s150x150/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/fa10019c5e0dba196927ebbfb59645d8/5B618CF8/t51.2885-15/s240x240/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/1321311bb4731b613e073a490083ef94/5B680E80/t51.2885-15/s320x320/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/e2ba63dc6a0c0ca2b04a90ff8b41d47f/5B6E2C06/t51.2885-15/s480x480/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/dc307eb1788de7a12eaba56fb8ef674c/5B7395C3/t51.2885-15/s640x640/sh0.08/e35/25005649_385320658576782_8311315089936351232_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1660535497880346400,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "#PR Lab final presentation from our @CronkitePRLab team! Amazing group of students that helped us spread the word about our @nasapsyche! #journeytoametalworld #soinspired #sopsyched #thankyou 👏🏻🛰😍🌌 ☄️"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BcLaDzIFZ6T",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1512171278,
+              "dimensions": {
+                "height": 1147,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/4a5e4c9431c43be77de6064a30d98290/5B6EB949/t51.2885-15/e35/24175058_522492964778643_8347692148673478656_n.jpg",
+              "edge_media_preview_like": {
+                "count": 26
+              },
+              "gating_info": null,
+              "media_preview": "ACgq2LaKN4ULKp+ReoHoKj+ywueUAB6YyD7Z57/pU1kQbePP9wfyp4jUNuz0GKRRz2p2yW7IUyAwbPOemKzSOK29a5MZ/wB7+lY5HFRLcqOqHjoKKlRMqPpRWdymn0dvuJodUEcaplvlGMACnf2i7qWBYbR0J68/pWSSQcYqYRMyqycj+IE989O3FX/W47a2WvyJJp95VmJIAOcknk9uaYZFKjt8uT9c/wCGKrTAKzIOQpI/KoweMHOP/r07XJvY1o5EIG09AM0VShkEWerk+nSiocexVxr3jsMcAenX/wCtUkEznOc5HQ9PwqmOtWLUnzD9DVtKwot3InbeWfGMnoKQL1oTof8APepU6/hT2I31GrGR2P8Anr+RopzE5opDP//Z",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/7ea7c9458909882e06df014649aeb1c7/5B54A726/t51.2885-15/s640x640/sh0.08/e35/c0.33.1080.1080/24175058_522492964778643_8347692148673478656_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/c079c32c2adb678ad4fe306699a48395/5B6328B2/t51.2885-15/s150x150/e35/c0.33.1080.1080/24175058_522492964778643_8347692148673478656_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/1c4dec6ffd326676d890cc4bdbbf9789/5B503124/t51.2885-15/s240x240/e35/c0.33.1080.1080/24175058_522492964778643_8347692148673478656_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/442e8d794297c2ef352a63845cc3df2b/5B60D822/t51.2885-15/s320x320/e35/c0.33.1080.1080/24175058_522492964778643_8347692148673478656_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/17918042feea667571b0e4722b6501a2/5B624191/t51.2885-15/s480x480/e35/c0.33.1080.1080/24175058_522492964778643_8347692148673478656_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/7ea7c9458909882e06df014649aeb1c7/5B54A726/t51.2885-15/s640x640/sh0.08/e35/c0.33.1080.1080/24175058_522492964778643_8347692148673478656_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1658195864769085400,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Check out these incredible and whimsical pieces by Psyche Inspired member, Nikka Bacalzo. \nNikka calls them \"Psyche: Then and Now\" and explains: \"These two pieces that I cut with an X-Acto blade show the \"then\" and \"now\" of Psyche. I layered multiple different cut-outs, separated and framed by foam core, to create the final piece. The Psyche asteroid was named after a Greek goddess, which inspired the idea of hands presenting the asteroid, as well as the wings she had that float behind. Fast forwarding to 2026, the expected arrival date of the Psyche spacecraft, the second piece includes people looking through a telescope at Psyche, as well as Jupiter and Mars, which are near Psyche.” Click on the link in bio to check out more Psyche Inspired works of art! 🎨☄️🛰"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BcDGFp_lT_x",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1511892372,
+              "dimensions": {
+                "height": 759,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/e3c81df26a39229150369e679d455d76/5B74930B/t51.2885-15/e35/24125167_182841752296457_8525499096033656832_n.jpg",
+              "edge_media_preview_like": {
+                "count": 13
+              },
+              "gating_info": null,
+              "media_preview": "ACodoRRxsvzDnnnn/GpjDAc7R9OTwP602Mfuxk4BJH0561L5QjyxYe31/wA+lWzMoSqoYheBgU8wr1x096JwQ5B64X8PapliIBJO0kcf4fjxVXEyDyl4OOD71VxWmYiBuB39zntWbTTAvxS7Yyu3Oe/PPP07VLhsquBkFgv4AYP/AOuqSu23bnj/ACalMzkg8ZUkjjufxqbAR3DMzkvw3AP4VeZfNUFeSO3v7/41nysZH3N1brgelODsDkHFO2wF0Dy1OT1zx9ayanLNUO2mlYEf/9k=",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/684168c6f8fc7bb945135ddf4def19a8/5B589893/t51.2885-15/s640x640/sh0.08/e35/c160.0.759.759/24125167_182841752296457_8525499096033656832_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/18f5a106067d627f1eba4e45876e30e7/5B6A1CD0/t51.2885-15/s150x150/e35/c160.0.759.759/24125167_182841752296457_8525499096033656832_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/47b7d6af3ee5a4f84f7326d1bda3c9cf/5B70F046/t51.2885-15/s240x240/e35/c160.0.759.759/24125167_182841752296457_8525499096033656832_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/0462cdfd92f4229148e3c432eed0b894/5B5490AE/t51.2885-15/s320x320/e35/c160.0.759.759/24125167_182841752296457_8525499096033656832_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/ee8cbf3a964a6ecbed38f7347fcb51f7/5B66A787/t51.2885-15/s480x480/e35/c160.0.759.759/24125167_182841752296457_8525499096033656832_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/684168c6f8fc7bb945135ddf4def19a8/5B589893/t51.2885-15/s640x640/sh0.08/e35/c160.0.759.759/24125167_182841752296457_8525499096033656832_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1653251980637029600,
+              "__typename": "GraphSidecar",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Surprise temporary installation of Psyche Inspired’s @caralieee’s incredible first artistic piece, Psyche Acrylic Pop-Art Posters in Principal Investigator, @ltelkins office! Caralie shares: \"The Psyche Mission is possible today because of NASA's work in the late 50's into the early 60's and 70's. Inspired by the Pop Art Movement that thrived during those decades, the Psyche Posters celebrate that era of advancement. Details were cut from transparent acrylic; brightly colored solid pieces fit together with the detail pieces. A colorful image is cast behind each poster when lit from one side.\" What a treat to see first-hand! Keep up the #PSYCHEdelic work!! 😍💫☄️🙌🏻👀 #soinspired #journeytoametalworld #sopsyched"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bbxh-rGFMTn",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1511303015,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/7336b78ca0b8e439a6a247d8166d5359/5B4F143A/t51.2885-15/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+              "edge_media_preview_like": {
+                "count": 23
+              },
+              "gating_info": null,
+              "media_preview": null,
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/7bdc4d3adf95fb126a50612079cd3950/5B5E185B/t51.2885-15/s640x640/sh0.08/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/33fcd8fba1d911b1e78ec47e1d6f6185/5B5D2B5F/t51.2885-15/s150x150/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/b9d81d32b38d3c3de43beccb0cd62cdf/5B647360/t51.2885-15/s240x240/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/b5af5344d8a32022863f8604d701351e/5B601618/t51.2885-15/s320x320/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/af97deeae7567876cebddc069899bc5a/5B67F49E/t51.2885-15/s480x480/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/7bdc4d3adf95fb126a50612079cd3950/5B5E185B/t51.2885-15/s640x640/sh0.08/e35/23734238_378292245940468_6238219498113990656_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1651175471340560400,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Psyche Outreach gone metal 😝💫🤘🏼☄️🎨🚀Way to go @_briannart_ —too COOL! #SolarPanelChalkArt #JourneyToAMetalWorld #SoInspired #NoFilter"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BbqJ1fHF5-R",
+              "edge_media_to_comment": {
+                "count": 1
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1511055476,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/62fe1f11999de4eb266c3113495994cb/5B6FFF00/t51.2885-15/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+              "edge_media_preview_like": {
+                "count": 21
+              },
+              "gating_info": null,
+              "media_preview": "ACoqjUsRuzluVJPP4/8A1uabICUBUlmJ6MPXrnnjH8qne6iibax574GcfWpSc8gg/wCfWrJMyQKx28qOeT0z3+magm5O0Y4A/QAVpSRq33qWJERdjKGGc5xzSY0VLSYW+WOCScY7gY6j39+wz60x7uXccMSMnFTGGORsD5VHp6/ypf7NH94/mKm42l8ytNCWkLN0J/P/AD6jOK04WXywq5BAwB2/+v8ApVO7+6COxq/uO0HsQP5VaVyWwCg8H+gP4UbMcdu3/wBeoTlqMsnGfwqrC5icxnr39aTDf5xQr7hz+lMKH1P50WQXZUuvufiKtRPvjXPp/Kq1z9w/hUlt/qx9T/OkgaLJO0cVVck9asdqjNWRsOjOc/gf8/lT8VDF/T+tS0ikf//Z",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/64b1c2cb749db799a2b36c5bdf275c50/5B5ACE61/t51.2885-15/s640x640/sh0.08/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/dd1292763470472458e8d3184294fe54/5B634365/t51.2885-15/s150x150/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/018e4d9e9e530c82f8010b5888adc774/5B54F45A/t51.2885-15/s240x240/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/ec02c0ac2c08e94d9fef9374857e78f5/5B6F8C22/t51.2885-15/s320x320/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/00c9970f8318a5005134557d2df9198c/5B706FA4/t51.2885-15/s480x480/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/64b1c2cb749db799a2b36c5bdf275c50/5B5ACE61/t51.2885-15/s640x640/sh0.08/e35/23595791_783731388502062_4482705839836102656_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1651155204362984200,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "More INCREDIBLE artwork from our uber talented Psyche Inspired artists, Megan Bromley, Sofia Garcia and Jeremy Seidner! Learn more about these three amazing pieces and more, on our webpage [link in bio]. #soinspired #journeytoametalworld #psycheinspired 🎨👀🤘🏼🖼🚀"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BbqFOkBF9ti",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1511053060,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/e958af29859f3fca6ccaee10f66e0759/5B4F06B6/t51.2885-15/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+              "edge_media_preview_like": {
+                "count": 11
+              },
+              "gating_info": null,
+              "media_preview": "ACoqnwufvpxj+7UbFF+bAAz2H+TVL7GQOcq/UenH68+v6VWWVifmZgPUE/4/rUjEul3yZQAgge3P6U8W0YAB5dvyFAkCtl33j+4c49vxqSWUlQwX6EnOB/npWi2E2uz+/wD4BTkhx9316f8A16b5Tf7P5ipI9pB3HZ9P881ET6DinqF1/T/4BsNdjOxhwO2ORn2JqgChJVdzenHNRedIxyTn8B/hTQ2ORwazGXorJ7hN0ewDJGWzuyP88U/+yp+hZDj1LdPyq7p674Q55O4g/hV8cdu1K/QDEGkSggkpt9if8Kl/st/Vf1/wrYDZGCDRz6H8zT5h38vwOUYIDwT9MdKur5Esfz/fwcEHr6ZqvgYppUY6CkI17EMsWARjcff/AAq4HzkZB/z9aqWA/dfiamAAzjjp/WgY5ZhyeMAcnB47+vpTxLkZBXB+tVU/h+v+NP6cCpbsVyn/2Q==",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/83580535a7625cadc60467ddda9c2c5a/5B4F54D7/t51.2885-15/s640x640/sh0.08/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/901dfe4f76e9104ac80e5ddb1a272379/5B7120D3/t51.2885-15/s150x150/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/07d089ef78ec5d6f32187b5608f1dd85/5B6FC8EC/t51.2885-15/s240x240/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/ffe64af14bfabd54d6d3889520267d41/5B580C94/t51.2885-15/s320x320/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/4154f0cf5252928d67b5f8ad90c36f85/5B677212/t51.2885-15/s480x480/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/83580535a7625cadc60467ddda9c2c5a/5B4F54D7/t51.2885-15/s640x640/sh0.08/e35/23595766_132352550761555_1706488358940704768_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1649687933828401000,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Six graphic design senior capstone students have partnered with the @NASAPsyche Mission to build the first Psyche mobile app. As part of their @arizonastateuniversity capstone class, they were tasked with designing a clock inspired by #Psyche. What’s even cooler?! These clocks are on display for public viewing with some amazing meteorites thanks to our friends @asumeteorites! #psycheinspired #journeytoametalworld #soinspired #soPSYCHEd ☄️🕰"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bbk3m92FwaC",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1510878148,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/d34107439e4ea9c5551a0a32b845a706/5B5DA575/t51.2885-15/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+              "edge_media_preview_like": {
+                "count": 17
+              },
+              "gating_info": null,
+              "media_preview": "ACoqwgrSHLkn9a1LKFFYMBkj39qpRg446e/9KvW5bzASc9ePb2qHsWjRK7uB+n+NVJsW/JZUB7kFj/wED9SSK0o+uapX4YFSoXOCS7DIQcevGT9CfQVirXSNG9LIo/a0/wCeh/4FEMfo2aZ5x/vRH8SP0xxTfPJ4E24+jL8p/PI/MCqh4PMYz3xmtzIczbcEVes2y2ewqqhBHFXY+Oe1TLZ+jKW5rI+7p+fb/wCv/nms/VOkYJOwt8x7e39asxPu47etR3SsRgL5gI+ZM8kcYK98j1HTuMGueCd0zSS0MQ7zkSfdAOeOB6Y/HGMdfeo1eXAx0xVoRoTgJK5HRD0H1wM4/Ko287J+ZR7ZHHtXUYkatVrzMJgVnCnUNDTNSKQnocCrc8Szqp2uxX+JCNw/A/ezj1BFYyE1p2jHDc9x/Kstmby1QwxMwwXuGH93bj9S2KqGBR/yz/Nxn8eK0pWOOprJJOapO5jY/9k=",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/aebbd299f7fd0951b89df518388192e2/5B4F235F/t51.2885-15/s640x640/sh0.08/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/e9b23e094d1466d196e3ccbc96822547/5B610722/t51.2885-15/s150x150/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/cdcd597f4707607f491dfb97585dee3d/5B554DB6/t51.2885-15/s240x240/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/30f82fd6f9f2b705091cf043b1e36c9f/5B6B8A12/t51.2885-15/s320x320/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/7d35bde2f41415641c16a4437af5eb62/5B51DD4A/t51.2885-15/s480x480/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/aebbd299f7fd0951b89df518388192e2/5B4F235F/t51.2885-15/s640x640/sh0.08/e35/23594596_1491084217654669_7970063737652510720_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1649678353400335600,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Take a look at the first artistic piece by Psyche Inspired member, Morgan Baerwaldt! \nMorgan explains, \"I figured that a visual comparison would probably help people imagine the size of the craft more than the descriptions alone. School buses are a really common, relatable size, so I chose to use those for the first two illustrations. I added in a six foot tall bus driver, who is clearly very confused about why the Psyche bus is sitting next to his bus, to make the drawing more fun and add more context. I chose to show Psyche sitting on top of a tennis court. While not every body knows the where the singles lines are on a tennis court, most people have seen a tennis court and can see the relationship. It turns out that a standard interior door, something that most people probably walk through every day, is nearly exactly the height of Psyche's booms and antenna reflector. I used felt-tip ink pens and watercolor on cold press watercolor paper. I drew it in pencil, inked over it in pen, erased extra marks, and then water-colored over that. #psycheinspired #soinspired #journeytoametalworld #soPSYCHEd 🤘🏼💫🚌🛰🎨"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bbk1bjYFAz8",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1510877006,
+              "dimensions": {
+                "height": 817,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/cef834498c7ae5ff489aa8a8e8537c5d/5B5238B9/t51.2885-15/e35/23594456_533659090317916_7951770703139700736_n.jpg",
+              "edge_media_preview_like": {
+                "count": 10
+              },
+              "gating_info": null,
+              "media_preview": "ACof2vNYjeCOMno368095QqggZ/Gq5tSRnc27nnjAPOOMZqzt69wQPzHf+VSr9f1ARJN5IIxx60pZsH5SMdOetCjHJGD3x/QUzzj02t+YqgH7zx8pPvnp9eanHNVTKc42MfyqyACKAIyxFQyzeXkngdP/rVN5YI4PoajeIsTz17UhkIuQV3ZIH402O58wZBb8f5/55qYQkDAOMfpQsJX069AO9AIm3VIDUfl5znv2qTFMR//2Q==",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/f1d66d8b4ec265aef9c7b1dd2fd6bf05/5B7276F7/t51.2885-15/s640x640/sh0.08/e35/c131.0.817.817/23594456_533659090317916_7951770703139700736_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/c56aeb015d84fbf5b1fcfc9135d8ba00/5B639CB4/t51.2885-15/s150x150/e35/c131.0.817.817/23594456_533659090317916_7951770703139700736_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/51fdabd80f7a11cd761301136115af25/5B72BA22/t51.2885-15/s240x240/e35/c131.0.817.817/23594456_533659090317916_7951770703139700736_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/0b6d77d4b508c718a182680b7753e5cc/5B5AFDCA/t51.2885-15/s320x320/e35/c131.0.817.817/23594456_533659090317916_7951770703139700736_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/9f067ec5d5da2fb2c815ddd17f1cb21e/5B5F06E3/t51.2885-15/s480x480/e35/c131.0.817.817/23594456_533659090317916_7951770703139700736_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/f1d66d8b4ec265aef9c7b1dd2fd6bf05/5B7276F7/t51.2885-15/s640x640/sh0.08/e35/c131.0.817.817/23594456_533659090317916_7951770703139700736_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1648923532385057500,
+              "__typename": "GraphSidecar",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Have you seen the first artistic piece by Psyche Inspired members, @cvasque_art & Kari Sanford?! Papier-mâché model PSYCHE!\n\nAs they describe, \"For this project we made a replica of the Psyche asteroid roughly the size of a laundry basket. We used a papier-mâché technique in order to achieve this goal, using wire, foam, and paper. This provides a tangible way for people to 'interact' with the asteroid.\"...and interact they DID! \nThe NASA Psyche Outreach Team was able to debut this beauty at @arizonastateuniversity's Homecoming Block Party--and clearly she was a hit! 📜🤘🏽☄️#HeavyMetal #SoPSYCHEd #PSYelfie #psycheinspired"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BbiJzdhl_sW",
+              "edge_media_to_comment": {
+                "count": 1
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1510787024,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/62581fc9fed77d678168773daaf40988/5B5B0B42/t51.2885-15/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+              "edge_media_preview_like": {
+                "count": 26
+              },
+              "gating_info": null,
+              "media_preview": null,
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/d990866bc586b37f6e9b82185dfb1200/5B703423/t51.2885-15/s640x640/sh0.08/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/6db912877cf2e499d6d80b771ecdb11c/5B67C727/t51.2885-15/s150x150/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/82505c462dafe17ba14c4c86e9a0f1fd/5B527B18/t51.2885-15/s240x240/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/5cdaa08cc5b0c42d429478bcef9163a8/5B4F7C60/t51.2885-15/s320x320/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/ee964165cb6990cf9e70945e541b5c89/5B760CE6/t51.2885-15/s480x480/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/d990866bc586b37f6e9b82185dfb1200/5B703423/t51.2885-15/s640x640/sh0.08/e35/23507172_283475932162556_7778181439433998336_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1648914750217067000,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "Check out the first work by Psyche Inspired artist, @johndomenicoartist entitled, “Psyche in Orbit”! John created this incredible 25” x 25” x 3.5” platter made of stoneware with iron thermite glaze ☄️💫 #farout #psycheinspired #soPSYCEd"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "BbiHzqflxoM",
+              "edge_media_to_comment": {
+                "count": 1
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1510785977,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/37ee6294d30efb806f51a3a1dfdfd8d6/5B69FB47/t51.2885-15/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+              "edge_media_preview_like": {
+                "count": 23
+              },
+              "gating_info": null,
+              "media_preview": "ACoq5qpVhdug69KWGPe3PQVrheOeTQBm/Y29RUbwOnUce1bfkkDcelHl8Z7GgDnqKuXUOw7h0NVKAL1mvPNagwGyenX/AAqoIGi+fHA6/T/63WrRwRSGOLkn1pxl3cEcVBmnAGgRVuxlPxrL21ryqZTtHRev19PyqH7MaYHQeXVJ7R05iGR/cJ6f7p/ofwrSFLQBkbJO8b/kD/WlEE0hxt8te5JGfwHPP1rXopWAqpbBBtUYA/zz70eTVqm0xH//2Q==",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/dd7bcd4fc7ec2e807be9f4f1bfe8ad39/5B5AEF26/t51.2885-15/s640x640/sh0.08/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/6bcd322ddd2fe547c4545b481497104a/5B5BE422/t51.2885-15/s150x150/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/9b5ea44c802792d391128d97a3188b1f/5B6C3C1D/t51.2885-15/s240x240/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/4344309fdeaa265f9ab8ac3783698c1b/5B50AD65/t51.2885-15/s320x320/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/99a42d1e15c80be64e44168c846d39e9/5B68B5E3/t51.2885-15/s480x480/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/dd7bcd4fc7ec2e807be9f4f1bfe8ad39/5B5AEF26/t51.2885-15/s640x640/sh0.08/e35/23507132_772037166330052_3528194515586252800_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          },
+          {
+            "node": {
+              "id": 1648752078481694500,
+              "__typename": "GraphImage",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "\"Psyche Inspired\" is a program that brings undergraduates from many disciplines together to share the excitement, innovation, science & engineering of NASA’s Psyche mission with the public in new ways through artistic & creative works.  Here is the first work by Psyche Inspired member, @abigailweibel! 🎨 As she describes: \"Curiosity is the theme for this piece. To signify this I chose to position the model looking outwards and upwards. The color gray is representative of the unknown, black of space, and brighter colors of the new information we will gain through the Psyche mission. Curiosity is innate in all humans and does not belong to one type of person. I chose to emphasize this by providing the model some anonymity by covering her eyes and to further accentuate her line of sight.\" #psycheinspired #journeytoametalworld #soPSYCHEd"
+                    }
+                  }
+                ]
+              },
+              "shortcode": "Bbhi0eolp6X",
+              "edge_media_to_comment": {
+                "count": 0
+              },
+              "comments_disabled": false,
+              "taken_at_timestamp": 1510766585,
+              "dimensions": {
+                "height": 1080,
+                "width": 1080
+              },
+              "display_url": "https://scontent-lax3-2.cdninstagram.com/vp/0d10848a43875d4f054bac1742c388ba/5B6C9B65/t51.2885-15/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+              "edge_media_preview_like": {
+                "count": 22
+              },
+              "gating_info": null,
+              "media_preview": "ACoqiuWzaxnvtX/CsVutaU7f6NH/ALv/ALMRWY3WopaQkv77/Uubvy+n6iUUoHrwPWpYovNbav69cVqQRUVbawm3YVSwJ2g+p6/h9enFRGNFODIMjg4BI/A9/rQIcJC0RQ/wjj8STVY9aUHGR60h60krX82U3e3kv1YuSR04H+fyz+talhAzMkh27cnoMHI9T+orMUHnHHGPr7VrWZktwQQMHJGWGc/TOaTBb6ljVZpIlCqSobj5cjjvn1zXP1NPPLKf3pJI7dAPwqGmhMTNPjbac98HHsfX8O3vUVPj60AWwMAfSrFlGGYt6HAqnk4FWrViFGCR8xoKNaSCOYbWGeOvft/j+hrOOlqTxIAOwI5H196nEjA9T27n0NU2dsnk9T3oJep//9k=",
+              "owner": {
+                "id": 5655933163
+              },
+              "thumbnail_src": "https://scontent-lax3-2.cdninstagram.com/vp/d9bfab6f256c18c9d7c8b8b9ad607587/5B65F104/t51.2885-15/s640x640/sh0.08/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+              "thumbnail_resources": [
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/729c9b846e875ed0fafc2155ceb47249/5B731D00/t51.2885-15/s150x150/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+                  "config_width": 150,
+                  "config_height": 150
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/e1be37cf31d72e8e33a0ade24461de66/5B70943F/t51.2885-15/s240x240/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+                  "config_width": 240,
+                  "config_height": 240
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/11cb69614daa89386808944e280fe9d4/5B529F47/t51.2885-15/s320x320/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+                  "config_width": 320,
+                  "config_height": 320
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/215b97e94b7e18d9d7d6921fd449deed/5B5EBBC1/t51.2885-15/s480x480/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+                  "config_width": 480,
+                  "config_height": 480
+                },
+                {
+                  "src": "https://scontent-lax3-2.cdninstagram.com/vp/d9bfab6f256c18c9d7c8b8b9ad607587/5B65F104/t51.2885-15/s640x640/sh0.08/e35/23596349_159144741493410_7233181880919523328_n.jpg",
+                  "config_width": 640,
+                  "config_height": 640
+                }
+              ],
+              "is_video": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "status": "ok"
+}
