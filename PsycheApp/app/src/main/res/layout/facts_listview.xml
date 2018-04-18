@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:scaleType="center"
-        app:srcCompat="@drawable/image_1" />
+        app:srcCompat="@drawable/mission_tab_light1" />
 
     <TextView
         android:id="@+id/titleListView"
