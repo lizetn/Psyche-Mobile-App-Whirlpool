@@ -55,6 +55,7 @@ public class GalleryVideoFragment extends Fragment
         recyclerView.setAdapter(videoAdapter);
 
 
+        //Initial set up for connection progress bar
         connection.setText("");
         // Set up the GridLayoutManager and VideoRecycleAdapter
         mCountDownTimer = new CountDownTimer(8000, 1000)
@@ -81,6 +82,8 @@ public class GalleryVideoFragment extends Fragment
 
         boolean connected = false;
         view.getContext();
+
+        //Checks to see if the phone has network connection
         ConnectivityManager connectivityManager = (ConnectivityManager) view.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         assert connectivityManager != null;
 
