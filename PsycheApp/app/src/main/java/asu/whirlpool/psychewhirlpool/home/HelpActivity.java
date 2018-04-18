@@ -29,6 +29,16 @@ import asu.whirlpool.psychewhirlpool.SocialMediaTabs;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+/**
+ * HelpActivity displays Navigation help and contains a link to the app credits page.
+ * The activity also contains a navigation bar and has a back button at the top for
+ * another alternative to return to the home screen. HelpActivity is only accessible
+ * from the home screen, so the back button at the top is hard coded to return there.
+ *
+ * @author      Natalie Fleischaker
+ * @version     4/15/2018
+ *
+ */
 public class HelpActivity extends AppCompatActivity {
 
     private BottomNavigationView navigation;
@@ -51,6 +61,8 @@ public class HelpActivity extends AppCompatActivity {
             switch (item.getItemId())
             {
                 case R.id.navigation_home:
+                    intent = new Intent(HelpActivity.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_timeline:
                     intent = new Intent(HelpActivity.this, TimelineTab.class);
@@ -137,7 +149,8 @@ public class HelpActivity extends AppCompatActivity {
     }
 
     /**
-     * Hides help box for navigation icon titles.
+     * Navigates back to the home screen.
+     * @param view  View from which the method is called.
      */
     public void closeHelp(View view)
     {
@@ -147,7 +160,7 @@ public class HelpActivity extends AppCompatActivity {
 
     /**
      * Navigates to {@link asu.whirlpool.psychewhirlpool.home.AppCreditsActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayCredits(View view)
     {

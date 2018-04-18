@@ -1,21 +1,14 @@
 package asu.whirlpool.psychewhirlpool;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -24,12 +17,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.LinearLayout;
 
 import com.github.lzyzsd.circleprogress.DonutProgress;
 
@@ -42,6 +32,16 @@ import java.util.GregorianCalendar;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+/**
+ * Displays the home page of the app which contains a navigation bar and buttons for
+ * accessing the countdown clock, mission facts, NASA website, psyche news website,
+ * navigation help, and a toggle for night mode coloring of the app.
+ *
+ * @author      Natalie Fleischaker, Javier Perez
+ * @created     11/06/2017
+ * @version     4/2/2018
+ *
+ */
 public class CountdownActivity extends AppCompatActivity {
 
     final private int numTimers = 1;  // constant for the desired number of timers
@@ -67,8 +67,11 @@ public class CountdownActivity extends AppCompatActivity {
      * Toggle this boolean constant's value to turn on/off logging
      * within the class.
      */
-    private static final boolean VERBOSE = true;
+    private static final boolean VERBOSE = false;
 
+    /**
+     * Handles navigation between different sections of the Psyche App.
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -118,12 +121,6 @@ public class CountdownActivity extends AppCompatActivity {
         textViewHours = (DonutProgress) findViewById(R.id.textViewHoursA);
         textViewMins = (DonutProgress) findViewById(R.id.textViewMinutesA);
         textViewSecs = (DonutProgress) findViewById(R.id.textViewSecondsA);
-
-        if(height < 900)
-        {
-
-            Log.d(String.valueOf(textViewYears.getLayoutParams().height), "onCreate: ");
-        }
 
         textViewSecs.setUnfinishedStrokeWidth((float) 10.0);
         textViewSecs.setFinishedStrokeWidth((float) 10.0);
@@ -299,6 +296,7 @@ public class CountdownActivity extends AppCompatActivity {
     {
         SimpleDateFormat formatter = new SimpleDateFormat("MM.dd.yyyy, HH:mm:ss");
         formatter.setLenient(false);
+
         long[] milliseconds = new long[numTimers];
         Date[] endDates = new Date[numTimers];
 
@@ -311,10 +309,6 @@ public class CountdownActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        /**
-         * This needs to be refactored and encapsulated, but the basic functionality is
-         * still being figured out, so that will be done later.
-         */
         for (int i = 0; i < mCountDownTimer.length; i++) {
             final int index = i;
 
@@ -333,38 +327,47 @@ public class CountdownActivity extends AppCompatActivity {
                     double nm = (1.0 / progs);
                     double sum = (nm * 100.0);
                     int yr = (int) sum;
+
                     textViewYears.setDonut_progress(String.valueOf(yr));
 
                     int progs2 = ((calendar.get(Calendar.MONTH)));
                     double nm2 = (progs2 / 12.0);
                     double sum2 = (nm2 * 100.0);
+
                     int mths = (int) sum2;
+
                     textViewMonths.setDonut_progress(String.valueOf(mths));
 
 
                     int progs3 = ((calendar.get(Calendar.DAY_OF_MONTH)));
                     double nm3 = (progs3 / 31.0);
                     double sum3 = (nm3 * 100.0);
+
                     int dys = (int) sum3;
+
                     textViewDays.setDonut_progress(String.valueOf(dys));
 
                     int progs4 = ((calendar.get(Calendar.HOUR_OF_DAY)));
                     double nm4 = (progs4 / 24.0);
                     double sum4 = (nm4 * 100.0);
+
                     int hrs = (int) sum4;
+
                     textViewHours.setDonut_progress(String.valueOf(hrs));
 
                     int progs5 = ((calendar.get(Calendar.MINUTE)));
                     double nm5 = (progs5 / 60.0);
                     double sum5 = (nm5 * 100.0);
-                    Log.d(String.valueOf(sum5), "onTick: sss");
+                    if (VERBOSE) Log.d(String.valueOf(sum5), "onTick: sss");
                     int mins = (int) sum5;
+
                     textViewMins.setDonut_progress(String.valueOf(mins));
 
 
                     int progs6 = ((calendar.get(Calendar.SECOND)));
                     double nm6 = (progs6 / 60.0);
                     double sum6 = (nm6 * 100.0);
+
                     int secs = (int) sum6;
                     textViewSecs.setDonut_progress(String.valueOf(secs));
 
@@ -433,7 +436,7 @@ public class CountdownActivity extends AppCompatActivity {
     public void onStop() {
         cancelTimers();
         super.onStop();
-        Log.v(TAG, "-- ON STOP --");
+        if (VERBOSE) Log.v(TAG, "-- ON STOP --");
     }
 
     @Override

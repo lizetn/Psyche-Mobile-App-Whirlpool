@@ -31,7 +31,7 @@ public class YouTubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     private final String YOUTUBE_ERROR = "Initialization error";
 
     /**
-     * Instantiate the {@link YouTubePlayerView} in the UI.
+     * Instantiates the {@link YouTubePlayerView} in the UI.
      * Also get the video ID passed by the {@link VideoRecycleAdapter}.
      */
     @Override

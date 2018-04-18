@@ -14,46 +14,62 @@ import asu.whirlpool.psychewhirlpool.R;
  * in {@link TimelineTab}.
  *
  * @author      Erick Ramirez Cordero
- * @version     3/7/2018
+ * @version     4/17/2018
  */
 public class TimelineNodeActivity extends AppCompatActivity
 {
+    /**
+     * Instantiates the activity based on day/night mode and the node that was selected
+     * in {@link TimelineFragment}.
+     *
+     * The node's information is sent in an {@link Intent} from {@link TimelineRecycleAdapter}.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        boolean nightModeEnabled;
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
             setTheme(R.style.PsycheDarkTheme);
+            nightModeEnabled = true;
         }
         else
         {
             setTheme(R.style.PsycheLightTheme);
+            nightModeEnabled = false;
         }
+
+        // Instantiate the layout and background
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline_node);
+
+        if (nightModeEnabled)
+        {
+            findViewById(R.id.constraintLayout).setBackgroundResource(R.drawable.background_timeline_dark);
+        }
+        else
+        {
+            findViewById(R.id.constraintLayout).setBackgroundResource(R.drawable.background_timeline_light);
+        }
 
         // Initialize details about the node selected
         Intent intent = getIntent();
         TextView titleTextView = findViewById(R.id.titleTextView);
         TextView contentTextView = findViewById(R.id.contentTextView);
-        ImageView imageView = findViewById(R.id.nodeImageView);
 
         try
         {
             String title = intent.getExtras().getString(TimelineRecycleAdapter.TITLE_KEY);
             String data = intent.getExtras().getString(TimelineRecycleAdapter.DATA_KEY);
-            int imageId = intent.getExtras().getInt(TimelineRecycleAdapter.IMAGE_KEY);
 
             titleTextView.setText(title);
             contentTextView.setText(data);
-            imageView.setImageResource(imageId);
         }
         catch (Exception ex)
         {
             // Display error message
             titleTextView.setText(R.string.error_message);
             contentTextView.setText(R.string.error_message);
-            imageView.setImageResource(R.drawable.psyche_help_purple);
         }
     }
 }

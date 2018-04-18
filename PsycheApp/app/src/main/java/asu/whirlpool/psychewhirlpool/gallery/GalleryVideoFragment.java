@@ -6,7 +6,9 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,8 +26,10 @@ import asu.whirlpool.psychewhirlpool.gallery.videoClasses.VideoRecycleAdapter;
  * Additionally, the {@link VideoRecycleAdapter} is used to instantiate and display the
  * thumbnails.
  *
+ * Videos are obtained and streamed from the YouTube Data API.
+ *
  * @author      Erick Ramirez Cordero
- * @version     3/7/2018
+ * @version     4/17/2018
  */
 public class GalleryVideoFragment extends Fragment
 {
@@ -44,10 +48,24 @@ public class GalleryVideoFragment extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_gallery_videos, container, false);
+
         prog = (ProgressBar) view.findViewById(R.id.prog);
         connection = (TextView) view.findViewById(R.id.connection);
         prog.setVisibility(View.INVISIBLE);
         connection.setVisibility(View.INVISIBLE);
+
+        ConstraintLayout constraintLayout = view.findViewById(R.id.constraintLayout);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
+            constraintLayout.setBackgroundResource(R.drawable.background_timeline_dark);
+        }
+        else
+        {
+            constraintLayout.setBackgroundResource(R.drawable.background_timeline_light);
+        }
+
+        // Set up the GridLayoutManager and VideoRecycleAdapter
         RecyclerView recyclerView = view.findViewById(R.id.VideoRecyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), NUMBER_OF_COLUMNS));
 
@@ -56,6 +74,7 @@ public class GalleryVideoFragment extends Fragment
 
 
         connection.setText("");
+
         // Set up the GridLayoutManager and VideoRecycleAdapter
         mCountDownTimer = new CountDownTimer(8000, 1000)
         {

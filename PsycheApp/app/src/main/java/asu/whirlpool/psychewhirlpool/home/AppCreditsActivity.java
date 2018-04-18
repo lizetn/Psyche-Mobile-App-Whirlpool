@@ -10,6 +10,15 @@ import android.view.View;
 
 import asu.whirlpool.psychewhirlpool.R;
 
+/**
+ * Displays the home page of the app which contains a navigation bar and buttons for
+ * accessing the countdown clock, mission facts, NASA website, psyche news website,
+ * navigation help, and a toggle for night mode coloring of the app.
+ *
+ * @author      Natalie Fleischaker
+ * @version     4/8/2018
+ *
+ */
 public class AppCreditsActivity extends AppCompatActivity {
 
     @Override

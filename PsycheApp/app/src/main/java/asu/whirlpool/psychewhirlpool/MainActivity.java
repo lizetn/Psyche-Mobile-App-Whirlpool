@@ -33,6 +33,15 @@ import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
 import asu.whirlpool.psychewhirlpool.home.HelpActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+/**
+ * Displays the home page of the app which contains a navigation bar and buttons for
+ * accessing the countdown clock, mission facts, NASA website, psyche news website,
+ * navigation help, and a toggle for night mode coloring of the app.
+ *
+ * @author      Natalie Fleischaker
+ * @version     4/8/2018
+ *
+ */
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
@@ -236,6 +245,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * Checks shared preferences to see if this is the first time the app is
      * being run or if the app has had important updates.
+     *
+     * A version of the intro for use after a major update has not been
+     * implemented since the app is new and has had no major updates.
      */
     private void checkLastVersionRun() {
 
