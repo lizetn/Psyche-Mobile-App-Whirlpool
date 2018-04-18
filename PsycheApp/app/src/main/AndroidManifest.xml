@@ -82,6 +82,9 @@
         <activity android:name=".InstagramClasses.Display" />
         <activity android:name=".facebookClasses.Display2" />
         <activity
+            android:name="com.YourCompanyName.YourProductName.UnityPlayerActivity">
+        </activity>
+        <activity
             android:name=".gallery.GalleryTab"
             android:label="@string/title_activity_gallery_tab"
             android:parentActivityName=".MainActivity"
