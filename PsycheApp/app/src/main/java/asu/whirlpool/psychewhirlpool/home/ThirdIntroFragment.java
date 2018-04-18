@@ -13,6 +13,9 @@ import asu.whirlpool.psychewhirlpool.R;
  * Activities that contain this fragment must implement the
  * Use the {@link ThirdIntroFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * @author      Natalie Fleischaker
+ * @version     3/18/2018
  */
 public class ThirdIntroFragment extends Fragment {
 
@@ -26,7 +29,6 @@ public class ThirdIntroFragment extends Fragment {
      *
      * @return A new instance of fragment ThirdIntroFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ThirdIntroFragment newInstance() {
         ThirdIntroFragment fragment = new ThirdIntroFragment();
         Bundle args = new Bundle();

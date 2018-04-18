@@ -33,6 +33,15 @@ import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
 import asu.whirlpool.psychewhirlpool.home.HelpActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+/**
+ * Displays the home page of the app which contains a navigation bar and buttons for
+ * accessing the countdown clock, mission facts, NASA website, psyche news website,
+ * navigation help, and a toggle for night mode coloring of the app.
+ *
+ * @author      Natalie Fleischaker
+ * @version     4/8/2018
+ *
+ */
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
@@ -159,7 +168,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Navigates to {@link CountdownActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayCountdown(View view)
     {
@@ -169,7 +178,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Navigates to {@link FactsActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayFacts(View view)
     {
@@ -179,6 +188,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Closes the app and displays Psyche news website in chosen browser.
+     * @param view  View from which the method is called.
      */
     public void displayNews(View view)
     {
@@ -189,6 +199,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Displays help activity for help with navigation icon titles.
+     * @param view  View from which the method is called.
      */
     public void displayHelp(View view)
     {
@@ -198,6 +209,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Closes the app and displays NASA website in chosen browser.
+     * @param view  View from which the method is called.
      */
     public void displayNASAWebsite(View view)
     {
@@ -208,7 +220,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Toggles color scheme on home page.
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void toggleHomeNightMode(View view)
     {
@@ -233,6 +245,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * Checks shared preferences to see if this is the first time the app is
      * being run or if the app has had important updates.
+     *
+     * A version of the intro for use after a major update has not been
+     * implemented since the app is new and has had no major updates.
      */
     private void checkLastVersionRun() {
 
@@ -259,7 +274,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (currentVersionCode > savedVersionCode) {
             // The app has been upgraded
-            // TODO Add activity for info upon upgrade
+            // TODO Add activity for info upon upgrade if that functionality is desired
             return;
         }
 

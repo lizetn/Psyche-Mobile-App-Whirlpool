@@ -40,7 +40,7 @@ public class TwitterActivity extends ListFragment
                 mp = String.format("%d", ((countdownSeconds % 86400) % 3600) % 60);
                 if(countdownSeconds == 1 || countdownSeconds == 1000)
                 {
-                    ls.setText(getString(R.string.internet_error));
+                    ls.setText(R.string.internet_error);
                     mCountDownTimer.cancel();
                 }
             }

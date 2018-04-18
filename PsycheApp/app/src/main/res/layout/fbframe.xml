@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -33,33 +34,33 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/profilepics" />
 
-            <TextView
-                android:id="@+id/story"
-                android:layout_width="249dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
-                android:text="story"
-                android:textColor="#000000"
-                android:textSize="17dp"
-                app:layout_constraintBottom_toTopOf="@+id/times"
-                app:layout_constraintLeft_toLeftOf="@+id/profilePic"
-                app:layout_constraintStart_toStartOf="@+id/profilePic" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/times"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="-250dp"
-                android:layout_marginTop="58dp"
-                android:paddingTop="10dp"
-                android:text="Time"
-                android:textColor="@color/com_facebook_button_background_color_disabled"
-                android:textSize="12dp"
-                app:layout_constraintLeft_toLeftOf="@+id/profilePic"
-                app:layout_constraintStart_toStartOf="@+id/profilePic"
-                app:layout_constraintTop_toBottomOf="@+id/story" />
+                <TextView
+                    android:id="@+id/story"
+                    android:layout_width="249dp"
+                    android:layout_height="wrap_content"
+                    android:text="story"
+                    android:textColor="#000000"
+                    android:textSize="17dp"
+                    app:layout_constraintLeft_toLeftOf="@+id/profilePic"
+                    app:layout_constraintStart_toStartOf="@+id/profilePic"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/times"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Time"
+                    android:textColor="@color/com_facebook_button_background_color_disabled"
+                    android:textSize="12dp"
+                    app:layout_constraintLeft_toLeftOf="@+id/profilePic"
+                    app:layout_constraintStart_toStartOf="@+id/profilePic"
+                    app:layout_constraintTop_toBottomOf="@+id/story" />
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
         <RelativeLayout
@@ -77,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:paddingBottom="4dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"

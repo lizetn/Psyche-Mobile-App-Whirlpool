@@ -4,31 +4,30 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * {@link FullImageActivity} displays a full-screen version of the image selected in
- * the {@link GalleryTab}. Additionally, the User can toggle between a description-mode
- * and the full-screen mode.
+ * {@link FullImageActivity} displays an image and description selected in
+ * the {@link GalleryImageFragment}.
  *
  * @author      Diana Chavez, Erick Ramirez Cordero
- * @version     4/9/2018
+ * @version     4/16/2018
  */
 public class FullImageActivity extends AppCompatActivity
 {
-    ImageView fullImageView;
     ImageView desImageView;
     TextView desTextView;
     ScrollView desScrollView;
 
     /**
-     * Display a full screen version of an image based on the resource
-     * ID passed by the {@link ImageRecycleAdapter}.
+     * Displays a larger image and a description based on the information
+     * passed by the {@link ImageRecycleAdapter}.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,44 +40,24 @@ public class FullImageActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_image);
 
-        Intent intent = getIntent();
-        fullImageView = findViewById(R.id.fullImageView);
         desImageView = findViewById(R.id.desImageView);
         desTextView = findViewById(R.id.desTextView);
         desScrollView = findViewById(R.id.desScrollView);
+        Intent intent = getIntent();
 
         try
         {
-            int resId = intent.getIntExtra(ImageRecycleAdapter.IMAGE_KEY, ImageRecycleAdapter.RES_ERROR);
+            String imageUrl = intent.getStringExtra(ImageRecycleAdapter.URL_KEY);
             CharSequence descriptionText = intent.getCharSequenceExtra(ImageRecycleAdapter.DESCRIPTION_KEY);
 
-            fullImageView.setImageResource(resId);
-            desImageView.setImageResource(resId);
+            Glide.with(this).load(imageUrl).into(desImageView);
             desTextView.setText(descriptionText);
         }
         catch (Exception ex)
         {
-            // Display error image
+            // Display error if image could not be loaded
             desImageView.setImageResource(R.drawable.psyche_icon_bw);
-        }
-    }
-
-    /**
-     * Toggles the visibility of the image description.
-     */
-    public void toggleDescription(View view)
-    {
-        if (fullImageView.getVisibility() == View.VISIBLE)
-        {
-            fullImageView.setVisibility(View.INVISIBLE);
-            desImageView.setVisibility(View.VISIBLE);
-            desScrollView.setVisibility(View.VISIBLE);
-        }
-        else
-        {
-            fullImageView.setVisibility(View.VISIBLE);
-            desImageView.setVisibility(View.INVISIBLE);
-            desScrollView.setVisibility(View.INVISIBLE);
+            desTextView.setText(R.string.internet_connection_error);
         }
     }
 }
