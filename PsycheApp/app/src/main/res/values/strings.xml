@@ -7,11 +7,11 @@
     <string name="intro_quote_1">FOR THE FIRST TIME EVER,</string>
     <string name="intro_quote_2">WE ARE EXPLORING A</string>
     <string name="intro_quote_3">WORLD</string>
-    <string name="intro_quote_4">MADE NOT OF ROCK OR ICE</string>
+    <string name="intro_quote_4">MADE NOT OF ROCK OR ICE,</string>
     <string name="intro_quote_5">BUT OF METAL.</string>
     <string name="intro_nav_buttons_skip">SKIP INTRO</string>
     <string name="intro_nav_buttons_next">NEXT</string>
-    <string name="intro_nav_buttons_finish">FINISH</string>
+    <string name="intro_nav_buttons_finish">ENTER APP</string>
     <string name="intro_navigation_title">NAVIGATION</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>

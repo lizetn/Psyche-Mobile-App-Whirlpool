@@ -53,7 +53,8 @@
                 android:layout_height="8dp"
                 android:layout_marginEnd="@dimen/tw__composer_spacing_medium"
                 android:layout_marginRight="@dimen/tw__composer_spacing_medium"
-                android:background="@drawable/dot_indicator_unselected" />
+                android:background="@drawable/dot_indicator_unselected"
+                android:clickable="true" />
 
             <ImageView
                 android:id="@+id/intro_dot_indicator_1"
@@ -61,7 +62,8 @@
                 android:layout_height="8dp"
                 android:layout_marginEnd="@dimen/tw__composer_spacing_medium"
                 android:layout_marginRight="@dimen/tw__composer_spacing_medium"
-                android:background="@drawable/dot_indicator_unselected" />
+                android:background="@drawable/dot_indicator_unselected"
+                android:clickable="true" />
 
             <ImageView
                 android:id="@+id/intro_dot_indicator_2"
@@ -69,11 +71,10 @@
                 android:layout_height="8dp"
                 android:layout_marginEnd="@dimen/tw__composer_spacing_medium"
                 android:layout_marginRight="@dimen/tw__composer_spacing_medium"
-                android:background="@drawable/dot_indicator_unselected" />
+                android:background="@drawable/dot_indicator_unselected"
+                android:clickable="true" />
 
         </LinearLayout>
-
-        <!-- This overlaps the next button in the last slide -->
 
         <Button
             android:id="@+id/intro_btn_next"

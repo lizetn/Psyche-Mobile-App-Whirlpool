@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ import asu.whirlpool.psychewhirlpool.R;
 
 /**
  * {@link FullImageActivity} displays an image and description selected in
- * the {@link GalleryTab}.
+ * the {@link GalleryImageFragment}.
  *
  * @author      Diana Chavez, Erick Ramirez Cordero
  * @version     4/16/2018
@@ -27,7 +26,7 @@ public class FullImageActivity extends AppCompatActivity
     ScrollView desScrollView;
 
     /**
-     * Display a full screen version of an image based on the information
+     * Displays a larger image and a description based on the information
      * passed by the {@link ImageRecycleAdapter}.
      */
     @Override

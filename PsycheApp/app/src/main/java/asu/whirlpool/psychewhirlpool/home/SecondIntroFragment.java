@@ -15,7 +15,8 @@ import asu.whirlpool.psychewhirlpool.R;
  * Use the {@link SecondIntroFragment#newInstance} factory method to
  * create an instance of this fragment.
  *
- *
+ * @author      Natalie Fleischaker
+ * @version     3/18/2018
  */
 public class SecondIntroFragment extends Fragment {
     private static final String LINE1 = "1";
