@@ -158,14 +158,14 @@
                             <TextView
                                 android:id="@+id/shor_content"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="31dp"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginLeft="12dp"
                                 android:layout_marginTop="10dp"
                                 android:maxLength="150"
                                 android:text=""
-                                android:typeface="normal"
-                                android:textColor="#222222" />
+                                android:textColor="#222222"
+                                android:typeface="normal" />
                         </LinearLayout>
 
                         <TextView

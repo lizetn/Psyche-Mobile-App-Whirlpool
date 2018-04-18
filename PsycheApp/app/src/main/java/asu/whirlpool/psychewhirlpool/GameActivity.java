@@ -13,6 +13,7 @@ import android.widget.TextView;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+//Activity that calls Unity player
 public class GameActivity extends AppCompatActivity {
 
     private TextView mTextMessage;

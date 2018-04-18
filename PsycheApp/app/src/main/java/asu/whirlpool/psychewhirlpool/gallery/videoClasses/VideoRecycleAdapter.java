@@ -2,10 +2,13 @@ package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -31,6 +34,7 @@ public class VideoRecycleAdapter extends RecyclerView.Adapter<ImageViewHolder>
     public static final String VIDEO_KEY = "VIDEO_KEY";
     private final String THUMBNAIL_URI_START = "http://img.youtube.com/vi/";
     private final String THUMBNAIL_URI_END = "/hqdefault.jpg";
+
 
     private String[] videoIDs = {
             "cSMhurC_fm0", "h2pm1RPY6Bc",
