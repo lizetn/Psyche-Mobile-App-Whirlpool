@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
+import com.YourCompanyName.YourProductName.UnityPlayerActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
@@ -60,6 +60,9 @@ public class GameActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
+        Intent intent = new Intent(GameActivity.this, UnityPlayerActivity.class);
+
+        startActivity(intent);
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
