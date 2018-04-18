@@ -27,7 +27,6 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
  * FactsActivity handles the loading of information for the Mission Facts section of
  * the Psyche App.
  *
- * @author      Erick Ramirez Cordero
  * @author      Diana Chavez
  * @version     4/15/2018
  */
@@ -35,6 +34,8 @@ public class FactsActivity extends AppCompatActivity
 {
     private ListView mListView;
     public static final String FAQ_KEY = "faq_key";
+
+    //stores the images used in both Night Mode and normal mode for the background of the Mission Facts ListView
     public int[] tabDayImages = {R.drawable.mission_tab_light6, R.drawable.mission_tab_light10,
                                    R.drawable.mission_tab_light2, R.drawable.mission_tab_light11,
                                    R.drawable.mission_tab_light3, R.drawable.mission_tab_light8,
@@ -89,8 +90,12 @@ public class FactsActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        //creates the ListView adapter from (@link ListViewAdapter)
         ListViewAdapter adapter;
 
+        //checks to see if the app is in Night Mode. If the app is in NightMode, the ListView adapter
+        //is loaded with from the images stored in int[] tabNightImages and sets theme to PsycheDarkTheme.
+        // Otherwise, it is loaded with images from int[] tabDayImages
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
         {
             setTheme(R.style.PsycheDarkTheme);
@@ -120,11 +125,12 @@ public class FactsActivity extends AppCompatActivity
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //Create ListView object and fills it will text on the options
+        //Creates ListView object and fills it with text on the options. Sets the ListView object to
+        //the ListView adapter.
         mListView = findViewById(R.id.FactsList);
         mListView.setAdapter(adapter);
 
-        // Instantiate FAQ Information
+        //Instantiate Mission Fact Information
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
