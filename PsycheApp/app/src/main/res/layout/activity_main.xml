@@ -133,7 +133,7 @@
 
         <Button
             android:id="@+id/countdownButton"
-            android:layout_width="140dp"
+            android:layout_width="175dp"
             android:layout_height="100dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="4dp"
@@ -174,7 +174,7 @@
 
         <Button
             android:id="@+id/nightModeButton"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_marginBottom="4dp"
             android:layout_marginTop="8dp"
