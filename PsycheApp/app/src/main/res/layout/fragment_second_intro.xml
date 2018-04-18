@@ -8,7 +8,7 @@
     tools:context="asu.whirlpool.psychewhirlpool.home.SecondIntroFragment">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/quote1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/intro_quote_1"
             android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
@@ -28,13 +28,12 @@
             android:textColor="@android:color/white"
             android:textSize="29sp"
             android:theme="@style/AppTheme"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/quote3"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/quote2"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/intro_quote_2"
             android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
@@ -44,7 +43,7 @@
             android:textSize="35sp"
             android:theme="@style/AppTheme"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/quote3"
             app:layout_constraintTop_toBottomOf="@+id/quote1" />
 
         <TextView
@@ -63,7 +62,7 @@
 
         <TextView
             android:id="@+id/quote4"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/intro_quote_4"
             android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
@@ -71,13 +70,12 @@
             android:textColor="@android:color/white"
             android:textSize="28sp"
             android:theme="@style/AppTheme"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/quote3"
             app:layout_constraintTop_toBottomOf="@+id/quote3" />
 
         <TextView
             android:id="@+id/quote5"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/intro_quote_5"
             android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
@@ -87,8 +85,7 @@
             android:textColor="@android:color/white"
             android:textSize="52sp"
             android:theme="@style/AppTheme"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/quote3"
             app:layout_constraintTop_toBottomOf="@+id/quote4" />
     </android.support.constraint.ConstraintLayout>
 
