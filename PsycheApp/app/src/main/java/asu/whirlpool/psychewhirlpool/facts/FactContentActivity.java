@@ -3,6 +3,7 @@ package asu.whirlpool.psychewhirlpool.facts;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -77,7 +78,6 @@ public class FactContentActivity extends AppCompatActivity
 
         //Sets up the toolbar
         contentToolbar = (Toolbar) findViewById(R.id.toolbar);
-        //contentToolbar.set
 
         //Checks the current sdk
         final int sdk = android.os.Build.VERSION.SDK_INT;
@@ -102,8 +102,9 @@ public class FactContentActivity extends AppCompatActivity
         }
         else
         {
-            //set the text color of the Mission Facts section displayed
+            //set the text color of the Mission Facts section displayed and of the toolbar title
             contentTextView.setTextColor(getResources().getColor(R.color.psyche_black));
+            contentToolbar.setTitleTextColor(getResources().getColor(R.color.psyche_black));
 
             //sets the background image of the Mission Facts section based on the sdk
             if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN)
