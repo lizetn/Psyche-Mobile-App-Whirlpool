@@ -1,32 +1,25 @@
 package asu.whirlpool.psychewhirlpool;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.LinearLayout;
 
 import com.github.lzyzsd.circleprogress.DonutProgress;
 
@@ -39,6 +32,16 @@ import java.util.GregorianCalendar;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+/**
+ * Displays the home page of the app which contains a navigation bar and buttons for
+ * accessing the countdown clock, mission facts, NASA website, psyche news website,
+ * navigation help, and a toggle for night mode coloring of the app.
+ *
+ * @author      Natalie Fleischaker, Javier Perez
+ * @created     11/06/2017
+ * @version     4/2/2018
+ *
+ */
 public class CountdownActivity extends AppCompatActivity {
 
     final private int numTimers = 1;  // constant for the desired number of timers
@@ -64,8 +67,11 @@ public class CountdownActivity extends AppCompatActivity {
      * Toggle this boolean constant's value to turn on/off logging
      * within the class.
      */
-    private static final boolean VERBOSE = true;
+    private static final boolean VERBOSE = false;
 
+    /**
+     * Handles navigation between different sections of the Psyche App.
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -116,46 +122,6 @@ public class CountdownActivity extends AppCompatActivity {
         textViewMins = (DonutProgress) findViewById(R.id.textViewMinutesA);
         textViewSecs = (DonutProgress) findViewById(R.id.textViewSecondsA);
 
-        if(height < 900)
-        {
-            /*ViewGroup.LayoutParams ls = textViewYears.getLayoutParams();
-            ls.height =75;
-            ls.width = 75;
-            textViewYears.setLayoutParams(ls);
-            //textViewMonths.setLayoutParams(ls);
-            //textViewDays.setLayoutParams(ls);
-            //textViewHours.setLayoutParams(ls);
-            textViewMins.setLayoutParams(ls);
-            ConstraintSet set = new ConstraintSet();*/
-           // set.clone(textViewYears);
-           /* set.connect(R.id.clocksAndLabels,ConstraintSet.LEFT,R.id.defaultTimer,ConstraintSet.LEFT,0);
-            set.connect(R.id.clocksAndLabels, ConstraintSet.RIGHT, R.id.defaultTimer, ConstraintSet.RIGHT, 0);
-            set.connect(R.id.clocksAndLabels, ConstraintSet.TOP, R.id.dynamic_spinner, ConstraintSet.TOP, 0);
-            set.connect(R.id.clocksAndLabels, ConstraintSet.BOTTOM, R.id.defaultTimer, ConstraintSet.BOTTOM, 0);
-           */// set.applyTo(ls);
-            //textViewSecs.setLayoutParams(ls);
-           /* ConstraintLayout ls = (ConstraintLayout) findViewById(R.id.clocksAndLabels);
-            ConstraintLayout ls2 = ls;
-            ConstraintSet set = new ConstraintSet();
-            ConstraintLayout.LayoutParams ns;
-            ns = (ConstraintLayout.LayoutParams) ls2.getLayoutParams();
-            ns.height = 40;
-            ns.width = 40;
-            textViewYears.setLayoutParams(ns);
-            set.clone(ls);
-            set.connect(R.id.clocksAndLabels,ConstraintSet.LEFT,R.id.defaultTimer,ConstraintSet.LEFT,0);
-            set.connect(R.id.clocksAndLabels, ConstraintSet.RIGHT, R.id.defaultTimer, ConstraintSet.RIGHT, 0);
-            set.connect(R.id.clocksAndLabels, ConstraintSet.TOP, R.id.dynamic_spinner, ConstraintSet.TOP, 0);
-            set.connect(R.id.clocksAndLabels, ConstraintSet.BOTTOM, R.id.defaultTimer, ConstraintSet.BOTTOM, 0);
-            set.applyTo(ls);*/
-            //ViewGroup.LayoutParams params = ls.getLayoutParams();
-// Changes the height and width to the specified *pixels*
-            //params.height = 40;
-            //params.width = 40;
-
-            Log.d(String.valueOf(textViewYears.getLayoutParams().height), "onCreate: ");
-        }
-
         textViewSecs.setUnfinishedStrokeWidth((float) 10.0);
         textViewSecs.setFinishedStrokeWidth((float) 10.0);
 
@@ -176,7 +142,6 @@ public class CountdownActivity extends AppCompatActivity {
         textViewMins.setUnfinishedStrokeWidth((float) 10.0);
 
         endTimes = new String[numTimers];
-        Log.d("BEFORE", "onCreate: ");
         endTimes[0] = "11.30.2027, 13:00:00";
         if (VERBOSE) Log.v(TAG, "+++ ON CREATE +++");
 
@@ -185,12 +150,26 @@ public class CountdownActivity extends AppCompatActivity {
         titleMessage.setText("Phase F: Mission Closeout");
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
+        for (int i = 0; i < menuView.getChildCount(); i++) {
+            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            // navigation icon height set here
+            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            // navigation icon width set here
+            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            iconView.setLayoutParams(layoutParams);
+        }
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         final Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
 
-        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design", "Phase C: Critical Design","Phase D: Instrument & Spacecraft Build","Phase E: Mars Gravity Assist","Phase F: Mission Closeout" };
+        String[] items = new String[] { "Phase A: Concept Study", "Phase B: Preliminary Design",
+                "Phase C: Critical Design", "Phase D: Build, Ship & Launch",
+                "Spacecraft Launch", "Phase E: Mars Gravity Assist",
+                "Phase F: Mission Closeout" };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.spinner_item, items);
@@ -242,7 +221,8 @@ public class CountdownActivity extends AppCompatActivity {
                         startCountdown();
                         break;
                     case 3:
-                        titleMessage.setText("Phase D: Instrument & Spacecraft Build, Ship & Launch");
+                        titleMessage.setText("Phase D: Instrument & Spacecraft\n" +
+                                                "Build, Ship & Launch");
                         endTimes[0] = "01.30.2021, 13:00:00";
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();
@@ -250,6 +230,14 @@ public class CountdownActivity extends AppCompatActivity {
                         startCountdown();
                         break;
                     case 4:
+                        titleMessage.setText("Spacecraft Launch");
+                        endTimes[0] = "08.24.2022, 13:00:00";
+                        if(mCountDownTimer[0] != null) {
+                            mCountDownTimer[0].cancel();
+                        }
+                        startCountdown();
+                        break;
+                    case 5:
                         titleMessage.setText("Phase E: Gravity Assist, Arrival, & Orbit");
                         endTimes[0] = "05.30.2023, 13:00:00";
                         if(mCountDownTimer[0] != null) {
@@ -257,7 +245,7 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-                    case 5:
+                    case 6:
                         titleMessage.setText("Phase F: Mission Closeout");
                         endTimes[0] = "11.30.2027, 13:00:00";
                         if(mCountDownTimer[0] != null) {
@@ -265,10 +253,8 @@ public class CountdownActivity extends AppCompatActivity {
                         }
                         startCountdown();
                         break;
-                    case 6:
-                        break;
                     default:
-                        titleMessage.setText("Phase F: Mission Closeout");
+                        titleMessage.setText("Spacecraft Launch");
                         endTimes[0] = "11.30.2027, 13:00:00";
                         if(mCountDownTimer[0] != null) {
                             mCountDownTimer[0].cancel();
@@ -311,8 +297,6 @@ public class CountdownActivity extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("MM.dd.yyyy, HH:mm:ss");
         formatter.setLenient(false);
 
-       // String[] endTimes = new String[numTimers];
-        //endTimes[0] = "06.01.2022, 13:00:00";
         long[] milliseconds = new long[numTimers];
         Date[] endDates = new Date[numTimers];
 
@@ -325,10 +309,6 @@ public class CountdownActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        /**
-         * This needs to be refactored and encapsulated, but the basic functionality is
-         * still being figured out, so that will be done later.
-         */
         for (int i = 0; i < mCountDownTimer.length; i++) {
             final int index = i;
 
@@ -347,51 +327,49 @@ public class CountdownActivity extends AppCompatActivity {
                     double nm = (1.0 / progs);
                     double sum = (nm * 100.0);
                     int yr = (int) sum;
-                    Log.d(String.valueOf(yr), "onTick: YEAR ");
+
                     textViewYears.setDonut_progress(String.valueOf(yr));
 
                     int progs2 = ((calendar.get(Calendar.MONTH)));
                     double nm2 = (progs2 / 12.0);
                     double sum2 = (nm2 * 100.0);
-                    Log.d(String.valueOf(sum2), "onTick: sss");
+
                     int mths = (int) sum2;
-                    Log.d(String.valueOf(mths), "onTick: ");
+
                     textViewMonths.setDonut_progress(String.valueOf(mths));
 
 
                     int progs3 = ((calendar.get(Calendar.DAY_OF_MONTH)));
                     double nm3 = (progs3 / 31.0);
                     double sum3 = (nm3 * 100.0);
-                    Log.d(String.valueOf(sum3), "onTick: sss");
+
                     int dys = (int) sum3;
-                    Log.d(String.valueOf(dys), "onTick: ");
+
                     textViewDays.setDonut_progress(String.valueOf(dys));
 
                     int progs4 = ((calendar.get(Calendar.HOUR_OF_DAY)));
                     double nm4 = (progs4 / 24.0);
                     double sum4 = (nm4 * 100.0);
-                    Log.d(String.valueOf(sum4), "onTick: sss");
+
                     int hrs = (int) sum4;
-                    Log.d(String.valueOf(hrs), "onTick: ");
+
                     textViewHours.setDonut_progress(String.valueOf(hrs));
 
                     int progs5 = ((calendar.get(Calendar.MINUTE)));
                     double nm5 = (progs5 / 60.0);
                     double sum5 = (nm5 * 100.0);
-                    Log.d(String.valueOf(sum5), "onTick: sss");
+                    if (VERBOSE) Log.d(String.valueOf(sum5), "onTick: sss");
                     int mins = (int) sum5;
-                    Log.d(String.valueOf(mins), "onTick: ");
+
                     textViewMins.setDonut_progress(String.valueOf(mins));
 
 
                     int progs6 = ((calendar.get(Calendar.SECOND)));
                     double nm6 = (progs6 / 60.0);
                     double sum6 = (nm6 * 100.0);
-                    Log.d(String.valueOf(sum6), "onTick: sss");
+
                     int secs = (int) sum6;
-                    Log.d(String.valueOf(secs), "onTick: ");
                     textViewSecs.setDonut_progress(String.valueOf(secs));
-                    Log.d(textViewSecs.getText(), "onTick: SECCCCSSS");
 
                     String yearsLeft = String.format("%d", calendar.get(Calendar.YEAR) - 1970);
                     String monthsLeft = String.format("%d", calendar.get(Calendar.MONTH));
@@ -458,7 +436,7 @@ public class CountdownActivity extends AppCompatActivity {
     public void onStop() {
         cancelTimers();
         super.onStop();
-        Log.v(TAG, "-- ON STOP --");
+        if (VERBOSE) Log.v(TAG, "-- ON STOP --");
     }
 
     @Override

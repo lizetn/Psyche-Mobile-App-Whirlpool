@@ -2,6 +2,7 @@ package asu.whirlpool.psychewhirlpool.gallery;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +13,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import asu.whirlpool.psychewhirlpool.BottomNavigationViewHelper;
 import asu.whirlpool.psychewhirlpool.GameActivity;
@@ -28,11 +33,11 @@ import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
  * GalleryTab implements a tab system to divide the Gallery section
  * into two parts: images and videos.
  *
- * {@link GalleryImageFragment} and GalleryVideoFragment are used to create the fragments
+ * {@link GalleryImageFragment} and {@link GalleryVideoFragment} are used to create the fragments
  * that are displayed when the User navigates through the Gallery.
  *
- * @author  Erick Ramirez Cordero
- * @date    1/25/2018
+ * @author      Erick Ramirez Cordero
+ * @version     4/17/2018
  */
 public class GalleryTab extends AppCompatActivity
 {
@@ -92,14 +97,21 @@ public class GalleryTab extends AppCompatActivity
         }
     };
 
+    /**
+     * Instantiates the tab system and navigation bar.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        {
             setTheme(R.style.PsycheDarkTheme);
-        } else {
+        }
+        else
+        {
             setTheme(R.style.PsycheLightTheme);
         }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery_tab);
 
@@ -116,6 +128,20 @@ public class GalleryTab extends AppCompatActivity
 
         // Set up navigation bar
         BottomNavigationView navigation = findViewById(R.id.navigation);
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
+
+        for (int i = 0; i < menuView.getChildCount(); i++)
+        {
+            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            // navigation icon height set here
+            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            // navigation icon width set here
+            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            iconView.setLayoutParams(layoutParams);
+        }
+
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
@@ -143,7 +169,6 @@ public class GalleryTab extends AppCompatActivity
     {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
             return true;
@@ -203,9 +228,7 @@ public class GalleryTab extends AppCompatActivity
         }
 
         /**
-         * Gets tab name from tabTitles array.
-         * @param position
-         * @return
+         * Gets tab name from tabTitles array
          */
         @Override
         public CharSequence getPageTitle(int position)

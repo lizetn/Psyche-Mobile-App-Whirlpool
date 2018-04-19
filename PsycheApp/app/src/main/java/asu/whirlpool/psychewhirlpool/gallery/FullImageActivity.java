@@ -5,26 +5,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import asu.whirlpool.psychewhirlpool.R;
 
 /**
- * {@link FullImageActivity} displays a full-screen version of the image selected in
- * the {@link GalleryTab}.
+ * {@link FullImageActivity} displays an image and description selected in
+ * the {@link GalleryImageFragment}.
  *
- * @author      Diana Chavez
- *
- * Revision:    Changed variables and constants. Changed image key to work with new
- *              version of Gallery.
- *
- * @author      Erick Ramirez Cordero
- * @version     2/15/2018
+ * @author      Diana Chavez, Erick Ramirez Cordero
+ * @version     4/16/2018
  */
 public class FullImageActivity extends AppCompatActivity
 {
+    ImageView desImageView;
+    TextView desTextView;
+    ScrollView desScrollView;
+
     /**
-     * Display a full screen version of an image based on the resource
-     * ID passed by the {@link ImageRecycleAdapter}.
+     * Displays a larger image and a description based on the information
+     * passed by the {@link ImageRecycleAdapter}.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,18 +40,24 @@ public class FullImageActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_image);
 
+        desImageView = findViewById(R.id.desImageView);
+        desTextView = findViewById(R.id.desTextView);
+        desScrollView = findViewById(R.id.desScrollView);
         Intent intent = getIntent();
-        ImageView imageView = findViewById(R.id.imageView);
 
         try
         {
-            int resId = intent.getExtras().getInt(ImageRecycleAdapter.IMAGE_KEY);
-            imageView.setImageResource(resId);
+            String imageUrl = intent.getStringExtra(ImageRecycleAdapter.URL_KEY);
+            CharSequence descriptionText = intent.getCharSequenceExtra(ImageRecycleAdapter.DESCRIPTION_KEY);
+
+            Glide.with(this).load(imageUrl).into(desImageView);
+            desTextView.setText(descriptionText);
         }
         catch (Exception ex)
         {
-            // Display error image
-            imageView.setImageResource(R.drawable.psyche_icon_bw);
+            // Display error if image could not be loaded
+            desImageView.setImageResource(R.drawable.psyche_icon_bw);
+            desTextView.setText(R.string.internet_connection_error);
         }
     }
 }

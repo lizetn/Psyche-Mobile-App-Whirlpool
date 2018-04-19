@@ -4,7 +4,7 @@
     android:id="@+id/contstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/intro_background_gradient">
+    android:background="@drawable/intro_first_background_gradient">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/introTitleGroup"
@@ -21,34 +21,44 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/title_home_large"
-            android:textColor="@color/psyche_dark_purple"
-            android:textSize="60sp"
+            android:textColor="@android:color/white"
+            android:textSize="72sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/introPsycheIcon" />
 
         <ImageView
             android:id="@+id/introPsycheIcon"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:adjustViewBounds="true"
             android:background="@drawable/psyche_icon_color"
             android:contentDescription="@string/title_home_large"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="@+id/introTitle"
-            app:layout_constraintLeft_toLeftOf="@+id/introTitle"
-            app:layout_constraintStart_toStartOf="@+id/introTitle"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/introSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:text="@string/title_home_small"
-            android:textColor="@color/psyche_dark_purple"
-            android:textSize="16sp"
-            app:layout_constraintLeft_toLeftOf="@+id/introTitle"
-            app:layout_constraintStart_toStartOf="@+id/introTitle"
+            android:textColor="@android:color/white"
+            android:textSize="19sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/introTitle" />
     </android.support.constraint.ConstraintLayout>
 

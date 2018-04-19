@@ -10,7 +10,7 @@ import com.bumptech.glide.module.GlideModule;
 /**
  * Created by jperez60 on 1/25/2018.
  */
-
+//Glide configuration used to optimize glide resolution
 public class GlideConfiguration implements GlideModule {
 
     @Override

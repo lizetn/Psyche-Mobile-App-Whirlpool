@@ -21,6 +21,14 @@ import android.widget.TextView;
 
 import asu.whirlpool.psychewhirlpool.R;
 
+/**
+ * Displays a ViewPager with three fragments as the introduction to the app.
+ * Only runs the first time that the app is run or after app data is cleared.
+ *
+ * @author      Natalie Fleischaker
+ * @version     3/12/2018
+ *
+ */
 public class FirstRunIntroActivity extends AppCompatActivity {
 
     /**
@@ -38,8 +46,11 @@ public class FirstRunIntroActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
     private int page = 0;
-    private ImageButton mNextBtn;
-    private Button mSkipBtn, mFinishBtn;
+    private Button mNextBtn;
+    private Button mSkipBtn;
+    private ImageView mFirstDot;
+    private ImageView mSecondDot;
+    private ImageView mThirdDot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +62,11 @@ public class FirstRunIntroActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        mNextBtn = (ImageButton) findViewById(R.id.intro_btn_next);
+        mNextBtn = (Button) findViewById(R.id.intro_btn_next);
         mSkipBtn = (Button) findViewById(R.id.intro_btn_skip);
-        mFinishBtn = (Button) findViewById(R.id.intro_btn_finish);
+        mFirstDot = (ImageView) findViewById(R.id.intro_dot_indicator_0);
+        mSecondDot = (ImageView) findViewById(R.id.intro_dot_indicator_1);
+        mThirdDot = (ImageView) findViewById(R.id.intro_dot_indicator_2);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -73,8 +86,11 @@ public class FirstRunIntroActivity extends AppCompatActivity {
                 page = position;
                 updateIndicators(page);
 
-                mNextBtn.setVisibility(position == 2 ? View.GONE : View.VISIBLE);
-                mFinishBtn.setVisibility(position == 2 ? View.VISIBLE : View.GONE);
+                if (position == 2) {
+                    mNextBtn.setText(R.string.intro_nav_buttons_finish);
+                } else {
+                    mNextBtn.setText(R.string.intro_nav_buttons_next);
+                }
             }
 
             @Override
@@ -83,22 +99,55 @@ public class FirstRunIntroActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * OnClick behavior for the Next/Enter App button.
+         */
         mNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                page += 1;
-                mViewPager.setCurrentItem(page, true);
+                if (page == 2) {
+                    finish();
+                } else {
+                    page += 1;
+                    mViewPager.setCurrentItem(page, true);
+                }
             }
         });
 
-        mSkipBtn.setOnClickListener(new View.OnClickListener() {
+        /**
+         * OnClick behavior for the first indicator dot.
+         */
+        mFirstDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                displayPage(0);
             }
         });
 
-        mFinishBtn.setOnClickListener(new View.OnClickListener() {
+        /**
+         * OnClick behavior for the second indicator dot.
+         */
+        mSecondDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPage(1);
+            }
+        });
+
+        /**
+         * OnClick behavior for the third indicator dot.
+         */
+        mThirdDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPage(2);
+            }
+        });
+
+        /**
+         * OnClick behavior for the skip button.
+         */
+        mSkipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -144,22 +193,22 @@ public class FirstRunIntroActivity extends AppCompatActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class IntroFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        public PlaceholderFragment() {
+        public IntroFragment() {
         }
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+        public static IntroFragment newInstance(int sectionNumber) {
+            IntroFragment fragment = new IntroFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
@@ -191,9 +240,9 @@ public class FirstRunIntroActivity extends AppCompatActivity {
             switch(position) {
                 case 0: return FirstIntroFragment.newInstance(getString(R.string.title_home_large),
                         getString(R.string.title_home_small));
-                case 1: return SecondIntroFragment.newInstance(
-                        getString(R.string.intro_tag_line_beginning),
-                        getString(R.string.intro_tag_line_ending));
+                case 1: return SecondIntroFragment.newInstance(getString(R.string.intro_quote_1),
+                        getString(R.string.intro_quote_2),getString(R.string.intro_quote_3),
+                        getString(R.string.intro_quote_4),getString(R.string.intro_quote_5));
                 case 2: return ThirdIntroFragment.newInstance();
                 default: return FirstIntroFragment.newInstance(getString(R.string.title_home_large),
                         getString(R.string.title_home_small));
@@ -218,5 +267,14 @@ public class FirstRunIntroActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    /**
+     * Changes page global variable and displays that page.
+     * @param position  Desired page to display.
+     */
+    protected void displayPage(int position) {
+        page = position;
+        mViewPager.setCurrentItem(position, true);
     }
 }

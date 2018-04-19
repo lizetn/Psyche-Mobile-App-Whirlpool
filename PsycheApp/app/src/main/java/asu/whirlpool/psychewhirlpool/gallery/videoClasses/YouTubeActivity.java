@@ -1,5 +1,6 @@
 package asu.whirlpool.psychewhirlpool.gallery.videoClasses;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
@@ -30,7 +31,7 @@ public class YouTubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     private final String YOUTUBE_ERROR = "Initialization error";
 
     /**
-     * Instantiate the {@link YouTubePlayerView} in the UI.
+     * Instantiates the {@link YouTubePlayerView} in the UI.
      * Also get the video ID passed by the {@link VideoRecycleAdapter}.
      */
     @Override
@@ -48,6 +49,7 @@ public class YouTubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         playerView.initialize(API_KEY, this);
 
         videoID = getIntent().getStringExtra(VideoRecycleAdapter.VIDEO_KEY);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
     /**

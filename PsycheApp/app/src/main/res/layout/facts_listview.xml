@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:scaleType="center"
-        app:srcCompat="@drawable/image_1" />
+        app:srcCompat="@drawable/mission_tab_light1" />
 
     <TextView
         android:id="@+id/titleListView"
@@ -24,6 +24,7 @@
         android:text="TextView"
         android:textAlignment="textStart"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/knockout_htf30juniorwelterwt_regular" />
 </RelativeLayout>

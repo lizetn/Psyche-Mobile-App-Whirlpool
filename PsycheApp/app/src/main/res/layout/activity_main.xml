@@ -5,40 +5,92 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/windowBackground"
+    android:background="@drawable/home_bg_light"
     android:visibility="visible"
     tools:context="asu.whirlpool.psychewhirlpool.MainActivity">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/homeButtonsLayout"
+        android:id="@+id/homeTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/homeTitleTextLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_home_large"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            android:autoSizeMaxTextSize="64sp"
+            android:autoSizeMinTextSize="56sp"
+            android:autoSizeStepGranularity="4sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/homeTitleTextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_home_small"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:autoSizeMaxTextSize="17sp"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeStepGranularity="1sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintEnd_toEndOf="@+id/homeTitleTextLarge"
+            app:layout_constraintStart_toStartOf="@+id/homeTitleTextLarge"
+            app:layout_constraintTop_toBottomOf="@+id/homeTitleTextLarge" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/nasaButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/nasa_insignia_color_700"
+        android:elevation="16dp"
+        android:onClick="displayNASAWebsite"
+        android:paddingLeft="2dp"
+        android:paddingStart="@dimen/cardview_default_radius"
+        android:paddingTop="@dimen/tw__composer_close_size"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/homeTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeTitleText"
+        app:layout_constraintTop_toTopOf="@+id/homeTitleText" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/homeButtonsLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeTitleLayout"
-        app:layout_constraintVertical_bias="0.32999998">
-
-        <ImageView
-            android:id="@+id/verticalDividerHome"
-            android:layout_width="3dp"
-            android:layout_height="0dp"
-            android:background="@drawable/horizontal_line"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintBottom_toBottomOf="@+id/helpButton"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/countdownButton"
-            app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeTitleText">
 
         <Button
             android:id="@+id/factsButton"
-            android:layout_width="140dp"
-            android:layout_height="106dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginStart="4dp"
+            android:layout_width="100dp"
+            android:layout_height="118dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayFacts"
@@ -49,34 +101,20 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/countdownButton"
-            app:layout_constraintStart_toEndOf="@+id/countdownButton" />
-
-        <ImageView
-            android:id="@+id/homeFactsIcon"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:adjustViewBounds="false"
-            android:background="@drawable/ic_info_outline_black_50dp"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            android:cropToPadding="false"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/horDividerHome1"
-            app:layout_constraintEnd_toEndOf="@+id/factsButton"
-            app:layout_constraintStart_toStartOf="@+id/factsButton"
-            app:layout_constraintTop_toTopOf="@+id/factsButton"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textSize="18sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/newsButton"
+            app:layout_constraintTop_toTopOf="@+id/newsButton" />
 
         <Button
             android:id="@+id/helpButton"
-            android:layout_width="140dp"
-            android:layout_height="106dp"
-            android:layout_marginTop="3dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="4dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayHelp"
@@ -85,47 +123,20 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/newsButton"
-            app:layout_constraintTop_toBottomOf="@+id/newsButton" />
-
-        <ImageView
-            android:id="@+id/homeHelpIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:adjustViewBounds="false"
-            android:background="@android:drawable/ic_menu_help"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/helpButton"
+            android:textSize="18sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/newsButton"
+            app:layout_constraintEnd_toStartOf="@+id/newsButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/helpButton"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/horDividerHome1"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:background="@drawable/horizontal_line"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/newsButton"
-            app:layout_constraintEnd_toEndOf="@+id/factsButton"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/countdownButton" />
+            app:layout_constraintTop_toTopOf="@+id/newsButton"
+            app:layout_constraintVertical_bias="0.498" />
 
         <Button
             android:id="@+id/countdownButton"
-            android:layout_width="140dp"
-            android:layout_height="106dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
+            android:layout_width="175dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="4dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="displayCountdown"
@@ -134,35 +145,39 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/verticalDividerHome"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="18sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintBottom_toTopOf="@+id/newsButton"
+            app:layout_constraintEnd_toEndOf="@+id/newsButton"
+            app:layout_constraintStart_toStartOf="@+id/newsButton"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/homeClockIcon"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:adjustViewBounds="false"
-            android:background="@drawable/countdown_clock_300"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            android:cropToPadding="false"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/countdownButton"
-            app:layout_constraintEnd_toEndOf="@+id/countdownButton"
-            app:layout_constraintStart_toStartOf="@+id/countdownButton"
+        <Button
+            android:id="@+id/newsButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            android:elevation="16dp"
+            android:onClick="displayNews"
+            android:paddingTop="@dimen/tw__composer_close_size"
+            android:text="@string/button_home_news"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.498" />
 
         <Button
             android:id="@+id/nightModeButton"
-            android:layout_width="140dp"
-            android:layout_height="106dp"
-            android:layout_marginTop="3dp"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             android:elevation="16dp"
             android:onClick="toggleHomeNightMode"
@@ -173,168 +188,99 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/nasaButton"
-            app:layout_constraintTop_toBottomOf="@+id/nasaButton" />
+            android:textSize="18sp"
+            android:fontFamily="@font/knockout_htf30juniorwelterwt_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/newsButton"
+            app:layout_constraintStart_toStartOf="@+id/newsButton"
+            app:layout_constraintTop_toBottomOf="@+id/newsButton" />
+
+        <ImageView
+            android:id="@+id/homeFactsIcon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/home_missionfacts_darkpurple_solid_300"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            android:cropToPadding="false"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/factsButton"
+            app:layout_constraintStart_toStartOf="@+id/factsButton"
+            app:layout_constraintTop_toTopOf="@+id/factsButton" />
+
+        <ImageView
+            android:id="@+id/homeHelpIcon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/home_help_darkpurple_solid_300"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/helpButton"
+            app:layout_constraintStart_toStartOf="@+id/helpButton"
+            app:layout_constraintTop_toTopOf="@+id/helpButton" />
+
+        <ImageView
+            android:id="@+id/homeClockIcon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="1dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/countdown_clock_300"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            android:cropToPadding="false"
+            android:elevation="20dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/countdownButton"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/countdownButton"
+            app:layout_constraintTop_toTopOf="@+id/countdownButton" />
 
         <ImageView
             android:id="@+id/homeMoonIcon"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="14dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:adjustViewBounds="false"
             android:background="@drawable/night_mode_300"
             android:backgroundTint="?android:attr/textColorPrimary"
             android:elevation="20dp"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/nightModeButton"
             app:layout_constraintStart_toStartOf="@+id/nightModeButton"
-            app:layout_constraintTop_toBottomOf="@+id/nasaButton"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/nightModeButton" />
 
-        <Button
-            android:id="@+id/nasaButton"
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="4dp"
-            android:background="@android:color/transparent"
-            android:elevation="16dp"
-            android:onClick="displayNASAWebsite"
-            android:paddingLeft="2dp"
-            android:paddingStart="@dimen/cardview_default_radius"
-            android:paddingTop="@dimen/tw__composer_close_size"
-            android:text="@string/button_home_nasa"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/newsButton"
+        <ImageView
+            android:id="@+id/homeNewsIcon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/home_news_darkpurple_solid_psyche_300"
+            android:backgroundTint="?android:attr/textColorPrimary"
+            android:cropToPadding="false"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/newsButton"
+            app:layout_constraintStart_toStartOf="@+id/newsButton"
             app:layout_constraintTop_toTopOf="@+id/newsButton" />
 
-        <ImageView
-            android:id="@+id/homeNASAIcon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
-            android:adjustViewBounds="false"
-            android:background="@drawable/nasa_meatball_white"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            android:cropToPadding="false"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/horDividerHome2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/verticalDividerHome"
-            app:layout_constraintTop_toTopOf="@+id/nasaButton"
-            app:layout_constraintVertical_bias="0.17000002" />
-
-        <ImageView
-            android:id="@+id/horDividerHome2"
+        <android.support.constraint.Guideline
+            android:id="@+id/guideMidRight"
             android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:background="@drawable/horizontal_line"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/helpButton"
-            app:layout_constraintEnd_toEndOf="@+id/factsButton"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/countdownButton" />
+            android:layout_height="0dp"
+            android:layout_marginEnd="225dp"
+            android:layout_marginLeft="186dp"
+            android:layout_marginRight="225dp"
+            android:layout_marginStart="186dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="233dp"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/newsButton"
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="2dp"
-            android:background="@android:color/transparent"
-            android:elevation="16dp"
-            android:onClick="displayFacts"
-            android:paddingTop="@dimen/tw__composer_close_size"
-            android:text="@string/button_home_news"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/countdownButton"
-            app:layout_constraintTop_toBottomOf="@+id/countdownButton" />
-
-        <ImageView
-            android:id="@+id/homeStreamIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:adjustViewBounds="false"
-            android:background="@drawable/play_outline_purple"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            android:cropToPadding="false"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/horDividerHome2"
-            app:layout_constraintEnd_toStartOf="@+id/verticalDividerHome"
-            app:layout_constraintStart_toStartOf="@+id/newsButton"
-            app:layout_constraintTop_toTopOf="@+id/newsButton"
-            app:layout_constraintVertical_bias="0.25" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/homeTitleLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00999999">
-
-        <TextView
-            android:id="@+id/homeTitleTextLarge"
+        <android.support.constraint.Guideline
+            android:id="@+id/guideMidLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/title_home_large"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/homeTitleLogo"
-            app:layout_constraintTop_toTopOf="@+id/homeTitleLogo" />
-
-        <TextView
-            android:id="@+id/homeTitleTextSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="13dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"
-            android:text="@string/title_home_small"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="11sp"
-            app:layout_constraintStart_toStartOf="@+id/homeTitleTextLarge"
-            app:layout_constraintTop_toBottomOf="@+id/homeTitleTextLarge" />
-
-        <ImageView
-            android:id="@+id/homeTitleLogo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="Psyche: Journey to a Metal World"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/psyche_icon_color" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="178dp" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -346,6 +292,7 @@
         android:background="?attr/colorPrimaryDark"
         android:clickable="true"
         android:focusable="true"
+        android:paddingTop="@dimen/nav_bar_padding_top"
         android:soundEffectsEnabled="true"
         app:elevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -353,160 +300,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/homeHelpWindow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/colorBackground"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeTitleLayout"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/homeHelpCloseButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:onClick="closeHelp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-
-        <ImageView
-            android:id="@+id/homeIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/ic_home_black_24dp"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintEnd_toStartOf="@+id/helpTitle"
-            app:layout_constraintTop_toBottomOf="@+id/helpTitle" />
-
-        <ImageView
-            android:id="@+id/gameIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/gold_game_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/socialIconHelp"
-            app:layout_constraintTop_toBottomOf="@+id/socialIconHelp" />
-
-        <ImageView
-            android:id="@+id/socialIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/gold_social_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/galleryIconHelp"
-            app:layout_constraintTop_toBottomOf="@+id/galleryIconHelp" />
-
-        <ImageView
-            android:id="@+id/galleryIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/gold_gallery_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/timelineIconHelp"
-            app:layout_constraintTop_toBottomOf="@+id/timelineIconHelp" />
-
-        <ImageView
-            android:id="@+id/timelineIconHelp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/gold_timeline_icon_200"
-            android:backgroundTint="?android:attr/textColorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/homeIconHelp"
-            app:layout_constraintTop_toBottomOf="@+id/homeIconHelp" />
-
-        <TextView
-            android:id="@+id/galleryIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="32dp"
-            android:text="@string/title_activity_gallery"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/galleryIconHelp"
-            app:layout_constraintStart_toEndOf="@+id/galleryIconHelp" />
-
-        <TextView
-            android:id="@+id/socialIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="32dp"
-            android:text="@string/title_activity_social_media"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/socialIconHelp"
-            app:layout_constraintStart_toEndOf="@+id/socialIconHelp" />
-
-        <TextView
-            android:id="@+id/gameIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="32dp"
-            android:text="@string/title_activity_game"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/gameIconHelp"
-            app:layout_constraintStart_toEndOf="@+id/gameIconHelp" />
-
-        <TextView
-            android:id="@+id/helpTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/title_help"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/timelineIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="32dp"
-            android:text="@string/timeline_title"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/timelineIconHelp"
-            app:layout_constraintStart_toEndOf="@+id/timelineIconHelp" />
-
-        <TextView
-            android:id="@+id/homeIconLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="32dp"
-            android:text="@string/title_activity_home"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/homeIconHelp"
-            app:layout_constraintStart_toEndOf="@+id/homeIconHelp" />
-
-    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

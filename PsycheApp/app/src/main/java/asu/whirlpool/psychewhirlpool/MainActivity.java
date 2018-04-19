@@ -2,30 +2,59 @@ package asu.whirlpool.psychewhirlpool;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
 
 import asu.whirlpool.psychewhirlpool.facts.FactsActivity;
 import asu.whirlpool.psychewhirlpool.gallery.GalleryTab;
+import asu.whirlpool.psychewhirlpool.home.AppCreditsActivity;
 import asu.whirlpool.psychewhirlpool.home.FirstRunIntroActivity;
+import asu.whirlpool.psychewhirlpool.home.HelpActivity;
 import asu.whirlpool.psychewhirlpool.timeline.TimelineTab;
 
+/**
+ * Displays the home page of the app which contains a navigation bar and buttons for
+ * accessing the countdown clock, mission facts, NASA website, psyche news website,
+ * navigation help, and a toggle for night mode coloring of the app.
+ *
+ * @author      Natalie Fleischaker
+ * @version     4/8/2018
+ *
+ */
 public class MainActivity extends AppCompatActivity
 {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
-    private ConstraintLayout mHelpBox, mButtonsBox;
+    private ConstraintLayout mBackground;
+    private ImageView mImageView;
+    final int sdk = android.os.Build.VERSION.SDK_INT;
 
+    private final String NEWS_URI = "https://psyche.asu.edu/category/news/";
+
+    /**
+     * Handles navigation between different sections of the Psyche App.
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
     {
@@ -72,7 +101,20 @@ public class MainActivity extends AppCompatActivity
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         mTextMessage = (TextView) findViewById(R.id.message);
+
+        // Set up navigation bar
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) navigation.getChildAt(0);
+        for (int i = 0; i < menuView.getChildCount(); i++) {
+            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            // navigation icon height set here
+            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            // navigation icon width set here
+            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+            iconView.setLayoutParams(layoutParams);
+        }
         BottomNavigationViewHelper.disableAnimation(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
@@ -83,11 +125,50 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
+
+        // if the app is in night mode, change all icons to gold versions and switch background
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            if(sdk >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+            } else {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_dark));
+            }
+            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_countdownclock_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_mustard_solid_psyche_300));
+            mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_mustard_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_nightmode_mustard_solid_300));
+        }
+        // if not in night mode, make sure icons and background are changed back to defaults
+        else {
+            mBackground = (ConstraintLayout) findViewById(R.id.container);
+            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                mBackground.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+            } else {
+                mBackground.setBackground(ContextCompat.getDrawable(this, R.drawable.home_bg_light));
+            }
+            mImageView = (ImageView) findViewById(R.id.homeClockIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.countdown_clock_300));
+            mImageView = (ImageView) findViewById(R.id.homeHelpIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_help_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeNewsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_news_darkpurple_solid_psyche_300));
+            mImageView = (ImageView) findViewById(R.id.homeFactsIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.home_missionfacts_darkpurple_solid_300));
+            mImageView = (ImageView) findViewById(R.id.homeMoonIcon);
+            mImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.night_mode_300));
+        }
     }
 
     /**
      * Navigates to {@link CountdownActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayCountdown(View view)
     {
@@ -97,7 +178,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Navigates to {@link FactsActivity}
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void displayFacts(View view)
     {
@@ -106,31 +187,29 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Displays help box for navigation icon titles.
+     * Closes the app and displays Psyche news website in chosen browser.
+     * @param view  View from which the method is called.
+     */
+    public void displayNews(View view)
+    {
+        Uri newsUrl = Uri.parse(NEWS_URI);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, newsUrl);
+        startActivity(launchBrowser);
+    }
+
+    /**
+     * Displays help activity for help with navigation icon titles.
+     * @param view  View from which the method is called.
      */
     public void displayHelp(View view)
     {
-        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
-        mHelpBox.setVisibility(View.VISIBLE);
-
-        mButtonsBox = (ConstraintLayout) findViewById(R.id.homeButtonsLayout);
-        mButtonsBox.setVisibility(View.GONE);
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
     }
 
     /**
-     * Hides help box for navigation icon titles.
-     */
-    public void closeHelp(View view)
-    {
-        mButtonsBox = (ConstraintLayout) findViewById(R.id.homeButtonsLayout);
-        mButtonsBox.setVisibility(View.VISIBLE);
-
-        mHelpBox = (ConstraintLayout) findViewById(R.id.homeHelpWindow);
-        mHelpBox.setVisibility(View.GONE);
-    }
-
-    /**
-     * Closes the app and displays NASA website in browser.
+     * Closes the app and displays NASA website in chosen browser.
+     * @param view  View from which the method is called.
      */
     public void displayNASAWebsite(View view)
     {
@@ -141,7 +220,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Toggles color scheme on home page.
-     * @param view
+     * @param view  View from which the method is called.
      */
     public void toggleHomeNightMode(View view)
     {
@@ -166,6 +245,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * Checks shared preferences to see if this is the first time the app is
      * being run or if the app has had important updates.
+     *
+     * A version of the intro for use after a major update has not been
+     * implemented since the app is new and has had no major updates.
      */
     private void checkLastVersionRun() {
 
@@ -192,7 +274,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (currentVersionCode > savedVersionCode) {
             // The app has been upgraded
-            // TODO Add activity for info upon upgrade
+            // TODO Add activity for info upon upgrade if that functionality is desired
             return;
         }
 

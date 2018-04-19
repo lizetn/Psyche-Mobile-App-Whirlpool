@@ -13,7 +13,9 @@ import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
 /**
- * TODO: Add documentation
+ *  Javier Perez
+ *  Twitter Activity
+ *  Class that uses Twitter API to create a Twitter feed
  */
 public class TwitterActivity extends ListFragment
 {
@@ -31,6 +33,7 @@ public class TwitterActivity extends ListFragment
         final TextView ls = view.findViewById(R.id.ls);
         ls.setText("");
 
+        //Progress bar used to check internet connection
         mCountDownTimer = new CountDownTimer(8000, 1000)
         {
             @Override
@@ -40,7 +43,7 @@ public class TwitterActivity extends ListFragment
                 mp = String.format("%d", ((countdownSeconds % 86400) % 3600) % 60);
                 if(countdownSeconds == 1 || countdownSeconds == 1000)
                 {
-                    ls.setText(getString(R.string.internet_error));
+                    ls.setText(R.string.internet_error);
                     mCountDownTimer.cancel();
                 }
             }
@@ -53,6 +56,7 @@ public class TwitterActivity extends ListFragment
         };
 
         mCountDownTimer.start();
+        //Twitter API call, sets the list adapter to a Twitter adapter with the content containing tweets and images
         Twitter.initialize(view.getContext());
 
         final UserTimeline userTimeline = new UserTimeline.Builder()
